@@ -63,4 +63,9 @@ class Event extends BaseModel
     {
         return $this->hasMany(EventEntry::class);
     }
+
+    public function link()
+    {
+        return route('event.show', $this);
+    }
 }

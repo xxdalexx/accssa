@@ -63,4 +63,9 @@ class Series extends BaseModel
         $this->save();
         $this->recalculateAllEventPoints();
     }
+
+    public function link()
+    {
+        return route('series.show', $this);
+    }
 }

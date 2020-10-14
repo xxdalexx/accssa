@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DevController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\SeriesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,7 @@ use App\Http\Controllers\EventController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('event', [EventController::class, 'index'])->name('event.index');
 Route::get('event/{event}', [EventController::class, 'show'])->name('event.show');
+Route::get('series/{series}', [SeriesController::class, 'show'])->name('series.show');
+
 Route::get('dev', [DevController::class, 'index'])->name('dev');
