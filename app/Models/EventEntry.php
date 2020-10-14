@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helper\RaceTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class EventEntry extends BaseModel
@@ -42,5 +43,23 @@ class EventEntry extends BaseModel
             return;
         }
         return $value;
+    }
+
+    public function getQualiTimeTextAttribute()
+    {
+        $raceTime = new RaceTime($this->quali_time);
+        return $raceTime->onlySeconds();
+    }
+
+    public function getBestLapTextAttribute()
+    {
+        $raceTime = new RaceTime($this->best_lap);
+        return $raceTime->onlySeconds();
+    }
+
+    public function getTotalTimeTextAttribute()
+    {
+        $raceTime = new RaceTime($this->total_time);
+        return $raceTime->withHour();
     }
 }

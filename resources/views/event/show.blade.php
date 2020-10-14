@@ -35,8 +35,8 @@
                                 <td>{{ $entry->position }}</td>
                                 <td>{{ $entry->driver->driver_name }}</td>
                                 <td>{{ $entry->laps }}</td>
-                                <td>{{ $entry->total_time }}</td>
-                                <td>{{ $entry->best_lap }}</td>
+                                <td>{{ $entry->totalTimeText }}</td>
+                                <td>{{ $entry->bestLapText }}</td>
                                 <td>{{ $entry->penalty_points }}</td>
                                 <td>{{ $entry->best_lap_points }}</td>
                                 <td>{{ $entry->top_quali_points }}</td>
