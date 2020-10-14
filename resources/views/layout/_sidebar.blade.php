@@ -16,13 +16,6 @@
             <div id="sidebar-scrollbar">
                 <nav class="iq-sidebar-menu">
                     <ul id="iq-sidebar-toggle" class="iq-menu">
-                        <li>
-                            <a href="todo.html" class="iq-waves-effect">
-                                <i class="las la-check-square"></i>
-                                <span>Americas Pint Standings</span>
-                            </a>
-                        </li>
-
                         @foreach(App\Models\Series::all() as $series)
                         <li>
                             <a href="#series{{ $series->id }}" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false">
