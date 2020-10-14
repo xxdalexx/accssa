@@ -9,9 +9,9 @@ class Event extends BaseModel
 {
     use HasFactory;
 
-    public static function build($sgpEventId, $seriesId = 1)
+    public static function build($sgpEventId, $seriesId = 1, $minLaps = 20)
     {
-        $apiResponse = (new SgpBase)->getEventResults($sgpEventId);
+        $apiResponse = (new SgpBase)->getEventResults($sgpEventId, $minLaps);
 
         $event = self::firstOrCreate([
             'session_id_sgp' => $apiResponse['session_id_sgp'],

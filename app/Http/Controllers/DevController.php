@@ -8,13 +8,19 @@ use Illuminate\Http\Request;
 
 class DevController extends Controller
 {
-    public function index()
+    public function index(): void
+    {
+        $response = (new SgpBase)->getEventResults('Hm6Wt88r4SdvlyiDG4yqv', 10);
+        dd($response);
+    }
+
+    public function leagueSessionsIndex()
     {
         $apiResponse = (new SgpBase)->getLeagueSessions();
         dd($apiResponse);
     }
 
-    public function standingsindex(): void
+    public function standingsIndex(): void
     {
         //Get all drivers for series
         $points = [];
@@ -23,7 +29,7 @@ class DevController extends Controller
         dd($series->getStandings());
     }
 
-    public function jsonindex(): void
+    public function jsonIndex(): void
     {
         $path = __DIR__ . '\..\..\..\json.json';
         $parsed = json_decode(file_get_contents($path));

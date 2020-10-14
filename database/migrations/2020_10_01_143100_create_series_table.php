@@ -17,6 +17,7 @@ class CreateSeriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->smallInteger('top_point')->default(0);
+            $table->boolean('penalty_points')->default(false);
             $table->timestamps();
         });
     }

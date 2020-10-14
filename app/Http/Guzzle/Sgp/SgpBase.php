@@ -9,10 +9,9 @@ class SgpBase extends GuzzleBase
 {
     public function __construct()
     {
-        $token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IlNYczMzSUgtWkRTYTZBMmhVektVXyIsInN0ZWFtSWQiOiI3NjU2MTE5ODAzMjcwMTY2MyIsImlhdCI6MTYwMTg5NjAwMywiZXhwIjoxNjAyMzI4MDAzfQ.tXnhxSRBVnY3gAFJ_N3EwWapZ3sOoUBn6pru4xOODG4';
         $this->params = [
             'headers' => [
-                'Authorization' => 'Bearer ' . $token,
+                'Authorization' => 'Bearer ' . env('SGP_AUTH_TOKEN'),
                 'Accept'        => 'application/json',
             ]
         ];
@@ -46,10 +45,10 @@ class SgpBase extends GuzzleBase
         return $this;
     }
 
-    public function getEventResults(string $eventId)
+    public function getEventResults(string $eventId, $minLaps = 20)
     {
         $this->setClientToResults($eventId);
-        $cleaner = new EventResultsCleaner($this->getResponse());
+        $cleaner = new EventResultsCleaner($this->getResponse(), $minLaps);
         return $cleaner->getCleaned();
     }
 

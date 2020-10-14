@@ -23,6 +23,7 @@ class CreateEventEntriesTable extends Migration
             $table->bigInteger('quali_time');
             $table->bigInteger('total_time');
             $table->bigInteger('best_lap');
+            $table->smallInteger('race_number')->default(1);
             $table->smallInteger('penalty_points')->nullable();
             $table->smallInteger('best_lap_points')->nullable();
             $table->smallInteger('top_quali_points')->nullable();

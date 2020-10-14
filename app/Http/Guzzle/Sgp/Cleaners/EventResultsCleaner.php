@@ -8,11 +8,17 @@ class EventResultsCleaner extends CleanerBase
 {
     protected $qualiResults;
     protected $resultsCollection;
+    protected $minLaps;
+
+    public function __construct(object $response, $minLaps = 20)
+    {
+        $this->response = $response;
+        $this->minLaps = $minLaps;
+        $this->clean();
+    }
 
     protected function clean(): void
     {
-        // $this->testing();
-        // dd($this->response);
         $this->cleaned['session_id_sgp'] = $this->response->sessionId;
         $this->cleaned['session_name'] = $this->response->sessionName;
         $this->cleaned['track_name'] = $this->response->trackName;
@@ -20,21 +26,20 @@ class EventResultsCleaner extends CleanerBase
         $this->qualiResults = collect($this->response->qualify->results);
 
         $this->buildRaceResults();
-
-        //dd($this->cleaned);
-        //dd($this->response->qualify->results);
     }
 
-    protected function testing()
+    protected function getRacesFromResponse()
     {
         $test = collect($this->response->results);
-        dd($test->where('type', 'RACE'));
+        return $test->where('type', 'RACE');
     }
 
-    protected function buildRaceResults($minLaps = 25): void
+    protected function buildRaceResults(): void
     {
-        foreach ($this->response->results[2]->results as $result) {
-            if ($result->lapCount > $minLaps) {
+        $race = $this->getRacesFromResponse()->first(); //TODO: Account for multiple.
+
+        foreach ($race->results as $result) {
+            if ($result->lapCount > $this->minLaps) {
                 $results[$result->position] = $this->buildRaceResult($result);
             }
         }
