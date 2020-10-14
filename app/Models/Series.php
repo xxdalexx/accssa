@@ -28,6 +28,24 @@ class Series extends BaseModel
         return $this->hasManyThrough(EventEntry::class, Event::class);
     }
 
+    public function getStandingsDropOne()
+    {
+        $points = [];
+        $eventsCount = $this->events()->count();
+        $drivers = $this->eventEntries()->select(['driver_id', 'final_points'])->get()->groupBy('driver_id');
+
+        foreach ($drivers as $driver) {
+            if ($driver->count() == $eventsCount) {
+                $driver = $driver->sortByDesc('final_points');
+                $driver->pop();
+            }
+            $points[$driver->first()->driver->driver_name] = $driver->sum('final_points');
+        }
+
+        arsort($points);
+        return $points;
+    }
+
     public function getStandings()
     {
         $points = [];
@@ -35,12 +53,7 @@ class Series extends BaseModel
         $drivers = $this->eventEntries->groupBy('driver_id');
 
         foreach ($drivers as $driver) {
-            foreach ($driver as $entry) {
-                if (!isset($points[$entry->driver->driver_name])) {
-                    $points[$entry->driver->driver_name] = 0;
-                }
-                $points[$entry->driver->driver_name] += $entry->final_points;
-            }
+            $points[$driver->first()->driver->driver_name] = $driver->sum('final_points');
         }
 
         arsort($points);

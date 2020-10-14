@@ -10,8 +10,8 @@ class DevController extends Controller
 {
     public function index(): void
     {
-        $response = (new SgpBase)->getEventResults('Hm6Wt88r4SdvlyiDG4yqv', 10);
-        dd($response);
+        $series = Series::first();
+        $series->getStandingsDropOne();
     }
 
     public function leagueSessionsIndex()
