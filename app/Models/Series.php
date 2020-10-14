@@ -81,4 +81,9 @@ class Series extends BaseModel
     {
         return route('series.show', $this);
     }
+
+    public function linkDropOne()
+    {
+        return route('series.showDropOne', $this);
+    }
 }

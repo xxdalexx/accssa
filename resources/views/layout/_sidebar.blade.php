@@ -31,6 +31,14 @@
                                     </a>
                                 </li>
                             </ul>
+                            <ul id="series{{ $series->id }}" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                                <li>
+                                    <a href="{{ $series->linkDropOne() }}">
+                                        <i class="ri-record-circle-line"></i>
+                                        Standings Drop One
+                                    </a>
+                                </li>
+                            </ul>
                             @foreach($series->events as $event)
                             <ul id="series{{ $series->id }}" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                 <li>

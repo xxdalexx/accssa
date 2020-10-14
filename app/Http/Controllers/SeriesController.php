@@ -11,4 +11,9 @@ class SeriesController extends Controller
     {
         return view('series.show')->withPoints($series->getStandings());
     }
+
+    public function showDropOne(Series $series)
+    {
+        return view('series.show')->withPoints($series->getStandingsDropOne());
+    }
 }
