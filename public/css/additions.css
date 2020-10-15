@@ -1,0 +1,12 @@
+.table td {
+    padding: .5em;
+    text-align: center;
+}
+
+.table th {
+    text-align: center;
+}
+
+.content-page {
+    padding: 15px 15px 0;
+}

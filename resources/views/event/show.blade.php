@@ -15,7 +15,6 @@
                     <table id="datatable" class="table table-striped table-bordered">
                         <thead>
                             <tr>
-                                <th>DBID</th>
                                 <th>Position</th>
                                 <th>Driver</th>
                                 <th>Laps</th>
@@ -31,13 +30,14 @@
                         <tbody>
                             @foreach ($event->eventEntries as $entry)
                             <tr>
-                                <td>{{ $entry->id }}</td>
                                 <td>{{ $entry->position }}</td>
                                 <td>{{ $entry->driver->driver_name }}</td>
                                 <td>{{ $entry->laps }}</td>
                                 <td>{{ $entry->totalTimeText }}</td>
                                 <td>{{ $entry->bestLapText }}</td>
-                                <td>{{ $entry->penalty_points }}</td>
+                                <td>
+                                    @livewire('penalty-td', ['points' => $entry->penalty_points, 'eventEntryId' => $entry->id])
+                                </td>
                                 <td>{{ $entry->best_lap_points }}</td>
                                 <td>{{ $entry->top_quali_points }}</td>
                                 <td>{{ $entry->points }}</td>
