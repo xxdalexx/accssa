@@ -11,7 +11,9 @@ class DevController extends Controller
     public function index(): void
     {
         $series = Series::first();
-        $series->getStandingsDropOne();
+        $standings = collect($series->getStandingsDropOne());
+        $split = $standings->split(2);
+        dd($split->toArray());
     }
 
     public function leagueSessionsIndex()

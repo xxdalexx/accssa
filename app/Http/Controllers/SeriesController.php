@@ -9,11 +9,11 @@ class SeriesController extends Controller
 {
     public function show(Series $series)
     {
-        return view('series.show')->withPoints($series->getStandings());
+        return view('series.show')->withPoints($series->getStandingsSplit());
     }
 
     public function showDropOne(Series $series)
     {
-        return view('series.show')->withPoints($series->getStandingsDropOne());
+        return view('series.show')->withPoints($series->getStandingsDropOneSplit());
     }
 }

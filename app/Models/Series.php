@@ -46,6 +46,13 @@ class Series extends BaseModel
         return $points;
     }
 
+    public function getStandingsDropOneSplit()
+    {
+        $points = collect($this->getStandingsDropOne());
+        $split = $points->split(2);
+        return $split->toArray();
+    }
+
     public function getStandings()
     {
         $points = [];
@@ -58,6 +65,13 @@ class Series extends BaseModel
 
         arsort($points);
         return $points;
+    }
+
+    public function getStandingsSplit()
+    {
+        $points = collect($this->getStandings());
+        $split = $points->split(2);
+        return $split->toArray();
     }
 
     public function recalculateAllEventPoints()

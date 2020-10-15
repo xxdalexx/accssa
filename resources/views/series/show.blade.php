@@ -12,24 +12,51 @@
             </div>
             <div class="iq-card-body">
                 <div class="table-responsive">
-                    <table id="datatable" class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Total</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($points as $name => $point)
-                            <tr>
-                                <td>{{ $loop->iteration }}</td>
-                                <td>{{ $name }}</td>
-                                <td>{{ $point }}</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                    <div class="row w-100">
+                        <div class="col-md-6">
+                            <table id="datatable" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($points[0] as $name => $point)
+                                    <tr>
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $name }}</td>
+                                        <td>{{ $point }}</td>
+                                    </tr>
+                                    @php
+                                        $finalLoop = $loop->iteration;
+                                    @endphp
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table id="datatable" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($points[1] as $name => $point)
+                                    <tr>
+                                        <td>{{ $loop->iteration + $finalLoop }}</td>
+                                        <td>{{ $name }}</td>
+                                        <td>{{ $point }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
