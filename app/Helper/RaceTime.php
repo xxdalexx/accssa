@@ -13,7 +13,7 @@ class RaceTime
         $time = $time / 1000;
         $timeArray = explode('.', $time);
         $seconds = $timeArray[0];
-        $this->decimal = $timeArray[1];
+        $this->decimal = $timeArray[1] ?? 0;
 
         $this->seconds = date('i:s', $seconds);
         $this->withHour = date('H:i:s', $seconds);

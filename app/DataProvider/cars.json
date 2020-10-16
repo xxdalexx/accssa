@@ -1,0 +1,458 @@
+{
+    "0": {
+      "name": "Porsche 991 GT3",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Porsche",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/0/skins/default/preview.jpg"
+        }
+      }
+    },
+    "1": {
+      "name": "Mercedes AMG GT3",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Mercedes",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/1/skins/default/preview.jpg"
+        }
+      }
+    },
+    "2": {
+      "name": "Ferrari 488 GT3",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Ferrari",
+      "country": "IT",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/2/skins/default/preview.jpg"
+        }
+      }
+    },
+    "3": {
+      "name": "Audi R8 LMS",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Audi",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/3/skins/default/preview.jpg"
+        }
+      }
+    },
+    "4": {
+      "name": "Lamborghini Huracan GT3",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Lamborghini",
+      "country": "IT",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/4/skins/default/preview.jpg"
+        }
+      }
+    },
+    "5": {
+      "name": "Mclaren 650s GT3",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "McLaren",
+      "country": "GB",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/5/skins/default/preview.jpg"
+        }
+      }
+    },
+    "6": {
+      "name": "Nissan GT R Nismo GT3 2018",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Nissan",
+      "country": "JP",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/6/skins/default/preview.jpg"
+        }
+      }
+    },
+    "7": {
+      "name": "BMW M6 GT3",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "BMW",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/7/skins/default/preview.jpg"
+        }
+      }
+    },
+    "8": {
+      "name": "Bentley Continental GT3 2018",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Bentley",
+      "country": "GB",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/8/skins/default/preview.jpg"
+        }
+      }
+    },
+    "9": {
+      "name": "Porsche 991.2 GT3 Cup",
+      "dlc": "",
+      "tags": ["Cup"],
+      "brand": "Porsche",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/9/skins/default/preview.jpg"
+        }
+      }
+    },
+    "10": {
+      "name": "Nissan GT-R Nismo GT3 2015",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Nissan",
+      "country": "JP",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/10/skins/default/preview.jpg"
+        }
+      }
+    },
+    "11": {
+      "name": "Bentley Continental GT3 2015",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Bentley",
+      "country": "GB",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/11/skins/default/preview.jpg"
+        }
+      }
+    },
+    "12": {
+      "name": "AMR Vantage V12 GT3",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Aston Martin",
+      "country": "GB",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/12/skins/default/preview.jpg"
+        }
+      }
+    },
+    "13": {
+      "name": "Lamborghini Gallardo R-EX",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Lamborghini",
+      "country": "IT",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/13/skins/default/preview.jpg"
+        }
+      }
+    },
+    "14": {
+      "name": "Jaguar G3",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Jaguar",
+      "country": "GB",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/14/skins/default/preview.jpg"
+        }
+      }
+    },
+    "15": {
+      "name": "Lexus RC F GT3",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Lexus",
+      "country": "JP",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/15/skins/default/preview.jpg"
+        }
+      }
+    },
+    "16": {
+      "name": "Lamborghini Huracan GT3 Evo (2019)",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Lamborghini",
+      "country": "IT",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/16/skins/default/preview.jpg"
+        }
+      }
+    },
+    "17": {
+      "name": "Honda NSX GT3",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Honda",
+      "country": "JP",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/17/skins/default/preview.jpg"
+        }
+      }
+    },
+    "18": {
+      "name": "Lamborghini Huracan SuperTrofeo",
+      "dlc": "",
+      "tags": ["St"],
+      "brand": "Lamborghini",
+      "country": "IT",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/18/skins/default/preview.jpg"
+        }
+      }
+    },
+    "19": {
+      "name": "Audi R8 LMS Evo (2019)",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Audi",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/19/skins/default/preview.jpg"
+        }
+      }
+    },
+    "20": {
+      "name": "AMR V8 Vantage (2019)",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Aston Martin",
+      "country": "GB",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/20/skins/default/preview.jpg"
+        }
+      }
+    },
+    "21": {
+      "name": "Honda NSX Evo (2019)",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Honda",
+      "country": "JP",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/21/skins/default/preview.jpg"
+        }
+      }
+    },
+    "22": {
+      "name": "McLaren 720S GT3 (Special)",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "McLaren",
+      "country": "GB",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/22/skins/default/preview.jpg"
+        }
+      }
+    },
+    "23": {
+      "name": "Porsche 991 II GT3 R",
+      "dlc": "",
+      "tags": ["GT3"],
+      "brand": "Porsche",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/23/skins/default/preview.jpg"
+        }
+      }
+    },
+    "50": {
+      "name": "Alpine A1110 GT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "Alpine",
+      "country": "FR",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/50/skins/default/preview.jpg"
+        }
+      }
+    },
+    "51": {
+      "name": "Aston Martin Vantage GT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "Aston Martin",
+      "country": "GB",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/51/skins/default/preview.jpg"
+        }
+      }
+    },
+    "52": {
+      "name": "Audi R8 LMS GT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "Audi",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/52/skins/default/preview.jpg"
+        }
+      }
+    },
+    "53": {
+      "name": "BMW M4 GT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "BMW",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/53/skins/default/preview.jpg"
+        }
+      }
+    },
+    "55": {
+      "name": "Chevrolet Camaro GT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "Chevrolet",
+      "country": "US",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/55/skins/default/preview.jpg"
+        }
+      }
+    },
+    "56": {
+      "name": "Ginetta G55 GT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "Ginetta",
+      "country": "GB",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/56/skins/default/preview.jpg"
+        }
+      }
+    },
+    "57": {
+      "name": "KTM X-Bow GT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "KTM",
+      "country": "AT",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/57/skins/default/preview.jpg"
+        }
+      }
+    },
+    "58": {
+      "name": "Maserati MCGT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "Maserati",
+      "country": "IT",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/58/skins/default/preview.jpg"
+        }
+      }
+    },
+    "59": {
+      "name": "McLaren 570S GT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "McLaren",
+      "country": "GB",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/59/skins/default/preview.jpg"
+        }
+      }
+    },
+    "60": {
+      "name": "Mercedes AMG GT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "Mercedes",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/60/skins/default/preview.jpg"
+        }
+      }
+    },
+    "61": {
+      "name": "Porsche 718 Cayman GT4",
+      "dlc": "GT4 Pack",
+      "tags": ["GT4"],
+      "brand": "Porsche",
+      "country": "DE",
+      "skins": {
+        "default": {
+          "name": "default",
+          "preview": "/acc/1.13.2/cars/61/skins/default/preview.jpg"
+        }
+      }
+    }
+
+  }

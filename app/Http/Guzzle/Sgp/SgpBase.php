@@ -3,6 +3,7 @@
 namespace App\Http\Guzzle\Sgp;
 
 use App\Http\Guzzle\GuzzleBase;
+use App\Http\Guzzle\Sgp\Cleaners\DriverResultsCleaner;
 use App\Http\Guzzle\Sgp\Cleaners\EventResultsCleaner;
 
 class SgpBase extends GuzzleBase
@@ -38,6 +39,13 @@ class SgpBase extends GuzzleBase
         return $this;
     }
 
+    protected function setClientToDriverResults($driverId)
+    {
+        $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/driver-results/$driverId"]);
+
+        return $this;
+    }
+
     protected function setClientToLeagueSessions()
     {
         $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/session-views/league-sessions"]);
@@ -49,6 +57,13 @@ class SgpBase extends GuzzleBase
     {
         $this->setClientToResults($eventId);
         $cleaner = new EventResultsCleaner($this->getResponse(), $minLaps);
+        return $cleaner->getCleaned();
+    }
+
+    public function getDriverResults(string $driverId)
+    {
+        $this->setClientToDriverResults($driverId);
+        $cleaner = new DriverResultsCleaner($this->getResponse());
         return $cleaner->getCleaned();
     }
 

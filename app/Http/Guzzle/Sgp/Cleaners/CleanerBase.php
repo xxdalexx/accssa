@@ -6,9 +6,9 @@ class CleanerBase
 {
     public array $cleaned;
 
-    public object $response;
+    public $response;
 
-    public function __construct(object $response)
+    public function __construct($response)
     {
         $this->response = $response;
         $this->clean();

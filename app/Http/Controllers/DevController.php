@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\DataProvider\DataProvider;
+use App\Helper\DriverScore;
 use App\Http\Guzzle\Sgp\SgpBase;
 use App\Models\Series;
 use Illuminate\Http\Request;
 
 class DevController extends Controller
 {
-    public function index(): void
+    public function index()
+    {
+        dd((new DriverScore('QEau6D9p27CRYNEFqFVj1'))->getScore());
+    }
+
+    public function splitStandingsIndex(): void
     {
         $series = Series::first();
         $standings = collect($series->getStandingsDropOne());
