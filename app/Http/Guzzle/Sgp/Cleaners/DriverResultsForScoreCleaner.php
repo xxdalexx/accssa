@@ -4,36 +4,36 @@ namespace App\Http\Guzzle\Sgp\Cleaners;
 
 use Illuminate\Support\Collection;
 
-class DriverResultsCleaner extends CleanerBase
+class DriverResultsForScoreCleaner extends CleanerBase
 {
     protected Collection $trackResults;
 
     protected array $tracks = [
-        //"barcelona",
-        //"brands_hatch",
+        "barcelona",
+        "brands_hatch",
         "barcelona_2019",
         "brands_hatch_2019",
-        //"hungaroring",
+        "hungaroring",
         "hungaroring_2019",
         "kyalami_2019",
         "laguna_seca_2019",
-        //"misano",
+        "misano",
         "misano_2019",
-        //"monza",
+        "monza",
         "monza_2019",
         "mount_panorama_2019",
-        //"nurburgring",
+        "nurburgring",
         "nurburgring_2019",
-        //"paul_ricard",
+        "paul_ricard",
         "paul_ricard_2019",
-        //"silverstone",
+        "silverstone",
         "silverstone_2019",
-        //"spa",
+        "spa",
         "spa_2019",
         "suzuka_2019",
-        //"zandvoort",
+        "zandvoort",
         "zandvoort_2019",
-        //"zolder",
+        "zolder",
         "zolder_2019"
     ];
 
@@ -44,7 +44,6 @@ class DriverResultsCleaner extends CleanerBase
         foreach ($this->tracks as $track) {
             $this->processTrack($track);
         }
-
     }
 
     protected function processTrack(string $trackName)

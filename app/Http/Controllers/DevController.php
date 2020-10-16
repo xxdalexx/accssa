@@ -11,17 +11,23 @@ use Illuminate\Http\Request;
 
 class DevController extends Controller
 {
-    public function index()
+    public function ShowScoresindex()
     {
         foreach (Driver::orderBy('driver_score')->get() as $driver) {
             echo($driver->driver_name . ' - ' . $driver->driver_score . "<br>");
         }
     }
 
+    public function index()
+    {
+        $s = (new DriverScore('RXveOcRFWUOQDuAGrIQQ9'))->getScore();
+        dd($s);
+    }
+
     public function RunDriverScoresindex()
     {
-        //ignore 29 32
-        foreach (Driver::where('id', '>', 32)->get() as $driver) {
+        $ignore = [29, 32];
+        foreach (Driver::whereNotIn('id', $ignore)->get() as $driver) {
             $score = (new DriverScore($driver->sgp_id))->getScore();
             dump($driver->id . $driver->driver_name . ' - ' . $score);
             $driver->driver_score = $score;

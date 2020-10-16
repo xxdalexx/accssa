@@ -17,4 +17,14 @@ class DataProvider
         $parsed = json_decode(file_get_contents($path));
         return collect($parsed);
     }
+
+    public function gimmeAGT3Car()
+    {
+        return $this->getCars()->where('id', '<', 24)->random()->name;
+    }
+
+    public function gimmeATrack()
+    {
+        return $this->getTracks()->random()->name;
+    }
 }

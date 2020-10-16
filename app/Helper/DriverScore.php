@@ -8,7 +8,8 @@ class DriverScore
 {
     protected $trackTimes;
     protected $alienTimes = [
-        "barcelona_2019" => 101900,
+        "barcelona" => 101900,
+        "barcelona_2019" => 102500,
         "brands_hatch_2019" => 82200,
         "hungaroring_2019" => 101500,
         "kyalami_2019" => 99390,
@@ -17,9 +18,12 @@ class DriverScore
         "monza_2019" => 106400,
         "mount_panorama_2019" => 119800,
         "nurburgring_2019" => 112300,
+        "paul_ricard" => 114200,
         "paul_ricard_2019" => 113200,
-        "silverstone_2019" => 116000,
-        "spa_2019" => 135900,
+        "silverstone" => 116000,
+        "silverstone_2019" => 117000,
+        "spa" => 135900,
+        "spa_2019" => 136900,
         "suzuka_2019" => 118200,
         "zandvoort_2019" => 94500,
         "zolder_2019" => 87650,
@@ -28,13 +32,33 @@ class DriverScore
 
     public function __construct(string $sgpDriverId)
     {
-        $this->trackTimes = (new SgpBase)->getDriverResults($sgpDriverId);
+        $this->trackTimes = (new SgpBase)->getDriverResultsForScore($sgpDriverId);
 
         foreach ($this->trackTimes as $track => $time) {
-            $score[$track] = $time - $this->alienTimes[$track];
+            if ($calculatedScore = $this->calculateScore($track, $time)) {
+                $score[$track] = $calculatedScore;
+            }
         }
 
-        $this->score = collect($score)->sort()->take(5)->avg();
+        if (count($score) > 2) {
+            $this->score = collect($score)->sort()->take(5)->avg();
+        } else {
+            $this->score = 0;
+        }
+    }
+
+    protected function calculateScore($track, $time)
+    {
+        if (!array_key_exists($track, $this->alienTimes)) {
+            $score = $time - $this->alienTimes[$track . '_2019'];
+        } else {
+            $score = $time - $this->alienTimes[$track];
+        }
+
+        if ($score > 10000) {
+            return false;
+        }
+        return $score;
     }
 
     public function getScore()

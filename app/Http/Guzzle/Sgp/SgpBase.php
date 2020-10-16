@@ -3,8 +3,8 @@
 namespace App\Http\Guzzle\Sgp;
 
 use App\Http\Guzzle\GuzzleBase;
-use App\Http\Guzzle\Sgp\Cleaners\DriverResultsCleaner;
 use App\Http\Guzzle\Sgp\Cleaners\EventResultsCleaner;
+use App\Http\Guzzle\Sgp\Cleaners\DriverResultsForScoreCleaner;
 
 class SgpBase extends GuzzleBase
 {
@@ -60,10 +60,10 @@ class SgpBase extends GuzzleBase
         return $cleaner->getCleaned();
     }
 
-    public function getDriverResults(string $driverId)
+    public function getDriverResultsForScore(string $driverId)
     {
         $this->setClientToDriverResults($driverId);
-        $cleaner = new DriverResultsCleaner($this->getResponse());
+        $cleaner = new DriverResultsForScoreCleaner($this->getResponse());
         return $cleaner->getCleaned();
     }
 
