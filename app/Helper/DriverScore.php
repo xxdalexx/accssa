@@ -10,11 +10,14 @@ class DriverScore
     protected $alienTimes = [
         "barcelona_2019" => 101900,
         "brands_hatch_2019" => 82200,
+        "hungaroring_2019" => 101500,
         "kyalami_2019" => 99390,
         "laguna_seca_2019" => 80800,
         "misano_2019" => 92400,
+        "monza_2019" => 106400,
         "mount_panorama_2019" => 119800,
         "nurburgring_2019" => 112300,
+        "paul_ricard_2019" => 113200,
         "silverstone_2019" => 116000,
         "spa_2019" => 135900,
         "suzuka_2019" => 118200,
@@ -36,6 +39,9 @@ class DriverScore
 
     public function getScore()
     {
-        return $this->score;
+        if (count($this->trackTimes) > 2) {
+            return (int) $this->score;
+        }
+        return 0;
     }
 }

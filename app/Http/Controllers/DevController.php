@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\DataProvider\DataProvider;
 use App\Helper\DriverScore;
 use App\Http\Guzzle\Sgp\SgpBase;
+use App\Models\Driver;
 use App\Models\Series;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,21 @@ class DevController extends Controller
 {
     public function index()
     {
-        dd((new DriverScore('QEau6D9p27CRYNEFqFVj1'))->getScore());
+        foreach (Driver::orderBy('driver_score')->get() as $driver) {
+            echo($driver->driver_name . ' - ' . $driver->driver_score . "<br>");
+        }
+    }
+
+    public function RunDriverScoresindex()
+    {
+        //ignore 29 32
+        foreach (Driver::where('id', '>', 32)->get() as $driver) {
+            $score = (new DriverScore($driver->sgp_id))->getScore();
+            dump($driver->id . $driver->driver_name . ' - ' . $score);
+            $driver->driver_score = $score;
+            $driver->save();
+        }
+
     }
 
     public function splitStandingsIndex(): void
