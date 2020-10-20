@@ -2,29 +2,39 @@
 
 namespace App\DataProvider;
 
+use Illuminate\Support\Collection;
+
 class DataProvider
 {
+    protected Collection $cars;
+    protected Collection $tracks;
+
+    public function __construct()
+    {
+        $carPath = __DIR__ . '\cars.json';
+        $trackPath = __DIR__ . '\tracks.json';
+
+        $this->cars = collect(json_decode(file_get_contents($carPath)));
+        $this->tracks = collect(json_decode(file_get_contents($trackPath)));
+    }
+
     public function getCars()
     {
-        $path = __DIR__ . '\cars.json';
-        $parsed = json_decode(file_get_contents($path));
-        return collect($parsed);
+        return $this->cars;
     }
 
     public function getTracks()
     {
-        $path = __DIR__ . '\tracks.json';
-        $parsed = json_decode(file_get_contents($path));
-        return collect($parsed);
+        return $this->tracks;
     }
 
     public function gimmeAGT3Car()
     {
-        return $this->getCars()->where('id', '<', 24)->random()->name;
+        return $this->cars->take(24)->random()->name;
     }
 
     public function gimmeATrack()
     {
-        return $this->getTracks()->random()->name;
+        return $this->tracks->random()->name;
     }
 }

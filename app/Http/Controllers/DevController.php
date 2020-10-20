@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\DataProvider\DataProvider;
 use App\Models\DriverScore;
 
 class DevController extends Controller
 {
     public function index()
+    {
+        $dp = new DataProvider;
+        dd($dp->getCars()->sortDesc());
+    }
+
+    public function neededTrackCountindex()
     {
         $tracks = [
             "barcelona" => 0,
