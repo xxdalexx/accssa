@@ -2,67 +2,46 @@
 
 namespace App\Http\Controllers;
 
-use App\DataProvider\DataProvider;
-use App\Helper\DriverScore;
-use App\Http\Guzzle\Sgp\SgpBase;
-use App\Models\Driver;
-use App\Models\Series;
-use Illuminate\Http\Request;
+use App\Models\DriverScore;
 
 class DevController extends Controller
 {
-    public function ShowScoresindex()
-    {
-        foreach (Driver::orderBy('driver_score')->get() as $driver) {
-            echo($driver->driver_name . ' - ' . $driver->driver_score . "<br>");
-        }
-    }
-
     public function index()
     {
-        $s = (new DriverScore('RXveOcRFWUOQDuAGrIQQ9'))->getScore();
-        dd($s);
-    }
+        $tracks = [
+            "barcelona" => 0,
+            "brands_hatch" => 0,
+            "barcelona_2019" => 0,
+            "brands_hatch_2019" => 0,
+            "hungaroring" => 0,
+            "hungaroring_2019" => 0,
+            "kyalami_2019" => 0,
+            "laguna_seca_2019" => 0,
+            "misano" => 0,
+            "misano_2019" => 0,
+            "monza" => 0,
+            "monza_2019" => 0,
+            "mount_panorama_2019" => 0,
+            "nurburgring" => 0,
+            "nurburgring_2019" => 0,
+            "paul_ricard" => 0,
+            "paul_ricard_2019" => 0,
+            "silverstone" => 0,
+            "silverstone_2019" => 0,
+            "spa" => 0,
+            "spa_2019" => 0,
+            "suzuka_2019" => 0,
+            "zandvoort" => 0,
+            "zandvoort_2019" => 0,
+            "zolder" => 0,
+            "zolder_2019" => 0
+        ];
+        $scores = DriverScore::all();
 
-    public function RunDriverScoresindex()
-    {
-        $ignore = [29, 32];
-        foreach (Driver::whereNotIn('id', $ignore)->get() as $driver) {
-            $score = (new DriverScore($driver->sgp_id))->getScore();
-            dump($driver->id . $driver->driver_name . ' - ' . $score);
-            $driver->driver_score = $score;
-            $driver->save();
+        foreach ($tracks as $track => $score) {
+            $tracks[$track] = $scores->where($track, '>', 0)->count();
         }
 
-    }
-
-    public function splitStandingsIndex(): void
-    {
-        $series = Series::first();
-        $standings = collect($series->getStandingsDropOne());
-        $split = $standings->split(2);
-        dd($split->toArray());
-    }
-
-    public function leagueSessionsIndex()
-    {
-        $apiResponse = (new SgpBase)->getLeagueSessions();
-        dd($apiResponse);
-    }
-
-    public function standingsIndex(): void
-    {
-        //Get all drivers for series
-        $points = [];
-        $series = Series::first();
-
-        dd($series->getStandings());
-    }
-
-    public function jsonIndex(): void
-    {
-        $path = __DIR__ . '\..\..\..\json.json';
-        $parsed = json_decode(file_get_contents($path));
-        dd($parsed->results[2]->results);
+        dd(collect($tracks)->sort());
     }
 }
