@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\DataProvider\DataProvider;
+use App\Http\Guzzle\Sgp\SgpBase;
 use App\Models\DriverScore;
+use App\SingleUseFeatures\AbandondedMembers;
 
 class DevController extends Controller
 {
     public function index()
     {
-        $dp = new DataProvider;
-        dd($dp->getCars()->sortDesc());
+        $test = (new SgpBase)->getDriverResults('SXs33IH-ZDSa6A2hUzKU_');
+        dd($test);
+        //dd(AbandondedMembers::run());
     }
 
     public function neededTrackCountindex()

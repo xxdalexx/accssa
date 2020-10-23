@@ -40,14 +40,24 @@ class RRGenerator extends Command
     {
         $provider = new DataProvider;
         $entrants = [
-            'Dale' => 0,
-            'Fares' => 0,
-            'Paul' => 0
+            'Dale',
+            'How did I go that fast',
+            'Paul Cantea',
+            'KB+M',
+            'Thunder Down Under',
+            'Bryan Curzon',
+            'Justin Sly Stallone',
+            'A. Franchino',
+            'My Tires are Roasting',
+            'Hans Solo',
+            'Meeting Man',
+            'Oklahoma City Bomber',
+            'Emoji King'
         ];
 
         $this->info('Track: ' . $provider->gimmeATrack());
 
-        foreach ($entrants as $entry => $null) {
+        foreach ($entrants as $entry) {
             $this->info($entry . ' - ' . $provider->gimmeAGT3Car());
         }
 
