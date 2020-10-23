@@ -21,5 +21,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('event/{event}', [EventController::class, 'show'])->name('event.show');
 Route::get('series/{series}/dropone', [SeriesController::class, 'showDropOne'])->name('series.showDropOne');
 Route::get('series/{series}', [SeriesController::class, 'show'])->name('series.show');
+Route::get('randomizer', [HomeController::class, 'randomizer'])->name('randomizer');
 
 Route::get('dev', [DevController::class, 'index'])->name('dev');

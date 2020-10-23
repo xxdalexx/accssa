@@ -14,4 +14,9 @@ class HomeController extends Controller
         return view('home')->withPoints($series->getStandings());
     }
 
+    public function randomizer()
+    {
+        return view('randomizer');
+    }
+
 }

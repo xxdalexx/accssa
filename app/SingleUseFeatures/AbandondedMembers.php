@@ -24,7 +24,12 @@ class AbandondedMembers
             'Eric Hodge',
             'Antonio Guarda',
             'Marco Jurich',
-            'Ryan Cody'
+            'Ryan Cody',
+            'Michael Luecke',
+            'Miikka Maaninka',
+            'Aaron Talbert',
+            'Jarrod Seccombe',
+            'Thomas Atkins'
         ]);
 
         foreach ($list->members as $userId => $member) {

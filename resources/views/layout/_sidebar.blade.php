@@ -52,6 +52,12 @@
                         </li>
                         @endforeach
                         <li>
+                            <a href="{{ route('randomizer') }}">
+                                <i class="ri-question-line"></i>
+                                <span>Randomizer</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="#menu-level" class="iq-waves-effect collapsed" data-toggle="collapse"
                                 aria-expanded="false"><i class="ri-record-circle-line"></i><span>Menu Level</span><i
                                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
