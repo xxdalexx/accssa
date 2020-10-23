@@ -21,7 +21,10 @@ class AbandondedMembers
             'Tim Sizeland',
             'Viktor  Janeba',
             'Maurício Redaelli',
-            'Eric Hodge'
+            'Eric Hodge',
+            'Antonio Guarda',
+            'Marco Jurich',
+            'Ryan Cody'
         ]);
 
         foreach ($list->members as $userId => $member) {

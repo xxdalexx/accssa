@@ -6,6 +6,7 @@ Show count of most needed tracks. - Code in DevController
 Remove clean laps from event entries.
 Create Score Relationship on Driver Creation.
 Front end for driver ratings.
+Better penalty system.
 Calculate driver score with new table data/move driver score from Driver to DriverScore model.
 Find abandonded members.
 Build Automatic Cacheing on all SGP API Calls.
