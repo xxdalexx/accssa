@@ -9,14 +9,30 @@ class AbandondedMembers
 {
     public static function run()
     {
-        $list = (new SgpBase)->getLeagueMemberList();
+        $list = (new SgpBase)->bustCache()->getLeagueMemberList();
         $deleteList = [];
+        $saveList = collect([
+            'Doug Cooper',
+            'Erik Strom',
+            'Joe Marsiglia',
+            'Josselin Merlet',
+            'Kolbjørn Ålbu',
+            'Matija Ličen',
+            'Tim Sizeland',
+            'Viktor  Janeba',
+            'Maurício Redaelli',
+            'Eric Hodge'
+        ]);
 
         foreach ($list->members as $userId => $member) {
-            $response = (new SgpBase)->getDriverResults($userId);
+            $response = (new SgpBase)->setCacheTTL($threeDays = 259200)->getDriverResults($userId);
             $eventCount = collect($response)->where('leagueId', 'ikG1uiyY6vvTGCTAL486M')->count();
             if ($eventCount == 0) {
-                $deleteList[$userId] = $member->name;
+                if ($saveList->contains($member->name)) {
+                    dump($member->name);
+                } else {
+                    $deleteList[$userId] = $member->name;
+                }
             }
         }
         return $deleteList;

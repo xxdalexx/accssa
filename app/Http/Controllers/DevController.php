@@ -11,9 +11,7 @@ class DevController extends Controller
 {
     public function index()
     {
-        $test = (new SgpBase)->getDriverResults('SXs33IH-ZDSa6A2hUzKU_');
-        dd($test);
-        //dd(AbandondedMembers::run());
+        dd(AbandondedMembers::run());
     }
 
     public function neededTrackCountindex()
