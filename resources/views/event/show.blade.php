@@ -20,7 +20,6 @@
                                 <th>Laps</th>
                                 <th>Total Time</th>
                                 <th>Best Lap</th>
-                                <th>Clean Laps</th>
                                 <th>Penalties</th>
                                 <th>Fastest Lap</th>
                                 <th>Quali</th>
@@ -36,7 +35,6 @@
                                 <td>{{ $entry->laps }}</td>
                                 <td>{{ $entry->totalTimeText }}</td>
                                 <td>{{ $entry->bestLapText }}</td>
-                                <td>{{ $entry->clean_laps }}</td>
                                 <td>
                                     @livewire('penalty-td', ['points' => $entry->penalty_points, 'eventEntryId' => $entry->id])
                                 </td>

@@ -2,6 +2,7 @@ Auth System - Replace registration with validation link.
 -Auth Built
 -Login Built
 -Need invite system still.
+
 Account for more than one race in an event.
 New Series artisan command and or FE.
 Add event FE.
@@ -13,6 +14,5 @@ Better penalty system.
 Calculate driver score with new table data/move driver score from Driver to DriverScore model.
 Find abandonded members.
 Build Automatic Cacheing on all SGP API Calls.
-
 Build FE for Random Generator.
 Test local serving.

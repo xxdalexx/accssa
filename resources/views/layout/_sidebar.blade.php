@@ -24,6 +24,8 @@
                             </a>
                         </li>
                         @endguest
+
+                        @auth
                         @foreach(App\Models\Series::all() as $series)
                         <li>
                             <a href="#series{{ $series->id }}" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false">
@@ -59,19 +61,24 @@
                             @endforeach
                         </li>
                         @endforeach
+                        @endauth
+
                         <li>
                             <a href="{{ route('randomizer') }}">
                                 <i class="ri-question-line"></i>
                                 <span>Randomizer</span>
                             </a>
                         </li>
+
+                        @auth
+                        {{-- Menu template --}}
                         <li>
                             <a href="#menu-level" class="iq-waves-effect collapsed" data-toggle="collapse"
                                 aria-expanded="false"><i class="ri-record-circle-line"></i><span>Menu Level</span><i
                                     class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                             <ul id="menu-level" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                                 <li><a href="#"><i class="ri-record-circle-line"></i>Menu 1</a></li>
-                                <li><a href="#"><i class="ri-record-circle-line"></i>Menu 2</a>
+                                <li><a href="#"><i class="ri-record-circle-line"></i>Menu 2</a></li>
                                 <li>
                                     <a href="#sub-menu" class="iq-waves-effect collapsed" data-toggle="collapse"
                                         aria-expanded="false"><i class="ri-play-circle-line"></i><span>Sub-menu</span><i
@@ -82,13 +89,12 @@
                                         <li><a href="#"><i class="ri-record-circle-line"></i>Sub-menu 3</a></li>
                                     </ul>
                                 </li>
+                                <li><a href="#"><i class="ri-record-circle-line"></i>Menu 3</a></li>
+                                <li><a href="#"><i class="ri-record-circle-line"></i>Menu 4</a></li>
+                            </ul>
                         </li>
-                        <li><a href="#"><i class="ri-record-circle-line"></i>Menu 3</a></li>
-                        <li><a href="#"><i class="ri-record-circle-line"></i>Menu 4</a></li>
-                    </ul>
-                    </li>
+                        @endauth
                     </ul>
                 </nav>
-                <div class="p-3"></div>
             </div>
         </div>
