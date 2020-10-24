@@ -1,7 +1,10 @@
+Auth System - Replace registration with validation link.
+-Auth Built
+-Login Built
+-Need invite system still.
 Account for more than one race in an event.
 New Series artisan command and or FE.
 Add event FE.
-Auth System - Replace registration with validation link.
 Show count of most needed tracks. - Code in DevController
 Remove clean laps from event entries.
 Create Score Relationship on Driver Creation.

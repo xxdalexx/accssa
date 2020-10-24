@@ -16,6 +16,14 @@
             <div id="sidebar-scrollbar">
                 <nav class="iq-sidebar-menu">
                     <ul id="iq-sidebar-toggle" class="iq-menu">
+                        @guest
+                        <li>
+                            <a href="{{ route('login') }}">
+                                <i class="ri-login-circle-line"></i>
+                                <span>Login</span>
+                            </a>
+                        </li>
+                        @endguest
                         @foreach(App\Models\Series::all() as $series)
                         <li>
                             <a href="#series{{ $series->id }}" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false">

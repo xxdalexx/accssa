@@ -4,22 +4,24 @@
             <div class="col-md-4">
                 <table id="datatable" class="table table-bordered">
                     <tr>
-                        <th>Track:</th>
-                        <th>{{ $this->trackName }}</th>
+                        <th class="w-50">Track:</th>
+                        <th class="w-50">{{ $this->trackName }}</th>
                     </tr>
                 </table>
-                <button wire:click="repickTrack" class="btn btn-outline-success btn-block">Repick Track</button>
+                <button wire:click="repickTrack" class="btn btn-outline-success btn-block" style="margin-top: -1.2em">Repick Track</button>
                 <hr>
-                <input wire:model="newEntrantName" type="text" class="form-control" placeholder="Enter Name" autocomplete="off">
-                <button wire:click="addEntrant" class="btn btn-outline-success btn-block">Add Entrant</button>
+                <form wire:submit.prevent="addEntrant">
+                    <input wire:model.lazy="newEntrantName" type="text" class="form-control" placeholder="Enter Name" autocomplete="off">
+                    <button class="btn btn-outline-success btn-block">Add Entrant</button>
+                </form>
             </div>
             <div class="col-md-8">
-                <table id="datatable" class="table table-striped table-bordered">
+                <table id="datatable" class="table table-striped table-bordered" style="margin-bottom: 0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Car</th>
-                            <th></th>
+                            <th class="w-30">Name</th>
+                            <th class="w-50">Car</th>
+                            <th class="w-20"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,7 +31,7 @@
                             <td>{{ $car }}</td>
                             <td>
                                 <button wire:click="repickCar('{{ $name }}')" class="btn btn-outline-success">Repick</button>
-                                <button wire:click="deleteEntrant('{{ $name }}')" class="btn btn-outline-danger">Delete</button>
+                                <button wire:click="deleteEntrant('{{ $name }}')" class="btn btn-outline-danger">Remove</button>
                             </td>
                         </tr>
                         @endforeach

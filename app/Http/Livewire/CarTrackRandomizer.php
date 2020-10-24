@@ -43,8 +43,13 @@ class CarTrackRandomizer extends Component
         unset($this->entrants[$name]);
     }
 
-    public function addEntrant()
+    public function addEntrant($lazyPass = null)
     {
+        if (empty($this->newEntrantName && empty($lazyPass))) {
+            return;
+        }
+        $this->newEntrantName = $this->newEntrantName ?? $lazyPass;
+
         $this->entrants[$this->newEntrantName] = $this->dataProvider->gimmeAGT3Car();
         $this->newEntrantName = '';
     }
