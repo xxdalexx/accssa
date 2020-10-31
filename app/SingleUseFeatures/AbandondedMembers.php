@@ -29,7 +29,11 @@ class AbandondedMembers
             'Miikka Maaninka',
             'Aaron Talbert',
             'Jarrod Seccombe',
-            'Thomas Atkins'
+            'Thomas Atkins',
+            'James Desjardine',
+            'Jarrel Mayer',
+            'Szymon Salamon',
+            'Nicolas Alvarado'
         ]);
 
         foreach ($list->members as $userId => $member) {

@@ -23,7 +23,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($points[0] as $name => $point)
+                                    @forelse($points[0] as $name => $point)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $name }}</td>
@@ -32,7 +32,8 @@
                                     @php
                                         $finalLoop = $loop->iteration;
                                     @endphp
-                                    @endforeach
+                                    @empty
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
@@ -46,13 +47,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($points[1] as $name => $point)
+                                    @forelse($points[1] as $name => $point)
                                     <tr>
                                         <td>{{ $loop->iteration + $finalLoop }}</td>
                                         <td>{{ $name }}</td>
                                         <td>{{ $point }}</td>
                                     </tr>
-                                    @endforeach
+                                    @empty
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>

@@ -9,12 +9,8 @@ use App\SingleUseFeatures\AbandondedMembers;
 
 class DevController extends Controller
 {
-    public function index()
-    {
-        dd(AbandondedMembers::run());
-    }
 
-    public function neededTrackCountindex()
+    public function index()
     {
         $tracks = [
             "barcelona" => 0,

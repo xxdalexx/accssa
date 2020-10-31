@@ -2,6 +2,7 @@ Auth System - Replace registration with validation link.
 -Auth Built
 -Login Built
 -Need invite system still.
+-Fix redirect.
 
 Account for more than one race in an event.
 New Series artisan command and or FE.

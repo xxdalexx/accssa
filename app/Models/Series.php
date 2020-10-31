@@ -8,7 +8,7 @@ class Series extends BaseModel
 {
     use HasFactory;
 
-    public static function new(string $name, bool $penaltyPoints = false)
+    public static function new(string $name, bool $penaltyPoints = true)
     {
         $series = new self;
         $series->name = $name;
@@ -50,6 +50,11 @@ class Series extends BaseModel
     {
         $points = collect($this->getStandingsDropOne());
         $split = $points->split(2);
+
+        if (!$split->count()) {
+            return $this->emptyStandings();
+        }
+
         return $split->toArray();
     }
 
@@ -71,7 +76,19 @@ class Series extends BaseModel
     {
         $points = collect($this->getStandings());
         $split = $points->split(2);
+
+        if (!$split->count()) {
+            return $this->emptyStandings();
+        }
+
         return $split->toArray();
+    }
+
+    private function emptyStandings()
+    {
+        $array[0] = ['No Current Standings' => 0];
+        $array[1] = ['No Current Standings' => 0];
+        return $array;
     }
 
     public function recalculateAllEventPoints()
