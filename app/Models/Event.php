@@ -27,7 +27,6 @@ class Event extends BaseModel
                 'position' => $result['position'],
                 'quali_time' => $result['quali_time'],
                 'laps' => $result['laps'],
-                'clean_laps' => $result['clean_laps'],
                 'total_time' => $result['total_time'],
                 'best_lap' => $result['best_lap'],
                 'best_lap_points' => $result['best_lap_points'],
