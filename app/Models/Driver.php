@@ -12,4 +12,9 @@ class Driver extends BaseModel
     {
         return $this->hasOne(DriverScore::class);
     }
+
+    public function User()
+    {
+        return $this->hasOne(User::class);
+    }
 }

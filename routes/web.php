@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\DriverManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,6 @@ Route::get('series/{series}/dropone', [SeriesController::class, 'showDropOne'])-
 Route::get('series/{series}', [SeriesController::class, 'show'])->name('series.show');
 Route::get('randomizer', [HomeController::class, 'randomizer'])->name('randomizer');
 Route::get('/admin/users', [UserManagementController::class, 'index'])->name('admin.users');
+Route::get('/admin/drivers', [DriverManagementController::class, 'index'])->name('admin.drivers');
 
 Route::get('dev', [DevController::class, 'index'])->name('dev');

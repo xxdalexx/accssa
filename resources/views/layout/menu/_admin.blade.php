@@ -6,18 +6,30 @@
             <i class="ri-arrow-right-s-line iq-arrow-right"></i>
         </a>
         <ul id="menu-admin" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+            @can('manage series')
             <li>
                 <a href="{{ route('series.create') }}">
                     <i class="ri-add-box-line"></i>
                     <span>Create Series</span>
                 </a>
             </li>
+            @endcan
+            @can('manage users')
             <li>
                 <a href="{{ route('admin.users') }}">
                     <i class="ri-folder-user-line"></i>
                     <span>User Management</span>
                 </a>
             </li>
+            @endcan
+            @can('manage drivers')
+            <li>
+                <a href="{{ route('admin.drivers') }}">
+                    <i class="ri-roadster-fill"></i>
+                    <span>Driver Management</span>
+                </a>
+            </li>
+            @endcan
         </ul>
     </li>
 @endrole
