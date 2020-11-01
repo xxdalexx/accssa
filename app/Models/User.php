@@ -38,4 +38,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function displayRoles(): string
+    {
+        $string = '';
+        $roleNames = $this->getRoleNames();
+        foreach($roleNames as $role) {
+            $string .= ucwords($role) . ' ';
+        }
+        return $string;
+    }
 }

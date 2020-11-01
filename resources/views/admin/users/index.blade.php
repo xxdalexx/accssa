@@ -17,14 +17,14 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Admin</th>
+                                    <th>Current Roles</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($users as $user)
                                     <tr>
-                                       <td>{{ $user->name }}</td>
-                                       <td></td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->displayRoles() }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

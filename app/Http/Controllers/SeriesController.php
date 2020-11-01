@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class SeriesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('permission:manage series')->only(['store', 'create']);
+    }
+
     public function show(Series $series)
     {
         return view('series.show')->withPoints($series->getStandingsSplit());

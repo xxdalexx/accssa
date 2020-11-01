@@ -36,7 +36,11 @@
                                 <td>{{ $entry->totalTimeText }}</td>
                                 <td>{{ $entry->bestLapText }}</td>
                                 <td>
-                                    @livewire('penalty-td', ['points' => $entry->penalty_points, 'eventEntryId' => $entry->id])
+                                    @can('give penalties')
+                                        @livewire('penalty-td', ['points' => $entry->penalty_points, 'eventEntryId' => $entry->id])
+                                    @else
+                                        {{ $entry->penalty_points }}
+                                    @endcan
                                 </td>
                                 <td>{{ $entry->best_lap_points }}</td>
                                 <td>{{ $entry->top_quali_points }}</td>
