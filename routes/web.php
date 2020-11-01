@@ -5,6 +5,7 @@ use App\Http\Controllers\DevController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\SeriesController;
+use App\Http\Controllers\UserManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,6 @@ Route::put('series', [SeriesController::class, 'store'])->name('series.store');
 Route::get('series/{series}/dropone', [SeriesController::class, 'showDropOne'])->name('series.showDropOne');
 Route::get('series/{series}', [SeriesController::class, 'show'])->name('series.show');
 Route::get('randomizer', [HomeController::class, 'randomizer'])->name('randomizer');
+Route::get('/admin/users', [UserManagementController::class, 'index'])->name('admin.users');
 
 Route::get('dev', [DevController::class, 'index'])->name('dev');
