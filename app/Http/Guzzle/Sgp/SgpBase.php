@@ -5,6 +5,7 @@ namespace App\Http\Guzzle\Sgp;
 use App\Http\Guzzle\GuzzleBase;
 use App\Http\Guzzle\Sgp\Cleaners\EventResultsCleaner;
 use App\Http\Guzzle\Sgp\Cleaners\DriverResultsForScoreCleaner;
+use App\Models\Site;
 
 class SgpBase extends GuzzleBase
 {
@@ -12,7 +13,7 @@ class SgpBase extends GuzzleBase
     {
         $this->params = [
             'headers' => [
-                'Authorization' => 'Bearer ' . env('SGP_AUTH_TOKEN'),
+                'Authorization' => 'Bearer ' . Site::sgpToken(),
                 'Accept'        => 'application/json',
             ]
         ];

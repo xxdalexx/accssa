@@ -30,6 +30,12 @@
                 </a>
             </li>
             @endcan
+            <li>
+                <a href="{{ route('admin.sgpToken') }}">
+                    <i class="ri-window-line"></i>
+                    <span>SGP API Token</span>
+                </a>
+            </li>
         </ul>
     </li>
 @endrole

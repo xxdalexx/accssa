@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DevController;
 use App\Http\Controllers\HomeController;
@@ -26,7 +27,8 @@ Route::put('series', [SeriesController::class, 'store'])->name('series.store');
 Route::get('series/{series}/dropone', [SeriesController::class, 'showDropOne'])->name('series.showDropOne');
 Route::get('series/{series}', [SeriesController::class, 'show'])->name('series.show');
 Route::get('randomizer', [HomeController::class, 'randomizer'])->name('randomizer');
-Route::get('/admin/users', [UserManagementController::class, 'index'])->name('admin.users');
-Route::get('/admin/drivers', [DriverManagementController::class, 'index'])->name('admin.drivers');
+Route::get('admin/users', [UserManagementController::class, 'index'])->name('admin.users');
+Route::get('admin/drivers', [DriverManagementController::class, 'index'])->name('admin.drivers');
+Route::get('admin/sgptoken', [AdminController::class, 'sgpToken'])->name('admin.sgpToken');
 
 Route::get('dev', [DevController::class, 'index'])->name('dev');
