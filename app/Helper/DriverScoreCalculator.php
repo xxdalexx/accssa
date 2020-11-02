@@ -3,8 +3,9 @@
 namespace App\Helper;
 
 use App\Http\Guzzle\Sgp\SgpBase;
+use App\Models\DriverScore;
 
-class DriverScore
+class DriverScoreCalculator
 {
     protected $trackTimes;
     protected $alienTimes = [
@@ -30,9 +31,9 @@ class DriverScore
     ];
     protected $score;
 
-    public function __construct(string $sgpDriverId)
+    public function __construct(DriverScore $driverScore)
     {
-        $this->trackTimes = (new SgpBase)->getDriverResultsForScore($sgpDriverId);
+        $this->trackTimes = $this->cleanModelAttributes($driverScore);
 
         foreach ($this->trackTimes as $track => $time) {
             if ($calculatedScore = $this->calculateScore($track, $time)) {
@@ -47,8 +48,24 @@ class DriverScore
         }
     }
 
+    protected function cleanModelAttributes($driverScore)
+    {
+        $attributes = $driverScore->getAttributes();
+        unset(
+            $attributes['id'],
+            $attributes['driver_id'],
+            $attributes['created_at'],
+            $attributes['updated_at'],
+        );
+        return $attributes;
+    }
+
     protected function calculateScore($track, $time)
     {
+        if (!$time) {
+            return false;
+        }
+
         if (!array_key_exists($track, $this->alienTimes)) {
             $score = $time - $this->alienTimes[$track . '_2019'];
         } else {

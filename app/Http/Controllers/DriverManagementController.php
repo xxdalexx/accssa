@@ -14,7 +14,6 @@ class DriverManagementController extends Controller
 
     public function index()
     {
-        return view('admin.drivers.index')
-            ->withDrivers(Driver::all());
+        return view('admin.drivers.index');
     }
 }

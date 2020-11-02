@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Helper\DriverScoreCalculator;
 use App\Http\Guzzle\Sgp\SgpBase;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -24,5 +25,12 @@ class DriverScore extends BaseModel
 
         $this->save();
         return $this;
+    }
+
+    public function calculateScore()
+    {
+        $this->updateFromSgp();
+        $calculator = new DriverScoreCalculator($this);
+        return $calculator->getScore();
     }
 }

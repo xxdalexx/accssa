@@ -5,10 +5,11 @@ Auth System - Replace registration with validation link.
 -Need invite system still.
 -Fix redirect.
 
+Create Score Relationship on Driver Creation. -Important
+
 Account for more than one race in an event.
 Add event FE.
 Show count of most needed tracks. - Code in DevController
-Create Score Relationship on Driver Creation.
 Front end for driver ratings.
 Better penalty system.
 Calculate driver score with new table data/move driver score from Driver to DriverScore model.

@@ -8,13 +8,21 @@ class Driver extends BaseModel
 {
     use HasFactory;
 
-    public function Score()
+    public function score()
     {
         return $this->hasOne(DriverScore::class);
     }
 
-    public function User()
+    public function user()
     {
         return $this->hasOne(User::class);
+    }
+
+    public function calculateDriverScore()
+    {
+        $this->driver_score = $this->score->calculateScore();
+        $this->save();
+
+        return $this;
     }
 }
