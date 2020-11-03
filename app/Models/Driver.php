@@ -18,6 +18,11 @@ class Driver extends BaseModel
         return $this->hasOne(User::class);
     }
 
+    public function invite()
+    {
+        return $this->hasOne(Invite::class);
+    }
+
     public function calculateDriverScore()
     {
         $this->driver_score = $this->score->calculateScore();

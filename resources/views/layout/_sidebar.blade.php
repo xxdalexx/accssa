@@ -1,7 +1,7 @@
         <!-- Sidebar  -->
         <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
-                <a href="index.html">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('images/logo.gif') }}" class="img-fluid" alt="">
                     <span>SGP+</span>
                 </a>

@@ -3,16 +3,14 @@
 @section('content')
 
 <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-6 offset-3">
         <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                 <div class="iq-header-title">
-                    <h4 class="card-title">Welcom {{ Auth::user()->name }}</h4>
+                    <h4 class="card-title">Welcome {{ $name }}</h4>
                 </div>
             </div>
-            <div class="iq-card-body">
-                Put some stuff here.
-            </div>
+            @livewire('auth.invite.show-invite', ['invite' => $invite])
         </div>
     </div>
 </div>

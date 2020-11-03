@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Driver;
+use App\Models\Invite;
 use Livewire\Component;
 
 class Drivers extends Component
@@ -11,6 +12,11 @@ class Drivers extends Component
     {
         $driver = Driver::find($driverId);
         $driver->calculateDriverScore();
+    }
+
+    public function genInvite($driverId)
+    {
+        Invite::generate($driverId);
     }
 
     public function render()

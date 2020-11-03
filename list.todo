@@ -3,14 +3,13 @@ Auth System - Replace registration with validation link.
 -Login Built.
 -Roles package installed.
 -Need invite system still.
--Fix redirect.
 
 Create Score Relationship on Driver Creation. -Important
 
-Account for more than one race in an event.
-Add event FE.
-Show count of most needed tracks. - Code in DevController
-Front end for driver ratings.
+Series management page.
 Better penalty system.
-Calculate driver score with new table data/move driver score from Driver to DriverScore model.
+Show count of most needed tracks. - Code in DevController
+Front end for driver ratings. -Admin side done
+Account for more than one race in an event.
 Figure out how to keep menus open. Probably not doable with current design pattern.
+User and Driver admin search filter.

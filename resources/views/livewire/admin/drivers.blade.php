@@ -22,6 +22,10 @@
                         <td>
                             @if($driver->user()->exists())
                                 <i class="ri-check-fill"></i>
+                            @elseif($driver->invite()->exists())
+                                {{ $driver->invite->code }}
+                            @else
+                                <a wire:click.prevent="genInvite({{ $driver->id }})" href='#'>Generate Invite Code</a>
                             @endif
                         </td>
                     </tr>
