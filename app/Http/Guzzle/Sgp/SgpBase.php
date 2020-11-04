@@ -71,9 +71,10 @@ class SgpBase extends GuzzleBase
 
     public function getLeagueMemberList()
     {
-        $this->cacheName = 'leagueMemberList.' . 'ikG1uiyY6vvTGCTAL486M';
+        $leagueId = Site::sgpLeagueId();
+        $this->cacheName = 'leagueMemberList.' . $leagueId;
 
-        $this->setClientToLeagueViews('ikG1uiyY6vvTGCTAL486M');
+        $this->setClientToLeagueViews($leagueId);
         return $this->getResponse();
     }
 
@@ -105,10 +106,12 @@ class SgpBase extends GuzzleBase
 
     public function getLeagueSessions()
     {
-        $this->cacheName = 'leagueSessions.' . 'ikG1uiyY6vvTGCTAL486M';
+        $leagueId = Site::sgpLeagueId();
+
+        $this->cacheName = 'leagueSessions.' . $leagueId;
 
         $this->setClientToLeagueSessions();
-        $this->buildQuery('leagueId', 'ikG1uiyY6vvTGCTAL486M');
+        $this->buildQuery('leagueId', $leagueId);
         $gameString = '["acc","assetto_corsa"]';
         $this->buildQuery('games', $gameString);
         $this->buildQuery('limit', '12');

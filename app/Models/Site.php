@@ -20,4 +20,14 @@ class Site extends Model
     {
         return self::where('key', 'sgpToken')->update(['value' => $token]);
     }
+
+    public static function sgpLeagueId()
+    {
+        return self::where('key', 'sgpLeagueId')->value('value');
+    }
+
+    public static function setSgpLeagueId(string $id)
+    {
+        return self::where('key', 'sgpLeagueId')->update(['value' => $id]);
+    }
 }
