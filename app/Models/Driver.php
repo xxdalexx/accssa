@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Guzzle\Sgp\SgpBase;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Driver extends BaseModel
@@ -17,6 +18,20 @@ class Driver extends BaseModel
             $score = new DriverScore;
             $driver->score()->save($score);
         });
+    }
+
+    public static function importFromSgp(string $sgpId): self
+    {
+        $apiResponse = (new SgpBase)->getLeagueMemberList()->members->$sgpId;
+
+        $newDriver = self::updateOrCreate([
+            'driver_name' => $apiResponse->name,
+            'sgp_id' => $apiResponse->userId
+        ]);
+
+        $newDriver->calculateDriverScore();
+
+        return $newDriver;
     }
 
     public function score()

@@ -13,12 +13,10 @@ class DevController extends Controller
 
     public function index()
     {
-        $drivers = Driver::all();
-        foreach ($drivers as $driver) {
-            if (!$driver->score()->exists()) {
-                dump($driver->driver_name);
-            }
-        }
+        //$r = (new SgpBase)->getUserDetails('75d083a9-66b3-4226-bce4-dd986ecf6955');
+        $r = (new SgpBase)->getLeagueMemberList();
+        $id = '75d083a9-66b3-4226-bce4-dd986ecf6955';
+        dd($r->members->$id);
     }
 
     public function FindNeededTracksindex()

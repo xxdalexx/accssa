@@ -14,20 +14,23 @@
                     <form wire:submit.prevent="import">
                         <label>Import Driver by SGP ID</label>
                         <div class="input-group">
-                            <input type="text" class="form-control">
+                            <input wire:model="importString" type="text" class="form-control">
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-outline-secondary">Import</button>
                             </div>
                         </div>
                     </form>
                 </div>
+                @if($this->importSuccess)
+                    <p class="text-success">{{ $this->importedDriverName }} Imported</p>
+                @endif
             </div>
 
             <table id="datatable" class="table table-striped table-bordered">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Score</th>
+                        <th wire:click="$set('sortBy', 'driver_name')" class="finger">Name</th>
+                        <th wire:click="$set('sortBy', 'driver_score')" class="finger">Score</th>
                         <th>Account</th>
                     </tr>
                 </thead>
