@@ -8,6 +8,8 @@ use Livewire\Component;
 
 class Drivers extends Component
 {
+    public $searchString;
+
     public function calculateScore($driverId)
     {
         $driver = Driver::find($driverId);
@@ -19,9 +21,18 @@ class Drivers extends Component
         Invite::generate($driverId);
     }
 
+    public function import()
+    {
+        dd('import');
+    }
+
     public function render()
     {
         return view('livewire.admin.drivers')
-            ->withDrivers(Driver::orderBy('driver_name')->get());
+            ->withDrivers(
+                Driver::where('driver_name', 'LIKE', '%' . $this->searchString . '%')
+                    ->orderBy('driver_score')
+                    ->get()
+            );
     }
 }

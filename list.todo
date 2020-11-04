@@ -1,15 +1,11 @@
-Auth System - Replace registration with validation link.
--Auth Built.
--Login Built.
--Roles package installed.
--Need invite system still.
-
 Create Score Relationship on Driver Creation. -Important
+Import Driver on admin page
+User and Driver admin search filter and sorting.
 
 Series management page.
 Better penalty system.
 Show count of most needed tracks. - Code in DevController
 Front end for driver ratings. -Admin side done
 Account for more than one race in an event.
-Figure out how to keep menus open. Probably not doable with current design pattern.
-User and Driver admin search filter.
+Highlight standings row for logged in user.
+Figure out how to keep menus open. Probably not easily doable with current design pattern.

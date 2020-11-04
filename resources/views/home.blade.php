@@ -7,7 +7,11 @@
         <div class="iq-card">
             <div class="iq-card-header d-flex justify-content-between">
                 <div class="iq-header-title">
-                    <h4 class="card-title">Welcom {{ Auth::user()->name }}</h4>
+                    @if(Auth::check())
+                        <h4 class="card-title">Welcome {{ Auth::user()->name }}</h4>
+                    @else
+                        <h4 class="card-title">Welcome</h4>
+                    @endif
                 </div>
             </div>
             <div class="iq-card-body">

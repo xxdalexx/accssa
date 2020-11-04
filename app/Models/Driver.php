@@ -8,6 +8,17 @@ class Driver extends BaseModel
 {
     use HasFactory;
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        //Change to actual event if anything else should be done when a driver is created.
+        static::created(function ($driver) {
+            $score = new DriverScore;
+            $driver->score()->save($score);
+        });
+    }
+
     public function score()
     {
         return $this->hasOne(DriverScore::class);

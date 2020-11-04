@@ -1,6 +1,28 @@
 <div class="iq-card-body">
     <div class="table-responsive">
         <div class="row w-100">
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>Filter By Driver Name</label>
+                    <input wire:model="searchString" type="text" class="form-control">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group">
+                    <form wire:submit.prevent="import">
+                        <label>Import Driver by SGP ID</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-outline-secondary">Import</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             <table id="datatable" class="table table-striped table-bordered">
                 <thead>
                     <tr>
