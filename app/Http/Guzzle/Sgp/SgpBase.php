@@ -56,7 +56,6 @@ class SgpBase extends GuzzleBase
 
     protected function setClientToLeagueViews($leagueId)
     {
-        //ACCSSA Hard Coded
         $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/league-views/$leagueId"]);
 
         return $this;
@@ -67,6 +66,24 @@ class SgpBase extends GuzzleBase
         $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/user-views/$userId"]);
 
         return $this;
+    }
+
+    protected function setClientToLeagueHistory($leagueId)
+    {
+        $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/query/session-history/by-league/$leagueId"]);
+
+        return $this;
+    }
+
+    public function getLeagueHistory()
+    {
+        $leagueId = Site::sgpLeagueId();
+        $this->cacheName = 'leagueHistory' . $leagueId;
+
+        $this->setClientToLeagueHistory($leagueId);
+        $this->buildQuery('offset', 0);
+        $this->buildQuery('limit', 1000);
+        return $this->getResponse();
     }
 
     public function getLeagueMemberList()

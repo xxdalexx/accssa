@@ -29,8 +29,19 @@ class DriverScore extends BaseModel
 
     public function calculateScore()
     {
-        $this->updateFromSgp();
-        $calculator = new DriverScoreCalculator($this);
+        $calculator = $this->buildCalculator();
         return $calculator->getScore();
+    }
+
+    public function tracksByStrength()
+    {
+        $calculator = $this->buildCalculator();
+        return collect($calculator->getTrackScores())->sort();
+    }
+
+    protected function buildCalculator()
+    {
+        $this->updateFromSgp();
+        return new DriverScoreCalculator($this);
     }
 }

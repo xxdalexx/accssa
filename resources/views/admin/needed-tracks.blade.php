@@ -41,13 +41,15 @@
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>Track</th>
+                            <th>Track Timeline Reversed</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($reverseTimeline as $track)
                         <tr>
-                            <td>Name</td>
+                            <td>{{ $track }}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Helper\NeededTrackListing;
 use Illuminate\Http\Request;
+use App\Http\Guzzle\Sgp\SgpBase;
+use App\Helper\NeededTrackListing;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -21,7 +22,14 @@ class AdminController extends Controller
     public function neededTracks()
     {
         return view('admin.needed-tracks')->with([
-            'neededTracks' => NeededTrackListing::get()
+            'neededTracks' => NeededTrackListing::get(),
+            'reverseTimeline' => $this->reverseTrackTimeline()
         ]);
+    }
+
+    protected function reverseTrackTimeline()
+    {
+        $response = (new SgpBase)->bustCache()->getLeagueHistory();
+        return collect($response)->pluck('trackName')->unique()->reverse();
     }
 }

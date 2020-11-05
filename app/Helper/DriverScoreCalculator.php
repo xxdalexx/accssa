@@ -2,47 +2,30 @@
 
 namespace App\Helper;
 
+use App\DataProvider\DataProvider;
 use App\Http\Guzzle\Sgp\SgpBase;
 use App\Models\DriverScore;
 
 class DriverScoreCalculator
 {
     protected $trackTimes;
-    protected $alienTimes = [
-        "barcelona" => 101900,
-        "barcelona_2019" => 102500,
-        "brands_hatch_2019" => 82200,
-        "hungaroring_2019" => 101500,
-        "kyalami_2019" => 99390,
-        "laguna_seca_2019" => 80800,
-        "misano_2019" => 92400,
-        "monza_2019" => 106400,
-        "mount_panorama_2019" => 119800,
-        "nurburgring_2019" => 112300,
-        "paul_ricard" => 114200,
-        "paul_ricard_2019" => 113200,
-        "silverstone" => 116000,
-        "silverstone_2019" => 117000,
-        "spa" => 135900,
-        "spa_2019" => 136900,
-        "suzuka_2019" => 118200,
-        "zandvoort_2019" => 94500,
-        "zolder_2019" => 87650,
-    ];
+    protected $alienTimes;
+    protected $trackScores;
     protected $score;
 
     public function __construct(DriverScore $driverScore)
     {
+        $this->alienTimes = (new DataProvider)->getAlienTimes();
         $this->trackTimes = $this->cleanModelAttributes($driverScore);
 
         foreach ($this->trackTimes as $track => $time) {
             if ($calculatedScore = $this->calculateScore($track, $time)) {
-                $score[$track] = $calculatedScore;
+                $this->trackScores[$track] = $calculatedScore;
             }
         }
 
-        if (count($score) > 2) {
-            $this->score = collect($score)->sort()->take(5)->avg();
+        if (count($this->trackScores) > 2) {
+            $this->score = collect($this->trackScores)->sort()->take(5)->avg();
         } else {
             $this->score = 0;
         }
@@ -84,5 +67,10 @@ class DriverScoreCalculator
             return (int) $this->score;
         }
         return 0;
+    }
+
+    public function getTrackScores()
+    {
+        return $this->trackScores;
     }
 }
