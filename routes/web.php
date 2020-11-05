@@ -34,6 +34,7 @@ Route::get('randomizer', [HomeController::class, 'randomizer'])->name('randomize
 Route::get('admin/users', [UserManagementController::class, 'index'])->name('admin.users');
 Route::get('admin/drivers', [DriverManagementController::class, 'index'])->name('admin.drivers');
 Route::get('admin/sgptoken', [AdminController::class, 'sgpToken'])->name('admin.sgpToken');
+Route::get('admin/neededtracks', [AdminController::class, 'neededTracks'])->name('admin.neededTracks');
 
 Route::get('invite', [InviteController::class, 'index'])->name('invite.index');
 Route::get('invite/{invite:code}', [InviteController::class, 'show'])->name('invite.show');

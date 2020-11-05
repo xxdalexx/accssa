@@ -36,6 +36,12 @@
                     <span>SGP API Token</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.neededTracks') }}">
+                    <i class="ri-road-map-line"></i>
+                    <span>Needed Tracks</span>
+                </a>
+            </li>
         </ul>
     </li>
 @endrole
