@@ -9,6 +9,7 @@ use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\DriverManagementController;
 use App\Http\Controllers\InviteController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,8 @@ Route::get('admin/users', [UserManagementController::class, 'index'])->name('adm
 Route::get('admin/drivers', [DriverManagementController::class, 'index'])->name('admin.drivers');
 Route::get('admin/sgptoken', [AdminController::class, 'sgpToken'])->name('admin.sgpToken');
 Route::get('admin/neededtracks', [AdminController::class, 'neededTracks'])->name('admin.neededTracks');
+
+Route::get('user', [UserController::class, 'show'])->name('user.show');
 
 Route::get('invite', [InviteController::class, 'index'])->name('invite.index');
 Route::get('invite/{invite:code}', [InviteController::class, 'show'])->name('invite.show');
