@@ -18,7 +18,20 @@
                         <label for="email">Series Name</label>
                         <input type="text" class="form-control" id="name" name="name" autocomplete="off">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                    <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                        <input type="checkbox" class="custom-control-input bg-info" name="splits" id="split-check">
+                        <label class="custom-control-label" for="split-check">Uses Splits</label>
+                     </div>
+
+                     <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                        <input type="checkbox" class="custom-control-input bg-info" name="penalties" id="penalty-check">
+                        <label class="custom-control-label" for="penalty-check">Uses Penalty Points</label>
+                     </div>
+
+                     <hr>
+
+                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>

@@ -8,7 +8,7 @@ class Series extends BaseModel
 {
     use HasFactory;
 
-    public static function new(string $name, bool $penaltyPoints = true)
+    public static function new(string $name, bool $splits = true, bool $penaltyPoints = true)
     {
         $series = new self;
         $series->name = $name;

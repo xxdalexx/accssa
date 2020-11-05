@@ -29,7 +29,11 @@ class SeriesController extends Controller
 
     public function store(Request $request)
     {
-        $series = Series::new($request->input('name'));
+        $series = Series::new(
+            $request->input('name'),
+            $request->boolean('splits'),
+            $request->boolean('penalties')
+        );
         return redirect()->route('series.show', $series);
     }
 }

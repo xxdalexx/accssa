@@ -1,10 +1,13 @@
+Series Splits
+
 User admin search filter and sorting.
 
-Dynamic league id.
-Series management page.
-Better penalty system.
 Show count of most needed tracks. - Code in DevController
-Front end for driver ratings. -Admin side done
-Account for more than one race in an event.
+Series management page.
+Driver Profiles.
 Highlight standings row for logged in user.
+Better penalty system.
+Front end for driver ratings. -Admin side done
+Team Builder.
+Account for more than one race in an event.
 Figure out how to keep menus open. Probably not easily doable with current design pattern.
