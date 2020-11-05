@@ -43,7 +43,7 @@ class NeededTrackListing
                 $tracks[$track] = $scores->where($track, '>', 0)->count();
             }
 
-            return collect($tracks)->sort();
+            return fixTrackNames(collect($tracks)->sort());
         }
 }
 

@@ -16,7 +16,8 @@ class DevController extends Controller
         $score = DriverScore::first();
         $calculator = new DriverScoreCalculator($score);
         $trackScores = collect($calculator->getTrackScores())->sort();
-        dd($trackScores);
+        $fixed = fixTrackNames($trackScores);
+        dd($fixed);
     }
 
 }

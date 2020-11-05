@@ -36,7 +36,8 @@ class DriverScore extends BaseModel
     public function tracksByStrength()
     {
         $calculator = $this->buildCalculator();
-        return collect($calculator->getTrackScores())->sort();
+        $tracks = collect($calculator->getTrackScores())->sort();
+        return fixTrackNames($tracks);
     }
 
     protected function buildCalculator()
