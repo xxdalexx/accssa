@@ -63,6 +63,20 @@ class Event extends BaseModel
         return $this->hasMany(EventEntry::class);
     }
 
+    public function incidents()
+    {
+        return $this->hasMany(Incident::class);
+    }
+
+    public function getDriverList(): array
+    {
+        $drivers = [];
+        foreach($this->eventEntries as $entry) {
+            $drivers[$entry->driver->id] = $entry->driver->driver_name;
+        }
+        return $drivers;
+    }
+
     public function link()
     {
         return route('event.show', $this);

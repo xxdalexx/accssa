@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Penalty extends Model
 {
     use HasFactory;
+
+    public function getDisplayNameAttribute()
+    {
+        if ($this->points == 1) {
+            $ending = 'pt.';
+        } else {
+            $ending = 'pts.';
+        }
+
+        return $this->description . ' - ' . $this->points . $ending;
+    }
 }

@@ -56,44 +56,6 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="col-sm-12">
-        <div class="iq-card">
-            <div class="iq-card-header d-flex justify-content-between">
-                <div class="iq-header-title">
-                    <h4 class="card-title">Reported Incidents</h4>
-                </div>
-            </div>
-            <div class="iq-card-body">
-                <div class="table-responsive">
-                    <table id="datatable" class="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>Accused</th>
-                                <th>Victim</th>
-                                <th>Time Stamp</th>
-                                <th>Status</th>
-                                <th>Penalty</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (range(0,3) as $entry)
-                            <tr>
-                                <td>Accused Driver</td>
-                                <td>Victim Driver</td>
-                                <td>14:32</td>
-                                <td>Accepted by Accused</td>
-                                <td>Collision - Loss of positions - 2pts</td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 @livewire('event-incidents', ['event' => $event])
 
 @endsection

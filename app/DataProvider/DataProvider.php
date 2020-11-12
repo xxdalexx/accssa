@@ -67,8 +67,8 @@ class DataProvider
     public function getIncidentStatuses()
     {
         return [
-            0 => 'Accepted By Accused',
-            1 => 'Awaiting Response From Accused',
+            0 => 'Awaiting Response From Accused',
+            1 => 'Accepted By Accused',
             2 => 'Review Requested',
             3 => 'Reviewed - Penalty Confirmed',
             4 => 'Reviewed - No Action Taken'
