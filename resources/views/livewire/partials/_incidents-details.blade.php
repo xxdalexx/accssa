@@ -29,7 +29,7 @@
                         <td>{{ $this->timestampDispaly }}</td>
                     </tr>
                     <tr>
-                        <td>Description: </td>
+                        <td>Given Description: </td>
                         <td>{{ $this->descriptionDispaly }}</td>
                     </tr>
                     <tr>

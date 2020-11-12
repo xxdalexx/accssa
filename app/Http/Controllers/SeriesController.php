@@ -14,12 +14,18 @@ class SeriesController extends Controller
 
     public function show(Series $series)
     {
-        return view('series.show')->withPoints($series->getStandingsSplit());
+        return view('series.show')->with([
+            'points' => $series->getStandingsSplit(),
+            'title' => $series->name
+        ]);
     }
 
     public function showDropOne(Series $series)
     {
-        return view('series.show')->withPoints($series->getStandingsDropOneSplit());
+        return view('series.show')->with([
+            'points' => $series->getStandingsDropOneSplit(),
+            'title' => $series->name
+        ]);
     }
 
     public function create()
