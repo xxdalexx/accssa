@@ -32,8 +32,8 @@ class DataProvider
 
     public function __construct()
     {
-        $carPath = __DIR__ . '\cars.json';
-        $trackPath = __DIR__ . '\tracks.json';
+        $carPath = __DIR__ . '/cars.json';
+        $trackPath = __DIR__ . '/tracks.json';
 
         $this->cars = collect(json_decode(file_get_contents($carPath)));
         $this->tracks = collect(json_decode(file_get_contents($trackPath)));
