@@ -24,7 +24,7 @@ class DriverScoreCalculator
             }
         }
 
-        if (count($this->trackScores) > 2) {
+        if (!empty($this->trackScores) && count($this->trackScores) > 2) {
             $this->score = collect($this->trackScores)->sort()->take(5)->avg();
         } else {
             $this->score = 0;
