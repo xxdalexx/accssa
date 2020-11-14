@@ -65,6 +65,28 @@ class Driver extends BaseModel
         return $this->driver_name;
     }
 
+    public function getCurrentSplitAttribute()
+    {
+        $cuts = [
+            'pro' => 3500,
+            'silver' => 4500,
+        ];
+
+        if ($this->driver_score == 0) {
+            return 'No Score';
+        }
+
+        if ($this->driver_score < $cuts['pro']) {
+            return 'Pro';
+        }
+
+        if ($this->driver_score < $cuts['silver']) {
+            return 'Silver';
+        }
+
+        return 'AM';
+    }
+
     public function calculateDriverScore()
     {
         $this->driver_score = $this->score->calculateScore();

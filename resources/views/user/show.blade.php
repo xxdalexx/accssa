@@ -23,6 +23,20 @@
             </div>
         </div>
     </div>
+    <div class="col-md-6">
+        <div class="iq-card">
+            <div class="iq-card-header d-flex justify-content-between">
+                <div class="iq-header-title">
+                    <h4 class="card-title">Your Current Split</h4>
+                </div>
+            </div>
+            <div class="iq-card-body">
+                <h3>
+                    {{ $split }}
+                </h3>
+            </div>
+        </div>
+    </div>
 </div>
 
 @endsection

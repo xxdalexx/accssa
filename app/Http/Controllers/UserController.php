@@ -10,7 +10,8 @@ class UserController extends Controller
     public function show()
     {
         return view('user.show')->with([
-            'tracksByStrength' => Auth::user()->driver->score->tracksByStrength()
+            'tracksByStrength' => Auth::user()->driver->score->tracksByStrength(),
+            'split' => Auth::user()->driver->currentSplit
         ]);
     }
 }

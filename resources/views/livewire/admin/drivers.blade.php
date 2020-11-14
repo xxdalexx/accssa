@@ -31,6 +31,7 @@
                     <tr>
                         <th wire:click="$set('sortBy', 'driver_name')" class="finger">Name</th>
                         <th wire:click="$set('sortBy', 'driver_score')" class="finger">Score</th>
+                        <th>Split</th>
                         <th>Account</th>
                     </tr>
                 </thead>
@@ -43,6 +44,9 @@
                             <div wire:click="calculateScore({{ $driver->id }})" class="finger pull-right">
                                 <i class="ri-refresh-line"></i>
                             </div>
+                        </td>
+                        <td>
+                            {{ $driver->currentSplit }}
                         </td>
                         <td>
                             @if($driver->user()->exists())
