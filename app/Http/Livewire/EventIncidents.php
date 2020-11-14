@@ -28,12 +28,20 @@ class EventIncidents extends Component
     public $descriptionDispaly;
     public $notesDispaly;
     public $statusDispaly;
+    public $displayedStatusId;
+    public $displayedIncidentId;
+    public $statusChangeSuccess = false;
 
     public function mount()
     {
         $this->event->load('incidents');
         $this->driverList = $this->event->getDriverList();
         $this->statusList = (new DataProvider)->getIncidentStatuses();
+    }
+
+    public function hydrate()
+    {
+        $this->statusChangeSuccess = false;
     }
 
     public function showDetails($incidentId)
@@ -48,7 +56,27 @@ class EventIncidents extends Component
         $this->descriptionDispaly = $incident->description;
         $this->notesDispaly = $incident->reviewers_notes;
         $this->statusDispaly = $this->statusList[$incident->status];
+        $this->displayedStatusId = $incident->status;
+        $this->displayedIncidentId = $incident->id;
         $this->showDetails = true;
+    }
+
+    public function deleteIncident()
+    {
+        $incident = Incident::find($this->displayedIncidentId);
+        $incident->delete();
+        $this->event->refresh();
+        $this->showDetails = false;
+    }
+
+    public function updateStatusOfDisplayed()
+    {
+        $incident = Incident::find($this->displayedIncidentId);
+        $incident->status = $this->displayedStatusId;
+        if ($incident->save()) {
+            $this->statusChangeSuccess = true;
+        }
+        $this->event->refresh();
     }
 
     public function newIncident()
@@ -66,6 +94,7 @@ class EventIncidents extends Component
         ]);
 
         $this->resetAllFields();
+        $this->event->refresh();
     }
 
     public function resetAllFields()

@@ -8,7 +8,7 @@
             </div>
             <div class="iq-card-body">
                 <div class="table-responsive">
-                    <table id="datatable" class="table table-striped table-bordered table-hover">
+                    <table id="one" class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th>Accused</th>
