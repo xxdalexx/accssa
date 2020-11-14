@@ -57,6 +57,14 @@ class Driver extends BaseModel
         return $this->driver_name;
     }
 
+    public function getDisplayNameReversedAttribute()
+    {
+        if ($this->number) {
+            return '#' . $this->number . ' ' . $this->driver_name;
+        }
+        return $this->driver_name;
+    }
+
     public function calculateDriverScore()
     {
         $this->driver_score = $this->score->calculateScore();
