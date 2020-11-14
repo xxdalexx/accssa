@@ -35,7 +35,7 @@ class Series extends BaseModel
         $drivers = $this->eventEntries()->select(['driver_id', 'final_points'])->get()->groupBy('driver_id');
 
         foreach ($drivers as $driver) {
-            if ($driver->count() == $eventsCount) {
+            if ($driver->count() == $eventsCount && $driver->count() != 1) {
                 $driver = $driver->sortByDesc('final_points');
                 $driver->pop();
             }
