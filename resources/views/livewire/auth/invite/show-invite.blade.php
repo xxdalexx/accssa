@@ -8,6 +8,13 @@
             @enderror
         </div>
         <div class="form-group">
+            <label for="number">Your Car Number</label>
+            <input wire:model="driverNumber" type="text" class="form-control">
+            @error('driverNumber')
+                <p class="text-danger">{{ $message }}</p>
+            @enderror
+        </div>
+        <div class="form-group">
             <label for="email">Password</label>
             <input wire:model="password" type="password" class="form-control">
             @error('password')

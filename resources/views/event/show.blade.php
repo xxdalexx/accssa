@@ -31,7 +31,7 @@
                             @foreach ($event->eventEntries as $entry)
                             <tr>
                                 <td>{{ $entry->position }}</td>
-                                <td>{{ $entry->driver->driver_name }}</td>
+                                <td>{{ $entry->driver->displayName }}</td>
                                 <td>{{ $entry->laps }}</td>
                                 <td>{{ $entry->totalTimeText }}</td>
                                 <td>{{ $entry->bestLapText }}</td>

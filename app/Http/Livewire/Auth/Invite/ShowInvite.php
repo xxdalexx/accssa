@@ -13,11 +13,13 @@ class ShowInvite extends Component
     public $email;
     public $password;
     public $passwordVerify;
+    public $driverNumber;
 
     protected $rules = [
         'email' => 'required|email',
         'password' => 'required',
-        'passwordVerify' => 'required|same:password'
+        'passwordVerify' => 'required|same:password',
+        'driverNumber' => 'required|integer'
     ];
 
     public function register()
@@ -30,6 +32,10 @@ class ShowInvite extends Component
             'email' => $this->email,
             'password' => Hash::make($this->password)
         ]);
+
+        $driver = $this->invite->driver;
+        $driver->number = $this->driverNumber;
+        $driver->save();
 
         Auth::login($user);
 

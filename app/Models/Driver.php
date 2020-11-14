@@ -49,6 +49,14 @@ class Driver extends BaseModel
         return $this->hasOne(Invite::class);
     }
 
+    public function getDisplayNameAttribute()
+    {
+        if ($this->number) {
+            return $this->driver_name . ' #' . $this->number;
+        }
+        return $this->driver_name;
+    }
+
     public function calculateDriverScore()
     {
         $this->driver_score = $this->score->calculateScore();
