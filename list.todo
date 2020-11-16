@@ -1,15 +1,21 @@
 Better penalty system.
 -Automatically apply points.
+-Auto Accept self reports.
+-Buttons to accept or ask for review.
+-Admin: change penalty.
+Series management page.
+Add change driver number to profile.
+Event Edit
+-Display replay url
+-Change name
+-Link to sgp page.
 Series Splits
 User profile has active api connection.
 
 User admin search filter and sorting.
 
 Deactivate user/driver.
-Series management page.
-Driver Profiles.
 Highlight standings row for logged in user.
-Front end for driver ratings. -Admin side done
 Team Builder.
 Account for more than one race in an event.
 Figure out how to keep menus open. Probably not easily doable with current design pattern.
@@ -17,24 +23,3 @@ Auth redirect.
 Split Data Providers.
 
 DO ON SERVER
-Add driver numbers for me and Chris.
-
-User reports incident.
-Accused has chance to accept points or request review.
-
-
-Incident
-    Primarily Against Id
-    Replay Timestamp
-    Victim
-    Description
-    Status
-
-Penalty
-    Description
-    Points
-
-    Collision - No positions lost - 1pt
-    Collision - Positions lost - 2pts
-    Collision - Multiple cars involved - 3pts
-    MH - 1, 2, 3, 4
