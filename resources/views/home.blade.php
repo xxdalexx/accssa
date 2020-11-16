@@ -15,7 +15,10 @@
                 </div>
             </div>
             <div class="iq-card-body">
-                Put some stuff here.
+                <h6>Nov 16th.</h6>
+                <p>Self reported penalties automatically processed and applied.</p>
+                <p>First lap incident option added to double penalties.</p>
+                <p>Buttons to accept penalties or request review.</p>
             </div>
         </div>
     </div>

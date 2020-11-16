@@ -42,6 +42,14 @@
                         </div>
 
                         <div class="form-group">
+                            <label>First Lap Incident</label>
+                            <select wire:model="firstLap" class="form-control mb-3">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
                             <label>Replay Timestamp</label>
                             <input wire:model.lazy="timestamp" type="text" class="form-control">
                         </div>

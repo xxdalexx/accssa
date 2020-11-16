@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\DataProvider\DataProvider;
+use App\Models\EventEntry;
 use App\Models\Incident;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
@@ -18,18 +19,21 @@ class EventIncidents extends Component
     public $victimId = "0";
     public $timestamp = "";
     public $description = "";
+    public $firstLap = "0";
 
     public $showDetails = false;
-    public $accusedNameDispaly;
-    public $victimNameDispaly;
-    public $reportedNameDispaly;
-    public $penaltyNameDispaly;
-    public $timestampDispaly;
-    public $descriptionDispaly;
-    public $notesDispaly;
-    public $statusDispaly;
+    public $accusedNameDisplay;
+    public $victimNameDisplay;
+    public $reportedNameDisplay;
+    public $penaltyNameDisplay;
+    public $timestampDisplay;
+    public $descriptionDisplay;
+    public $notesDisplay;
+    public $statusDisplay;
     public $displayedStatusId;
     public $displayedIncidentId;
+    public $appliedDisplay;
+    public $firstLapDisplay;
     public $statusChangeSuccess = false;
 
     public function mount()
@@ -48,14 +52,16 @@ class EventIncidents extends Component
     {
         $incident = Incident::find($incidentId);
 
-        $this->accusedNameDispaly = $incident->accused->driver_name;
-        $this->victimNameDispaly = $incident->victim->driver_name;
-        $this->reportedNameDispaly = $incident->reportedBy->name;
-        $this->penaltyNameDispaly = $incident->penalty->displayName;
-        $this->timestampDispaly = $incident->timestamp;
-        $this->descriptionDispaly = $incident->description;
-        $this->notesDispaly = $incident->reviewers_notes;
-        $this->statusDispaly = $this->statusList[$incident->status];
+        $this->accusedNameDisplay = $incident->accused->driver_name;
+        $this->victimNameDisplay = $incident->victim->driver_name;
+        $this->reportedNameDisplay = $incident->reportedBy->name;
+        $this->penaltyNameDisplay = $incident->penalty->displayName;
+        $this->timestampDisplay = $incident->timestamp;
+        $this->descriptionDisplay = $incident->description;
+        $this->notesDisplay = $incident->reviewers_notes;
+        $this->statusDisplay = $this->statusList[$incident->status];
+        $this->appliedDisplay = $incident->penalty_applied;
+        $this->firstLapDisplay = $incident->first_lap;
         $this->displayedStatusId = $incident->status;
         $this->displayedIncidentId = $incident->id;
         $this->showDetails = true;
@@ -79,9 +85,45 @@ class EventIncidents extends Component
         $this->event->refresh();
     }
 
+    public function requestReview()
+    {
+        $incident = Incident::find($this->displayedIncidentId);
+        $incident->status = 2;
+        $incident->save();
+        $this->displayedStatusId = 2;
+        $this->statusDisplay = $this->statusList[2];
+        $this->event->refresh();
+    }
+
+    public function acceptPenalty()
+    {
+        $this->applyPenalty(true);
+    }
+
+    public function applyPenalty($userAccepted = false)
+    {
+        $incident = Incident::find($this->displayedIncidentId);
+        $eventEntry = EventEntry::where(['event_id' => $incident->event_id, 'driver_id' => $incident->accused_id])->first();
+
+        $eventEntry->penalty_points += $incident->penalty->points;
+        if ($incident->first_lap) {
+            $eventEntry->penalty_points += $incident->penalty->points; //Apply again if first lap
+        }
+        $eventEntry->save();
+
+        $incident->penalty_applied = true;
+        if ($userAccepted) {
+            $incident->status = 1;
+        }
+        $incident->save();
+
+        $this->event->refresh();
+        $this->showDetails($incident->id);
+    }
+
     public function newIncident()
     {
-        Incident::create([
+        $incident = Incident::create([
             'accused_id' => $this->accusedId,
             'victim_id' => $this->victimId,
             'reported_by_id' => Auth::id(),
@@ -90,8 +132,23 @@ class EventIncidents extends Component
             'timestamp' => $this->timestamp,
             'description' => $this->description,
             'reviewers_notes' => 'Not reviewed',
+            'first_lap' => $this->firstLap,
             'status' => 0,
         ]);
+
+        //Self Reported
+        if (Auth::user()->driver->id == (int) $this->accusedId) {
+            $incident->penalty_applied = true;
+            $incident->status = 1; //Accepted by Accused
+            $incident->save();
+
+            $eventEntry = EventEntry::where(['event_id' => $incident->event_id, 'driver_id' => $incident->accused_id])->first();
+            $eventEntry->penalty_points += $incident->penalty->points;
+            if ($incident->first_lap) {
+                $eventEntry->penalty_points += $incident->penalty->points; //Apply again if first lap
+            }
+            $eventEntry->save();
+        }
 
         $this->resetAllFields();
         $this->event->refresh();
@@ -104,6 +161,7 @@ class EventIncidents extends Component
         $this->victimId = "0";
         $this->timestamp = "";
         $this->description = "";
+        $this->firstLap = "0";
     }
 
     public function render()
