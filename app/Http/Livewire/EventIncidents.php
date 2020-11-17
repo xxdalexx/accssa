@@ -46,6 +46,9 @@ class EventIncidents extends Component
     public function hydrate()
     {
         $this->statusChangeSuccess = false;
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
     }
 
     public function showDetails($incidentId)
