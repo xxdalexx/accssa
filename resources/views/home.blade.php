@@ -16,9 +16,12 @@
             </div>
             <div class="iq-card-body">
                 <h6>Nov 16th.</h6>
-                <p>Self reported penalties automatically processed and applied.</p>
-                <p>First lap incident option added to double penalties.</p>
-                <p>Buttons to accept penalties or request review.</p>
+                <p>
+                    Self reported penalties automatically processed and applied.<br>
+                    First lap incident option added to double penalties.<br>
+                    Buttons to accept penalties or request review.<br>
+                    Auth timeout bug on penalty system fixed.<br>
+                </p>
             </div>
         </div>
     </div>
