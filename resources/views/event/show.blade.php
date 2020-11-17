@@ -56,6 +56,10 @@
     </div>
 </div>
 
+@can('manage series')
+    @livewire('event-editor', ['event' => $event])
+@endcan
+
 @livewire('event-incidents', ['event' => $event])
 
 @endsection
