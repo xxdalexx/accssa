@@ -13,6 +13,12 @@
                     <span>Create Series</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.importEvent') }}">
+                    <i class="ri-upload-cloud-line"></i>
+                    <span>Import Event</span>
+                </a>
+            </li>
             @endcan
             @can('manage users')
             <li>

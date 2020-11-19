@@ -27,6 +27,11 @@ class AdminController extends Controller
         ]);
     }
 
+    public function importEvent()
+    {
+        return view('admin.import-event');
+    }
+
     protected function reverseTrackTimeline()
     {
         $response = (new SgpBase)->bustCache()->getLeagueHistory();
