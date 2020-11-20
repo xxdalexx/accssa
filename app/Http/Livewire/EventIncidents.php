@@ -155,7 +155,7 @@ class EventIncidents extends Component
             $this->event->refresh();
             $this->event->recalculatePoints();
         }
-
+        $this->event->refresh();
         $this->resetAllFields();
     }
 
