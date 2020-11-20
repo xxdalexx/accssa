@@ -14,6 +14,7 @@ class Series extends BaseModel
         $series->name = $name;
         $series->top_point = 0;
         $series->penalty_points = $penaltyPoints;
+        $series->splits = $splits;
         $series->save();
         return $series;
     }
@@ -26,6 +27,11 @@ class Series extends BaseModel
     public function eventEntries()
     {
         return $this->hasManyThrough(EventEntry::class, Event::class);
+    }
+
+    public function locks()
+    {
+        return $this->hasMany(SeriesLock::class);
     }
 
     public function getStandingsDropOne()

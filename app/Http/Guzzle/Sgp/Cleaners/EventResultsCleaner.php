@@ -57,7 +57,9 @@ class EventResultsCleaner extends CleanerBase
             'sgp_id' => $input->driverId,
             'driver_name' => $input->driverName
         ]);
+
         //dd($input);
+        $result['driverModel'] = $driver;
         $result['driver_id'] = $driver->id;
         $result['driver_id_sgp'] = $driver->sgp_id;
         $result['driver_name'] = $driver->driver_name;

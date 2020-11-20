@@ -68,8 +68,8 @@ class Driver extends BaseModel
     public function getCurrentSplitAttribute()
     {
         $cuts = [
-            'pro' => 3500,
-            'silver' => 4500,
+            'pro' => 3000,
+            'silver' => 4000,
         ];
 
         if ($this->driver_score == 0) {

@@ -9,6 +9,22 @@ class EventController extends Controller
 {
     public function show(Event $event)
     {
-        return view('event.show')->withEvent($event->load('eventEntries'));
+        if ($event->series->splits) {
+            return $this->showSplits($event);
+        }
+
+        return view('event.show')->with([
+            'event' => $event->load('eventEntries')
+        ]);
+    }
+
+    protected function showSplits($event)
+    {
+        $entries = $event->eventEntries->groupBy('split');
+
+        return view('event.show-splits')->with([
+            'event' => $event->load('eventEntries'),
+            'entries' => $entries
+        ]);
     }
 }

@@ -22,5 +22,6 @@
         <hr>
 
         <button type="submit" class="btn btn-primary">Submit</button>
+        <p wire:loading>Working.</p>
     </form>
 </div>

@@ -17,7 +17,7 @@ class CreateSeriesLocksTable extends Migration
             $table->id();
             $table->foreignId('driver_id')->constrained()->cascadeOnDelete();
             $table->foreignId('series_id')->constrained()->cascadeOnDelete();
-            $table->string('split');
+            $table->string('split')->default('No Score');
         });
     }
 

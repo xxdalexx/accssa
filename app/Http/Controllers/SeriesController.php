@@ -14,6 +14,13 @@ class SeriesController extends Controller
 
     public function show(Series $series)
     {
+        if ($series->splits) {
+            return view('series.show-splits')->with([
+                'points' => $series->getStandingsSplit(),
+                'title' => $series->name
+            ]);
+        }
+
         return view('series.show')->with([
             'points' => $series->getStandingsSplit(),
             'title' => $series->name

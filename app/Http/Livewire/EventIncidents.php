@@ -120,8 +120,8 @@ class EventIncidents extends Component
         }
         $incident->save();
 
-        $this->event->recalculatePoints();
         $this->event->refresh();
+        $this->event->recalculatePoints();
         $this->showDetails($incident->id);
     }
 
@@ -152,11 +152,11 @@ class EventIncidents extends Component
                 $eventEntry->penalty_points += $incident->penalty->points; //Apply again if first lap
             }
             $eventEntry->save();
+            $this->event->refresh();
             $this->event->recalculatePoints();
         }
 
         $this->resetAllFields();
-        $this->event->refresh();
     }
 
     public function resetAllFields()
