@@ -13,8 +13,7 @@ class SeriesLocks extends Component
 
     public function mount()
     {
-        //$this->seriesId = Series::pluck('id')->first();
-        $this->seriesId = 2;
+        $this->seriesId = Series::pluck('id')->first();
         $this->setLocks();
     }
 
