@@ -37,6 +37,7 @@ Route::get('admin/drivers', [DriverManagementController::class, 'index'])->name(
 Route::get('admin/sgptoken', [AdminController::class, 'sgpToken'])->name('admin.sgpToken');
 Route::get('admin/neededtracks', [AdminController::class, 'neededTracks'])->name('admin.neededTracks');
 Route::get('admin/importevent', [AdminController::class, 'importEvent'])->name('admin.importEvent');
+Route::get('admin/lockoverride', [AdminController::class, 'lockOverride'])->name('admin.lockOverride');
 
 Route::get('user', [UserController::class, 'show'])->name('user.show');
 

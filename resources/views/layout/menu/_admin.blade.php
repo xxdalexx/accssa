@@ -19,6 +19,12 @@
                     <span>Import Event</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.lockOverride') }}">
+                    <i class="ri-door-lock-box-line"></i>
+                    <span>Series Locks</span>
+                </a>
+            </li>
             @endcan
             @can('manage users')
             <li>

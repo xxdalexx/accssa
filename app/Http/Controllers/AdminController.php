@@ -32,6 +32,11 @@ class AdminController extends Controller
         return view('admin.import-event');
     }
 
+    public function lockOverride()
+    {
+        return view('admin.locks');
+    }
+
     protected function reverseTrackTimeline()
     {
         $response = (new SgpBase)->bustCache()->getLeagueHistory();
