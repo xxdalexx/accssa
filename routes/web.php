@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DevController;
+use App\Http\Controllers\DiscordController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\SeriesController;
@@ -38,6 +39,7 @@ Route::get('admin/sgptoken', [AdminController::class, 'sgpToken'])->name('admin.
 Route::get('admin/neededtracks', [AdminController::class, 'neededTracks'])->name('admin.neededTracks');
 Route::get('admin/importevent', [AdminController::class, 'importEvent'])->name('admin.importEvent');
 Route::get('admin/lockoverride', [AdminController::class, 'lockOverride'])->name('admin.lockOverride');
+Route::get('admin/discord', [AdminController::class, 'discord'])->name('admin.discord');
 
 Route::get('user', [UserController::class, 'show'])->name('user.show');
 

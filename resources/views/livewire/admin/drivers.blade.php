@@ -54,6 +54,7 @@
                             @elseif($driver->invite()->exists())
                                 {{ $driver->invite->code }}
                             @else
+                                <input wire:model.lazy="snowflakes.driver{{ $driver->id }}" class="form-control" style="height: 2em">
                                 <a wire:click.prevent="genInvite({{ $driver->id }})" href='#'>Generate Invite Code</a>
                             @endif
                         </td>

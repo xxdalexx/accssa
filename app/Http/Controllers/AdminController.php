@@ -37,6 +37,11 @@ class AdminController extends Controller
         return view('admin.locks');
     }
 
+    public function discord()
+    {
+        return view('admin.snowflakes');
+    }
+
     protected function reverseTrackTimeline()
     {
         $response = (new SgpBase)->bustCache()->getLeagueHistory();

@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use App\Http\Guzzle\Sgp\SgpBase;
+use Illuminate\Notifications\Notifiable;
+use App\Notifications\DiscordNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Driver extends BaseModel
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     protected static function boot()
     {
@@ -93,5 +95,15 @@ class Driver extends BaseModel
         $this->save();
 
         return $this;
+    }
+
+    public function routeNotificationForDiscord()
+    {
+        return $this->discord_private_channel_id;
+    }
+
+    public function sendDiscordDM(string $message)
+    {
+        $this->notify(new DiscordNotification($message));
     }
 }

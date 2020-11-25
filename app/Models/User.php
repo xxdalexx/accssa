@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
+use App\Notifications\DiscordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
@@ -38,6 +39,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function routeNotificationForDiscord()
+    {
+        return $this->discord_private_channel_id;
+    }
+
+    public function sendDiscordDM(string $message)
+    {
+        $this->notify(new DiscordNotification($message));
+    }
 
     public function displayRoles(): string
     {

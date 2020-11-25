@@ -4,21 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Driver;
+use App\Models\SeriesLock;
 use App\Models\DriverScore;
 use App\Http\Guzzle\Sgp\SgpBase;
 use App\DataProvider\DataProvider;
 use Illuminate\Support\Facades\Auth;
 use App\Helper\DriverScoreCalculator;
-use App\Models\SeriesLock;
+use App\Notifications\TestNotification;
+use NotificationChannels\Discord\Discord;
+use App\Notifications\DiscordNotification;
 use App\SingleUseFeatures\AbandondedMembers;
 
 class DevController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:admin');
+    }
+
     public function index()
     {
-        $lock = SeriesLock::whereDriverId(58)->first();
-        dd($lock->id);
-        $lock->overrideSplit('AM');
+        $me = Auth::user();
+        $me->sendDiscordDM('Click: http://sgp.test/invite/');
     }
 
     public function aindex()
