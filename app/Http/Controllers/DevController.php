@@ -10,6 +10,7 @@ use App\Http\Guzzle\Sgp\SgpBase;
 use App\DataProvider\DataProvider;
 use Illuminate\Support\Facades\Auth;
 use App\Helper\DriverScoreCalculator;
+use App\Models\Event;
 use App\Notifications\TestNotification;
 use NotificationChannels\Discord\Discord;
 use App\Notifications\DiscordNotification;
@@ -24,8 +25,7 @@ class DevController extends Controller
 
     public function index()
     {
-        $me = Auth::user();
-        $me->sendDiscordDM('Click: http://sgp.test/invite/');
+        $event = Event::build('aPPzsGE-pWWcwmqjsREtz', 2);
     }
 
     public function aindex()

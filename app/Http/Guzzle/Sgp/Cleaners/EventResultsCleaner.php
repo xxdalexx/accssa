@@ -64,7 +64,7 @@ class EventResultsCleaner extends CleanerBase
         $result['driver_id_sgp'] = $driver->sgp_id;
         $result['driver_name'] = $driver->driver_name;
         $result['position'] = $input->position;
-        $result['quali_time'] = $this->qualiResults->firstWhere('driverId', $driver->sgp_id)->bestLapTime;
+        $result['quali_time'] = $this->qualiResults->firstWhere('driverId', $driver->sgp_id)->bestCleanLapTime;
         $result['laps'] = $input->lapCount;
         $result['clean_laps'] = $input->cleanLapCount;
         $result['total_time'] = $input->totalTime;
