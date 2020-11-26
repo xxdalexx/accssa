@@ -3,6 +3,7 @@
         <table id="datatable" class="table table-striped table-bordered">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>User Name</th>
                     <th>Snowflake</th>
                     <th>Private Channel ID</th>
@@ -12,6 +13,9 @@
             <tbody>
                 @foreach($drivers as $key => $driver)
                     <tr>
+                        <td>
+                            {{ $driver['id'] }}
+                        </td>
                         <td>
                             {{ $driver['driver_name'] }}
                         </td>
