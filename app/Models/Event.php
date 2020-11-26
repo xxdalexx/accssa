@@ -140,7 +140,7 @@ class Event extends BaseModel
     {
         $drivers = [];
         foreach($this->eventEntries as $entry) {
-            $drivers[$entry->driver->id] = $entry->driver->displayNameReversed;
+            $drivers['driver' . $entry->driver->id] = $entry->driver->displayNameReversed;
         }
         return $drivers;
     }

@@ -2,11 +2,12 @@
 
 namespace App\Http\Livewire;
 
-use App\DataProvider\DataProvider;
-use App\Models\EventEntry;
-use App\Models\Incident;
-use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
+use App\Models\Incident;
+use App\Models\EventEntry;
+use Illuminate\Support\Str;
+use App\DataProvider\DataProvider;
+use Illuminate\Support\Facades\Auth;
 
 class EventIncidents extends Component
 {
@@ -40,6 +41,7 @@ class EventIncidents extends Component
     {
         $this->event->load('incidents');
         $this->driverList = $this->event->getDriverList();
+        //dd($this->driverList);
         $this->statusList = (new DataProvider)->getIncidentStatuses();
     }
 
@@ -127,9 +129,12 @@ class EventIncidents extends Component
 
     public function newIncident()
     {
+        $accusedId = (int) Str::after($this->accusedId, 'driver');
+        $victimId = (int) Str::after($this->victimId, 'driver');
+
         $incident = Incident::create([
-            'accused_id' => $this->accusedId,
-            'victim_id' => $this->victimId,
+            'accused_id' => $accusedId,
+            'victim_id' => $victimId,
             'reported_by_id' => Auth::id(),
             'penalty_id' => $this->penalty,
             'event_id' => $this->event->id,
@@ -141,7 +146,7 @@ class EventIncidents extends Component
         ]);
 
         //Self Reported
-        if (Auth::user()->driver->id == (int) $this->accusedId) {
+        if (Auth::user()->driver->id == (int) $accusedId) {
             $incident->penalty_applied = true;
             $incident->status = 1; //Accepted by Accused
             $incident->save();

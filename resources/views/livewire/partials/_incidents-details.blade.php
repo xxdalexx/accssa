@@ -16,10 +16,12 @@
                         <td>Victim:</td>
                         <td>{{ $this->victimNameDisplay }}</td>
                     </tr>
+                    @can('give penalties')
                     <tr>
                         <td>Reported By:<br></td>
                         <td>{{ $this->reportedNameDisplay }}</td>
                     </tr>
+                    @endcan
                     <tr>
                         <td>Infraction: </td>
                         <td>{{ $this->penaltyNameDisplay }}</td>
