@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use App\Concerns\ShowStandings;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Series extends BaseModel
 {
-    use HasFactory;
+    use HasFactory, ShowStandings;
 
     public static function new(string $name, bool $splits = true, bool $penaltyPoints = true)
     {
@@ -32,69 +33,6 @@ class Series extends BaseModel
     public function locks()
     {
         return $this->hasMany(SeriesLock::class);
-    }
-
-    public function getStandingsDropOne()
-    {
-        $points = [];
-        $eventsCount = $this->events()->count();
-        $drivers = $this->eventEntries()->select(['driver_id', 'final_points'])->get()->groupBy('driver_id');
-
-        foreach ($drivers as $driver) {
-            if ($driver->count() == $eventsCount && $driver->count() != 1) {
-                $driver = $driver->sortByDesc('final_points');
-                $driver->pop();
-            }
-            $points[$driver->first()->driver->driver_name] = $driver->sum('final_points');
-        }
-
-        arsort($points);
-        return $points;
-    }
-
-    public function getStandingsDropOneSplit()
-    {
-        $points = collect($this->getStandingsDropOne());
-        $split = $points->split(2);
-
-        if (!$split->count()) {
-            return $this->emptyStandings();
-        }
-
-        return $split->toArray();
-    }
-
-    public function getStandings()
-    {
-        $points = [];
-
-        $drivers = $this->eventEntries->groupBy('driver_id');
-
-        foreach ($drivers as $driver) {
-            $points[$driver->first()->driver->driver_name] = $driver->sum('final_points');
-        }
-
-        arsort($points);
-        return $points;
-    }
-
-    public function getStandingsSplit()
-    {
-        $points = collect($this->getStandings());
-        $split = $points->split(2);
-
-        if (!$split->count()) {
-            return $this->emptyStandings();
-        }
-
-        return $split->toArray();
-    }
-
-    private function emptyStandings()
-    {
-        $array[0] = ['No Current Standings' => 0];
-        $array[1] = ['No Current Standings' => 0];
-        return $array;
     }
 
     public function recalculateAllEventPoints()
