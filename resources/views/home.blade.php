@@ -15,13 +15,14 @@
                 </div>
             </div>
             <div class="iq-card-body">
-                <h6>Nov 16th.</h6>
+                <h5>Recent Changes</h5>
+                <h6>Nov 27th.</h6>
                 <p>
-                    Self reported penalties automatically processed and applied.<br>
-                    First lap incident option added to double penalties.<br>
-                    Buttons to accept penalties or request review.<br>
-                    Auth timeout bug on penalty system fixed.<br>
+                    Standings pages for Series that are separated into splits now show by split.<br>
                 </p>
+                <h5>
+                    Someone come up with something better to put here.
+                </h5>
             </div>
         </div>
     </div>
