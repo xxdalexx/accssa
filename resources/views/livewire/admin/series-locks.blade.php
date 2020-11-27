@@ -25,7 +25,7 @@
                             <option value="Silver">Silver</option>
                             <option value="Pro">Pro</option>
                         </select>
-                        <button wire:click="overrideSplit({{ $key }})" class="btn btn-outline-success">Update</button>
+                        <button wire:click="overrideSplit('{{ $key }}')" class="btn btn-outline-success">Update</button>
                         @if(array_key_exists('success', $lock))
                             <p class="text-success">Saved</p>
                         @endif

@@ -3,8 +3,9 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Series;
-use App\Models\SeriesLock;
 use Livewire\Component;
+use App\Models\SeriesLock;
+use Illuminate\Support\Str;
 
 class SeriesLocks extends Component
 {
@@ -30,13 +31,14 @@ class SeriesLocks extends Component
             $row = [];
             $row['driver_name'] = $lock->driver->driver_name;
             $row['split'] = $lock->split;
-            $this->locks[$lock->id] = $row;
+            $this->locks['lock' . $lock->id] = $row;
         }
     }
 
     public function overrideSplit($key)
     {
-        $lock = SeriesLock::find($key);
+        $lockId = (int) Str::after($key, 'lock');
+        $lock = SeriesLock::find($lockId);
         $lock->overrideSplit($this->locks[$key]['split']);
         $this->locks[$key]['success'] = true;
     }
