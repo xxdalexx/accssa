@@ -16,6 +16,7 @@
                         <table id="datatable" class="table table-striped table-bordered">
                             <thead>
                                 <tr>
+                                    <th>Id</th>
                                     <th>Name</th>
                                     <th>Current Roles</th>
                                 </tr>
@@ -23,6 +24,7 @@
                             <tbody>
                                 @foreach($users as $user)
                                     <tr>
+                                        <td>{{ $user->id }}</td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->displayRoles() }}</td>
                                     </tr>
