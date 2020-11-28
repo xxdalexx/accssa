@@ -42,6 +42,11 @@ class AdminController extends Controller
         return view('admin.snowflakes');
     }
 
+    public function preEvent()
+    {
+        return view('admin.pre-event-checks');
+    }
+
     protected function reverseTrackTimeline()
     {
         $response = (new SgpBase)->bustCache()->getLeagueHistory();

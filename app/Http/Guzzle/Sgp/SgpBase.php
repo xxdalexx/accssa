@@ -144,4 +144,10 @@ class SgpBase extends GuzzleBase
         $this->setClientToUserViews($userId);
         return $this->getResponse();
     }
+
+    public function getPreEventDetails($eventId)
+    {
+        $this->setClientToSession($eventId);
+        return $this->getResponse();
+    }
 }

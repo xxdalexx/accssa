@@ -40,6 +40,7 @@ Route::get('admin/neededtracks', [AdminController::class, 'neededTracks'])->name
 Route::get('admin/importevent', [AdminController::class, 'importEvent'])->name('admin.importEvent');
 Route::get('admin/lockoverride', [AdminController::class, 'lockOverride'])->name('admin.lockOverride');
 Route::get('admin/discord', [AdminController::class, 'discord'])->name('admin.discord');
+Route::get('admin/preevent', [AdminController::class, 'preEvent'])->name('admin.preEvent');
 
 Route::get('user', [UserController::class, 'show'])->name('user.show');
 

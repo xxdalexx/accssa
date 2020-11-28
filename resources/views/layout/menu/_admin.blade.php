@@ -25,6 +25,12 @@
                     <span>Series Locks</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.preEvent') }}">
+                    <i class="ri-list-settings-line"></i>
+                    <span>Pre Event Checks</span>
+                </a>
+            </li>
             @endcan
             @can('manage users')
             <li>
