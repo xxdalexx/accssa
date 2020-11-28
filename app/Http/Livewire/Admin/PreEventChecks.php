@@ -38,9 +38,12 @@ class PreEventChecks extends Component
                 //See if split matches if there is a series selected
                 if ($this->seriesId) {
                     if ($lock = $locks->where('driver_id', $dbEntry->id)->first()) {
-                        $this->driverEntriesForTable[$driver->driverId]['splitMatch'] = ($lock->split == $registeredSplit);
+                        $this->driverEntriesForTable[$driver->driverId]['splitMatch'] = (substr($lock->split, 0, 3) == $registeredSplit);
+                        if ($driver->driverName == "Paul Cantea") {
+                            dd($this->driverEntriesForTable[$driver->driverId], $lock->split, $registeredSplit);
+                        }
                     } else {
-                        $this->driverEntriesForTable[$driver->driverId]['splitMatch'] = ($dbEntry->getCurrentSplitAttribute() == $registeredSplit);
+                        $this->driverEntriesForTable[$driver->driverId]['splitMatch'] = (substr($dbEntry->getCurrentSplitAttribute(), 0, 3) == $registeredSplit);
                     }
                 }
             }
