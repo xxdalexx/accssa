@@ -19,9 +19,11 @@
                 <hr>
                 <h4 class="text-center mb-2">Pro Split</h4>
                 @include('series._split-table', ['splitName' => 'Pro'])
-                <hr>
-                <h4 class="text-center mb-2">No Split Qualification</h4>
-                @include('series._split-table', ['splitName' => 'No Score'])
+                @if(isset($points['No Score']))
+                    <hr>
+                    <h4 class="text-center mb-2">No Split Qualification</h4>
+                    @include('series._split-table', ['splitName' => 'No Score'])
+                @endif
             </div>
         </div>
     </div>

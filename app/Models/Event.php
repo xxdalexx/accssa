@@ -70,10 +70,12 @@ class Event extends BaseModel
         $this->repositionSplit($splits, 'Silver');
         $this->repositionSplit($splits, 'AM');
 
-        foreach ($splits['No Score'] as $entry) {
-            $entry->position = 0;
-            $entry->points = 0;
-            $entry->save();
+        if (property_exists($splits, 'No Score')) {
+            foreach ($splits['No Score'] as $entry) {
+                $entry->position = 0;
+                $entry->points = 0;
+                $entry->save();
+            }
         }
     }
 

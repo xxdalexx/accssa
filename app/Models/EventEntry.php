@@ -62,4 +62,13 @@ class EventEntry extends BaseModel
         $raceTime = new RaceTime($this->total_time);
         return $raceTime->withHour();
     }
+
+    public function setQualiTimeAttribute($value)
+    {
+        if (is_null($value)) {
+            $this->attributes['quali_time'] = 0;
+        } else {
+            $this->attributes['quali_time'] = $value;
+        }
+    }
 }
