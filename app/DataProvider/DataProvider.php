@@ -51,7 +51,12 @@ class DataProvider
 
     public function gimmeAGT3Car()
     {
-        return $this->cars->take(24)->random()->name;
+        return $this->cars->take(26)->random()->name;
+    }
+
+    public function gimmeAGT4Car()
+    {
+        return $this->cars->where('dlc', 'GT4 Pack')->random()->name;
     }
 
     public function gimmeATrack()

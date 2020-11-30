@@ -25,7 +25,8 @@ class DevController extends Controller
 
     public function index()
     {
-        $event = Event::build('aPPzsGE-pWWcwmqjsREtz', 2);
+        $provider = new DataProvider;
+        dump($provider->gimmeATrack());
     }
 
     public function aindex()
