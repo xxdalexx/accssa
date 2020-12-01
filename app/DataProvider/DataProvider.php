@@ -74,7 +74,7 @@ class DataProvider
         return [
             0 => 'Awaiting Response From Accused',
             1 => 'Accepted By Accused',
-            2 => 'Review Requested',
+            2 => 'Awaiting Review',
             3 => 'Reviewed - Penalty Confirmed',
             4 => 'Reviewed - No Action Taken'
         ];

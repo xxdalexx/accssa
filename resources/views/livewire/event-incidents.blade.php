@@ -32,7 +32,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Reported For</label> {{ $penalty }}
+                            <label>Reported For</label>
                             <select wire:model="penalty" class="form-control mb-3">
                                 <option value="0">Select Infraction</option>
                                 @foreach(App\Models\Penalty::all() as $penalty)
