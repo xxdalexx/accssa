@@ -1,17 +1,18 @@
 Series management page.
 Add 2020 Tracks.
+Steam Id
 Event Edit
 -Display replay url.
 -Link to sgp page.
 User/Driver Edit Page.
 User profile has active api connection.
+Account for more than one race in an event.
 
 User admin search filter and sorting.
 
 Deactivate user/driver.
 Highlight standings row for logged in user.
 Team Builder.
-Account for more than one race in an event.
 Figure out how to keep menus open. Probably not easily doable with current design pattern.
 Auth redirect.
 Split Data Providers.

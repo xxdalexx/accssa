@@ -35,12 +35,13 @@ Route::get('randomizer', [HomeController::class, 'randomizer'])->name('randomize
 
 Route::get('admin/users', [UserManagementController::class, 'index'])->name('admin.users');
 Route::get('admin/drivers', [DriverManagementController::class, 'index'])->name('admin.drivers');
-Route::get('admin/sgptoken', [AdminController::class, 'sgpToken'])->name('admin.sgpToken');
-Route::get('admin/neededtracks', [AdminController::class, 'neededTracks'])->name('admin.neededTracks');
-Route::get('admin/importevent', [AdminController::class, 'importEvent'])->name('admin.importEvent');
-Route::get('admin/lockoverride', [AdminController::class, 'lockOverride'])->name('admin.lockOverride');
+Route::get('admin/sgp-token', [AdminController::class, 'sgpToken'])->name('admin.sgpToken');
+Route::get('admin/needed-tracks', [AdminController::class, 'neededTracks'])->name('admin.neededTracks');
+Route::get('admin/import-event', [AdminController::class, 'importEvent'])->name('admin.importEvent');
+Route::get('admin/lock-override', [AdminController::class, 'lockOverride'])->name('admin.lockOverride');
+Route::get('admin/discord/message-everyone', [AdminController::class, 'discordMassMessage'])->name('admin.discordMassMessage');
 Route::get('admin/discord', [AdminController::class, 'discord'])->name('admin.discord');
-Route::get('admin/preevent', [AdminController::class, 'preEvent'])->name('admin.preEvent');
+Route::get('admin/pre-event', [AdminController::class, 'preEvent'])->name('admin.preEvent');
 
 Route::get('user', [UserController::class, 'show'])->name('user.show');
 

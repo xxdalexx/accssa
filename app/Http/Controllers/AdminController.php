@@ -42,6 +42,11 @@ class AdminController extends Controller
         return view('admin.snowflakes');
     }
 
+    public function discordMassMessage()
+    {
+        return view('admin.discord-mass-message');
+    }
+
     public function preEvent()
     {
         return view('admin.pre-event-checks');

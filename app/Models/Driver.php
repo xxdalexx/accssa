@@ -106,4 +106,12 @@ class Driver extends BaseModel
     {
         $this->notify(new DiscordNotification($message));
     }
+
+    public static function massDiscordMessage(string $message)
+    {
+        $all = self::whereNotNull('discord_private_channel_id')->get();
+        foreach ($all as $driver) {
+            $driver->sendDiscordDM($message);
+        }
+    }
 }
