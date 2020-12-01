@@ -1,15 +1,13 @@
 Series management page.
 Add 2020 Tracks.
 Steam Id
-Event Edit
--Display replay url.
--Link to sgp page.
 User/Driver Edit Page.
-User profile has active api connection.
+User profile has active api connection. - Currently disabled.
 Account for more than one race in an event.
 
 User admin search filter and sorting.
 
+Practice server config based on programmed event.
 Deactivate user/driver.
 Highlight standings row for logged in user.
 Team Builder.

@@ -40,9 +40,20 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        //Change to actual event if anything else should be done when a driver is created.
+        static::created(function ($newUser) {
+            $dale = User::first();
+            $dale->sendDiscordDM($newUser->name . ' Signed up.');
+        });
+    }
+
     public function routeNotificationForDiscord()
     {
-        return $this->discord_private_channel_id;
+        return $this->driver->discord_private_channel_id;
     }
 
     public function sendDiscordDM(string $message)
