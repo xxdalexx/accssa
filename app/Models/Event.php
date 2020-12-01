@@ -151,4 +151,9 @@ class Event extends BaseModel
     {
         return route('event.show', $this);
     }
+
+    public function sgpLink()
+    {
+        return "https://beta.simracing.gp/events/" . $this->session_id_sgp;
+    }
 }

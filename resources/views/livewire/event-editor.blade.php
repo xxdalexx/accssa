@@ -8,11 +8,23 @@
             </div>
             <div class="iq-card-body">
                 <form wire:submit.prevent="updateName">
-                    <div class="form-group">
-                        <label>Event Name</label>
+                    <label>Event Name</label>
+                    <div class="input-group">
                         <input wire:model.lazy="nameInput" type="text" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-outline-success">Update</button>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-outline-success">Update</button>
+                </form>
+                <hr>
+                <form wire:submit.prevent="updateReplay">
+                    <label>Replay Url</label>
+                    <div class="input-group">
+                        <input wire:model.lazy="replayInput" type="text" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-outline-success">Update</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
