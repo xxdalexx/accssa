@@ -17,7 +17,8 @@ class SeriesController extends Controller
         $viewName = $series->splits ? 'series.show-splits' : 'series.show';
 
         return view($viewName)->with([
-            'points' => $series->getStandings(),
+            'points' => $series->getStandings($series->drop_one_standings),
+            'dropOne' => $series->drop_one_standings,
             'title' => $series->name
         ]);
     }

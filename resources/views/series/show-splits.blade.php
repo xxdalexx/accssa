@@ -5,11 +5,7 @@
 <div class="row">
     <div class="col-sm-12">
         <div class="iq-card">
-            <div class="iq-card-header d-flex justify-content-between">
-                <div class="iq-header-title">
-                    <h4 class="card-title">{{ $title }}</h4>
-                </div>
-            </div>
+            @include('series._card-header')
             <div class="iq-card-body">
                 <h4 class="text-center mb-2">AM Split</h4>
                 @include('series._split-table', ['splitName' => 'AM'])
