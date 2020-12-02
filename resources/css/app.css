@@ -2,3 +2,8 @@
     padding: .5em;
     text-align: center;
 }
+
+.penalty-text-area {
+    width: 100%;
+    height: 10em;
+}

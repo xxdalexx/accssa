@@ -33,9 +33,11 @@ class EventIncidents extends Component
     public $statusDisplay;
     public $displayedStatusId;
     public $displayedIncidentId;
+    public $displayedReviewerNotes;
     public $appliedDisplay;
     public $firstLapDisplay;
     public $statusChangeSuccess = false;
+    public $reviewNotesUpdateSuccess = false;
 
     public function mount()
     {
@@ -48,6 +50,7 @@ class EventIncidents extends Component
     public function hydrate()
     {
         $this->statusChangeSuccess = false;
+        $this->reviewNotesUpdateSuccess = false;
         if (!Auth::check()) {
             return redirect()->route('login');
         }
@@ -64,6 +67,7 @@ class EventIncidents extends Component
         $this->timestampDisplay = $incident->timestamp;
         $this->descriptionDisplay = $incident->description;
         $this->notesDisplay = $incident->reviewers_notes;
+        $this->displayedReviewerNotes = $incident->reviewers_notes; //here
         $this->statusDisplay = $this->statusList[$incident->status];
         $this->appliedDisplay = $incident->penalty_applied;
         $this->firstLapDisplay = $incident->first_lap;
@@ -98,6 +102,16 @@ class EventIncidents extends Component
         $this->displayedStatusId = 2;
         $this->statusDisplay = $this->statusList[2];
         $this->event->refresh();
+    }
+
+    public function updateReviewersNotes()
+    {
+        $incident = Incident::find($this->displayedIncidentId);
+        $incident->reviewers_notes = $this->displayedReviewerNotes;
+        $incident->save();
+        $this->reviewNotesUpdateSuccess = true;
+        $this->event->refresh();
+        $this->showDetails($incident->id); //Duplicate DB Call Caused.
     }
 
     public function acceptPenalty()

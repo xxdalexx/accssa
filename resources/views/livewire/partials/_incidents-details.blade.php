@@ -92,7 +92,7 @@
                     <div class="row">
                         <div class="col-sm-10">
                             <p>
-                                This might be working correctly. You'll need to refresh the page to see if the points were added.
+                                You'll need to refresh the page to see that the points were added in the table above.
                             </p>
                         </div>
                         <div class="col-sm-2 align-self-center">
@@ -116,6 +116,17 @@
                         </div>
                         <div class="col-sm-2 align-self-center">
                             <button wire:click="updateStatusOfDisplayed" class="btn btn-outline-warning">Update</button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label>Reviewer Notes</label>
+                            <textarea wire:model.lazy="displayedReviewerNotes" class="form-control" style="height: 10em; width: 100%;"></textarea>
+                            <button wire:click="updateReviewersNotes" class="btn btn-outline-primary btn-block">Save</button>
+                            @if($this->reviewNotesUpdateSuccess)
+                                <p class="text-success">Saved.</p>
+                            @endif
                         </div>
                     </div>
                 @endcan
