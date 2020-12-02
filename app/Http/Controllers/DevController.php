@@ -25,8 +25,7 @@ class DevController extends Controller
 
     public function index()
     {
-        $provider = new DataProvider;
-        dump($provider->gimmeATrack());
+        $e = 7/0;
     }
 
     public function aindex()

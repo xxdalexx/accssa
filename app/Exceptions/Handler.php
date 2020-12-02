@@ -2,6 +2,9 @@
 
 namespace App\Exceptions;
 
+use Throwable;
+use App\Models\User;
+use ReflectionClass;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
@@ -33,5 +36,15 @@ class Handler extends ExceptionHandler
     public function register()
     {
         //
+    }
+
+    public function report(Throwable $exception)
+    {
+        if (env('APP_ENV') == "production") {
+            $message = $exception->getMessage();
+            $file = $exception->getFile();
+            $line = $exception->getLine();
+            User::first()->sendDiscordDM("Error: " . $message . " - File: " . $file . " - Line: " . $line);
+        }
     }
 }

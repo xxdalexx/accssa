@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <div class="row w-100">
+    <div class="row">
         <div class="col-md-6">
             <table id="datatable" class="table table-striped table-bordered">
                 <thead>
