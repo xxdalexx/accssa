@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Helper\DiscordErrorMessager;
 use Throwable;
 use App\Models\User;
 use ReflectionClass;
@@ -40,10 +41,6 @@ class Handler extends ExceptionHandler
 
     public function report(Throwable $exception)
     {
-        if (env('APP_ENV') == "production" && $message = $exception->getMessage()) {
-            $file = $exception->getFile();
-            $line = $exception->getLine();
-            User::first()->sendDiscordDM("Error: " . $message . " - File: " . $file . " - Line: " . $line);
-        }
+        (new DiscordErrorMessager)->handle($exception);
     }
 }
