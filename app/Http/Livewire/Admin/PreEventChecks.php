@@ -22,6 +22,7 @@ class PreEventChecks extends Component
             $listEntry['name'] = $event->sessionName;
             $this->upcomingEvents[] = $listEntry;
         }
+        $this->sgpEventId = $this->upcomingEvents[0]['id'];
     }
 
     public function pullData()
