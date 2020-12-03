@@ -76,7 +76,8 @@ class DataProvider
             1 => 'Accepted By Accused',
             2 => 'Awaiting Review',
             3 => 'Reviewed - Penalty Confirmed',
-            4 => 'Reviewed - No Action Taken'
+            4 => 'Reviewed - No Action Taken',
+            5 => 'Reviewed - See Notes'
         ];
     }
 }
