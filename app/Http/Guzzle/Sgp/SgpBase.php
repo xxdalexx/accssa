@@ -121,20 +121,31 @@ class SgpBase extends GuzzleBase
         return $cleaner->getCleaned();
     }
 
-    public function getLeagueSessions()
+    public function getLeagueSessions($onlyGame = null)
     {
+        if ($onlyGame == 'acc') {
+            $gameString = '["acc"]';
+        } elseif ($onlyGame == 'ac') {
+            $gameString = '[assetto_corsa"]';
+        } else {
+            $gameString = '["acc","assetto_corsa"]';
+        }
+
         $leagueId = Site::sgpLeagueId();
 
         $this->cacheName = 'leagueSessions.' . $leagueId;
 
         $this->setClientToLeagueSessions();
         $this->buildQuery('leagueId', $leagueId);
-        $gameString = '["acc","assetto_corsa"]';
         $this->buildQuery('games', $gameString);
         $this->buildQuery('limit', '12');
         $this->buildQuery('offset', '0');
-        dd($this);
         return $this->getResponse();
+    }
+
+    public function getUpcomingEvents($game = null)
+    {
+        return $this->getLeagueSessions($game);
     }
 
     public function getUserDetails($userId)

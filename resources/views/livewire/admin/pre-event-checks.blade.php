@@ -1,8 +1,12 @@
 <div>
     <div class="iq-card-body">
         <div class="form-group">
-            <label>SGP Event Id</label>
-            <input wire:model.lazy="sgpEventId" type="text" class="form-control">
+            <label>SGP Event</label>
+            <select wire:model="sgpEventId" class="form-control mb-3">
+                @foreach($upcomingEvents as $event)
+                    <option value="{{ $event['id'] }}">{{ $event['name'] }}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class="form-group">

@@ -25,7 +25,8 @@ class DevController extends Controller
 
     public function index()
     {
-        $e = 7/0;
+        $response = (new SgpBase)->bustCache()->getUpcomingEvents('acc');
+        dd($response);
     }
 
     public function aindex()

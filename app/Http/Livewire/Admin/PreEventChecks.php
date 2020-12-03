@@ -11,6 +11,18 @@ class PreEventChecks extends Component
 {
     public $sgpEventId, $seriesId = "0";
     public $driverEntriesForTable = [];
+    public $upcomingEvents;
+
+    public function mount()
+    {
+        $upcomingEvents = (new SgpBase)->getUpcomingEvents('acc');
+        foreach ($upcomingEvents as $event) {
+            $listEntry = [];
+            $listEntry['id'] = $event->id;
+            $listEntry['name'] = $event->sessionName;
+            $this->upcomingEvents[] = $listEntry;
+        }
+    }
 
     public function pullData()
     {

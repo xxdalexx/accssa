@@ -4,8 +4,6 @@ namespace App\Exceptions;
 
 use App\Helper\DiscordErrorMessager;
 use Throwable;
-use App\Models\User;
-use ReflectionClass;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
