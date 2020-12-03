@@ -40,8 +40,7 @@ class Handler extends ExceptionHandler
 
     public function report(Throwable $exception)
     {
-        if (env('APP_ENV') == "production") {
-            $message = $exception->getMessage();
+        if (env('APP_ENV') == "production" && $message = $exception->getMessage()) {
             $file = $exception->getFile();
             $line = $exception->getLine();
             User::first()->sendDiscordDM("Error: " . $message . " - File: " . $file . " - Line: " . $line);
