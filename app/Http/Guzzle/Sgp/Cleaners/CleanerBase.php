@@ -21,7 +21,10 @@ class CleanerBase
 
     public function getCleaned()
     {
-        return $this->cleaned;
+        if (isset($this->cleaned)) {
+            return $this->cleaned;
+        }
+        return null;
     }
 
     public function getResponse(): object

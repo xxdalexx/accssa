@@ -19,6 +19,10 @@ class DriverScore extends BaseModel
     {
         $apiResults = (new SgpBase)->getDriverResultsForScore($this->driver->sgp_id);
 
+        if (is_null($apiResults)) {
+            return $this;
+        }
+
         foreach ($apiResults as $track => $score) {
             $this->{$track} = $score;
         }
