@@ -22,9 +22,16 @@ class Driver extends BaseModel
         });
     }
 
-    public static function importFromSgp(string $sgpId): self
+    public static function importFromSgp(string $sgpId)
     {
-        $apiResponse = (new SgpBase)->getLeagueMemberList()->members->$sgpId;
+        $apiResponse = (new SgpBase)->getLeagueMemberList();
+
+        //api connection failed
+        if (!$apiResponse) {
+            return false;
+        }
+
+        $apiResponse = $apiResponse->members->$sgpId;
 
         $newDriver = self::updateOrCreate([
             'driver_name' => $apiResponse->name,

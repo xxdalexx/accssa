@@ -24,6 +24,9 @@
                 @if($this->importSuccess)
                     <p class="text-success">{{ $this->importedDriverName }} Imported</p>
                 @endif
+                @if($this->apiFailed)
+                    <p class="text-danger">Connection to SGP failed. Check Token.</p>
+                @endif
             </div>
 
             <table id="datatable" class="table table-striped table-bordered">

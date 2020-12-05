@@ -12,10 +12,17 @@ class PreEventChecks extends Component
     public $sgpEventId, $seriesId = "0";
     public $driverEntriesForTable = [];
     public $upcomingEvents;
+    public $apiFailed = false;
 
     public function mount()
     {
         $upcomingEvents = (new SgpBase)->getUpcomingEvents('acc');
+
+        if (!$upcomingEvents) {
+            $this->apiFailed = true;
+            return;
+        }
+
         foreach ($upcomingEvents as $event) {
             $listEntry = [];
             $listEntry['id'] = $event->id;

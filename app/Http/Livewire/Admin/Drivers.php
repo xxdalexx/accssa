@@ -16,6 +16,7 @@ class Drivers extends Component
     public $importedDriverName;
     public $sortBy = 'driver_name';
     public $snowflakes = [];
+    public $apiFailed = false;
 
     public function mount()
     {
@@ -59,6 +60,11 @@ _This is an automated message, send Dale a message if you have any issues._');
     public function import()
     {
         $newDriver = Driver::importFromSgp($this->importString);
+        //api failed
+        if (!$newDriver) {
+            $this->apiFailed = true;
+            return;
+        }
         $this->importedDriverName = $newDriver->driver_name;
         $this->importString = '';
         $this->importSuccess = true;

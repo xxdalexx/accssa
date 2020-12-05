@@ -1,5 +1,8 @@
 <div>
     <div class="iq-card-body">
+    @if($apiFailed)
+        <p class="text-danger">Connection to SGP failed. Check token.</p>
+    @else
         <div class="form-group">
             <label>SGP Event</label>
             <select wire:model="sgpEventId" class="form-control mb-3">
@@ -59,4 +62,5 @@
             </table>
         </div>
     </div>
+    @endif
 </div>

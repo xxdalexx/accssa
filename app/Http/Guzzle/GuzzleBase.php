@@ -30,7 +30,7 @@ abstract class GuzzleBase
         }
 
         $call = $this->makeCall($method);
-        if ($call->message == 'Unauthorized') {
+        if (isset($call->message) && $call->message == 'Unauthorized') {
             return false;
         }
 
