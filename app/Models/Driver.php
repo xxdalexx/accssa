@@ -111,7 +111,9 @@ class Driver extends BaseModel
 
     public function sendDiscordDM(string $message)
     {
-        $this->notify(new DiscordNotification($message));
+        if ($this->routeNotificationForDiscord()) {
+            $this->notify(new DiscordNotification($message));
+        }
     }
 
     public static function massDiscordMessage(string $message)

@@ -58,7 +58,9 @@ class User extends Authenticatable
 
     public function sendDiscordDM(string $message)
     {
-        $this->notify(new DiscordNotification($message));
+        if ($this->routeNotificationForDiscord()) {
+            $this->notify(new DiscordNotification($message));
+        }
     }
 
     public function displayRoles(): string
