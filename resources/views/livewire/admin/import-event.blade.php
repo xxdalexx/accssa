@@ -23,5 +23,8 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <p wire:loading>Working.</p>
+        @if($this->failed)
+            <p class="text-danger">Failed. SGP token probably needs updated.</p>
+        @endif
     </form>
 </div>

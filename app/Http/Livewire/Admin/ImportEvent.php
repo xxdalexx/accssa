@@ -10,10 +10,18 @@ class ImportEvent extends Component
     public $seriesId;
     public $sgpEventId;
     public $minLaps = 20;
+    public $failed = false;
 
     public function submitForm()
     {
         $event = Event::build($this->sgpEventId, $this->seriesId, $this->minLaps);
+
+        //api call failed
+        if (!$event) {
+            $this->failed = true;
+            return;
+        }
+
         return redirect($event->link());
     }
 

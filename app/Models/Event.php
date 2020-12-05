@@ -14,6 +14,11 @@ class Event extends BaseModel
         $series = Series::find($seriesId);
         $apiResponse = (new SgpBase)->getEventResults($sgpEventId, $minLaps);
 
+        //api call failed.
+        if (!$apiResponse) {
+            return false;
+        }
+
         $event = self::firstOrCreate([
             'session_id_sgp' => $apiResponse['session_id_sgp'],
             'session_name' => $apiResponse['session_name'],

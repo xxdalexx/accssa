@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Cache;
 
 abstract class GuzzleBase
 {
-    protected $client;
+    protected \GuzzleHttp\Client $client;
     protected $params = [];
     protected $cacheName;
     protected $cacheTTL = 86400;
@@ -29,13 +29,19 @@ abstract class GuzzleBase
             Cache::forget($this->cacheName);
         }
 
-        return Cache::remember($this->cacheName, $oneDay = $this->cacheTTL, function () use ($method) {
-            return $this->makeCall($method);
+        $call = $this->makeCall($method);
+        if ($call->message == 'Unauthorized') {
+            return false;
+        }
+
+        return Cache::remember($this->cacheName, $oneDay = $this->cacheTTL, function () use ($call) {
+            return $call;
         });
     }
 
     protected function makeCall($method = 'GET')
     {
+        $this->params['http_errors'] = false;
         return json_decode(@$this->client->request($method, '', $this->params)->getBody()->getContents());
     }
 

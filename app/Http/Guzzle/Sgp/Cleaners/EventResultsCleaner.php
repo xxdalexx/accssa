@@ -10,8 +10,13 @@ class EventResultsCleaner extends CleanerBase
     protected $resultsCollection;
     protected $minLaps;
 
-    public function __construct(object $response, $minLaps = 20)
+    public function __construct($response, $minLaps = 20)
     {
+        //api call failed.
+        if (!$response) {
+            return;
+        }
+
         $this->response = $response;
         $this->minLaps = $minLaps;
         $this->clean();
