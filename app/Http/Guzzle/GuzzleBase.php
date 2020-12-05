@@ -2,6 +2,7 @@
 
 namespace App\Http\Guzzle;
 
+use App\Models\User;
 use Illuminate\Support\Facades\Cache;
 
 abstract class GuzzleBase
@@ -31,6 +32,7 @@ abstract class GuzzleBase
 
         $call = $this->makeCall($method);
         if (isset($call->message) && $call->message == 'Unauthorized') {
+            User::first()->sendDiscordDM('SGP Token Needs Updated.');
             return false;
         }
 
