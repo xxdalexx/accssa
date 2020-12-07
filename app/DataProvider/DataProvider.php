@@ -77,7 +77,8 @@ class DataProvider
             2 => 'Awaiting Review',
             3 => 'Reviewed - Penalty Confirmed',
             4 => 'Reviewed - No Action Taken',
-            5 => 'Reviewed - See Notes'
+            5 => 'Reviewed - See Notes',
+            6 => 'Awaiting Review From Outside Source'
         ];
     }
 }
