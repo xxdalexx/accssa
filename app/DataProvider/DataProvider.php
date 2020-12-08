@@ -28,6 +28,7 @@ class DataProvider
         "suzuka_2019" => 118200,
         "zandvoort_2019" => 94500,
         "zolder_2019" => 87650,
+        "imola_2020" => 99900
     ];
 
     public function __construct()

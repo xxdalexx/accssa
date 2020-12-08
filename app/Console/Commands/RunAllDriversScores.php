@@ -39,7 +39,7 @@ class RunAllDriversScores extends Command
     public function handle()
     {
         foreach (Driver::all() as $driver) {
-            $driver->score->updateFromSgp();
+            $driver->calculateDriverScore();
             $this->info($driver->driver_name . ' updated.');
         }
     }

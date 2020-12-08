@@ -1,21 +1,22 @@
 Front End Admin Penalty Management.
 Add to google calendar.
-Functionality for when password protected events is on SGP.
 Series management page.
 Add 2020 Tracks for driver scores.
 Steam Ids
-User/Driver Edit Page.
-User profile has active api connection. - Currently disabled.
-Account for more than one race in an event.
+Deactivate user/driver.
+Auth redirect.
+League Driving Standards Warnings Tracker
 
+Account for more than one race in an event.
+User profile has active api connection. - Currently disabled.
+User/Driver Edit Page.
 User admin search filter and sorting.
 
+Functionality for when password protected events is on SGP.
 Practice server config based on sgp event.
-Deactivate user/driver.
 Highlight standings row for logged in user.
 Team Builder.
 Figure out how to keep menus open. Probably not easily doable with current design pattern.
-Auth redirect.
 Split Data Providers.
 
 DO ON SERVER

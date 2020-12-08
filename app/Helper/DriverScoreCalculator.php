@@ -2,9 +2,10 @@
 
 namespace App\Helper;
 
-use App\DataProvider\DataProvider;
-use App\Http\Guzzle\Sgp\SgpBase;
 use App\Models\DriverScore;
+use Illuminate\Support\Str;
+use App\Http\Guzzle\Sgp\SgpBase;
+use App\DataProvider\DataProvider;
 
 class DriverScoreCalculator
 {
@@ -47,6 +48,10 @@ class DriverScoreCalculator
     {
         if (!$time) {
             return false;
+        }
+
+        if (Str::endsWith($track, '_2020') && $track != 'imola_2020') {
+            $track = str_replace('2020', '2019', $track);
         }
 
         if (!array_key_exists($track, $this->alienTimes)) {
