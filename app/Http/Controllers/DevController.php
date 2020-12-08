@@ -26,10 +26,8 @@ class DevController extends Controller
 
     public function index()
     {
-        $tracks = (new DataProvider)->getTracks();
-        dd($tracks->keys()->filter(function ($value, $key) {
-            return Str::endsWith($value, '2020');
-        }));
+        $tracks = (new DataProvider)->getCars();
+        dd($tracks);
         // $response = (new SgpBase)->bustCache()->getUpcomingEvents('acc');
         // dd($response);
     }

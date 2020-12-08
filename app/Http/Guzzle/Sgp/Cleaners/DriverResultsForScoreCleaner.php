@@ -71,7 +71,7 @@ class DriverResultsForScoreCleaner extends CleanerBase
     {
         $return = new Collection();
         foreach ($track as $result) {
-            if ($result->carModelId < 24) {
+            if ($result->carModelId < 26) {
                 $races = collect($result->results)->where('type', 'RACE')->where('bestLap', '>', 0);
                 foreach ($races as $race) {
                     $return->push($race);

@@ -32,6 +32,7 @@
             <table id="datatable" class="table table-striped table-bordered">
                 <thead>
                     <tr>
+                        <th>DBID</th>
                         <th wire:click="$set('sortBy', 'driver_name')" class="finger">Name</th>
                         <th wire:click="$set('sortBy', 'driver_score')" class="finger">Score</th>
                         <th>Split</th>
@@ -41,6 +42,7 @@
                 <tbody>
                     @foreach($drivers as $driver)
                     <tr>
+                        <td>{{ $driver->id }}</td>
                         <td>{{ $driver->driver_name }}</td>
                         <td>
                             {{ $driver->driver_score }}
