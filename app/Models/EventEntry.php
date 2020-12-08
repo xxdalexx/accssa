@@ -71,4 +71,15 @@ class EventEntry extends BaseModel
             $this->attributes['quali_time'] = $value;
         }
     }
+
+    public function applyPenalty($points, $doubled = false)
+    {
+        $this->penalty_points += $points;
+
+        if ($doubled) {
+            $this->penalty_points += $points;
+        }
+
+        $this->save();
+    }
 }

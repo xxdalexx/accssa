@@ -30,7 +30,6 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <p wire:click="$refresh" class="finger">Known Bug, Click me if the table dissapears.</p>
                 </div>
             </div>
         </div>

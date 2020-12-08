@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\EventIncidents;
 
 use Livewire\Component;
 use App\Models\Incident;
@@ -11,16 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class EventIncidents extends Component
 {
+    use ReportForm;
+
     public $event;
     public $driverList;
     public $statusList;
-
-    public $penalty = "0";
-    public $accusedId = "0";
-    public $victimId = "0";
-    public $timestamp = "";
-    public $description = "";
-    public $firstLap = "0";
 
     public $showDetails = false;
     public $accusedNameDisplay;
@@ -158,55 +153,8 @@ class EventIncidents extends Component
         $this->showDetails($incident->id);
     }
 
-    public function newIncident()
-    {
-        $accusedId = (int) Str::after($this->accusedId, 'driver');
-        $victimId = (int) Str::after($this->victimId, 'driver');
-
-        $incident = Incident::create([
-            'accused_id' => $accusedId,
-            'victim_id' => $victimId,
-            'reported_by_id' => Auth::id(),
-            'penalty_id' => $this->penalty,
-            'event_id' => $this->event->id,
-            'timestamp' => $this->timestamp,
-            'description' => $this->description,
-            'reviewers_notes' => 'Not reviewed',
-            'first_lap' => $this->firstLap,
-            'status' => 0,
-        ]);
-
-        //Self Reported
-        if (Auth::user()->driver->id == (int) $accusedId) {
-            $incident->penalty_applied = true;
-            $incident->status = 1; //Accepted by Accused
-            $incident->save();
-
-            $eventEntry = EventEntry::where(['event_id' => $incident->event_id, 'driver_id' => $incident->accused_id])->first();
-            $eventEntry->penalty_points += $incident->penalty->points;
-            if ($incident->first_lap) {
-                $eventEntry->penalty_points += $incident->penalty->points; //Apply again if first lap
-            }
-            $eventEntry->save();
-            $this->event->refresh();
-            $this->event->recalculatePoints();
-        }
-        $this->event->refresh();
-        $this->resetAllFields();
-    }
-
-    public function resetAllFields()
-    {
-        $this->penalty = "1";
-        $this->accusedId = "0";
-        $this->victimId = "0";
-        $this->timestamp = "";
-        $this->description = "";
-        $this->firstLap = "0";
-    }
-
     public function render()
     {
-        return view('livewire.event-incidents');
+        return view('livewire.event-incidents.event-incidents');
     }
 }

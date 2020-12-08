@@ -56,6 +56,6 @@
     @livewire('event-editor', ['event' => $event])
 @endcan
 
-@livewire('event-incidents', ['event' => $event])
+@livewire('event-incidents.event-incidents', ['event' => $event])
 
 @endsection
