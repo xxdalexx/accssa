@@ -24,14 +24,14 @@
                         <label class="custom-control-label" for="split-check">Uses Splits</label>
                      </div>
 
-                     <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
-                        <input type="checkbox" class="custom-control-input bg-info" name="penalties" id="penalty-check">
-                        <label class="custom-control-label" for="penalty-check">Uses Penalty Points</label>
-                     </div>
+                    <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                       <input type="checkbox" class="custom-control-input bg-info" name="penalties" id="penalty-check">
+                       <label class="custom-control-label" for="penalty-check">Uses Penalty Points</label>
+                    </div>
 
-                     <hr>
+                    <hr>
 
-                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>

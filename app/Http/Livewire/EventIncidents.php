@@ -33,11 +33,13 @@ class EventIncidents extends Component
     public $statusDisplay;
     public $displayedStatusId;
     public $displayedIncidentId;
+    public $displayedPenaltyId;
     public $displayedReviewerNotes;
     public $appliedDisplay;
     public $firstLapDisplay;
     public $statusChangeSuccess = false;
     public $reviewNotesUpdateSuccess = false;
+    public $penaltyChangeSuccess = false;
 
     public function mount()
     {
@@ -49,11 +51,13 @@ class EventIncidents extends Component
 
     public function hydrate()
     {
-        $this->statusChangeSuccess = false;
-        $this->reviewNotesUpdateSuccess = false;
         if (!Auth::check()) {
             return redirect()->route('login');
         }
+
+        $this->statusChangeSuccess = false;
+        $this->reviewNotesUpdateSuccess = false;
+        $this->penaltyChangeSuccess = false;
     }
 
     public function showDetails($incidentId)
@@ -73,6 +77,7 @@ class EventIncidents extends Component
         $this->firstLapDisplay = $incident->first_lap;
         $this->displayedStatusId = $incident->status;
         $this->displayedIncidentId = $incident->id;
+        $this->displayedPenaltyId = $incident->penalty->id;
         $this->showDetails = true;
     }
 
@@ -92,6 +97,18 @@ class EventIncidents extends Component
             $this->statusChangeSuccess = true;
         }
         $this->event->refresh();
+        $this->showDetails($incident->id);
+    }
+
+    public function updatePenaltyOfDisplayed()
+    {
+        $incident = Incident::find($this->displayedIncidentId);
+        $incident->penalty_id = $this->displayedPenaltyId;
+        if ($incident->save()) {
+            $this->penaltyChangeSuccess = true;
+        }
+        $this->event->refresh();
+        $this->showDetails($incident->id);
     }
 
     public function requestReview()

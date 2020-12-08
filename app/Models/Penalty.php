@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class Penalty extends Model
+class Penalty extends BaseModel
 {
     use HasFactory;
+
+    protected $casts = [
+        'protected' => 'boolean'
+    ];
 
     public function getDisplayNameAttribute()
     {

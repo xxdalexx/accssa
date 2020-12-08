@@ -31,6 +31,12 @@
                     <span>Pre Event Checks</span>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.incidents') }}">
+                    <i class="ri-settings-line"></i>
+                    <span>Incident Settings</span>
+                </a>
+            </li>
             @endcan
             @can('manage users')
             <li>

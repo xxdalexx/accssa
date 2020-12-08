@@ -118,6 +118,26 @@
                             <button wire:click="updateStatusOfDisplayed" class="btn btn-outline-warning">Update</button>
                         </div>
                     </div>
+                    @if(!$this->appliedDisplay)
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <label>Change Penalty</label>
+                            <select wire:model="displayedPenaltyId" class="form-control mb-3">
+                                <option value="0">Status</option>
+                                @foreach(App\Models\Penalty::all() as $penalty)
+                                    <option value="{{ $penalty->id }}">{{ $penalty->displayName }}</option>
+                                @endforeach
+                            </select>
+                            @if($this->penaltyChangeSuccess)
+                                <p class="text-success">Penalty Updated.</p>
+                            @endif
+                        </div>
+                        <div class="col-sm-2 align-self-center">
+                            <button wire:click="updatePenaltyOfDisplayed" class="btn btn-outline-warning">Update</button>
+                        </div>
+                    </div>
+                    @endif
                     <hr>
                     <div class="row">
                         <div class="col-sm-12">

@@ -35,7 +35,7 @@
                             <label>Reported For</label>
                             <select wire:model="penalty" class="form-control mb-3">
                                 <option value="0">Select Infraction</option>
-                                @foreach(App\Models\Penalty::all() as $penalty)
+                                @foreach(App\Models\Penalty::whereProtected(false)->get() as $penalty)
                                     <option value="{{ $penalty->id }}">{{ $penalty->displayName }}</option>
                                 @endforeach
                             </select>

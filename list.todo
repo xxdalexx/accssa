@@ -1,10 +1,11 @@
 Front End Admin Penalty Management.
+Discord messages on Penaltys.
 Add to google calendar/Front page.
 Series management page.
 Add 2020 Tracks for driver scores. -done
-Deactivate user/driver.
-Auth redirect.
+Auth redirect. -done
 League Driving Standards Warnings Tracker
+Deactivate user/driver.
 
 Steam Ids
 Account for more than one race in an event.
@@ -12,11 +13,13 @@ User profile has active api connection. - Currently disabled.
 User/Driver Edit Page.
 User admin search filter and sorting.
 
+Event Incident badly needs refactored.
 Functionality for when password protected events is on SGP.
 Practice server config based on sgp event.
 Highlight standings row for logged in user.
 Team Builder.
 Figure out how to keep menus open. Probably not easily doable with current design pattern.
 Split Data Providers.
+Assign Model Casts.
 
 DO ON SERVER

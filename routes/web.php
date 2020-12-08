@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/discord/message-everyone', [AdminController::class, 'discordMassMessage'])->name('admin.discordMassMessage');
     Route::get('admin/discord', [AdminController::class, 'discord'])->name('admin.discord');
     Route::get('admin/pre-event', [AdminController::class, 'preEvent'])->name('admin.preEvent');
+    Route::get('admin/incident-settings', [AdminController::class, 'incidentSettings'])->name('admin.incidents');
 
     Route::get('user', [UserController::class, 'show'])->name('user.show');
 
