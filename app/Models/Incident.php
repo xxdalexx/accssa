@@ -10,12 +10,16 @@ class Incident extends BaseModel
 
     public function accused()
     {
-        return $this->belongsTo(Driver::class, 'accused_id');
+        return $this->belongsTo(Driver::class, 'accused_id')->withDefault([
+            'driver_name' => "I'm a bug."
+        ]);
     }
 
     public function victim()
     {
-        return $this->belongsTo(Driver::class, 'victim_id');
+        return $this->belongsTo(Driver::class, 'victim_id')->withDefault([
+            'driver_name' => "I'm a bug."
+        ]);
     }
 
     public function reportedBy()
@@ -25,6 +29,8 @@ class Incident extends BaseModel
 
     public function penalty()
     {
-        return $this->belongsTo(Penalty::class);
+        return $this->belongsTo(Penalty::class)->withDefault([
+            'displayName' => "I'm a bug."
+        ]);
     }
 }

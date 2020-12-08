@@ -1,4 +1,4 @@
-Front End Admin Penalty Management.
+Front End Admin Penalty Management. -Create done, need edits.
 Discord messages on Penaltys.
 Add to google calendar/Front page.
 Series management page.
@@ -13,7 +13,7 @@ User profile has active api connection. - Currently disabled.
 User/Driver Edit Page.
 User admin search filter and sorting.
 
-Event Incident badly needs refactored.
+Event Incident badly needs refactored and validation.
 Functionality for when password protected events is on SGP.
 Practice server config based on sgp event.
 Highlight standings row for logged in user.
