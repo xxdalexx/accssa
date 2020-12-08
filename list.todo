@@ -13,7 +13,6 @@ User profile has active api connection. - Currently disabled.
 User/Driver Edit Page.
 User admin search filter and sorting.
 
-Warning System.
 Event Incident badly needs refactored and validation.
 Functionality for when password protected events is on SGP.
 Practice server config based on sgp event.

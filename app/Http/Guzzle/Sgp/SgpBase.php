@@ -75,6 +75,25 @@ class SgpBase extends GuzzleBase
         return $this;
     }
 
+    protected function setClientToApplications($leagueId)
+    {
+        $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/query/participant-application/open-league-applications/$leagueId"]);
+
+        return $this;
+    }
+
+    public function rejectApplication($id)
+    {
+        $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/command/participant-application/RejectApplication/$id/1"]);
+        return $this->getResponse('POST');
+    }
+
+    public function getApplications()
+    {
+        $this->setClientToApplications(Site::sgpLeagueId());
+        return $this->getResponse();
+    }
+
     public function getLeagueHistory()
     {
         $leagueId = Site::sgpLeagueId();

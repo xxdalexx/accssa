@@ -16,6 +16,7 @@ use App\Notifications\TestNotification;
 use NotificationChannels\Discord\Discord;
 use App\Notifications\DiscordNotification;
 use App\SingleUseFeatures\AbandondedMembers;
+use Carbon\Carbon;
 
 class DevController extends Controller
 {
@@ -26,10 +27,7 @@ class DevController extends Controller
 
     public function index()
     {
-        $tracks = (new DataProvider)->getCars();
-        dd($tracks);
-        // $response = (new SgpBase)->bustCache()->getUpcomingEvents('acc');
-        // dd($response);
+
     }
 
     public function aindex()
