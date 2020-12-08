@@ -6,6 +6,9 @@ Add 2020 Tracks for driver scores. -done
 Auth redirect. -done
 League Driving Standards Warnings Tracker
 Deactivate user/driver.
+Fix 0 quali on import.
+Penalty list per driver.
+Buttons to apply and remove qualit and best lap bonuses.
 
 Steam Ids
 Account for more than one race in an event.
@@ -13,6 +16,7 @@ User profile has active api connection. - Currently disabled.
 User/Driver Edit Page.
 User admin search filter and sorting.
 
+Warning System.
 Event Incident badly needs refactored and validation.
 Functionality for when password protected events is on SGP.
 Practice server config based on sgp event.

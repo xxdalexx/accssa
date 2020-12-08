@@ -85,7 +85,7 @@ class EventResultsCleaner extends CleanerBase
 
     protected function assignBestQualiPoints()
     {
-        $best = $this->resultsCollection->sortBy('quali_time')->first();
+        $best = $this->resultsCollection->whereNotNull('quali_time')->sortBy('quali_time')->first();
         $this->cleaned['raceResults'][$best['position']]['top_quali_points'] = 2;
     }
 
