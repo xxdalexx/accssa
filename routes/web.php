@@ -24,28 +24,28 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('event/{event}', [EventController::class, 'show'])->name('event.show');
-
-Route::get('series/create', [SeriesController::class, 'create'])->name('series.create');
-Route::put('series', [SeriesController::class, 'store'])->name('series.store');
-Route::get('series/{series}/dropone', [SeriesController::class, 'showDropOne'])->name('series.showDropOne');
-Route::get('series/{series}', [SeriesController::class, 'show'])->name('series.show');
-
 Route::get('randomizer', [HomeController::class, 'randomizer'])->name('randomizer');
-
-Route::get('admin/users', [UserManagementController::class, 'index'])->name('admin.users');
-Route::get('admin/drivers', [DriverManagementController::class, 'index'])->name('admin.drivers');
-Route::get('admin/sgp-token', [AdminController::class, 'sgpToken'])->name('admin.sgpToken');
-Route::get('admin/needed-tracks', [AdminController::class, 'neededTracks'])->name('admin.neededTracks');
-Route::get('admin/import-event', [AdminController::class, 'importEvent'])->name('admin.importEvent');
-Route::get('admin/lock-override', [AdminController::class, 'lockOverride'])->name('admin.lockOverride');
-Route::get('admin/discord/message-everyone', [AdminController::class, 'discordMassMessage'])->name('admin.discordMassMessage');
-Route::get('admin/discord', [AdminController::class, 'discord'])->name('admin.discord');
-Route::get('admin/pre-event', [AdminController::class, 'preEvent'])->name('admin.preEvent');
-
-Route::get('user', [UserController::class, 'show'])->name('user.show');
-
 Route::get('invite', [InviteController::class, 'index'])->name('invite.index');
 Route::get('invite/{invite:code}', [InviteController::class, 'show'])->name('invite.show');
 
-Route::get('dev', [DevController::class, 'index'])->name('dev');
+Route::middleware('auth')->group(function () {
+    Route::get('event/{event}', [EventController::class, 'show'])->name('event.show');
+    Route::get('series/create', [SeriesController::class, 'create'])->name('series.create');
+    Route::put('series', [SeriesController::class, 'store'])->name('series.store');
+    Route::get('series/{series}/dropone', [SeriesController::class, 'showDropOne'])->name('series.showDropOne');
+    Route::get('series/{series}', [SeriesController::class, 'show'])->name('series.show');
+
+    Route::get('admin/users', [UserManagementController::class, 'index'])->name('admin.users');
+    Route::get('admin/drivers', [DriverManagementController::class, 'index'])->name('admin.drivers');
+    Route::get('admin/sgp-token', [AdminController::class, 'sgpToken'])->name('admin.sgpToken');
+    Route::get('admin/needed-tracks', [AdminController::class, 'neededTracks'])->name('admin.neededTracks');
+    Route::get('admin/import-event', [AdminController::class, 'importEvent'])->name('admin.importEvent');
+    Route::get('admin/lock-override', [AdminController::class, 'lockOverride'])->name('admin.lockOverride');
+    Route::get('admin/discord/message-everyone', [AdminController::class, 'discordMassMessage'])->name('admin.discordMassMessage');
+    Route::get('admin/discord', [AdminController::class, 'discord'])->name('admin.discord');
+    Route::get('admin/pre-event', [AdminController::class, 'preEvent'])->name('admin.preEvent');
+
+    Route::get('user', [UserController::class, 'show'])->name('user.show');
+
+    Route::get('dev', [DevController::class, 'index'])->name('dev');
+});
