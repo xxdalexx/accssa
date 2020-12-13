@@ -24,7 +24,7 @@ class Driver extends BaseModel
 
     public static function importFromSgp(string $sgpId)
     {
-        $apiResponse = (new SgpBase)->getLeagueMemberList();
+        $apiResponse = (new SgpBase)->bustCache()->getLeagueMemberList();
 
         //api connection failed
         if (!$apiResponse) {
