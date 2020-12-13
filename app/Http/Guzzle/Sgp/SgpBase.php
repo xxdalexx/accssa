@@ -108,7 +108,7 @@ class SgpBase extends GuzzleBase
     public function getLeagueMemberList()
     {
         $leagueId = Site::sgpLeagueId();
-        $this->cacheName = 'leagueMemberList.' . $leagueId;
+        //$this->cacheName = 'leagueMemberList.' . $leagueId;
 
         $this->setClientToLeagueViews($leagueId);
         return $this->getResponse();
