@@ -31,7 +31,7 @@ class Driver extends BaseModel
             return false;
         }
 
-        $apiResponse = $apiResponse->members->$sgpId;
+        $apiResponse = $apiResponse->members->{$sgpId};
 
         $newDriver = self::updateOrCreate([
             'driver_name' => $apiResponse->name,
