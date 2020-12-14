@@ -9,9 +9,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $series = Series::find(1);
+        return view('home');
+    }
 
-        return view('home')->withPoints($series->getStandings());
+    public function practiceConfig()
+    {
+        return view('practice-config');
     }
 
     public function randomizer()

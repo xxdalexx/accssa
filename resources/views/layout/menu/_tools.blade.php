@@ -12,4 +12,12 @@
             </a>
         </li>
     </ul>
+    <ul id="menu-tools" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+        <li>
+            <a href="{{ route('practiceConfig') }}">
+                <i class="ri-file-code-line"></i>
+                <span>Practice Server Config Gen</span>
+            </a>
+        </li>
+    </ul>
 </li>

@@ -24,7 +24,8 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('randomizer', [HomeController::class, 'randomizer'])->name('randomizer');
+Route::get('open/randomizer', [HomeController::class, 'randomizer'])->name('randomizer');
+Route::get('open/practice-config', [HomeController::class, 'practiceConfig'])->name('practiceConfig');
 Route::get('invite', [InviteController::class, 'index'])->name('invite.index');
 Route::get('invite/{invite:code}', [InviteController::class, 'show'])->name('invite.show');
 

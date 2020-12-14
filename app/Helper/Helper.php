@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Collection;
+
 function fixTrackNames($original)
 {
     $new = [];
@@ -9,4 +11,9 @@ function fixTrackNames($original)
         $new[$newKey] = $value;
     }
     return $new;
+}
+
+function prettyJson(Collection $input)
+{
+    return $input->toJson(JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
