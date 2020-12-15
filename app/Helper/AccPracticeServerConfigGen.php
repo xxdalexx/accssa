@@ -41,10 +41,14 @@ class AccPracticeServerConfigGen
 
     protected function setPasswordsFromSGP()
     {
-        $passwords = $this->config->passwords;
-        $this->passwords['server'] = $passwords->server ?? '';
-        $this->passwords['admin'] = $passwords->admin ?? '';
-        $this->passwords['spectator'] = $passwords->spectator ?? '';
+        //Commented out code until a better way to figure out api calls.
+        //$passwords = $this->config->passwords;
+        $this->passwords['server'] = '';
+        $this->passwords['admin'] = '';
+        $this->passwords['spectator'] = '';
+        // $this->passwords['server'] = $passwords->server ?? '';
+        // $this->passwords['admin'] = $passwords->admin ?? '';
+        // $this->passwords['spectator'] = $passwords->spectator ?? '';
     }
 
     public function getSettingsJson()
