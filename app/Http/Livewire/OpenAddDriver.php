@@ -22,7 +22,8 @@ class OpenAddDriver extends Component
 
     public $leagueList = [
         'ikG1uiyY6vvTGCTAL486M' => 'ACCSS Americas',
-        'VVyq-AUsfsLZ8yExCO-S9' => 'ACCSS'
+        'VVyq-AUsfsLZ8yExCO-S9' => 'ACCSS',
+        'yL-fZ-6YVsQZBDYLS2F-U' => 'GC'
     ];
 
     public function mount()
