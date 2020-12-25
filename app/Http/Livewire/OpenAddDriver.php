@@ -18,8 +18,6 @@ class OpenAddDriver extends Component
 
     public $upcomingEvents, $upcomingChamps, $memberList, $carClassList, $carList;
 
-    public $pass, $authed = false;
-
     public $leagueList = [
         'ikG1uiyY6vvTGCTAL486M' => 'ACCSS Americas',
         'VVyq-AUsfsLZ8yExCO-S9' => 'ACCSS',
@@ -31,13 +29,6 @@ class OpenAddDriver extends Component
         $this->leagueId = 'ikG1uiyY6vvTGCTAL486M';
         $this->fillEvents();
         $this->fillMemberList();
-    }
-
-    public function auth()
-    {
-        if ($this->pass == 'untilsgpgetstheirshittogether') {
-            $this->authed = true;
-        }
     }
 
     public function updatedSgpEventId()
@@ -52,7 +43,11 @@ class OpenAddDriver extends Component
 
     public function updatedLeagueId()
     {
-        $this->updatedType();
+        if ($this->type == 'Event') {
+            $this->fillEvents();
+        } else {
+            $this->fillChampionships();
+        }
         $this->fillMemberList();
     }
 
@@ -129,18 +124,24 @@ class OpenAddDriver extends Component
         }
 
         foreach ($upcomingEvents as $event) {
-            $listEntry = [];
-            $listEntry['id'] = $event->id;
-            $listEntry['name'] = $event->sessionName;
-            $this->upcomingEvents[] = $listEntry;
+            if (is_null($event->tournamentId)) {
+                $listEntry = [];
+                $listEntry['id'] = $event->id;
+                $listEntry['name'] = $event->sessionName;
+                $this->upcomingEvents[] = $listEntry;
+            }
         }
-        $this->sgpEventId = $this->upcomingEvents[0]['id'];
-        $this->fillFromEventInfo();
+        if (array_key_exists(0, $this->upcomingEvents)) {
+            $this->sgpEventId = $this->upcomingEvents[0]['id'];
+            $this->fillFromEventInfo();
+        } else {
+            $this->sgpEventId = false;
+        }
     }
 
     protected function fillMemberList()
     {
-        $response = (new SgpBase)->getLeagueMemberList();
+        $response = (new SgpBase)->getLeagueMemberList($this->leagueId);
         $this->memberList = [];
 
         foreach ($response->members as $id => $member) {
@@ -158,7 +159,7 @@ class OpenAddDriver extends Component
         $this->carClassList = [];
         $this->carList = [];
 
-        if (count($response->gameSettings->carClasses) > 0) {
+        if (isset($response->gameSettings->carClasses) && count($response->gameSettings->carClasses) > 0) {
             $this->hasCarClass = true;
 
             foreach ($response->gameSettings->carClasses as $class) {

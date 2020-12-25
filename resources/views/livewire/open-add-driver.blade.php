@@ -1,5 +1,4 @@
 <div class="iq-card-body">
-    @if($authed)
     <p wire:loading class="text-success text-center">Loading Data</p>
 
     <div class="form-group">
@@ -79,12 +78,4 @@
     <hr>
     <p>If any errors show in this box, let Dale know.</p>
     @dump($addResponse)
-
-    @else
-    <form wire:submit.prevent="auth">
-        <label>Auth Code</label>
-        <input wire:model.lazy="pass" type="text" class="form-control">
-        <button type="submit" class="btn btn-block btn-outline-success mt-2">Unlock</button>
-    </form>
-    @endif
 </div>
