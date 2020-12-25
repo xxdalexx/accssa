@@ -19,7 +19,8 @@ class SeriesController extends Controller
         return view($viewName)->with([
             'points' => $series->getStandings($series->drop_one_standings),
             'dropOne' => $series->drop_one_standings,
-            'title' => $series->name
+            'title' => $series->name,
+            'series' => $series
         ]);
     }
 
@@ -43,7 +44,8 @@ class SeriesController extends Controller
         $series = Series::new(
             $request->input('name'),
             $request->boolean('splits'),
-            $request->boolean('penalties')
+            $request->boolean('penalties'),
+            $request->boolean('registrationLocked')
         );
         return redirect()->route('series.show', $series);
     }

@@ -35,7 +35,7 @@ class CarTrackRandomizer extends Component
 
     public function repickCar($name)
     {
-        $this->entrants[$name] = $this->dataProvider->gimmeAGT4Car();
+        $this->entrants[$name] = $this->dataProvider->gimmeAGT3Car();
     }
 
     public function deleteEntrant($name)
@@ -49,7 +49,7 @@ class CarTrackRandomizer extends Component
             return;
         }
 
-        $this->entrants[$this->newEntrantName] = $this->dataProvider->gimmeAGT4Car();
+        $this->entrants[$this->newEntrantName] = $this->dataProvider->gimmeAGT3Car();
         $this->newEntrantName = '';
     }
 

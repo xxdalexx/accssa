@@ -15,26 +15,28 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($entries[$splitName] as $entry)
-            <tr>
-                <td>{{ $entry->position }}</td>
-                <td>{{ $entry->driver->displayName }}</td>
-                <td>{{ $entry->laps }}</td>
-                <td>{{ $entry->totalTimeText }}</td>
-                <td>{{ $entry->bestLapText }}</td>
-                <td>
-                    @can('give penalties')
-                        @livewire('penalty-td', ['points' => $entry->penalty_points, 'eventEntryId' => $entry->id])
-                    @else
-                        {{ $entry->penalty_points }}
-                    @endcan
-                </td>
-                <td>{{ $entry->best_lap_points }}</td>
-                <td>{{ $entry->top_quali_points }}</td>
-                <td>{{ $entry->points }}</td>
-                <td>{{ $entry->final_points }}</td>
-            </tr>
-            @endforeach
+            @isset($entries[$splitName])
+                @foreach ($entries[$splitName] as $entry)
+                <tr>
+                    <td>{{ $entry->position }}</td>
+                    <td>{{ $entry->driver->displayName }}</td>
+                    <td>{{ $entry->laps }}</td>
+                    <td>{{ $entry->totalTimeText }}</td>
+                    <td>{{ $entry->bestLapText }}</td>
+                    <td>
+                        @can('give penalties')
+                            @livewire('penalty-td', ['points' => $entry->penalty_points, 'eventEntryId' => $entry->id])
+                        @else
+                            {{ $entry->penalty_points }}
+                        @endcan
+                    </td>
+                    <td>{{ $entry->best_lap_points }}</td>
+                    <td>{{ $entry->top_quali_points }}</td>
+                    <td>{{ $entry->points }}</td>
+                    <td>{{ $entry->final_points }}</td>
+                </tr>
+                @endforeach
+            @endisset
         </tbody>
     </table>
 </div>

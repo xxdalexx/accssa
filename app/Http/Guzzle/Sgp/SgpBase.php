@@ -5,6 +5,8 @@ namespace App\Http\Guzzle\Sgp;
 use App\Http\Guzzle\GuzzleBase;
 use App\Http\Guzzle\Sgp\Cleaners\EventResultsCleaner;
 use App\Http\Guzzle\Sgp\Cleaners\DriverResultsForScoreCleaner;
+use App\Http\Guzzle\Sgp\RequestBuilders\AddDriverToChampionship;
+use App\Http\Guzzle\Sgp\RequestBuilders\AddDriverToEvent;
 use App\Models\Site;
 
 class SgpBase extends GuzzleBase
@@ -54,6 +56,13 @@ class SgpBase extends GuzzleBase
         return $this;
     }
 
+    protected function setClientToLeagueTournaments()
+    {
+        $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/tournament-views/league-tournaments"]);
+
+        return $this;
+    }
+
     protected function setClientToLeagueViews($leagueId)
     {
         $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/league-views/$leagueId"]);
@@ -82,12 +91,6 @@ class SgpBase extends GuzzleBase
         return $this;
     }
 
-    public function rejectApplication($id)
-    {
-        $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/command/participant-application/RejectApplication/$id/1"]);
-        return $this->getResponse('POST');
-    }
-
     public function getApplications()
     {
         $this->setClientToApplications(Site::sgpLeagueId());
@@ -105,9 +108,11 @@ class SgpBase extends GuzzleBase
         return $this->getResponse();
     }
 
-    public function getLeagueMemberList()
+    public function getLeagueMemberList($leagueId = null)
     {
-        $leagueId = Site::sgpLeagueId();
+        if (!$leagueId) {
+            $leagueId = Site::sgpLeagueId();
+        }
         //$this->cacheName = 'leagueMemberList.' . $leagueId;
 
         $this->setClientToLeagueViews($leagueId);
@@ -140,8 +145,9 @@ class SgpBase extends GuzzleBase
         return $cleaner->getCleaned();
     }
 
-    public function getLeagueSessions($onlyGame = null)
+    public function getUpcomingChampionships($onlyGame = null, $leagueId = null)
     {
+        //This is going to need updated for AMS2 and RR when added.
         if ($onlyGame == 'acc') {
             $gameString = '["acc"]';
         } elseif ($onlyGame == 'ac') {
@@ -150,7 +156,35 @@ class SgpBase extends GuzzleBase
             $gameString = '["acc","assetto_corsa"]';
         }
 
-        $leagueId = Site::sgpLeagueId();
+        if (!$leagueId) {
+            $leagueId = Site::sgpLeagueId();
+        }
+
+        $this->cacheName = 'leagueTournaments.' . $leagueId;
+
+        $this->setClientToLeagueTournaments();
+        $this->buildQuery('leagueId', $leagueId);
+        $this->buildQuery('games', $gameString);
+        $this->buildQuery('status', 'OPEN');
+        $this->buildQuery('limit', '12');
+        $this->buildQuery('offset', '0');
+        return $this->getResponse();
+    }
+
+    public function getLeagueSessions($onlyGame = null, $leagueId = null)
+    {
+        //This is going to need updated for AMS2 and RR when added.
+        if ($onlyGame == 'acc') {
+            $gameString = '["acc"]';
+        } elseif ($onlyGame == 'ac') {
+            $gameString = '[assetto_corsa"]';
+        } else {
+            $gameString = '["acc","assetto_corsa"]';
+        }
+
+        if (!$leagueId) {
+            $leagueId = Site::sgpLeagueId();
+        }
 
         $this->cacheName = 'leagueSessions.' . $leagueId;
 
@@ -162,9 +196,9 @@ class SgpBase extends GuzzleBase
         return $this->getResponse();
     }
 
-    public function getUpcomingEvents($game = null)
+    public function getUpcomingEvents($game = null, $leagueId = null)
     {
-        return $this->getLeagueSessions($game);
+        return $this->getLeagueSessions($game, $leagueId);
     }
 
     public function getUserDetails($userId)
@@ -178,6 +212,13 @@ class SgpBase extends GuzzleBase
     public function getPreEventDetails($eventId)
     {
         $this->setClientToSession($eventId);
+        return $this->getResponse();
+    }
+
+    public function getChampionshipDetails($champId)
+    {
+        $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/tournament-view/$champId"]);
+
         return $this->getResponse();
     }
 }

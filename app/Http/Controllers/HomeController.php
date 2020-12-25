@@ -14,12 +14,17 @@ class HomeController extends Controller
 
     public function practiceConfig()
     {
-        return view('practice-config');
+        return view('open.practice-config');
     }
 
     public function randomizer()
     {
-        return view('randomizer');
+        return view('open.randomizer');
+    }
+
+    public function addDriver()
+    {
+        return view('open.add-driver');
     }
 
 }

@@ -48,7 +48,7 @@ class EventResultsCleaner extends CleanerBase
                 $results[$result->position] = $this->buildRaceResult($result);
             }
         }
-        //dd($results);
+        //dd($race);
         $this->cleaned['raceResults'] = $results;
         $this->resultsCollection = collect($results);
 

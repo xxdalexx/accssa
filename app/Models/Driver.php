@@ -96,6 +96,14 @@ class Driver extends BaseModel
         return 'AM';
     }
 
+    public function championshipEligible()
+    {
+        if ($this->getCurrentSplitAttribute() == 'No Score') {
+            return false;
+        }
+        return true;
+    }
+
     public function calculateDriverScore()
     {
         $this->driver_score = $this->score->calculateScore();

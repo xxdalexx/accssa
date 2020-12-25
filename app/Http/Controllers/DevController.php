@@ -27,7 +27,8 @@ class DevController extends Controller
 
     public function index()
     {
-
+        $response = (new SgpBase)->bustCache()->getUpcomingChampionships('acc');
+        dump($response);
     }
 
     public function aindex()

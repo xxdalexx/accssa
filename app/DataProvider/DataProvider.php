@@ -45,6 +45,16 @@ class DataProvider
         return $this->cars;
     }
 
+    public function getGT3CarsForDropdown()
+    {
+        $list = [];
+        foreach ($this->cars->take(26) as $id => $car) {
+            $list['car'.$id] = $car->name;
+        }
+
+        return $list;
+    }
+
     public function getTracks()
     {
         return $this->tracks;

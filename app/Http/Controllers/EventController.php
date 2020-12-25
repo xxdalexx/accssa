@@ -9,6 +9,10 @@ class EventController extends Controller
 {
     public function show(Event $event)
     {
+        if (!$event->results_imported) {
+            return $this->showPreResults($event);
+        }
+
         if ($event->series->splits) {
             return $this->showSplits($event);
         }
@@ -25,6 +29,13 @@ class EventController extends Controller
         return view('event.show-splits')->with([
             'event' => $event->load('eventEntries'),
             'entries' => $entries
+        ]);
+    }
+
+    protected function showPreResults($event)
+    {
+        return view('event.show-pre-results')->with([
+            'event' => $event
         ]);
     }
 }

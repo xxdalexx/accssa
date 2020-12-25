@@ -9,7 +9,23 @@ class Event extends BaseModel
 {
     use HasFactory;
 
-    public static function build($sgpEventId, $seriesId = 1, $minLaps = 20)
+    public static function buildPreResults($sgpEventId, $seriesId)
+    {
+        //$series = Series::find($seriesId);
+        $apiResponse = (new SgpBase)->getPreEventDetails($sgpEventId);
+
+        $event = Event::create([
+            'session_id_sgp' => $apiResponse->id,
+            'session_name' => $apiResponse->sessionName,
+            'track_name' => $apiResponse->trackName,
+            'series_id' => $seriesId,
+            'results_imported' => false
+        ]);
+
+        return $event;
+    }
+
+    public static function build($sgpEventId, $seriesId, $minLaps = 20)
     {
         $series = Series::find($seriesId);
         $apiResponse = (new SgpBase)->getEventResults($sgpEventId, $minLaps);
@@ -63,6 +79,10 @@ class Event extends BaseModel
                 $event->recalculatePoints();
             }
         }
+
+        $event->registration_open = false;
+        $event->results_imported = true;
+        $event->save();
 
         return $event;
     }

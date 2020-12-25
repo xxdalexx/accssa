@@ -10,17 +10,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($points[$splitName][0] as $name => $point)
-                    <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $name }}</td>
-                        <td>{{ $point }}</td>
-                    </tr>
-                    @php
-                        $finalLoop = $loop->iteration;
-                    @endphp
-                    @empty
-                    @endforelse
+                    @if(array_key_exists($splitName, $points))
+                        @forelse($points[$splitName][0] as $name => $point)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $name }}</td>
+                            <td>{{ $point }}</td>
+                        </tr>
+                        @php
+                            $finalLoop = $loop->iteration;
+                        @endphp
+                        @empty
+                        @endforelse
+                    @endif
                 </tbody>
             </table>
         </div>
@@ -34,14 +36,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($points[$splitName][1] as $name => $point)
-                    <tr>
-                        <td>{{ $loop->iteration + $finalLoop }}</td>
-                        <td>{{ $name }}</td>
-                        <td>{{ $point }}</td>
-                    </tr>
-                    @empty
-                    @endforelse
+                    @if(array_key_exists($splitName, $points))
+                        @forelse($points[$splitName][1] as $name => $point)
+                        <tr>
+                            <td>{{ $loop->iteration + $finalLoop }}</td>
+                            <td>{{ $name }}</td>
+                            <td>{{ $point }}</td>
+                        </tr>
+                        @empty
+                        @endforelse
+                    @endif
                 </tbody>
             </table>
         </div>

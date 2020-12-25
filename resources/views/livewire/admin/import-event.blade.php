@@ -15,9 +15,19 @@
         </div>
 
         <div class="form-group">
-            <label>Minimum Lap Cut Off</label>
-            <input wire:model.lazy="minLaps" type="text" class="form-control">
+            <label>Event Status</label>
+            <select wire:model="hasResults" class="form-control mb-3">
+                <option value="0">Pre-Event / No Results</option>
+                <option value="1">Completed / Has Results</option>
+            </select>
         </div>
+
+        @if($hasResults)
+            <div class="form-group">
+                <label>Minimum Lap Cut Off</label>
+                <input wire:model.lazy="minLaps" type="text" class="form-control">
+            </div>
+        @endif
 
         <hr>
 

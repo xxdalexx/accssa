@@ -1,0 +1,696 @@
+{
+    "id": "",
+    "leagueId": "ikG1uiyY6vvTGCTAL486M",
+    "leagueName": "ACCSS Americas",
+    "tournamentId": null,
+    "tournamentName": null,
+    "duration": 61,
+    "driverEntries": [],
+    "sessionName": "US Server Testing",
+    "serverName": "| simracing.gp | ACCSS Americas | US Server Testing #8ILJG",
+    "createdBy": null,
+    "startsAt": "2020-12-18T03:00:00.000Z",
+    "game": "acc",
+    "status": "WAITING",
+    "statusTime": null,
+    "trackId": "zolder_2020",
+    "trackName": "Zolder 2020",
+    "gameVersion": "1.13.2",
+    "carClasses": [],
+    "cars": [
+        {
+            "id": "0",
+            "name": "Porsche 991 GT3",
+            "config": {
+                "ballastkg": 0,
+                "restrictor": 0
+            }
+        },
+        {
+            "id": "20",
+            "name": "AMR V8 Vantage (2019)",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Aston Martin",
+            "country": "GB",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/20/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/20/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/20/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/20/skins/default/preview_sm5.jpg",
+            "caption": "United Kingdom, Aston Martin, GT3",
+            "allTags": [
+                "United Kingdom",
+                "Aston Martin",
+                "GT3"
+            ]
+        },
+        {
+            "id": "12",
+            "name": "AMR Vantage V12 GT3",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Aston Martin",
+            "country": "GB",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/12/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/12/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/12/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/12/skins/default/preview_sm5.jpg",
+            "caption": "United Kingdom, Aston Martin, GT3",
+            "allTags": [
+                "United Kingdom",
+                "Aston Martin",
+                "GT3"
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Audi R8 LMS",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Audi",
+            "country": "DE",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/3/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/3/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/3/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/3/skins/default/preview_sm5.jpg",
+            "caption": "Germany, Audi, GT3",
+            "allTags": [
+                "Germany",
+                "Audi",
+                "GT3"
+            ]
+        },
+        {
+            "id": "19",
+            "name": "Audi R8 LMS Evo (2019)",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Audi",
+            "country": "DE",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/19/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/19/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/19/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/19/skins/default/preview_sm5.jpg",
+            "caption": "Germany, Audi, GT3",
+            "allTags": [
+                "Germany",
+                "Audi",
+                "GT3"
+            ]
+        },
+        {
+            "id": "7",
+            "name": "BMW M6 GT3",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "BMW",
+            "country": "DE",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/7/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/7/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/7/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/7/skins/default/preview_sm5.jpg",
+            "caption": "Germany, BMW, GT3",
+            "allTags": [
+                "Germany",
+                "BMW",
+                "GT3"
+            ]
+        },
+        {
+            "id": "11",
+            "name": "Bentley Continental GT3 2015",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Bentley",
+            "country": "GB",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/11/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/11/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/11/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/11/skins/default/preview_sm5.jpg",
+            "caption": "United Kingdom, Bentley, GT3",
+            "allTags": [
+                "United Kingdom",
+                "Bentley",
+                "GT3"
+            ]
+        },
+        {
+            "id": "8",
+            "name": "Bentley Continental GT3 2018",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Bentley",
+            "country": "GB",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/8/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/8/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/8/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/8/skins/default/preview_sm5.jpg",
+            "caption": "United Kingdom, Bentley, GT3",
+            "allTags": [
+                "United Kingdom",
+                "Bentley",
+                "GT3"
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Ferrari 488 GT3",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Ferrari",
+            "country": "IT",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/2/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/2/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/2/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/2/skins/default/preview_sm5.jpg",
+            "caption": "Italy, Ferrari, GT3",
+            "allTags": [
+                "Italy",
+                "Ferrari",
+                "GT3"
+            ]
+        },
+        {
+            "id": "24",
+            "name": "Ferrari 488 GT3 EVO",
+            "dlc": "World Challenge Pack",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Ferrari",
+            "country": "IT",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/24/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/24/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/24/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/24/skins/default/preview_sm5.jpg",
+            "caption": "Italy, Ferrari, GT3",
+            "allTags": [
+                "Italy",
+                "Ferrari",
+                "GT3"
+            ]
+        },
+        {
+            "id": "21",
+            "name": "Honda NSX Evo (2019)",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Honda",
+            "country": "JP",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/21/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/21/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/21/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/21/skins/default/preview_sm5.jpg",
+            "caption": "Japan, Honda, GT3",
+            "allTags": [
+                "Japan",
+                "Honda",
+                "GT3"
+            ]
+        },
+        {
+            "id": "17",
+            "name": "Honda NSX GT3",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Honda",
+            "country": "JP",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/17/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/17/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/17/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/17/skins/default/preview_sm5.jpg",
+            "caption": "Japan, Honda, GT3",
+            "allTags": [
+                "Japan",
+                "Honda",
+                "GT3"
+            ]
+        },
+        {
+            "id": "14",
+            "name": "Jaguar G3",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Jaguar",
+            "country": "GB",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/14/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/14/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/14/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/14/skins/default/preview_sm5.jpg",
+            "caption": "United Kingdom, Jaguar, GT3",
+            "allTags": [
+                "United Kingdom",
+                "Jaguar",
+                "GT3"
+            ]
+        },
+        {
+            "id": "13",
+            "name": "Lamborghini Gallardo R-EX",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Lamborghini",
+            "country": "IT",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/13/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/13/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/13/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/13/skins/default/preview_sm5.jpg",
+            "caption": "Italy, Lamborghini, GT3",
+            "allTags": [
+                "Italy",
+                "Lamborghini",
+                "GT3"
+            ]
+        },
+        {
+            "id": "4",
+            "name": "Lamborghini Huracan GT3",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Lamborghini",
+            "country": "IT",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/4/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/4/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/4/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/4/skins/default/preview_sm5.jpg",
+            "caption": "Italy, Lamborghini, GT3",
+            "allTags": [
+                "Italy",
+                "Lamborghini",
+                "GT3"
+            ]
+        },
+        {
+            "id": "16",
+            "name": "Lamborghini Huracan GT3 Evo (2019)",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Lamborghini",
+            "country": "IT",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/16/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/16/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/16/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/16/skins/default/preview_sm5.jpg",
+            "caption": "Italy, Lamborghini, GT3",
+            "allTags": [
+                "Italy",
+                "Lamborghini",
+                "GT3"
+            ]
+        },
+        {
+            "id": "15",
+            "name": "Lexus RC F GT3",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Lexus",
+            "country": "JP",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/15/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/15/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/15/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/15/skins/default/preview_sm5.jpg",
+            "caption": "Japan, Lexus, GT3",
+            "allTags": [
+                "Japan",
+                "Lexus",
+                "GT3"
+            ]
+        },
+        {
+            "id": "22",
+            "name": "McLaren 720S GT3 (Special)",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "McLaren",
+            "country": "GB",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/22/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/22/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/22/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/22/skins/default/preview_sm5.jpg",
+            "caption": "United Kingdom, McLaren, GT3",
+            "allTags": [
+                "United Kingdom",
+                "McLaren",
+                "GT3"
+            ]
+        },
+        {
+            "id": "5",
+            "name": "Mclaren 650s GT3",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "McLaren",
+            "country": "GB",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/5/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/5/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/5/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/5/skins/default/preview_sm5.jpg",
+            "caption": "United Kingdom, McLaren, GT3",
+            "allTags": [
+                "United Kingdom",
+                "McLaren",
+                "GT3"
+            ]
+        },
+        {
+            "id": "1",
+            "name": "Mercedes AMG GT3",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Mercedes",
+            "country": "DE",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/1/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/1/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/1/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/1/skins/default/preview_sm5.jpg",
+            "caption": "Germany, Mercedes, GT3",
+            "allTags": [
+                "Germany",
+                "Mercedes",
+                "GT3"
+            ]
+        },
+        {
+            "id": "25",
+            "name": "Mercedes-AMG GT3 Evo",
+            "dlc": "World Challenge Pack",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Mercedes",
+            "country": "DE",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/25/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/25/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/25/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/25/skins/default/preview_sm5.jpg",
+            "caption": "Germany, Mercedes, GT3",
+            "allTags": [
+                "Germany",
+                "Mercedes",
+                "GT3"
+            ]
+        },
+        {
+            "id": "6",
+            "name": "Nissan GT R Nismo GT3 2018",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Nissan",
+            "country": "JP",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/6/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/6/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/6/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/6/skins/default/preview_sm5.jpg",
+            "caption": "Japan, Nissan, GT3",
+            "allTags": [
+                "Japan",
+                "Nissan",
+                "GT3"
+            ]
+        },
+        {
+            "id": "10",
+            "name": "Nissan GT-R Nismo GT3 2015",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Nissan",
+            "country": "JP",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/10/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/10/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/10/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/10/skins/default/preview_sm5.jpg",
+            "caption": "Japan, Nissan, GT3",
+            "allTags": [
+                "Japan",
+                "Nissan",
+                "GT3"
+            ]
+        },
+        {
+            "id": "23",
+            "name": "Porsche 991 II GT3 R",
+            "dlc": "",
+            "tags": [
+                "GT3"
+            ],
+            "brand": "Porsche",
+            "country": "DE",
+            "skins": {
+                "default": {
+                    "name": "default",
+                    "preview": "/acc/1.13.2/cars/23/skins/default/preview.jpg"
+                }
+            },
+            "preview": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/23/skins/default/preview.jpg",
+            "previewSm2": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/23/skins/default/preview_sm2.jpg",
+            "previewSm5": "https://esrp-game-assets-stg.s3-eu-west-1.amazonaws.com/acc/1.13.2/cars/23/skins/default/preview_sm5.jpg",
+            "caption": "Germany, Porsche, GT3",
+            "allTags": [
+                "Germany",
+                "Porsche",
+                "GT3"
+            ]
+        }
+    ],
+    "config": {
+        "driverCategory": 3,
+        "maxEntries": 50,
+        "practiceServerName": null,
+        "practicePassword": null,
+        "practiceTime": 15,
+        "qualificationTime": 0,
+        "raceTime": 0,
+        "passwords": {
+            "server": "toblerone",
+            "admin": "milka",
+            "spectator": "kitkat"
+        },
+        "parts": [
+            {
+                "hourOfDay": 12,
+                "dayOfWeekend": 1,
+                "timeMultiplier": 1,
+                "sessionType": "P",
+                "sessionDurationMinutes": 15
+            },
+            {
+                "dayOfWeekend": 2,
+                "hourOfDay": 12,
+                "sessionDurationMinutes": 10,
+                "sessionType": "Q",
+                "timeMultiplier": 1
+            },
+            {
+                "dayOfWeekend": 3,
+                "hourOfDay": 12,
+                "sessionDurationMinutes": 20,
+                "sessionType": "R",
+                "timeMultiplier": 1
+            }
+        ],
+        "maxRaceLaps": 0,
+        "difficulty": {
+            "assists": {
+                "stabilityControlLevelMax": 0,
+                "disableAutosteer": 1,
+                "disableIdealLine": 0,
+                "disableAutoPitLimiter": 0,
+                "disableAutoGear": 0,
+                "disableAutoClutch": 0,
+                "disableAutoEngineStart": 0,
+                "disableAutoWiper": 0,
+                "disableAutoLights": 0
+            }
+        },
+        "rules": {
+            "eventConfig": {
+                "sessionOverTimeSeconds": 120,
+                "preRaceWaitingTimeSeconds": 120,
+                "postQualySeconds": 0,
+                "postRaceSeconds": 140,
+                "metaData": ""
+            },
+            "eventRules": {
+                "qualifyStandingType": 1,
+                "superpoleMaxCar": -1,
+                "pitWindowLengthSec": -1,
+                "driverStintTimeSec": -1,
+                "isRefuellingAllowedInRace": true,
+                "isRefuellingTimeFixed": false,
+                "maxDriversCount": 1,
+                "mandatoryPitstopCount": 0,
+                "maxTotalDrivingTime": -1,
+                "isMandatoryPitstopRefuellingRequired": false,
+                "isMandatoryPitstopTyreChangeRequired": false,
+                "isMandatoryPitstopSwapDriverRequired": false,
+                "tyreSetCount": 50
+            }
+        },
+        "settings": {
+            "allowAutoDQ": 1,
+            "shortFormationLap": 0,
+            "formationLapType": 1
+        },
+        "trackCondition": {
+            "weather": {
+                "ambientTemp": 23,
+                "cloudLevel": 0.3,
+                "rain": 0,
+                "weatherRandomness": 3,
+                "simracerWeatherConditions": null,
+                "isFixedConditionQualification": null
+            }
+        }
+    },
+    "v": 1
+}

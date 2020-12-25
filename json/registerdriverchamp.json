@@ -1,0 +1,12 @@
+{
+    "aggregateId": "tpzcw44yI42-Afijw2Jma",
+    "aggregateVersion": 5,
+    "command": {
+        "type": "JoinTournament",
+        "userId": "SXs33IH-ZDSa6A2hUzKU_",
+        "carModelId": "50",
+        "carSkinId": "default",
+        "carClassId": "GT4"
+    },
+    "endpoint": "https://stg-api.simracing.gp/stg/tournaments/command"
+}

@@ -29,6 +29,11 @@
                        <label class="custom-control-label" for="penalty-check">Uses Penalty Points</label>
                     </div>
 
+                    <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                       <input type="checkbox" class="custom-control-input bg-info" name="registrationLocked" id="registration-check">
+                       <label class="custom-control-label" for="registration-check">Lock Registration To Tracker</label>
+                    </div>
+
                     <hr>
 
                     <button type="submit" class="btn btn-primary">Submit</button>

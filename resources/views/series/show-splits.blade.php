@@ -7,6 +7,11 @@
         <div class="iq-card">
             @include('series._card-header')
             <div class="iq-card-body">
+
+                @if($series->registration_locked)
+                    @livewire('series.registration', ['series' => $series])
+                @endif
+
                 <h4 class="text-center mb-2">AM Split</h4>
                 @include('series._split-table', ['splitName' => 'AM'])
                 <hr>

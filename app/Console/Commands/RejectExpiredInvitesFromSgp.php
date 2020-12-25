@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 use App\Http\Guzzle\Sgp\SgpBase;
+use App\Http\Guzzle\Sgp\SgpPost;
 
 class RejectExpiredInvitesFromSgp extends Command
 {
@@ -43,7 +44,7 @@ class RejectExpiredInvitesFromSgp extends Command
 
         foreach ($applications as $app) {
             if (Carbon::parse($app->applyDate)->diffInDays() > 6) {
-                (new SgpBase)->rejectApplication($app->id);
+                (new SgpPost)->rejectApplication($app->id);
             }
         }
     }
