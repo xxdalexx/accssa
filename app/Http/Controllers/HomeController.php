@@ -25,7 +25,7 @@ class HomeController extends Controller
 
     public function addDriver()
     {
-        $auth = collect(1,49);
+        $auth = collect([1,49]);
 
         if (!$auth->contains(Auth::id())) {
             abort(401);
