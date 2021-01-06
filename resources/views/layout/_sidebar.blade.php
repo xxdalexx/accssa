@@ -3,7 +3,7 @@
             <div class="iq-sidebar-logo d-flex justify-content-between">
                 <a href="{{ route('home') }}">
                     <img src="{{ asset('images/logo.png') }}" class="img-fluid" alt="">
-                    <span>ACCSSA</span>
+                    <span>NWSR</span>
                 </a>
                 <div class="iq-menu-bt align-self-center">
                     <div class="wrapper-menu">
