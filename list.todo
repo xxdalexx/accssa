@@ -5,7 +5,7 @@ Series management page.
 League Driving Standards Warnings Tracker.
 Deactivate user/driver.
 Penalty list per driver.
-Buttons to apply and remove qualit and best lap bonuses.
+Buttons to apply and remove quali and best lap bonuses.
 
 Steam Ids
 Account for more than one race in an event.
@@ -15,11 +15,16 @@ User admin search filter and sorting.
 
 Event Incident badly needs refactored and validation.
 Functionality for when password protected events is on SGP.
-Practice server config based on sgp event.
+Practice server config based on sgp event. -Add full config option
 Highlight standings row for logged in user.
 Team Builder.
 Figure out how to keep menus open. Probably not easily doable with current design pattern.
 Split Data Providers.
 Assign Model Casts.
+
+Discord Bot
+-Assign split role
+-Check for SGP integration (need sgp to show this in a response)
+-Timed event reminders
 
 DO ON SERVER
