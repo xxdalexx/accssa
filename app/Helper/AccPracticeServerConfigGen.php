@@ -2,6 +2,7 @@
 
 namespace App\Helper;
 
+use Illuminate\Support\Str;
 use App\Http\Guzzle\Sgp\SgpBase;
 
 class AccPracticeServerConfigGen
@@ -11,6 +12,7 @@ class AccPracticeServerConfigGen
     protected $passwords;
     protected $serverName;
     protected $game;
+    protected $type = 'quali';
 
     public function __construct(string $sgpEventId)
     {
@@ -21,7 +23,7 @@ class AccPracticeServerConfigGen
             return;
         }
 
-        $this->serverName = $result->leagueName . ' Practice Server';
+        $this->serverName = (string) $this->generateServerName($result->serverName);
         $this->trackId = $result->trackId;
         $this->config = $result->config;
         $this->setPasswordsFromSGP();
@@ -34,9 +36,25 @@ class AccPracticeServerConfigGen
 
     public function setServerName(string $serverName)
     {
-        if (!empty($serverName)) {
-            $this->serverName = $serverName;
+        $this->serverName = $serverName;
+        return $this;
+    }
+
+    public function setType(string $type)
+    {
+        $this->type = $type;
+        return $this;
+    }
+
+    protected function generateServerName($input)
+    {
+        $serverName = Str::of($input)->replace('| simracing.gp | ', '')->beforeLast('#')->trim();
+
+        if ($serverName->endsWith('|')) {
+            $serverName = $serverName->beforeLast('|')->trim();
         }
+
+        return $serverName->finish(' - Practice Server');
     }
 
     protected function setPasswordsFromSGP()
@@ -91,16 +109,29 @@ class AccPracticeServerConfigGen
         $event['configVersion'] = 1;
         $event['isFixedConditionQualification'] = 1;
 
+        if ($this->type == 'quali') {
+            $event['sessions'][0] = $this->fixedQualiSessionArray();
+        } else {
+            $event['sessions'] = $this->directCopySessionsArray();
+        }
 
+        return prettyJson(collect($event));
+    }
+
+    protected function fixedQualiSessionArray()
+    {
         $session['hourOfDay'] = $this->getFirstRaceHourOfDay();
         $session['dayOfWeekend'] = 3;
         $session['timeMultiplier'] = 1;
         $session['sessionType'] = "Q";
         $session['sessionDurationMinutes'] = 120;
 
-        $event['sessions'][0] = $session;
+        return $session;
+    }
 
-        return prettyJson(collect($event));
+    protected function directCopySessionsArray()
+    {
+        return $this->config->parts;
     }
 
     protected function getFirstRaceHourOfDay()

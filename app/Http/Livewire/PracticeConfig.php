@@ -10,6 +10,7 @@ class PracticeConfig extends Component
 {
     public $apiFailed = false;
     public $notACC = false;
+    public $type = 'quali';
 
     public $sgpEventId;
     public $serverNameInput = '';
@@ -34,7 +35,11 @@ class PracticeConfig extends Component
         }
 
         $generator = new AccPracticeServerConfigGen($this->sgpEventId);
-        $generator->setServerName($this->serverNameInput);
+        $generator->setType($this->type);
+
+        if (!empty($this->serverNameInput)) {
+            $generator->setServerName($this->serverNameInput);
+        }
 
         if (!$generator->isACC()) {
             $this->notACC = true;
