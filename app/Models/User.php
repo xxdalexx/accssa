@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use App\Notifications\DiscordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -71,6 +73,25 @@ class User extends Authenticatable
             $string .= ucwords($role) . ' ';
         }
         return $string;
+    }
+
+    public function passwordReset()
+    {
+        return $this->hasOne(ResetPassword::class);
+    }
+
+    public function createPasswordReset()
+    {
+        return $this->passwordReset()->create([
+            'code' => (string) Str::uuid()
+        ]);
+    }
+
+    public function resetPassword(string $newPassword)
+    {
+        $this->password = Hash::make($newPassword);
+        $this->save();
+        return $this;
     }
 
     public function driver()

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Invite;
+use App\Models\ResetPassword;
 use Illuminate\Http\Request;
 
 class InviteController extends Controller
@@ -18,6 +19,14 @@ class InviteController extends Controller
         return view('auth.invite.show')->with([
             'invite' => $invite,
             'name' => $invite->driver->driver_name
+        ]);
+    }
+
+    public function showReset(ResetPassword $reset)
+    {
+        return view('auth.password-reset.show')->with([
+            'reset' => $reset,
+            'user' => $reset->user
         ]);
     }
 }

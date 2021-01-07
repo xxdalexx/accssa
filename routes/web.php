@@ -29,6 +29,7 @@ Route::get('open/practice-config', [HomeController::class, 'practiceConfig'])->n
 Route::get('open/add-driver', [HomeController::class, 'addDriver'])->name('addDriver');
 Route::get('invite', [InviteController::class, 'index'])->name('invite.index');
 Route::get('invite/{invite:code}', [InviteController::class, 'show'])->name('invite.show');
+Route::get('reset-password/{reset:code}', [InviteController::class, 'showReset'])->name('password-reset.show');
 
 Route::middleware('auth')->group(function () {
     Route::get('event/{event}', [EventController::class, 'show'])->name('event.show');
