@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Guzzle\Sgp\SgpBase;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,7 +15,8 @@ class DevController extends Controller
 
     public function index()
     {
-        dd(Auth::id());
+        $c = (new SgpBase)->getLeagueMemberList();
+        dd($c);
     }
 
     public function aindex()
@@ -27,6 +29,12 @@ class DevController extends Controller
         $user = User::first();
         Auth::login($user);
 
+        return redirect()->route('home');
+    }
+
+    public function loginAs(User $user)
+    {
+        Auth::login($user);
         return redirect()->route('home');
     }
 
