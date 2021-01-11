@@ -21,7 +21,8 @@ class OpenAddDriver extends Component
     public $leagueList = [
         'ikG1uiyY6vvTGCTAL486M' => 'ACCSS Americas',
         'VVyq-AUsfsLZ8yExCO-S9' => 'ACCSS',
-        'yL-fZ-6YVsQZBDYLS2F-U' => 'GC'
+        'yL-fZ-6YVsQZBDYLS2F-U' => 'GC',
+        '1772eUSJzLnh64svJwv7f' => 'Pit Crew'
     ];
 
     public function mount()
@@ -38,7 +39,7 @@ class OpenAddDriver extends Component
 
     public function updatedSgpChampionshipId()
     {
-        $this->fillFromEventInfo();
+        $this->fillFromChampInfo();
     }
 
     public function updatedLeagueId()
