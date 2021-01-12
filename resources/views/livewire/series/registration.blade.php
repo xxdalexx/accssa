@@ -14,6 +14,7 @@
                         @endforeach
                     </select>
                     <button wire:click="register" class="btn btn-outline-success btn-block">Register For Series</button>
+                    <span wire:loading wire:target="register" class="text-success">Working...</span>
                 </div>
             @else
                 <p class="text-primary text-center">You are currently registered in the {{ $split }} split.</p>
