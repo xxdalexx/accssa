@@ -22,5 +22,4 @@
             <p class="text-danger text-center">You currently do not qualify for registration.</p>
         @endif
     @endif
-    <hr>
 </div>

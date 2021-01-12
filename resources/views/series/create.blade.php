@@ -18,20 +18,26 @@
                         <label for="email">Series Name</label>
                         <input type="text" class="form-control" id="name" name="name" autocomplete="off">
                     </div>
-
-                    <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
-                        <input type="checkbox" class="custom-control-input bg-info" name="splits" id="split-check">
-                        <label class="custom-control-label" for="split-check">Uses Splits</label>
-                     </div>
-
-                    <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
-                       <input type="checkbox" class="custom-control-input bg-info" name="penalties" id="penalty-check">
-                       <label class="custom-control-label" for="penalty-check">Uses Penalty Points</label>
-                    </div>
-
-                    <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
-                       <input type="checkbox" class="custom-control-input bg-info" name="registrationLocked" id="registration-check">
-                       <label class="custom-control-label" for="registration-check">Lock Registration To Tracker</label>
+                    <div class="text-center">
+                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                            <input type="checkbox" class="custom-control-input bg-info" name="splits" id="split-check">
+                            <label class="custom-control-label" for="split-check">Uses Splits</label>
+                        </div>
+                        <br>
+                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                           <input type="checkbox" class="custom-control-input bg-info" name="penalties" id="penalty-check">
+                           <label class="custom-control-label" for="penalty-check">Uses Penalty Points</label>
+                        </div>
+                        <br>
+                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                           <input type="checkbox" class="custom-control-input bg-info" name="registrationLocked" id="registration-check">
+                           <label class="custom-control-label" for="registration-check">Lock Registration To Tracker</label>
+                        </div>
+                        <br>
+                        <div class="custom-control custom-checkbox custom-checkbox-color-check custom-control-inline">
+                           <input type="checkbox" class="custom-control-input bg-info" name="dropOne" id="drop-one-check">
+                           <label class="custom-control-label" for="drop-one-check">Drop One Standings</label>
+                        </div>
                     </div>
 
                     <hr>

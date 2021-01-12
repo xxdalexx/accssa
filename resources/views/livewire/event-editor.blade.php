@@ -26,6 +26,12 @@
                         </div>
                     </div>
                 </form>
+                @if($showImport)
+                    <hr>
+                    <label>Min Lap Cut Off</label>
+                    <input wire:model="minLap" type="text" class="form-control mb-2">
+                    <button wire:click="importResults" class="btn btn-outline-primary btn-block">Import Results</button>
+                @endif
             </div>
         </div>
     </div>

@@ -9,8 +9,13 @@
                     <h4 class="card-title">{{ $event->session_name }}</h4>
                 </div>
             </div>
-            @livewire('event.pre-event', ['event' => $event])
+
         </div>
     </div>
 </div>
+
+@can('manage series')
+    @livewire('event-editor', ['event' => $event, 'showImport' => true])
+@endcan
+
 @endsection

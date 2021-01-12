@@ -9,7 +9,7 @@ class Series extends BaseModel
 {
     use HasFactory, ShowStandings;
 
-    public static function new(string $name, bool $splits = true, bool $penaltyPoints = true, bool $registrationLocked = false)
+    public static function new(string $name, bool $splits = true, bool $penaltyPoints = true, bool $registrationLocked = false, bool $dropOne = false)
     {
         $series = new self;
         $series->name = $name;
@@ -17,6 +17,7 @@ class Series extends BaseModel
         $series->penalty_points = $penaltyPoints;
         $series->splits = $splits;
         $series->registration_locked = $registrationLocked;
+        $series->drop_one_standings = $dropOne;
         $series->save();
         return $series;
     }

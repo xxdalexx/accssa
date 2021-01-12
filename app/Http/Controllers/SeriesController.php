@@ -45,7 +45,8 @@ class SeriesController extends Controller
             $request->input('name'),
             $request->boolean('splits'),
             $request->boolean('penalties'),
-            $request->boolean('registrationLocked')
+            $request->boolean('registrationLocked'),
+            $request->boolean('dropOne')
         );
         return redirect()->route('series.show', $series);
     }

@@ -10,7 +10,10 @@
 
                 @if($series->registration_locked)
                     @livewire('series.registration', ['series' => $series])
+                    </div></div><div class="iq-card"><div class="iq-card-body">
                 @endif
+
+                @includeif('series.info.' . $series->id)
 
                 <h4 class="text-center mb-2">AM Split</h4>
                 @include('series._split-table', ['splitName' => 'AM'])
