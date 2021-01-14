@@ -6,6 +6,10 @@ trait ShowStandings
 {
     public function getStandings($dropOne = false)
     {
+        if ($this->registration_locked) {
+            return $this->getStandingsForLockedSeries();
+        }
+
         if ($this->splits && $dropOne) {
             return $this->getStandingsForSplitsDropOne();
         }
@@ -18,6 +22,26 @@ trait ShowStandings
             return $this->getStandingsDropOne();
         }
         return $this->getStandingsRegular();
+    }
+
+    protected function getStandingsForLockedSeries()
+    {
+        $points = [];
+
+        foreach ($this->getLocksBySplit() as $splitName => $entries) {
+            $split = [];
+            foreach ($entries as $entry) {
+                $split[$entry->driver->driver_name] = 0;
+            }
+            $points[$splitName] = $this->cutStandingsArrayInTwo($split);
+        }
+
+        return $points;
+    }
+
+    protected function getLocksBySplit()
+    {
+        return $this->locks->load('driver')->groupBy('split');
     }
 
     protected function getStandingsForSplits()
