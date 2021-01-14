@@ -17,14 +17,10 @@ class DevController extends Controller
 
     public function index()
     {
-        $driver = Auth::user()->driver;
-        $eventId = "2ONrH6mxHReLx0RXLENQu";
+        $override = 'change';
+        $override = $override ?: 'defalut';
 
-        $request = new RemoveDriverFromEvent;
-        $request->setDriver($driver);
-
-        $response = (new SgpPost)->unregisterDriverFromEvent($eventId, $request);
-        dd($response);
+        dd($override);
     }
 
     public function aindex()
