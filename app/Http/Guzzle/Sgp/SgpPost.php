@@ -4,6 +4,7 @@ namespace App\Http\Guzzle\Sgp;
 
 use App\Http\Guzzle\Sgp\RequestBuilders\AddDriverToEvent;
 use App\Http\Guzzle\Sgp\RequestBuilders\AddDriverToChampionship;
+use App\Http\Guzzle\Sgp\RequestBuilders\RemoveDriverFromEvent;
 
 class SgpPost extends SgpBase
 {
@@ -32,6 +33,15 @@ class SgpPost extends SgpBase
         $this->client = new \GuzzleHttp\Client([
             'base_uri' => "https://stg-api.simracing.gp/stg/tournaments/command"
         ]);
+
+        $this->params['body'] = $request->getRequestJson();
+
+        return $this->getResponse('POST');
+    }
+
+    public function unregisterDriverFromEvent(string $eventId, RemoveDriverFromEvent $request)
+    {
+        $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/sessions/$eventId/unregisterDriver"]);
 
         $this->params['body'] = $request->getRequestJson();
 
