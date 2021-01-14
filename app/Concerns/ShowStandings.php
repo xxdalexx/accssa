@@ -135,6 +135,10 @@ trait ShowStandings
             return $this->emptyStandings();
         }
 
+        if ($cut->count() == 1) {
+            $cut[1] = collect(['' => '']);
+        }
+
         return $cut->toArray();
     }
 }

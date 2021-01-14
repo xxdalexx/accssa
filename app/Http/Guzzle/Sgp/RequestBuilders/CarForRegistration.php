@@ -10,11 +10,16 @@ class CarForRegistration
     protected string $skin, $carClassId;
     protected bool $carClassRequired = false;
 
-    public function __construct($id = null)
+    public function __construct($id = null, $class = null)
     {
         $this->skin = "default";
+
         if ($id) {
             $this->setcarId($id);
+        }
+
+        if ($class) {
+            $this->setCarClass($class);
         }
     }
 

@@ -31,24 +31,12 @@ class Registration extends Component
         }
     }
 
-    public function register($makeChange = false)
+    public function register()
     {
-        $driver = Auth::user()->driver;
         $carId = Str::after($this->carInput, 'car');
 
-        //Create Lock
-        $lock = SeriesLock::updateOrCreate([
-            'series_id' => $this->series->id,
-            'driver_id' => $driver->id
-        ]);
-        if ($lock->wasRecentlyCreated) {
-            $lock->split = $driver->calculateDriverScore()->currentSplit;
-            $lock->car_id = (int) $carId;
-            $lock->save();
-        }
-
-        //Go through each event and register
-        $this->registerToEvents($carId, $lock, $driver);
+        $handler = new RegistrationHandler($this->series);
+        $handler->register($carId);
 
         $this->series->refresh();
     }
@@ -56,35 +44,11 @@ class Registration extends Component
     public function changeCar()
     {
         $carId = Str::after($this->carInput, 'car');
-        $driver = Auth::user()->driver;
 
-        //Update Series Lock
-        $lock = $this->series->locks->firstWhere('driver_id', Auth::user()->driver->id);
-        $lock->car_id = $carId;
-        $lock->save();
+        $handler = new RegistrationHandler($this->series);
+        $handler->changeCar($carId);
 
-        //here down should be changed to what sgp uses to change.
-        $request = (new RemoveDriverFromEvent)->setDriver($driver);
-        foreach ($this->series->sgpEventIds() as $eventId) {
-            $response = (new SgpPost)->unregisterDriverFromEvent($eventId, $request);
-        }
-
-        $this->registerToEvents($carId, $lock, $driver);
-    }
-
-    protected function registerToEvents($carId, $lock, $driver)
-    {
-        $registrationCar = new CarForRegistration();
-        $registrationCar->setCarId($carId);
-        $registrationCar->setCarClass($lock->split);
-
-        $registrationRequest = new AddDriverToEvent();
-        $registrationRequest->setDriver($driver);
-        $registrationRequest->setCar($registrationCar);
-
-        foreach ($this->series->sgpEventIds() as $eventId) {
-            $response = (new SgpPost)->addDriverToEvent($eventId, $registrationRequest);
-        }
+        $this->series->refresh();
     }
 
     public function fillProtectedProps()
