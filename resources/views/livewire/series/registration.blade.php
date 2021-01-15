@@ -8,7 +8,7 @@
     @if($series->registration_open)
         @if(Auth::user()->driver->championshipEligible())
             @if(!$registered)
-                @include('livewire\series\_register-form')
+                @include('livewire.series._register-form')
             @else
                 <h4 class="text-primary text-center">You are currently registered in the <strong>{{ $split }}</strong> split
                     with the <strong>{{ $car }}</strong></h4><hr>
