@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Guzzle\Sgp\RequestBuilders\RemoveDriverFromEvent;
+use App\Models\User;
+use App\Models\Series;
 use App\Http\Guzzle\Sgp\SgpBase;
 use App\Http\Guzzle\Sgp\SgpPost;
-use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Guzzle\Sgp\RequestBuilders\RemoveDriverFromEvent;
 
 class DevController extends Controller
 {
@@ -17,10 +18,8 @@ class DevController extends Controller
 
     public function index()
     {
-        $override = 'change';
-        $override = $override ?: 'defalut';
-
-        dd($override);
+        $s = Series::find(5);
+        dd($s->events->each->eventEntries->each->driver);
     }
 
     public function aindex()

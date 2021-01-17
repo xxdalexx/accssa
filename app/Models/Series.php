@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Series extends BaseModel
 {
     use HasFactory, ShowStandings;
+    use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
     public static function new(string $name, bool $splits = true, bool $penaltyPoints = true, bool $registrationLocked = false, bool $dropOne = false)
     {
@@ -30,6 +31,16 @@ class Series extends BaseModel
     public function eventEntries()
     {
         return $this->hasManyThrough(EventEntry::class, Event::class);
+    }
+
+    public function drivers()
+    {
+        return $this->hasManyDeepFromRelations($this->eventEntries(), (new EventEntry)->driver());
+    }
+
+    public function driversForDiscordMessage()
+    {
+        return $this->drivers()->whereNotNull('discord_user_id')->get()->unique();
     }
 
     public function locks()
