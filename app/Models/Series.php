@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use App\Concerns\ShowStandings;
+use App\Notifications\SeriesStartNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Notification;
 
 class Series extends BaseModel
 {
@@ -33,14 +35,19 @@ class Series extends BaseModel
         return $this->hasManyThrough(EventEntry::class, Event::class);
     }
 
-    public function drivers()
+    public function driversFromEntries()
     {
         return $this->hasManyDeepFromRelations($this->eventEntries(), (new EventEntry)->driver());
     }
 
-    public function driversForDiscordMessage()
+    public function driversFromLocks()
     {
-        return $this->drivers()->whereNotNull('discord_user_id')->get()->unique();
+        return $this->hasManyDeepFromRelations($this->locks(), (new SeriesLock)->driver());
+    }
+
+    public function sendSeriesStartNotifications()
+    {
+        Notification::send($this->driversFromLocks, new SeriesStartNotification($this));
     }
 
     public function locks()

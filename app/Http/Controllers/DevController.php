@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Driver;
 use App\Models\Series;
 use App\Http\Guzzle\Sgp\SgpBase;
 use App\Http\Guzzle\Sgp\SgpPost;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\SeriesStartNotification;
 use App\Http\Guzzle\Sgp\RequestBuilders\RemoveDriverFromEvent;
 
 class DevController extends Controller
@@ -18,8 +21,10 @@ class DevController extends Controller
 
     public function index()
     {
-        $s = Series::find(5);
-        dd($s->events->each->eventEntries->each->driver);
+        $series = Series::find(6);
+        //$series->sendSeriesStartNotifications();
+
+        //Notification::send($drivers, new SeriesStartNotification(Series::find(6)));
     }
 
     public function aindex()
