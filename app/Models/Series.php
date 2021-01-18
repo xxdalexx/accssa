@@ -47,7 +47,10 @@ class Series extends BaseModel
 
     public function sendSeriesStartNotifications()
     {
-        Notification::send($this->driversFromLocks, new SeriesStartNotification($this));
+        foreach ($this->driversFromLocks as $driver) {
+            $driver->notify(new SeriesStartNotification($this));
+            dump($driver->driver_name);
+        }
     }
 
     public function locks()
