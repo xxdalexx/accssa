@@ -29,24 +29,24 @@ class Event extends BaseModel
     {
         $series = Series::find($seriesId);
         $apiResponse = (new SgpBase)->getEventResults($sgpEventId, $minLaps);
-
         //api call failed.
         if (!$apiResponse) {
             return false;
         }
 
-        $event = self::firstOrCreate([
+        $event = self::updateOrCreate([
             'session_id_sgp' => $apiResponse['session_id_sgp'],
-            'session_name' => $apiResponse['session_name'],
             'track_name' => $apiResponse['track_name'],
             'series_id' => $seriesId
+        ],[
+            'session_name' => $apiResponse['session_name']
         ]);
 
         foreach ($apiResponse['raceResults'] as $result) {
             $driver = $result['driverModel'];
 
             if ($event->series->splits) {
-                $lock = SeriesLock::firstOrCreate([
+                $lock = SeriesLock::updateOrCreate([
                     'series_id' => $seriesId,
                     'driver_id' => $driver->id
                 ]);

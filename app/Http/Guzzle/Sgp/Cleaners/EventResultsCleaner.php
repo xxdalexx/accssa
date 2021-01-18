@@ -86,12 +86,12 @@ class EventResultsCleaner extends CleanerBase
     protected function assignBestQualiPoints()
     {
         $best = $this->resultsCollection->whereNotNull('quali_time')->sortBy('quali_time')->first();
-        $this->cleaned['raceResults'][$best['position']]['top_quali_points'] = 2;
+        $this->cleaned['raceResults'][$best['position']]['top_quali_points'] = 1;
     }
 
     protected function assignBestLapPoints()
     {
         $best = $this->resultsCollection->sortBy('best_lap')->first();
-        $this->cleaned['raceResults'][$best['position']]['best_lap_points'] = 2;
+        $this->cleaned['raceResults'][$best['position']]['best_lap_points'] = 1;
     }
 }
