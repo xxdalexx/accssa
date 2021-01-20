@@ -57,6 +57,11 @@ class AdminController extends Controller
         return view('admin.incident-settings');
     }
 
+    public function permissions()
+    {
+        return view('admin.permissions');
+    }
+
     protected function reverseTrackTimeline()
     {
         $response = (new SgpBase)->bustCache()->getLeagueHistory();

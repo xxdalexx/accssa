@@ -69,8 +69,18 @@ class User extends Authenticatable
     {
         $string = '';
         $roleNames = $this->getRoleNames();
-        foreach($roleNames as $role) {
+        foreach ($roleNames as $role) {
             $string .= ucwords($role) . ' ';
+        }
+        return $string;
+    }
+
+    public function displayPermissions(): string
+    {
+        $string = '';
+        $permissionNames = $this->getPermissionNames();
+        foreach ($permissionNames as $name) {
+            $string .= ucwords($name) . ' ';
         }
         return $string;
     }

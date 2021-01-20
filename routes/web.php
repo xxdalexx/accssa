@@ -44,10 +44,12 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/needed-tracks', [AdminController::class, 'neededTracks'])->name('admin.neededTracks');
     Route::get('admin/import-event', [AdminController::class, 'importEvent'])->name('admin.importEvent');
     Route::get('admin/lock-override', [AdminController::class, 'lockOverride'])->name('admin.lockOverride');
-    Route::get('admin/discord/message-everyone', [AdminController::class, 'discordMassMessage'])->name('admin.discordMassMessage');
-    Route::get('admin/discord', [AdminController::class, 'discord'])->name('admin.discord');
     Route::get('admin/pre-event', [AdminController::class, 'preEvent'])->name('admin.preEvent');
     Route::get('admin/incident-settings', [AdminController::class, 'incidentSettings'])->name('admin.incidents');
+    Route::get('admin/permissions', [AdminController::class, 'permissions'])->name('admin.permissions');
+
+    Route::get('admin/discord/message-everyone', [AdminController::class, 'discordMassMessage'])->name('admin.discordMassMessage');
+    Route::get('admin/discord', [AdminController::class, 'discord'])->name('admin.discord');
 
     Route::get('user', [UserController::class, 'show'])->name('user.show');
 

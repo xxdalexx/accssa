@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\SeriesStartNotification;
 use App\Http\Guzzle\Sgp\RequestBuilders\RemoveDriverFromEvent;
+use App\SingleUseFeatures\MembersMissingDiscordOnSgp;
 
 class DevController extends Controller
 {
@@ -21,10 +22,7 @@ class DevController extends Controller
 
     public function index()
     {
-        $series = Series::find(6);
-        //$series->sendSeriesStartNotifications();
-
-        //Notification::send($drivers, new SeriesStartNotification(Series::find(6)));
+        MembersMissingDiscordOnSgp::run();
     }
 
     public function aindex()
