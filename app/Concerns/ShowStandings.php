@@ -6,7 +6,7 @@ trait ShowStandings
 {
     public function getStandings($dropOne = false)
     {
-        if ($this->registration_locked) {
+        if ($this->registration_locked && $this->eventEntries->count() == 0) {
             return $this->getStandingsForLockedSeries();
         }
 

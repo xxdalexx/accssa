@@ -1,12 +1,8 @@
-Before Sunday:
 Refactor bonus points.
-Build api calls for split override.
-Entrant list.
 
 Front End Admin Penalty Management. -Create done, need edits.
 Discord messages on Penaltys.
 Add to google calendar/Front page.
-Series management page.
 League Driving Standards Warnings Tracker.
 Deactivate user/driver.
 Penalty list per driver.
@@ -29,7 +25,7 @@ Assign Model Casts.
 
 Discord Bot
 -Assign split role
--Check for SGP integration (need sgp to show this in a response)
+-Check for SGP integration
 -Timed event reminders
 
 DO ON SERVER
