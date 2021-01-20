@@ -33,4 +33,29 @@ class Incident extends BaseModel
             'displayName' => "I'm a bug."
         ]);
     }
+
+    public function applyPenalty($userAccepted = false)
+    {
+        $eventEntry = EventEntry::where(['event_id' => $this->event_id, 'driver_id' => $this->accused_id])->first();
+
+        $eventEntry->penalty_points += $this->penalty->points;
+        if ($this->first_lap) {
+            $eventEntry->penalty_points += $this->penalty->points; //Apply again if first lap
+        }
+        $eventEntry->save();
+
+        $this->penalty_applied = true;
+
+        if ($userAccepted) {
+            $this->status = 1;
+        }
+
+        $this->save();
+    }
+
+    public function requestReview()
+    {
+        $this->status = 2;
+        $this->save();
+    }
 }

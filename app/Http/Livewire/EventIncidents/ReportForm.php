@@ -39,23 +39,11 @@ trait ReportForm
 
         //Self Reported
         if (Auth::user()->driver->id == (int) $accusedId) {
-            $this->selfReported($incident);
+            $incident->applyPenalty(true);
         }
+
         $this->event->refresh();
         $this->resetAllFields();
-    }
-
-    protected function selfReported($incident)
-    {
-        $eventEntry = EventEntry::where(['event_id' => $incident->event_id, 'driver_id' => $incident->accused_id])->first();
-        $eventEntry->applyPenalty($incident->penalty->points, $incident->first_lap);
-
-        $incident->penalty_applied = true;
-        $incident->status = 1; //Accepted by Accused
-        $incident->save();
-
-        $this->event->refresh();
-        $this->event->recalculatePoints();
     }
 
     public function resetAllFields()

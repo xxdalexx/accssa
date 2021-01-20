@@ -40,7 +40,6 @@ class EventIncidents extends Component
     {
         $this->event->load('incidents');
         $this->driverList = $this->event->getDriverList();
-        //dd($this->driverList);
         $this->statusList = (new DataProvider)->getIncidentStatuses();
     }
 
@@ -66,7 +65,7 @@ class EventIncidents extends Component
         $this->timestampDisplay = $incident->timestamp;
         $this->descriptionDisplay = $incident->description;
         $this->notesDisplay = $incident->reviewers_notes;
-        $this->displayedReviewerNotes = $incident->reviewers_notes; //here
+        $this->displayedReviewerNotes = $incident->reviewers_notes;
         $this->statusDisplay = $this->statusList[$incident->status];
         $this->appliedDisplay = $incident->penalty_applied;
         $this->firstLapDisplay = $incident->first_lap;
@@ -80,6 +79,7 @@ class EventIncidents extends Component
     {
         $incident = Incident::find($this->displayedIncidentId);
         $incident->delete();
+
         $this->event->refresh();
         $this->showDetails = false;
     }
@@ -88,9 +88,11 @@ class EventIncidents extends Component
     {
         $incident = Incident::find($this->displayedIncidentId);
         $incident->status = $this->displayedStatusId;
+
         if ($incident->save()) {
             $this->statusChangeSuccess = true;
         }
+
         $this->event->refresh();
         $this->showDetails($incident->id);
     }
@@ -99,9 +101,11 @@ class EventIncidents extends Component
     {
         $incident = Incident::find($this->displayedIncidentId);
         $incident->penalty_id = $this->displayedPenaltyId;
+
         if ($incident->save()) {
             $this->penaltyChangeSuccess = true;
         }
+
         $this->event->refresh();
         $this->showDetails($incident->id);
     }
@@ -109,8 +113,8 @@ class EventIncidents extends Component
     public function requestReview()
     {
         $incident = Incident::find($this->displayedIncidentId);
-        $incident->status = 2;
-        $incident->save();
+        $incident->requestReview();
+
         $this->displayedStatusId = 2;
         $this->statusDisplay = $this->statusList[2];
         $this->event->refresh();
@@ -121,6 +125,7 @@ class EventIncidents extends Component
         $incident = Incident::find($this->displayedIncidentId);
         $incident->reviewers_notes = $this->displayedReviewerNotes;
         $incident->save();
+
         $this->reviewNotesUpdateSuccess = true;
         $this->event->refresh();
         $this->showDetails($incident->id); //Duplicate DB Call Caused.
@@ -134,19 +139,7 @@ class EventIncidents extends Component
     public function applyPenalty($userAccepted = false)
     {
         $incident = Incident::find($this->displayedIncidentId);
-        $eventEntry = EventEntry::where(['event_id' => $incident->event_id, 'driver_id' => $incident->accused_id])->first();
-
-        $eventEntry->penalty_points += $incident->penalty->points;
-        if ($incident->first_lap) {
-            $eventEntry->penalty_points += $incident->penalty->points; //Apply again if first lap
-        }
-        $eventEntry->save();
-
-        $incident->penalty_applied = true;
-        if ($userAccepted) {
-            $incident->status = 1;
-        }
-        $incident->save();
+        $incident->applyPenalty($userAccepted);
 
         $this->event->refresh();
         $this->event->recalculatePoints();

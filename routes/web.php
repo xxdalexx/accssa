@@ -46,8 +46,8 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/lock-override', [AdminController::class, 'lockOverride'])->name('admin.lockOverride');
     Route::get('admin/pre-event', [AdminController::class, 'preEvent'])->name('admin.preEvent');
     Route::get('admin/incident-settings', [AdminController::class, 'incidentSettings'])->name('admin.incidents');
-    Route::get('admin/permissions', [AdminController::class, 'permissions'])->name('admin.permissions');
 
+    Route::get('admin/permissions', [AdminController::class, 'permissions'])->name('admin.permissions');
     Route::get('admin/discord/message-everyone', [AdminController::class, 'discordMassMessage'])->name('admin.discordMassMessage');
     Route::get('admin/discord', [AdminController::class, 'discord'])->name('admin.discord');
 
