@@ -12,6 +12,16 @@ class Series extends BaseModel
     use HasFactory, ShowStandings;
     use \Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
+    protected $casts = [
+        'penalty_points' => 'boolean',
+        'splits' => 'boolean',
+        'drop_one_standings' => 'boolean',
+        'registration_locked' => 'boolean',
+        'registration_open' => 'boolean',
+        'archived' => 'boolean',
+        'vehicle_change_locked' => 'boolean',
+    ];
+
     public static function new(string $name, bool $splits = true, bool $penaltyPoints = true, bool $registrationLocked = false, bool $dropOne = false)
     {
         $series = new self;
@@ -110,6 +120,12 @@ class Series extends BaseModel
     public function getLockForUser(User $user)
     {
         return $this->getLockForDriver($user->driver);
+    }
+
+    public function disableVehicleChange()
+    {
+        $this->vehicle_change_locked = true;
+        $this->save();
     }
 
     public function link()

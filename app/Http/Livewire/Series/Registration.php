@@ -51,6 +51,11 @@ class Registration extends Component
         $this->series->refresh();
     }
 
+    public function disableCarChange()
+    {
+        $this->series->disableVehicleChange();
+    }
+
     public function fillProtectedProps()
     {
         $this->registered = $this->series->hasLockForUser(Auth::user());
