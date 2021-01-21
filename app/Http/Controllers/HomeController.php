@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+    public function new()
+    {
+        return view('new-home');
+    }
+
     public function index()
     {
         return view('home');

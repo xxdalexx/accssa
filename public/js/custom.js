@@ -1,553 +1,134 @@
 /*
-Template: Metorik - Responsive Bootstrap 4 Admin Dashboard Template
-Author: iqonicthemes.in
-Design and Developed by: iqonicthemes.in
-NOTE: This file contains the styling for responsive Template.
+=========================================
+|                                       |
+|           Scroll To Top               |
+|                                       |
+=========================================
+*/ 
+$('.scrollTop').click(function() {
+    $("html, body").animate({scrollTop: 0});
+});
+
+
+$('.navbar .dropdown.notification-dropdown > .dropdown-menu, .navbar .dropdown.message-dropdown > .dropdown-menu ').click(function(e) {
+    e.stopPropagation();
+});
+
+/*
+=========================================
+|                                       |
+|       Multi-Check checkbox            |
+|                                       |
+=========================================
 */
 
-/*----------------------------------------------
-Index Of Script
-------------------------------------------------
+function checkall(clickchk, relChkbox) {
 
-:: Page Loader
-:: Scrollbar
-:: Page Menu
-:: Header fixed
-:: Tooltip
-:: Sidebar Widget
-:: Magnific Popup
-:: Ripple Effect
-:: FullScreen
-:: Page faq
-:: Owl Carousel
-:: Select input
-:: Search input
-:: Counter
-:: slick
-:: Progress Bar
-:: Wow Animation
-:: Mailbox
-:: chatuser
-:: chatuser main
-:: Chat
-:: todo Page
-:: Sidebar Widget
-:: checkout
+    var checker = $('#' + clickchk);
+    var multichk = $('.' + relChkbox);
 
 
-------------------------------------------------
-Index Of Script
-----------------------------------------------*/
-
-(function(jQuery) {
-
-
-    "use strict";
-
-    jQuery(document).ready(function() {
+    checker.click(function () {
+        multichk.prop('checked', $(this).prop('checked'));
+    });    
+}
 
 
-        /*---------------------------------------------------------------------
-        Page Loader
-        -----------------------------------------------------------------------*/
-        jQuery("#load").fadeOut();
-        jQuery("#loading").delay().fadeOut("");
+/*
+=========================================
+|                                       |
+|           MultiCheck                  |
+|                                       |
+=========================================
+*/
 
+/*
+    This MultiCheck Function is recommanded for datatable
+*/
 
-
-        /*---------------------------------------------------------------------
-        Scrollbar
-        -----------------------------------------------------------------------*/
-        let Scrollbar = window.Scrollbar;
-        if (jQuery('#sidebar-scrollbar').length) {
-            Scrollbar.init(document.querySelector('#sidebar-scrollbar'), options);
-        }
-        let Scrollbar1 = window.Scrollbar;
-        if (jQuery('#right-sidebar-scrollbar').length) {
-            Scrollbar1.init(document.querySelector('#right-sidebar-scrollbar'), options);
-        }
-
-
-
-        /*---------------------------------------------------------------------
-        Page Menu
-        -----------------------------------------------------------------------*/
-        jQuery(document).on('click', '.wrapper-menu', function() {
-            jQuery(this).toggleClass('open');
-            jQuery("body").toggleClass("sidebar-main");
-        });
-
-
-
-        /*---------------------------------------------------------------------
-         Header fixed
-         -----------------------------------------------------------------------*/
-
-        jQuery(window).scroll(function() {
-            if (jQuery(window).scrollTop() >= 75) {
-                jQuery('.iq-top-navbar').addClass('fixed-header');
-            } else {
-                jQuery('.iq-top-navbar').removeClass('fixed-header');
-            }
-        });
-
-
-
-        /*---------------------------------------------------------------------
-        Tooltip
-        -----------------------------------------------------------------------*/
-        jQuery('[data-toggle="popover"]').popover();
-        jQuery('[data-toggle="tooltip"]').tooltip();
-
-
-
-        /*---------------------------------------------------------------------
-        Sidebar Widget
-        -----------------------------------------------------------------------*/
-        function checkClass(ele, type, className) {
-            switch (type) {
-                case 'addClass':
-                    if (!ele.hasClass(className)) {
-                        ele.addClass(className);
-                    }
-                    break;
-                case 'removeClass':
-                    if (ele.hasClass(className)) {
-                        ele.removeClass(className);
-                    }
-                    break;
-                case 'toggleClass':
-                    ele.toggleClass(className);
-                    break;
-            }
-        }
-        jQuery('.iq-sidebar-menu .active').each(function(ele, index) {
-            jQuery(this).addClass('active');
-            jQuery(this).find('.iq-submenu').addClass('show');
+function multiCheck(tb_var) {
+    tb_var.on("change", ".chk-parent", function() {
+        var e=$(this).closest("table").find("td:first-child .child-chk"), a=$(this).is(":checked");
+        $(e).each(function() {
+            a?($(this).prop("checked", !0), $(this).closest("tr").addClass("active")): ($(this).prop("checked", !1), $(this).closest("tr").removeClass("active"))
         })
+    }),
+    tb_var.on("change", "tbody tr .new-control", function() {
+        $(this).parents("tr").toggleClass("active")
+    })
+}
+
+/*
+=========================================
+|                                       |
+|           MultiCheck                  |
+|                                       |
+=========================================
+*/
+
+function checkall(clickchk, relChkbox) {
+
+    var checker = $('#' + clickchk);
+    var multichk = $('.' + relChkbox);
 
 
-        /*---------------------------------------------------------------------
-        Magnific Popup
-        -----------------------------------------------------------------------*/
-        jQuery('.popup-gallery').magnificPopup({
-            delegate: 'a.popup-img',
-            type: 'image',
-            tLoading: 'Loading image #%curr%...',
-            mainClass: 'mfp-img-mobile',
-            gallery: {
-                enabled: true,
-                navigateByImgClick: true,
-                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-            },
-            image: {
-                tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-                titleSrc: function(item) {
-                    return item.el.attr('title') + '<small>by Marsel Van Oosten</small>';
-                }
-            }
-        });
-        jQuery('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-            disableOn: 700,
-            type: 'iframe',
-            mainClass: 'mfp-fade',
-            removalDelay: 160,
-            preloader: false,
-            fixedContentPos: false
-        });
+    checker.click(function () {
+        multichk.prop('checked', $(this).prop('checked'));
+    });    
+}
+
+/*
+=========================================
+|                                       |
+|               Tooltips                |
+|                                       |
+=========================================
+*/
+
+$('.bs-tooltip').tooltip();
+
+/*
+=========================================
+|                                       |
+|               Popovers                |
+|                                       |
+=========================================
+*/
+
+$('.bs-popover').popover();
 
 
-        /*---------------------------------------------------------------------
-        Ripple Effect
-        -----------------------------------------------------------------------*/
-        jQuery(document).on('click', ".iq-waves-effect", function(e) {
-            // Remove any old one
-            jQuery('.ripple').remove();
-            // Setup
-            let posX = jQuery(this).offset().left,
-                posY = jQuery(this).offset().top,
-                buttonWidth = jQuery(this).width(),
-                buttonHeight = jQuery(this).height();
+/*
+================================================
+|                                              |
+|               Rounded Tooltip                |
+|                                              |
+================================================
+*/
 
-            // Add the element
-            jQuery(this).prepend("<span class='ripple'></span>");
+$('.t-dot').tooltip({
+    template: '<div class="tooltip status rounded-tooltip" role="tooltip"><div class="arrow"></div><div class="tooltip-inner"></div></div>'
+})
 
 
-            // Make it round!
-            if (buttonWidth >= buttonHeight) {
-                buttonHeight = buttonWidth;
-            } else {
-                buttonWidth = buttonHeight;
-            }
+/*
+================================================
+|            IE VERSION Dector                 |
+================================================
+*/
 
-            // Get the center of the element
-            let x = e.pageX - posX - buttonWidth / 2;
-            let y = e.pageY - posY - buttonHeight / 2;
+function GetIEVersion() {
+  var sAgent = window.navigator.userAgent;
+  var Idx = sAgent.indexOf("MSIE");
 
+  // If IE, return version number.
+  if (Idx > 0) 
+    return parseInt(sAgent.substring(Idx+ 5, sAgent.indexOf(".", Idx)));
 
-            // Add the ripples CSS and start the animation
-            jQuery(".ripple").css({
-                width: buttonWidth,
-                height: buttonHeight,
-                top: y + 'px',
-                left: x + 'px'
-            }).addClass("rippleEffect");
-        });
+  // If IE 11 then look for Updated user agent string.
+  else if (!!navigator.userAgent.match(/Trident\/7\./)) 
+    return 11;
 
-        /*---------------------------------------------------------------------
-        FullScreen
-        -----------------------------------------------------------------------*/
-        jQuery(document).on('click', '.iq-full-screen', function() {
-            let elem = jQuery(this);
-            if (!document.fullscreenElement &&
-                !document.mozFullScreenElement && // Mozilla
-                !document.webkitFullscreenElement && // Webkit-Browser
-                !document.msFullscreenElement) { // MS IE ab version 11
-
-                if (document.documentElement.requestFullscreen) {
-                    document.documentElement.requestFullscreen();
-                } else if (document.documentElement.mozRequestFullScreen) {
-                    document.documentElement.mozRequestFullScreen();
-                } else if (document.documentElement.webkitRequestFullscreen) {
-                    document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-                } else if (document.documentElement.msRequestFullscreen) {
-                    document.documentElement.msRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-                }
-            } else {
-                if (document.cancelFullScreen) {
-                    document.cancelFullScreen();
-                } else if (document.mozCancelFullScreen) {
-                    document.mozCancelFullScreen();
-                } else if (document.webkitCancelFullScreen) {
-                    document.webkitCancelFullScreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                }
-            }
-            elem.find('i').toggleClass('ri-fullscreen-line').toggleClass('ri-fullscreen-exit-line');
-        });
-
-        /*---------------------------------------------------------------------
-        Page faq
-        -----------------------------------------------------------------------*/
-        jQuery('.iq-accordion .iq-accordion-block .accordion-details').hide();
-        jQuery('.iq-accordion .iq-accordion-block:first').addClass('accordion-active').children().slideDown('slow');
-        jQuery(document).on("click", '.iq-accordion .iq-accordion-block', function() {
-            if (jQuery(this).children('div.accordion-details ').is(':hidden')) {
-                jQuery('.iq-accordion .iq-accordion-block').removeClass('accordion-active').children('div.accordion-details ').slideUp('slow');
-                jQuery(this).toggleClass('accordion-active').children('div.accordion-details ').slideDown('slow');
-            }
-        });
-
-
-        /*---------------------------------------------------------------------
-       Owl Carousel
-       -----------------------------------------------------------------------*/
-        jQuery('.owl-carousel').each(function() {
-            let jQuerycarousel = jQuery(this);
-            jQuerycarousel.owlCarousel({
-                items: jQuerycarousel.data("items"),
-                loop: jQuerycarousel.data("loop"),
-                margin: jQuerycarousel.data("margin"),
-                nav: jQuerycarousel.data("nav"),
-                dots: jQuerycarousel.data("dots"),
-                autoplay: jQuerycarousel.data("autoplay"),
-                autoplayTimeout: jQuerycarousel.data("autoplay-timeout"),
-                navText: ["<i class='fa fa-angle-left fa-2x'></i>", "<i class='fa fa-angle-right fa-2x'></i>"],
-                responsiveClass: true,
-                responsive: {
-                    // breakpoint from 0 up
-                    0: {
-                        items: jQuerycarousel.data("items-mobile-sm"),
-                        nav: false,
-                        dots: true
-                    },
-                    // breakpoint from 480 up
-                    480: {
-                        items: jQuerycarousel.data("items-mobile"),
-                        nav: false,
-                        dots: true
-                    },
-                    // breakpoint from 786 up
-                    786: {
-                        items: jQuerycarousel.data("items-tab")
-                    },
-                    // breakpoint from 1023 up
-                    1023: {
-                        items: jQuerycarousel.data("items-laptop")
-                    },
-                    1199: {
-                        items: jQuerycarousel.data("items")
-                    }
-                }
-            });
-        });
-
-        /*---------------------------------------------------------------------
-        Select input
-        -----------------------------------------------------------------------*/
-        jQuery('.select2jsMultiSelect').select2({
-            tags: true
-        });
-
-        /*---------------------------------------------------------------------
-        Search input
-        -----------------------------------------------------------------------*/
-        jQuery(document).on('click', function(e) {
-            let myTargetElement = e.target;
-            let selector, mainElement;
-            if (jQuery(myTargetElement).hasClass('search-toggle') || jQuery(myTargetElement).parent().hasClass('search-toggle') || jQuery(myTargetElement).parent().parent().hasClass('search-toggle')) {
-                if (jQuery(myTargetElement).hasClass('search-toggle')) {
-                    selector = jQuery(myTargetElement).parent();
-                    mainElement = jQuery(myTargetElement);
-                } else if (jQuery(myTargetElement).parent().hasClass('search-toggle')) {
-                    selector = jQuery(myTargetElement).parent().parent();
-                    mainElement = jQuery(myTargetElement).parent();
-                } else if (jQuery(myTargetElement).parent().parent().hasClass('search-toggle')) {
-                    selector = jQuery(myTargetElement).parent().parent().parent();
-                    mainElement = jQuery(myTargetElement).parent().parent();
-                }
-                if (!mainElement.hasClass('active') && jQuery(".navbar-list li").find('.active')) {
-                    jQuery('.navbar-list li').removeClass('iq-show');
-                    jQuery('.navbar-list li .search-toggle').removeClass('active');
-                }
-
-                selector.toggleClass('iq-show');
-                mainElement.toggleClass('active');
-
-                e.preventDefault();
-            } else if (jQuery(myTargetElement).is('.search-input')) {} else {
-                jQuery('.navbar-list li').removeClass('iq-show');
-                jQuery('.navbar-list li .search-toggle').removeClass('active');
-            }
-        });
-
-
-        /*---------------------------------------------------------------------
-        Counter
-        -----------------------------------------------------------------------*/
-        jQuery('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });
-
-
-        /*---------------------------------------------------------------------
-        slick
-        -----------------------------------------------------------------------*/
-        jQuery('.slick-slider').slick({
-            centerMode: true,
-            centerPadding: '60px',
-            slidesToShow: 9,
-            slidesToScroll: 1,
-            focusOnSelect: true,
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '30',
-                    slidesToShow: 3
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '15',
-                    slidesToShow: 1
-                }
-            }],
-            nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
-            prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
-        });
-
-        jQuery('#product-additional-slider').slick({
-            centerMode: false,
-            centerPadding: '60px',
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            focusOnSelect: true,
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '30',
-                    slidesToShow: 2
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '15',
-                    slidesToShow: 1
-                }
-            }],
-            nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
-            prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
-        });
-
-        jQuery('#related-slider').slick({
-            centerMode: false,
-            centerPadding: '60px',
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            focusOnSelect: true,
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '30',
-                    slidesToShow: 2
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    centerMode: true,
-                    centerPadding: '15',
-                    slidesToShow: 1
-                }
-            }],
-            nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
-            prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
-        });
-
-
-        /*---------------------------------------------------------------------
-        Progress Bar
-        -----------------------------------------------------------------------*/
-        jQuery('.iq-progress-bar > span').each(function() {
-            let progressBar = jQuery(this);
-            let width = jQuery(this).data('percent');
-            progressBar.css({
-                'transition': 'width 2s'
-            });
-
-            setTimeout(function() {
-                progressBar.appear(function() {
-                    progressBar.css('width', width + '%');
-                });
-            }, 100);
-        });
-
-
-        /*---------------------------------------------------------------------
-        Wow Animation
-        -----------------------------------------------------------------------*/
-        let wow = new WOW({
-            boxClass: 'wow',
-            animateClass: 'animated',
-            offset: 0,
-            mobile: false,
-            live: true
-        });
-        wow.init();
-
-
-        /*---------------------------------------------------------------------
-        Mailbox
-        -----------------------------------------------------------------------*/
-        jQuery(document).on('click', 'ul.iq-email-sender-list li', function() {
-            jQuery(this).next().addClass('show');
-        });
-
-        jQuery(document).on('click', '.email-app-details li h4', function() {
-            jQuery('.email-app-details').removeClass('show');
-        });
-
-
-        /*---------------------------------------------------------------------
-        chatuser
-        -----------------------------------------------------------------------*/
-        jQuery(document).on('click', '.chat-head .chat-user-profile', function() {
-            jQuery(this).parent().next().toggleClass('show');
-        });
-        jQuery(document).on('click', '.user-profile .close-popup', function() {
-            jQuery(this).parent().parent().removeClass('show');
-        });
-
-        /*---------------------------------------------------------------------
-        chatuser main
-        -----------------------------------------------------------------------*/
-        jQuery(document).on('click', '.chat-search .chat-profile', function() {
-            jQuery(this).parent().next().toggleClass('show');
-        });
-        jQuery(document).on('click', '.user-profile .close-popup', function() {
-            jQuery(this).parent().parent().removeClass('show');
-        });
-
-        /*---------------------------------------------------------------------
-        Chat 
-        -----------------------------------------------------------------------*/
-        jQuery(document).on('click', '#chat-start', function() {
-            jQuery('.chat-data-left').toggleClass('show');
-        });
-        jQuery(document).on('click', '.close-btn-res', function() {
-            jQuery('.chat-data-left').removeClass('show');
-        });
-        jQuery(document).on('click', '.iq-chat-ui li', function() {
-            jQuery('.chat-data-left').removeClass('show');
-        });
-        jQuery(document).on('click', '.sidebar-toggle', function() {
-            jQuery('.chat-data-left').addClass('show');
-        });
-
-        /*---------------------------------------------------------------------
-        todo Page
-        -----------------------------------------------------------------------*/
-        jQuery(document).on('click', '.todo-task-list > li > a', function() {
-            jQuery('.todo-task-list li').removeClass('active');
-            jQuery('.todo-task-list .sub-task').removeClass('show');
-            jQuery(this).parent().toggleClass('active');
-            jQuery(this).next().toggleClass('show');
-        });
-        jQuery(document).on('click', '.todo-task-list > li li > a', function() {
-            jQuery('.todo-task-list li li').removeClass('active');
-            jQuery(this).parent().toggleClass('active');
-        });
-
-        /*---------------------------------------------------------------------
-        Sidebar Widget
-        -----------------------------------------------------------------------*/
-        jQuery(document).ready(function() {
-            jQuery().on('click', '.todo-task-lists li', function() {
-                if (jQuery(this).find('input:checkbox[name=todo-check]').is(":checked")) {
-
-                    jQuery(this).find('input:checkbox[name=todo-check]').attr("checked", false);
-                    jQuery(this).removeClass('active-task');
-                } else {
-                    jQuery(this).find('input:checkbox[name=todo-check]').attr("checked", true);
-                    jQuery(this).addClass('active-task');
-                }
-            });
-        });
-
-        /*---------------------------------------------------------------------
-           checkout
-        -----------------------------------------------------------------------*/
-
-        jQuery(document).ready(function(){
-            jQuery('#place-order').click(function(){
-                jQuery('#cart').removeClass('show');
-                jQuery('#address').addClass('show');
-                jQuery('#step1').removeClass('active');
-                jQuery('#step1').addClass('done');
-                jQuery('#step2').addClass('active');
-            });
-            jQuery('#deliver-address').click(function(){
-                jQuery('#address').removeClass('show');
-                jQuery('#payment').addClass('show');
-                jQuery('#step2').removeClass('active');
-                jQuery('#step2').addClass('done');
-                jQuery('#step3').addClass('active');
-            });
-        });
-
-
-    });
-
-})(jQuery);
+  else
+    return 0; //It is not IE
+}
