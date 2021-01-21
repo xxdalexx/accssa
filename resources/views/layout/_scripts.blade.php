@@ -7,6 +7,7 @@
     <script>
         $(document).ready(function() {
             App.init();
+            feather.replace();
         });
     </script>
     <script src="{{ asset('js/custom.js') }}"></script>

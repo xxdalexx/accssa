@@ -10,6 +10,12 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
 <link href="{{ asset('css/bootstrap/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('css/plugins.css') }}" rel="stylesheet" type="text/css" />
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+<!--
+<link href="{{ asset('plugins/font-icons/fontawesome/css/regular.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('plugins/font-icons/fontawesome/css/fontawesome.css') }}" rel="stylesheet" type="text/css" />
+-->
 @stack('styles')
 @livewireStyles
 <!-- END GLOBAL MANDATORY STYLES -->
