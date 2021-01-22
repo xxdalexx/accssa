@@ -104,7 +104,7 @@ code {
   flex-grow: 8;
   margin-top: 106px;
   margin-bottom: 0;
-  margin-left: 212px;
+  margin-left: 250px;
   transition: .600s; }
 
 .main-container-fluid > .main-content > .container {
@@ -190,7 +190,7 @@ code {
   max-width: 58.333333%;
   margin-left: 80px; }
 
-/* 
+/*
 =====================
     Navigation Bar
 =====================
@@ -549,7 +549,7 @@ code {
       color: #bfc9d4;
       fill: rgba(0, 23, 55, 0.08); }
 
-/* 
+/*
 ===============
     Sub Header Container
 ===============
@@ -675,14 +675,14 @@ code {
   .page-header {
     display: block; } }
 
-/* 
+/*
 ===============
     Sidebar
 ===============
 */
 .sidebar-wrapper {
   width: 206px;
-  width: 212px;
+  width: 250px;
   position: fixed;
   z-index: 1028;
   border-radius: 6px 6px 0 0;
@@ -955,7 +955,7 @@ code {
 #sidebar ul.menu-categories .ps__rail-y {
   right: -4px !important; }
 
-/*  
+/*
     ======================
         Footer-wrapper
     ======================
@@ -989,7 +989,7 @@ code {
   height: 15px;
   vertical-align: text-top; }
 
-/*  
+/*
     ======================
         MEDIA QUERIES
     ======================
@@ -1061,7 +1061,7 @@ code {
     display: block;
     opacity: .7; } }
 
-/*  
+/*
     ======================
         MEDIA QUERIES
     ======================
