@@ -12,10 +12,10 @@
 <link href="{{ asset('css/plugins.css') }}" rel="stylesheet" type="text/css" />
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-<!--
-<link href="{{ asset('plugins/font-icons/fontawesome/css/regular.css') }}" rel="stylesheet" type="text/css" />
-<link href="{{ asset('plugins/font-icons/fontawesome/css/fontawesome.css') }}" rel="stylesheet" type="text/css" />
--->
+<script src="{{ asset('plugins/sweetalerts/promise-polyfill.js') }}"></script>
+<link href="{{ asset('plugins/sweetalerts/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('plugins/sweetalerts/sweetalert.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('css/components/custom-sweetalert.css') }}" rel="stylesheet" type="text/css" />
 @stack('styles')
 @livewireStyles
 <!-- END GLOBAL MANDATORY STYLES -->

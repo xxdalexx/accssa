@@ -3,10 +3,10 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\User;
+use App\Http\Livewire\BetterComponent;
 use App\Notifications\PasswordResetNotification;
-use Livewire\Component;
 
-class UserManagement extends Component
+class UserManagement extends BetterComponent
 {
     public $users;
 
@@ -19,6 +19,7 @@ class UserManagement extends Component
     {
         $reset = $user->createPasswordReset();
         $user->notify(new PasswordResetNotification($reset));
+        $this->success('Password Reset Sent', 'DM sent to ' . $user->name . ' with a link to reset their password.');
     }
 
     public function render()
