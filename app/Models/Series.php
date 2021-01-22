@@ -128,6 +128,11 @@ class Series extends BaseModel
         $this->save();
     }
 
+    public function getRouteParams()
+    {
+        return ['series.show', $this->id];
+    }
+
     public function link()
     {
         return route('series.show', $this);

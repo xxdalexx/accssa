@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 
 class MenuSection
 {
-    public $title, $icon;
+    public $title, $icon, $active = false;
 
     public $targetString;
 
@@ -23,7 +23,12 @@ class MenuSection
 
     public function addEntry(MenuEntry $entry)
     {
+        if ($entry->active) {
+            $this->active = true;
+        }
+
         $this->entries->push($entry);
+
         return $this;
     }
 }

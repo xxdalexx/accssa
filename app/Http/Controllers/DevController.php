@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Notification;
 use App\Notifications\SeriesStartNotification;
 use App\Http\Guzzle\Sgp\RequestBuilders\RemoveDriverFromEvent;
 use App\SingleUseFeatures\MembersMissingDiscordOnSgp;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 class DevController extends Controller
 {
@@ -22,7 +24,8 @@ class DevController extends Controller
 
     public function index()
     {
-        return $this->loginMe();
+        // dd(Series::first()->link());
+        dd(app('MenuBuilder'));
     }
 
     public function aindex()
