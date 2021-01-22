@@ -7,9 +7,11 @@ use Illuminate\Support\Collection;
 
 class MenuSection
 {
-    public $title, $icon, $active = false;
+    public $title, $icon;
 
-    public $targetString;
+    public $targetString, $active = false;
+
+    public $includeFile = 'layout.menu._section';
 
     public Collection $entries;
 

@@ -21,8 +21,16 @@ class MenuBuilder
         if (Auth::check()) {
             $this->buildAdminMenu();
             $this->buildActiveSeries();
+        } else {
+            $this->buildLogIn();
         }
         $this->buildOpenToolsMenu();
+    }
+
+    protected function buildLogIn()
+    {
+        $login = new MenuSectionNoSubs('Login', 'log-in', 'login');
+        $this->menuSections->push($login);
     }
 
     protected function buildAdminMenu()

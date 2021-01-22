@@ -6,7 +6,7 @@
         <div class="shadow-bottom"></div>
         <ul class="list-unstyled menu-categories" id="accordionExample">
             @foreach ($menu->getSections() as $section)
-                @include('layout.menu._section', ['section' => $section])
+                @include($section->includeFile, ['section' => $section])
             @endforeach
         </ul>
 
