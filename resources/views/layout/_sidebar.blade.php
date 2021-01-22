@@ -1,37 +1,18 @@
 <!--  BEGIN SIDEBAR  -->
+@inject('menu', 'MenuBuilder')
 <div class="sidebar-wrapper sidebar-theme">
 
     <nav id="sidebar">
         <div class="shadow-bottom"></div>
 
         <ul class="list-unstyled menu-categories" id="accordionExample">
-            <li class="menu">
-                <a href="#starter-kit" data-active="true" data-toggle="collapse" aria-expanded="true"
-                    class="dropdown-toggle">
-                    <div class="">
-                        <i data-feather="terminal"></i>
-                        <span>Administration</span>
-                    </div>
-                    <div>
-                        <i data-feather="chevron-right"></i>
-                    </div>
-                </a>
-                <ul class="submenu list-unstyled collapse show" id="starter-kit" data-parent="#accordionExample"
-                    style="">
-                    <li class="active">
-                        <a href="starter_kit_blank_page.html"> Blank Page </a>
-                    </li>
-                    <li>
-                        <a href="starter_kit_breadcrumbs.html"> Breadcrumbs </a>
-                    </li>
-                    <li>
-                        <a href="starter_kit_boxed.html"> Boxed </a>
-                    </li>
-                    <li>
-                        <a href="starter_kit_alt_menu.html"> Alternate Menu </a>
-                    </li>
-                </ul>
-            </li>
+            @if ($menu->showAdmin())
+                @include('layout._admin-menu')
+            @endif
+
+            @foreach ($menu->getSections() as $section)
+                @include('layout.menu._section', ['section' => $section])
+            @endforeach
 
             <li class="menu">
                 <a href="#submenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">

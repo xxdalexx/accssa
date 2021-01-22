@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\MenuBuilder\MenuBuilder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
@@ -14,7 +15,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton('MenuBuilder', function () {
+            return new MenuBuilder(
+                app('Illuminate\Http\Request')
+            );
+        });
     }
 
     /**

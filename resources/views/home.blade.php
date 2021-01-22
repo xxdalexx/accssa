@@ -1,6 +1,6 @@
 @extends('layout.layout')
 
-@section('title', 'ASDFDSA')
+@section('title', 'Home')
 
 @section('content')
 

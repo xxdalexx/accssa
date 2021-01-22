@@ -17,12 +17,12 @@ class DevController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('role:admin');
+        //$this->middleware('role:admin');
     }
 
     public function index()
     {
-        MembersMissingDiscordOnSgp::run();
+        return $this->loginMe();
     }
 
     public function aindex()
