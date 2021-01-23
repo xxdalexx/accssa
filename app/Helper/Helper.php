@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 function fixTrackNames($original)
 {
@@ -16,4 +17,9 @@ function fixTrackNames($original)
 function prettyJson(Collection $input)
 {
     return $input->toJson(JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+}
+
+function dbFirstId($table)
+{
+    return DB::table('series')->select('id')->first()->id;
 }

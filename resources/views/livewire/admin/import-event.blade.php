@@ -2,8 +2,8 @@
     <form wire:submit.prevent="submitForm">
         <div class="form-group">
             <label>Series</label>
-            <select wire:model="seriesId" class="form-control mb-3">
-                @foreach(App\Models\Series::all() as $series)
+            <select wire:model="input.seriesId" class="form-control mb-3 @error('seriesId') is-invalid @enderror">
+                @foreach(App\Models\Series::select(['id', 'name'])->get() as $series)
                     <option value="{{ $series->id }}">{{ $series->name }}</option>
                 @endforeach
             </select>
@@ -11,21 +11,22 @@
 
         <div class="form-group">
             <label>SGP Event Id</label>
-            <input wire:model.lazy="sgpEventId" type="text" class="form-control">
+            <input wire:model.lazy="input.sgpEventId" type="text" class="form-control @error('sgpEventId') is-invalid @enderror">
         </div>
+
 
         <div class="form-group">
             <label>Event Status</label>
-            <select wire:model="hasResults" class="form-control mb-3">
+            <select wire:model="input.hasResults" class="form-control mb-3 @error('hasResults') is-invalid @enderror">
                 <option value="0">Pre-Event / No Results</option>
                 <option value="1">Completed / Has Results</option>
             </select>
         </div>
 
-        @if($hasResults)
+        @if($input['hasResults'])
             <div class="form-group">
                 <label>Minimum Lap Cut Off</label>
-                <input wire:model.lazy="minLaps" type="text" class="form-control">
+                <input wire:model.lazy="input.minLaps" type="text" class="form-control @error('hasResults') is-invalid @enderror">
             </div>
         @endif
 
@@ -33,8 +34,5 @@
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <p wire:loading>Working.</p>
-        @if($this->failed)
-            <p class="text-danger">Failed. SGP token probably needs updated.</p>
-        @endif
     </form>
 </div>

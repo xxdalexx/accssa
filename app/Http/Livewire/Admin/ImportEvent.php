@@ -3,27 +3,47 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Models\Event;
-use Livewire\Component;
+use App\Http\Livewire\BetterComponent;
+use App\Http\Livewire\BetterInputs;
 
-class ImportEvent extends Component
+class ImportEvent extends BetterComponent
 {
-    public $seriesId;
-    public $sgpEventId;
-    public $hasResults = 0;
-    public $minLaps = 20;
-    public $failed = false;
+    use BetterInputs;
+
+    protected $rules = [
+        'seriesId' => 'required',
+        'sgpEventId' => 'required',
+        'hasResults' => 'required',
+        'minLaps' => 'required|numeric'
+    ];
+
+    public function mount()
+    {
+        $this->setInputDefault('minLaps', 20);
+        $this->setInputDefault('seriesId', dbFirstId('series'));
+        $this->setInputDefault('minLaps', 20);
+    }
 
     public function submitForm()
     {
-        if ($this->hasResults) {
-            $event = Event::build($this->sgpEventId, $this->seriesId, $this->minLaps);
+        $this->validate();
+
+        if ($this->input('hasResults')) {
+            $event = Event::build(
+                $this->input('sgpEventId'),
+                $this->input('seriesId'),
+                $this->input('minLaps')
+            );
         } else {
-            $event = Event::buildPreResults($this->sgpEventId, $this->seriesId);
+            $event = Event::buildPreResults(
+                $this->input('sgpEventId'),
+                $this->input('seriesId')
+            );
         }
 
         //api call failed
         if (!$event) {
-            $this->failed = true;
+            $this->alertApiCallFailed();
             return;
         }
 

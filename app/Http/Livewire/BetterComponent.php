@@ -25,4 +25,14 @@ class BetterComponent extends Component
     {
         $this->emit('alert', $title, $message, $type);
     }
+
+    protected function alertApiCallFailed()
+    {
+        $this->emit(
+            'alert',
+            'SGP Connection Failed',
+            'Try again later and/or let Dale know.',
+            'warning'
+        );
+    }
 }
