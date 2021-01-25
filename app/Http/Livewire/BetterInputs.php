@@ -12,9 +12,12 @@ trait BetterInputs
 
     public function initializeBetterInputs() //runs every request
     {
-        if (empty($this->input)) { //only run on mount
-            $this->fillInputsFromRules();
-        }
+
+    }
+
+    public function mountBetterInputs()
+    {
+        $this->fillInputsFromRules();
     }
 
     protected function fillInputsFromRules()
