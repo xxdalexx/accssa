@@ -55,6 +55,16 @@ class Series extends BaseModel
         return $this->hasManyDeepFromRelations($this->locks(), (new SeriesLock)->driver());
     }
 
+    public function scopeArchived($query)
+    {
+        return $query->whereArchived(true);
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->whereArchived(false);
+    }
+
     public function sendSeriesStartNotifications()
     {
         foreach ($this->driversFromLocks as $driver) {

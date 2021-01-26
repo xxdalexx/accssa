@@ -18,12 +18,15 @@ class MenuBuilder
         $this->request = $request;
         $this->adminEntries = collect();
         $this->menuSections = collect();
+
         if (Auth::check()) {
             $this->buildAdminMenu();
             $this->buildActiveSeries();
+            $this->buildArchivedSeries();
         } else {
             $this->buildLogIn();
         }
+
         $this->buildOpenToolsMenu();
     }
 
@@ -82,7 +85,7 @@ class MenuBuilder
 
     protected function buildActiveSeries()
     {
-        foreach (Series::with('events')->get() as $series) {
+        foreach (Series::active()->with('events')->get() as $series) {
             $menu = new MenuSection($series->name, 'navigation');
 
             $menu->addEntry(
@@ -97,6 +100,19 @@ class MenuBuilder
 
             $this->menuSections->push($menu);
         }
+    }
+
+    protected function buildArchivedSeries()
+    {
+        $menu = new MenuSection('Archived Series', 'navigation');
+
+        foreach (Series::archived()->get() as $series) {
+            $menu->addEntry(
+                new MenuEntry($series->name, 'series.show', $series->id)
+            );
+        }
+
+        $this->menuSections->push($menu);
     }
 
     protected function buildOpenToolsMenu()
