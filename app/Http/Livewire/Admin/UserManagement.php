@@ -8,6 +8,8 @@ use App\Notifications\PasswordResetNotification;
 
 class UserManagement extends BetterComponent
 {
+    public $searchString;
+
     public function triggerPasswordReset(User $user)
     {
         $reset = $user->createPasswordReset();
@@ -17,8 +19,10 @@ class UserManagement extends BetterComponent
 
     public function render()
     {
+        $users = User::where('name', 'LIKE', '%' . $this->searchString . '%')->get();
+
         return view('livewire.admin.user-management')->with([
-            'users' => User::all()
+            'users' => $users
         ]);
     }
 }

@@ -1,4 +1,10 @@
 <div class="widget-content widget-content-area">
+
+    <div class="form-group">
+        <label>Filter By Name</label>
+        <input wire:model="searchString" type="text" class="form-control">
+    </div>
+
     <div class="table-responsive">
         <table id="datatable" class="table table-bordered">
             <thead>
