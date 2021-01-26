@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Driver;
 use App\Models\Series;
+use Illuminate\Http\Request;
+use App\Http\Guzzle\Sgp\SgpApi;
 use App\Http\Guzzle\Sgp\SgpBase;
 use App\Http\Guzzle\Sgp\SgpPost;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Notification;
 use App\Notifications\SeriesStartNotification;
-use App\Http\Guzzle\Sgp\RequestBuilders\RemoveDriverFromEvent;
 use App\SingleUseFeatures\MembersMissingDiscordOnSgp;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use App\Http\Guzzle\Sgp\RequestBuilders\RemoveDriverFromEvent;
 
 class DevController extends Controller
 {
@@ -24,8 +25,7 @@ class DevController extends Controller
 
     public function index()
     {
-        // dd(Series::first()->link());
-        dd(app('MenuBuilder'));
+        dd(SgpApi::results('0-s_Giz4-CyLbvvfJOm6L'));
     }
 
     public function aindex()
