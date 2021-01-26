@@ -16,6 +16,7 @@
 <link href="{{ asset('plugins/sweetalerts/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('plugins/sweetalerts/sweetalert.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('css/components/custom-sweetalert.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('css/widgets/modules-widgets.css') }}" rel="stylesheet" type="text/css" />
 @stack('styles')
 @livewireStyles
 <!-- END GLOBAL MANDATORY STYLES -->

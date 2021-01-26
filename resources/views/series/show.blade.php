@@ -2,13 +2,20 @@
 
 @section('content')
 
+@section('title', $title . ' - Standings')
+
 <div class="row">
     <div class="col-sm-12">
-        <div class="iq-card">
-        @include('series._card-header')
-            <div class="iq-card-body">
+
+        @if($dropOne)
+        This series is a drop one standings.
+        @endif
+
+        <div class="widget">
+
+            <div class="widget-content widget-content-area">
                 <div class="table-responsive">
-                    <div class="row w-100">
+                    <div class="row m-auto">
                         <div class="col-md-6">
                             <table id="datatable" class="table table-striped table-bordered">
                                 <thead>
@@ -26,7 +33,7 @@
                                         <td>{{ $point }}</td>
                                     </tr>
                                     @php
-                                        $finalLoop = $loop->iteration;
+                                    $finalLoop = $loop->iteration;
                                     @endphp
                                     @empty
                                     @endforelse
@@ -56,8 +63,11 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
+
+
     </div>
 </div>
 
