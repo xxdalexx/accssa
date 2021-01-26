@@ -5,6 +5,7 @@ namespace App\Http\Guzzle\Sgp;
 use App\Http\Guzzle\GuzzleBase;
 use App\Http\Guzzle\Sgp\Get\Results;
 use App\Models\Site;
+use BadMethodCallException;
 
 abstract class SgpApi extends GuzzleBase
 {
@@ -28,6 +29,8 @@ abstract class SgpApi extends GuzzleBase
             $class = static::$directory[$name];
             return (new $class(...$arguments))->get();
         }
+
+        throw new BadMethodCallException;
     }
 
     abstract protected function setClient();
