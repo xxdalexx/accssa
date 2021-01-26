@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\Cache;
 abstract class GuzzleBase
 {
     protected \GuzzleHttp\Client $client;
-    protected $params = [];
-    protected $cacheName;
+    protected array $params = [];
+    protected string $cacheName;
     protected $cacheTTL = 86400;
-    protected $bustCache = false;
-    protected $cacheResponse = true;
+    protected bool $bustCache = false;
+    protected bool $cacheResponse = true;
 
     protected function buildQuery(string $key, string $value)
     {

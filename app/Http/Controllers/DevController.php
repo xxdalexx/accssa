@@ -3,7 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+<<<<<<< HEAD
 use Illuminate\Support\Facades\Auth;
+=======
+use App\Models\Driver;
+use App\Models\Series;
+use Illuminate\Http\Request;
+use App\Http\Guzzle\Sgp\SgpApi;
+use App\Http\Guzzle\Sgp\SgpBase;
+use App\Http\Guzzle\Sgp\SgpPost;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Notification;
+use App\Notifications\SeriesStartNotification;
+use App\SingleUseFeatures\MembersMissingDiscordOnSgp;
+use App\Http\Guzzle\Sgp\RequestBuilders\RemoveDriverFromEvent;
+>>>>>>> New design pattern for sgp api interactions.
 
 class DevController extends Controller
 {
@@ -14,8 +29,7 @@ class DevController extends Controller
 
     public function index()
     {
-        // dd(Series::first()->link());
-        dd(app('MenuBuilder'));
+        dd(SgpApi::results('0-s_Giz4-CyLbvvfJOm6L'));
     }
 
     public function aindex()
