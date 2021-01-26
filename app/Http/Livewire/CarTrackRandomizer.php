@@ -18,14 +18,14 @@ class CarTrackRandomizer extends Component
 
     public function mount()
     {
-        $this->dataProvider = new DataProvider;
+        $this->dataProvider = app('DataProvider');
         $this->repickTrack();
         $this->repickCar('Dale Carter');
     }
 
     public function hydrate()
     {
-        $this->dataProvider = new DataProvider;
+        $this->dataProvider = app('DataProvider');
     }
 
     public function repickTrack()

@@ -38,7 +38,7 @@ class GetRandomGT3Car extends Command
      */
     public function handle()
     {
-        $car = (new DataProvider)->gimmeAGT3Car();
+        $car = app('DataProvider')->gimmeAGT3Car();
         $this->info($car);
         return;
     }

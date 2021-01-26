@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\DataProvider\DataProvider;
 use App\MenuBuilder\MenuBuilder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
@@ -19,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
             return new MenuBuilder(
                 app('Illuminate\Http\Request')
             );
+        });
+
+        $this->app->singleton('DataProvider', function () {
+            return new DataProvider;
         });
     }
 

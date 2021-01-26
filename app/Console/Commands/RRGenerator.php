@@ -38,7 +38,7 @@ class RRGenerator extends Command
      */
     public function handle()
     {
-        $provider = new DataProvider;
+        $provider = app('DataProvider');
         $entrants = [
             'Dale',
             'How did I go that fast',

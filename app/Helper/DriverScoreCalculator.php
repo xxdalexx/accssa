@@ -16,7 +16,7 @@ class DriverScoreCalculator
 
     public function __construct(DriverScore $driverScore)
     {
-        $this->alienTimes = (new DataProvider)->getAlienTimes();
+        $this->alienTimes = app('DataProvider')->getAlienTimes();
         $this->trackTimes = $this->cleanModelAttributes($driverScore);
 
         foreach ($this->trackTimes as $track => $time) {

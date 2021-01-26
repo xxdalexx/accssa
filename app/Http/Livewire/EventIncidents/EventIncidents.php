@@ -40,7 +40,7 @@ class EventIncidents extends Component
     {
         $this->event->load('incidents');
         $this->driverList = $this->event->getDriverList();
-        $this->statusList = (new DataProvider)->getIncidentStatuses();
+        $this->statusList = app('DataProvider')->getIncidentStatuses();
     }
 
     public function hydrate()

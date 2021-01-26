@@ -24,7 +24,7 @@ class Registration extends Component
 
     public function mount()
     {
-        $this->cars = (new DataProvider)->getGT3CarsForDropdown();
+        $this->cars = app('DataProvider')->getGT3CarsForDropdown();
 
         if ($this->series->hasLockForUser(Auth::user())) {
             $this->carInput = 'car' . $this->series->getLockForUser(Auth::user())->car_id;
