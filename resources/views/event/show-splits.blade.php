@@ -29,6 +29,8 @@
     @livewire('event-editor', ['event' => $event])
 @endcan
 
+<hr>
+
 @livewire('event-incidents.event-incidents', ['event' => $event])
 
 @endsection

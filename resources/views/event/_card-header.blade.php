@@ -1,6 +1,6 @@
-<div class="iq-card-header d-flex justify-content-between">
-    <div class="iq-header-title">
-        <h4 class="card-title">{{ $event->session_name }}</h4>
+<div class="d-flex justify-content-between">
+    <div>
+        <h4>{{ $event->session_name }}</h4>
     </div>
     <div>
         <a href="{{ $event->sgpLink() }}" target="_blank">SGP Page</a>
