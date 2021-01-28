@@ -4,6 +4,7 @@ namespace App\Helper;
 
 use Throwable;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class DiscordErrorMessager
 {
@@ -42,6 +43,10 @@ class DiscordErrorMessager
 
     protected function buildMessage($info)
     {
-        return 'Error: ' . $info['message'] . ' - File: ' . $info['file'] . ' - Line: ' . $info['line'];
+        $message = 'Error: ' . $info['message'] . ' - File: ' . $info['file'] . ' - Line: ' . $info['line'];
+        if (Auth::check()) {
+            $message .= '/n' . Auth::user()->name;
+        }
+        return $message;
     }
 }
