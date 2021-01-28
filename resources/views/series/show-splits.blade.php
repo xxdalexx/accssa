@@ -8,6 +8,7 @@
     <div class="col-sm-12">
         @if($series->registration_locked)
             @livewire('series.registration', ['series' => $series])
+            <hr>
         @endif
 
         @includeif('series.info.' . $series->id)
