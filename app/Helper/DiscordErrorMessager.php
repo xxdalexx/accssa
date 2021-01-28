@@ -45,7 +45,7 @@ class DiscordErrorMessager
     {
         $message = 'Error: ' . $info['message'] . ' - File: ' . $info['file'] . ' - Line: ' . $info['line'];
         if (Auth::check()) {
-            $message .= '/n' . Auth::user()->name;
+            $message = Auth::user()->name . ' - ' . $message;
         }
         return $message;
     }
