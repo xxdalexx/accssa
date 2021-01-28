@@ -1,40 +1,58 @@
 @extends('layout.layout')
 
 @section('content')
-<section class="sign-in-page">
-    <div class="container p-0">
-        <div class="row no-gutters">
-            <div class="col-sm-12 align-self-center">
-                <div class="sign-in-from bg-white">
-                    <h1 class="mb-0">Sign in</h1>
-                    <p>Enter your email address and password to access admin panel.</p>
-                    <form class="mt-4" action="{{ route('login') }}" method="post">
-                        @csrf
-                        <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="email" class="form-control mb-0" id="email" name="email" placeholder="Enter email">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <a href="#" class="float-right">Forgot password?</a>
-                            <input type="password" class="form-control mb-0" id="password" name="password" placeholder="Password">
-                        </div>
-                        <div class="d-inline-block w-100">
-                            <div class="custom-control custom-checkbox d-inline-block mt-2 pt-1">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1">Remember Me</label>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <div class="form-form">
+            <div class="form-form-wrap">
+                <div class="form-container">
+                    <div class="form-content">
+                        <h1 class="">Log In to <a href="index.html"><span class="brand-name">NWSR</span></a></h1>
+                        <form class="text-left" action="{{ route('login') }}" method="post">
+                            @csrf
+                            <div class="form">
+
+                                <div id="username-field" class="field-wrapper input">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-user">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                    <input id="email" name="email" type="text" class="form-control"
+                                        placeholder="email">
+                                </div>
+
+                                <div id="password-field" class="field-wrapper input mb-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="feather feather-lock">
+                                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                                    </svg>
+                                    <input id="password" name="password" type="password" class="form-control"
+                                        placeholder="Password">
+                                </div>
+
+                                <div class="d-sm-flex justify-content-between">
+
+                                    <div class="field-wrapper toggle-pass">
+                                        <label class="switch s-primary">
+                                            <input type="checkbox" id="toggle-password" class="d-none">
+                                            <span class="slider round"></span>
+                                        </label>
+                                        <button type="submit" class="btn btn-primary btn-block" value="">Log In</button>
+                                    </div>
+
+
+
+                                </div>
                             </div>
-                            <button type="submit" class="btn btn-primary float-right">Sign in</button>
-                        </div>
-                        <div class="sign-info">
-                            @foreach($errors->all() as $message)
-                            {{ $message }} <br>
-                            @endforeach
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
+</div>
 @endsection

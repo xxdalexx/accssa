@@ -17,6 +17,9 @@
 <link href="{{ asset('plugins/sweetalerts/sweetalert.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('css/components/custom-sweetalert.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('css/widgets/modules-widgets.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('css/authentication/form-1.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}" rel="stylesheet" type="text/css" >
+<link href="{{ asset('assets/css/forms/switches.css') }}" rel="stylesheet" type="text/css" >
 @stack('styles')
 @livewireStyles
 <!-- END GLOBAL MANDATORY STYLES -->

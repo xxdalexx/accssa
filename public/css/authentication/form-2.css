@@ -19,7 +19,6 @@ body {
   background-color: #0e1726; }
 
 .form-form {
-  width: 50%;
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -31,7 +30,6 @@ body {
     min-height: 100%;
     align-self: center;
     width: 100%;
-    height: 100vh;
     justify-content: center; }
   .form-form .form-container {
     align-items: center;
