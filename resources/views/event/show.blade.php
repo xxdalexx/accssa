@@ -2,6 +2,8 @@
 
 @section('content')
 
+@section('title', $event->session_name)
+
 <div class="row">
     <div class="col-sm-12">
         @include('event._card-header')
