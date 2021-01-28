@@ -1,5 +1,7 @@
 @extends('layout.layout')
 
+@section('title', 'Needed Tracks')
+
 @section('content')
 
 <div class="row">
