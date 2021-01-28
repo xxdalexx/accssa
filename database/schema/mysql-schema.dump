@@ -1,0 +1,420 @@
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+DROP TABLE IF EXISTS `discord_channels`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `discord_channels` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `snowflake` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `driver_scores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `driver_scores` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `driver_id` bigint(20) unsigned NOT NULL,
+  `barcelona` mediumint(9) NOT NULL DEFAULT '0',
+  `brands_hatch` mediumint(9) NOT NULL DEFAULT '0',
+  `barcelona_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `brands_hatch_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `hungaroring` mediumint(9) NOT NULL DEFAULT '0',
+  `hungaroring_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `kyalami_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `laguna_seca_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `misano` mediumint(9) NOT NULL DEFAULT '0',
+  `misano_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `monza` mediumint(9) NOT NULL DEFAULT '0',
+  `monza_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `mount_panorama_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `nurburgring` mediumint(9) NOT NULL DEFAULT '0',
+  `nurburgring_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `paul_ricard` mediumint(9) NOT NULL DEFAULT '0',
+  `paul_ricard_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `silverstone` mediumint(9) NOT NULL DEFAULT '0',
+  `silverstone_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `spa` mediumint(9) NOT NULL DEFAULT '0',
+  `spa_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `suzuka_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `zandvoort` mediumint(9) NOT NULL DEFAULT '0',
+  `zandvoort_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `zolder` mediumint(9) NOT NULL DEFAULT '0',
+  `zolder_2019` mediumint(9) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `barcelona_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `brands_hatch_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `hungaroring_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `misano_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `monza_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `nurburgring_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `paul_ricard_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `silverstone_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `spa_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `zandvoort_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `zolder_2020` mediumint(9) NOT NULL DEFAULT '0',
+  `imola_2020` mediumint(9) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `driver_scores_driver_id_foreign` (`driver_id`),
+  CONSTRAINT `driver_scores_driver_id_foreign` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `drivers`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `drivers` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `sgp_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `driver_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `driver_score` int(11) NOT NULL DEFAULT '0',
+  `number` smallint(6) DEFAULT NULL,
+  `discord_user_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `discord_private_channel_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `steam_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `event_entries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `event_entries` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `driver_id` bigint(20) unsigned DEFAULT NULL,
+  `event_id` bigint(20) unsigned NOT NULL,
+  `position` tinyint(4) NOT NULL,
+  `laps` smallint(6) NOT NULL,
+  `quali_time` bigint(20) NOT NULL,
+  `total_time` bigint(20) NOT NULL,
+  `best_lap` bigint(20) NOT NULL,
+  `race_number` smallint(6) NOT NULL DEFAULT '1',
+  `penalty_points` smallint(6) DEFAULT NULL,
+  `best_lap_points` smallint(6) DEFAULT NULL,
+  `top_quali_points` smallint(6) DEFAULT NULL,
+  `points` smallint(6) DEFAULT NULL,
+  `final_points` smallint(6) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `split` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `event_entries_event_id_foreign` (`event_id`),
+  CONSTRAINT `event_entries_event_id_foreign` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `events` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `session_id_sgp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `session_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `track_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `series_id` bigint(20) unsigned NOT NULL,
+  `results_imported` tinyint(1) NOT NULL DEFAULT '0',
+  `registration_open` tinyint(1) NOT NULL DEFAULT '1',
+  `replay_url` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `failed_jobs`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `failed_jobs` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `connection` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `queue` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payload` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `exception` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `failed_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `incidents`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `incidents` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `accused_id` bigint(20) unsigned NOT NULL,
+  `victim_id` bigint(20) unsigned NOT NULL,
+  `reported_by_id` bigint(20) unsigned NOT NULL,
+  `penalty_id` bigint(20) unsigned NOT NULL,
+  `event_id` bigint(20) unsigned NOT NULL,
+  `timestamp` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `reviewers_notes` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `penalty_applied` tinyint(1) NOT NULL DEFAULT '0',
+  `first_lap` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `invites`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `invites` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `driver_id` bigint(20) unsigned NOT NULL,
+  `code` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `invites_driver_id_foreign` (`driver_id`),
+  CONSTRAINT `invites_driver_id_foreign` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `migrations` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `model_has_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `model_has_permissions` (
+  `permission_id` bigint(20) unsigned NOT NULL,
+  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model_id` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`permission_id`,`model_id`,`model_type`),
+  KEY `model_has_permissions_model_id_model_type_index` (`model_id`,`model_type`),
+  CONSTRAINT `model_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `model_has_roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `model_has_roles` (
+  `role_id` bigint(20) unsigned NOT NULL,
+  `model_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model_id` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`role_id`,`model_id`,`model_type`),
+  KEY `model_has_roles_model_id_model_type_index` (`model_id`,`model_type`),
+  CONSTRAINT `model_has_roles_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `penalties`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `penalties` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `points` smallint(6) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `protected` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `permissions` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guard_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `reset_passwords`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reset_passwords` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) unsigned NOT NULL,
+  `code` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `reset_passwords_user_id_foreign` (`user_id`),
+  CONSTRAINT `reset_passwords_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `role_has_permissions`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `role_has_permissions` (
+  `permission_id` bigint(20) unsigned NOT NULL,
+  `role_id` bigint(20) unsigned NOT NULL,
+  PRIMARY KEY (`permission_id`,`role_id`),
+  KEY `role_has_permissions_role_id_foreign` (`role_id`),
+  CONSTRAINT `role_has_permissions_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `role_has_permissions_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `roles` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `guard_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `series`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `series` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `top_point` smallint(6) NOT NULL DEFAULT '0',
+  `penalty_points` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `splits` tinyint(1) NOT NULL DEFAULT '0',
+  `drop_one_standings` tinyint(1) NOT NULL DEFAULT '1',
+  `registration_locked` tinyint(1) NOT NULL DEFAULT '0',
+  `registration_open` tinyint(1) NOT NULL DEFAULT '1',
+  `archived` tinyint(1) NOT NULL DEFAULT '0',
+  `vehicle_change_locked` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `series_locks`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `series_locks` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `driver_id` bigint(20) unsigned NOT NULL,
+  `series_id` bigint(20) unsigned NOT NULL,
+  `split` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'No Score',
+  `car_id` smallint(6) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `series_locks_driver_id_foreign` (`driver_id`),
+  KEY `series_locks_series_id_foreign` (`series_id`),
+  CONSTRAINT `series_locks_driver_id_foreign` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `series_locks_series_id_foreign` FOREIGN KEY (`series_id`) REFERENCES `series` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `sites`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sites` (
+  `key` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `telescope_entries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `telescope_entries` (
+  `sequence` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `batch_id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `family_hash` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `should_display_on_index` tinyint(1) NOT NULL DEFAULT '1',
+  `type` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `content` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`sequence`),
+  UNIQUE KEY `telescope_entries_uuid_unique` (`uuid`),
+  KEY `telescope_entries_batch_id_index` (`batch_id`),
+  KEY `telescope_entries_family_hash_index` (`family_hash`),
+  KEY `telescope_entries_created_at_index` (`created_at`),
+  KEY `telescope_entries_type_should_display_on_index_index` (`type`,`should_display_on_index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `telescope_entries_tags`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `telescope_entries_tags` (
+  `entry_uuid` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tag` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  KEY `telescope_entries_tags_entry_uuid_tag_index` (`entry_uuid`,`tag`),
+  KEY `telescope_entries_tags_tag_index` (`tag`),
+  CONSTRAINT `telescope_entries_tags_entry_uuid_foreign` FOREIGN KEY (`entry_uuid`) REFERENCES `telescope_entries` (`uuid`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `telescope_monitoring`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `telescope_monitoring` (
+  `tag` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `driver_id` bigint(20) unsigned NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_verified_at` timestamp NULL DEFAULT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `two_factor_secret` text COLLATE utf8mb4_unicode_ci,
+  `two_factor_recovery_codes` text COLLATE utf8mb4_unicode_ci,
+  `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `discord_user_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `discord_private_channel_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_email_unique` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+INSERT INTO `migrations` VALUES (1,'2014_10_12_000000_create_users_table',1);
+INSERT INTO `migrations` VALUES (2,'2014_10_12_100000_create_password_resets_table',1);
+INSERT INTO `migrations` VALUES (3,'2019_08_19_000000_create_failed_jobs_table',1);
+INSERT INTO `migrations` VALUES (4,'2020_09_22_072212_create_events_table',1);
+INSERT INTO `migrations` VALUES (5,'2020_10_01_135823_create_event_entries_table',1);
+INSERT INTO `migrations` VALUES (6,'2020_10_01_143100_create_series_table',1);
+INSERT INTO `migrations` VALUES (7,'2020_10_07_065028_create_drivers_table',1);
+INSERT INTO `migrations` VALUES (8,'2020_10_16_103059_add_driver_score_to_drivers_table',2);
+INSERT INTO `migrations` VALUES (10,'2020_10_19_200331_create_driver_scores_table',3);
+INSERT INTO `migrations` VALUES (11,'2014_10_12_200000_add_two_factor_columns_to_users_table',4);
+INSERT INTO `migrations` VALUES (12,'2020_10_24_004448_remove_clean_laps_from_event_entries_table',5);
+INSERT INTO `migrations` VALUES (13,'2020_11_01_194832_create_permission_tables',6);
+INSERT INTO `migrations` VALUES (14,'2020_11_01_231101_add_driver_id_to_users_table',7);
+INSERT INTO `migrations` VALUES (15,'2020_11_01_232513_create_sites_table',8);
+INSERT INTO `migrations` VALUES (16,'2020_11_02_053417_create_invites_table',9);
+INSERT INTO `migrations` VALUES (17,'2020_11_04_184026_add_splits_column_to_series_table',10);
+INSERT INTO `migrations` VALUES (18,'2020_11_11_040159_create_penalties_table',11);
+INSERT INTO `migrations` VALUES (19,'2020_11_11_040345_create_incidents_table',11);
+INSERT INTO `migrations` VALUES (20,'2020_11_14_002851_add_driver_number_to_drivers_table',12);
+INSERT INTO `migrations` VALUES (21,'2018_08_08_100000_create_telescope_entries_table',13);
+INSERT INTO `migrations` VALUES (22,'2020_11_16_214721_add_penalty_applied_to_incidents_table',14);
+INSERT INTO `migrations` VALUES (23,'2020_11_16_230328_add_first_lap_to_incidents_table',14);
+INSERT INTO `migrations` VALUES (24,'2020_11_19_115852_create_series_locks_table',15);
+INSERT INTO `migrations` VALUES (25,'2020_11_19_224202_add_split_to_driver_entries_table',15);
+INSERT INTO `migrations` VALUES (26,'2020_11_25_094544_add_discord_columns_to_users_table',16);
+INSERT INTO `migrations` VALUES (27,'2020_11_25_131912_add_discords_to_drivers_table',16);
+INSERT INTO `migrations` VALUES (28,'2020_12_02_110605_add_drop_one_standings_toggle_to_series_table',17);
+INSERT INTO `migrations` VALUES (29,'2020_12_08_154346_add_2020_tracks_to_driver_scores_table',18);
+INSERT INTO `migrations` VALUES (30,'2020_12_08_171130_add_protected_to_penalties_table',19);
+INSERT INTO `migrations` VALUES (31,'2020_12_20_192204_add_registration_open_to_events_table',20);
+INSERT INTO `migrations` VALUES (32,'2020_12_20_193041_add_registration_locked_column_to_series_table',20);
+INSERT INTO `migrations` VALUES (33,'2020_12_20_193155_add_car_id_column_to_series_locks_table',20);
+INSERT INTO `migrations` VALUES (34,'2020_12_20_200816_add_results_imported_to_events_table',20);
+INSERT INTO `migrations` VALUES (35,'2020_12_23_002327_add_registration_open_and_archive_columsn_to_series_table',20);
+INSERT INTO `migrations` VALUES (36,'2021_01_06_164253_create_discord_channels_table',21);
+INSERT INTO `migrations` VALUES (37,'2021_01_07_071153_drop_old_pasword_resets_table',22);
+INSERT INTO `migrations` VALUES (38,'2021_01_07_071803_create_reset_passwords_table',22);
+INSERT INTO `migrations` VALUES (39,'2021_01_20_210657_add_vehicle_change_locked_column_to_series_table',23);
+INSERT INTO `migrations` VALUES (40,'2021_01_21_012728_add_steam_id_column_to_drivers_table',24);
