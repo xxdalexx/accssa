@@ -127,6 +127,11 @@ class Series extends BaseModel
         return $this->locks->firstWhere('driver_id', $driver->id);
     }
 
+    public function getLockForDriverId(int $driverId)
+    {
+        return $this->locks->firstWhere('driver_id', $driverId);
+    }
+
     public function getLockForUser(User $user)
     {
         return $this->getLockForDriver($user->driver);

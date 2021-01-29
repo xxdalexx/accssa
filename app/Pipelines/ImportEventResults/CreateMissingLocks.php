@@ -20,6 +20,8 @@ class CreateMissingLocks
             ]);
         }
 
+        $dto->series->load('locks');
+
         return $next($dto);
     }
 }

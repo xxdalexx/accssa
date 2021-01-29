@@ -11,18 +11,24 @@ class DTO
 {
     protected string $eventId;
 
+    public int $minLapCutoff;
+
     public $rawApiResult;
 
     public Series $series;
 
     public Event $event;
 
+    public Collection $eventEntries;
+
     public Collection $drivers;
 
-    public function __construct($eventId, Series $series)
+    public function __construct($eventId, Series $series, $minLapCutoff = 20)
     {
         $this->eventId = $eventId;
         $this->series = $series;
+        $this->eventEntries = collect();
+        $this->minLapCutoff = $minLapCutoff;
     }
 
     public function loadDrivers(): void
@@ -59,5 +65,27 @@ class DTO
     {
         $results = $this->getFirstRaceResults();
         return $results->pluck('driverId');
+    }
+
+    public function driverIdFromSgpId(string $sgpId): int
+    {
+        return $this->drivers->firstWhere('sgp_id', $sgpId)->id;
+    }
+
+    public function getQualisFromResponse(): Collection
+    {
+        $collection = collect($this->rawApiResult->results);
+        return $collection->where('type', 'QUALIFY');
+    }
+
+    public function getFirstQualiResults()
+    {
+        $quali = $this->getQualisFromResponse()->first();
+        return collect($quali->results);
+    }
+
+    public function qualiTimeForSgpDriver(string $sgpId)
+    {
+        return $this->getFirstQualiResults()->firstWhere('driverId', $sgpId)->bestCleanLapTime;
     }
 }
