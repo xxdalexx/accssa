@@ -15,7 +15,7 @@ class NewEvent
         $event->session_name = $apiResult->sessionName;
         $event->track_name = $apiResult->trackName;
         $event->series_id = $dto->series->id;
-        //$event->results_imported = true;
+        $event->results_imported = true;
         $event->registration_open = $dto->series->registration_open; //I don't think this is needed.
         //$event->replay_url;
 
