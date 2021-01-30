@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Driver;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class DriverManagementController extends Controller
+class AdminManageDriversController extends Controller
 {
     public function __construct()
     {
