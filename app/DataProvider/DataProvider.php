@@ -7,7 +7,13 @@ use Illuminate\Support\Collection;
 class DataProvider
 {
     protected Collection $cars;
+
     protected Collection $tracks;
+
+    protected Collection $acTracks;
+
+    protected Collection $acCars;
+
     protected $alienTimes = [
         "barcelona" => 101900,
         "barcelona_2019" => 102500,
@@ -33,11 +39,13 @@ class DataProvider
 
     public function __construct()
     {
-        $carPath = __DIR__ . '/cars.json';
-        $trackPath = __DIR__ . '/tracks.json';
+        $accCarPath = __DIR__ . '/AccCars.json';
+        $accTrackPath = __DIR__ . '/AccTracks.json';
+        $acTrackPath = __DIR__ . '/AcTracks.json';
 
-        $this->cars = collect(json_decode(file_get_contents($carPath)));
-        $this->tracks = collect(json_decode(file_get_contents($trackPath)));
+        $this->cars = collect(json_decode(file_get_contents($accCarPath)));
+        $this->tracks = collect(json_decode(file_get_contents($accTrackPath)));
+        $this->acTracks = collect(json_decode((file_get_contents($acTrackPath))));
     }
 
     public function getCars()
@@ -58,6 +66,11 @@ class DataProvider
     public function getTracks()
     {
         return $this->tracks;
+    }
+
+    public function getAcTracks()
+    {
+        return $this->acTracks;
     }
 
     public function gimmeAGT3Car()

@@ -1,0 +1,2109 @@
+{
+    "ahvenisto_rc::": {
+        "name": "Ahvenisto",
+        "key": "ahvenisto_rc",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/ahvenisto_rc/ui/preview.png",
+        "country": "Finland",
+        "city": "Hämeenlinna",
+        "length": 2800,
+        "maxEntries": 30,
+        "description": "Ahvenisto Race Circuit",
+        "mod": {
+            "name": "Ahvenisto Race Circuit",
+            "version": "1.1.5",
+            "url": "https://www.racedepartment.com/downloads/ahvenisto-race-circuit.16490/version/56511/download"
+        }
+    },
+    "bridgehampton::": {
+        "name": "Bridgehampton Race Circuit",
+        "key": "bridgehampton",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/bridgehampton/ui/preview.png",
+        "country": "U.S.A.",
+        "city": "Bridgehampton",
+        "length": 4587,
+        "maxEntries": 24,
+        "description": "Bridgehampton",
+        "mod": {
+            "name": "Bridgehamptom",
+            "version": "2.0",
+            "url": "https://www.racedepartment.com/downloads/bridgehampton-race-circuit.6604/version/28008/download"
+        }
+    },
+    "deutschlandring::": {
+        "name": "Deutschlandring",
+        "key": "deutschlandring",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/deutschlandring/ui/preview.png",
+        "country": "Germany",
+        "city": "Hohnstein",
+        "length": 10000,
+        "maxEntries": 30,
+        "description": "Deutschlandring",
+        "mod": {
+            "name": "Deutschlandring",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/deutschlandring.25977/version/46001/download"
+        }
+    },
+    "drift::": {
+        "name": "Drift",
+        "key": "drift",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/drift/ui/preview.png",
+        "country": "Japan",
+        "city": "Tokyo",
+        "length": 905,
+        "maxEntries": 18,
+        "description": "Drift Track"
+    },
+    "imola::": {
+        "name": "Imola",
+        "key": "imola",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/imola/ui/preview.png",
+        "country": "Italy",
+        "city": "Imola",
+        "length": 4909,
+        "maxEntries": 24,
+        "description": "Autodromo Enzo e Dino Ferrari"
+    },
+    "ironbark_hills::": {
+        "name": "Ironbark Hills 2020",
+        "key": "ironbark_hills",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/ironbark_hills/ui/preview.png",
+        "country": "Australia",
+        "city": "",
+        "length": 6601,
+        "maxEntries": 30,
+        "description": "Flowing through the Ironbark forests",
+        "mod": {
+            "name": "Ironbark Hills",
+            "version": "0.6",
+            "url": "https://www.racedepartment.com/downloads/ironbark-hills.8329/version/68061/download"
+        }
+    },
+    "joesville::": {
+        "name": "Joesville",
+        "key": "joesville",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/joesville/ui/preview.png",
+        "country": "USA",
+        "city": "Joesville",
+        "length": 656,
+        "maxEntries": 24,
+        "description": "Joesville Speedway",
+        "mod": {
+            "name": "Joesville Speedway",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/joesville-speedway.25104/version/44581/download"
+        }
+    },
+    "jr_mosport_2020::": {
+        "name": "Mosport 2020",
+        "key": "jr_mosport_2020",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/jr_mosport_2020/ui/preview.png",
+        "country": "Canada",
+        "city": "Bowmanville",
+        "length": 3957,
+        "maxEntries": 37,
+        "description": "Canadian Tire Motorsport Park",
+        "mod": {
+            "name": "Mosport 2020 (CTMP)",
+            "version": "2.1",
+            "url": "https://www.racedepartment.com/downloads/mosport-2020-ctmp.24486/version/65059/download"
+        }
+    },
+    "kartodromovalencia::": {
+        "name": "Kartodromo de Valencia",
+        "key": "kartodromovalencia",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/kartodromovalencia/ui/preview.png",
+        "country": "Spain",
+        "city": "Valencia",
+        "length": 1428,
+        "maxEntries": 36,
+        "description": "Kartodromo de Valencia",
+        "mod": {
+            "name": "Kartodromo Internacional Valencia - Karting",
+            "version": "Version Year 2020 v2",
+            "url": "https://www.racedepartment.com/downloads/kartodromo-internacional-valencia-karting.19306/version/65177/download"
+        }
+    },
+    "ks_laguna_seca::": {
+        "name": "Laguna Seca",
+        "key": "ks_laguna_seca",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/ks_laguna_seca/ui/preview.png",
+        "country": "USA",
+        "city": "Monterey",
+        "length": 3602,
+        "maxEntries": 24,
+        "description": "Mazda Raceway Laguna Seca"
+    },
+    "ks_silverstone1967::": {
+        "name": "Silverstone 1967",
+        "key": "ks_silverstone1967",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/ks_silverstone1967/ui/preview.png",
+        "country": "Great Britain",
+        "city": "Silverstone",
+        "length": 4710,
+        "maxEntries": 20,
+        "description": "Historic Circuit of Silverstone"
+    },
+    "ks_zandvoort::": {
+        "name": "Zandvoort",
+        "key": "ks_zandvoort",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/ks_zandvoort/ui/preview.png",
+        "country": "Netherlands",
+        "city": "Zandvoort",
+        "length": 4307,
+        "maxEntries": 18,
+        "description": "Zandvoort Circuit Park"
+    },
+    "lilski_road_america::": {
+        "name": "Road America",
+        "key": "lilski_road_america",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/lilski_road_america/ui/preview.png",
+        "country": "USA",
+        "city": "Elkhart Lake",
+        "length": 6515,
+        "maxEntries": 43,
+        "description": "Road America",
+        "mod": {
+            "name": "Road America",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/road-america.32732/version/62697/download"
+        }
+    },
+    "magione::": {
+        "name": "Magione",
+        "key": "magione",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/magione/ui/preview.png",
+        "country": "Italy",
+        "city": "Magione",
+        "length": 2507,
+        "maxEntries": 18,
+        "description": "Autodromo di Umbria"
+    },
+    "monza::": {
+        "name": "Monza",
+        "key": "monza",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/monza/ui/preview.png",
+        "country": "Italy",
+        "city": "Monza (MI)",
+        "length": 5793,
+        "maxEntries": 26,
+        "description": "Autodromo di Monza"
+    },
+    "mugello::": {
+        "name": "Mugello",
+        "key": "mugello",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/mugello/ui/preview.png",
+        "country": "Italy",
+        "city": "Scarperia",
+        "length": 5245,
+        "maxEntries": 24,
+        "description": "Autodromo del Mugello"
+    },
+    "njmp_lightning::": {
+        "name": "New Jersey Motorsports Park",
+        "key": "njmp_lightning",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/njmp_lightning/ui/preview.png",
+        "country": "U.S.A.",
+        "city": "Millville",
+        "length": 3060,
+        "maxEntries": 24,
+        "description": "Lightning",
+        "mod": {
+            "name": "New Jersey Motorsports Park: Lightning",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/new-jersey-motorsports-park-lightning.14212/version/25366/download"
+        }
+    },
+    "rmi_stockton99::": {
+        "name": "Stockton 99 Speedway",
+        "key": "rmi_stockton99",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/rmi_stockton99/ui/preview.png",
+        "country": "USA",
+        "city": "Stockton",
+        "length": 565,
+        "maxEntries": 16,
+        "description": "Stockton Speedway",
+        "mod": {
+            "name": "Stockton99 Speedway",
+            "version": "0.99",
+            "url": "https://www.racedepartment.com/downloads/stockton99-speedway.36592/version/64582/download"
+        }
+    },
+    "sebring_rtb_v08::": {
+        "name": "sebring_rtb_v08",
+        "key": "sebring_rtb_v08",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/sebring_rtb_v08/ui/preview.png",
+        "country": "USA",
+        "city": "Sebring_FL",
+        "length": 6002,
+        "maxEntries": 30,
+        "description": "sebring-international-raceway",
+        "mod": {
+            "name": "Sebring International Raceway RTB",
+            "version": "0.8",
+            "url": "https://www.racedepartment.com/downloads/sebring-international-raceway-rtb.13374/version/30405/download"
+        }
+    },
+    "spa::": {
+        "name": "Spa",
+        "key": "spa",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/spa/ui/preview.png",
+        "country": "Belgium",
+        "city": "Francorchamps",
+        "length": 7004,
+        "maxEntries": 24,
+        "description": "Spa-Francorchamps"
+    },
+    "trento-bondone::": {
+        "name": "Trento-Bondone",
+        "key": "trento-bondone",
+        "subkey": "",
+        "preview": "/assetto_corsa/1.16/tracks/trento-bondone/ui/preview.png",
+        "country": "Italy",
+        "city": "Trento",
+        "length": 17619,
+        "maxEntries": 4,
+        "description": "Hillclimb course"
+    },
+    "bahrain_international_circuit::endurance": {
+        "name": "Bahrain International Circuit Endurance Circuit",
+        "key": "bahrain_international_circuit",
+        "subkey": "endurance",
+        "preview": "/assetto_corsa/1.16/tracks/bahrain_international_circuit/ui/endurance/preview.png",
+        "country": "Bahrain",
+        "city": "Sakhir",
+        "length": 6299,
+        "maxEntries": 36,
+        "description": "Bahrain International Circuit Endurance Circuit",
+        "mod": {
+            "name": "Bahrain International Circuit (All Layouts)",
+            "version": "1.9",
+            "url": "https://www.racedepartment.com/downloads/bahrain-international-circuit-all-layouts.35001/version/65616/download"
+        }
+    },
+    "bahrain_international_circuit::grandprix": {
+        "name": "Bahrain International Circuit Grand Prix Circuit",
+        "key": "bahrain_international_circuit",
+        "subkey": "grandprix",
+        "preview": "/assetto_corsa/1.16/tracks/bahrain_international_circuit/ui/grandprix/preview.png",
+        "country": "Bahrain",
+        "city": "Sakhir",
+        "length": 5411,
+        "maxEntries": 36,
+        "description": "Bahrain International Circuit Grand Prix Circuit",
+        "mod": {
+            "name": "Bahrain International Circuit (All Layouts)",
+            "version": "1.9",
+            "url": "https://www.racedepartment.com/downloads/bahrain-international-circuit-all-layouts.35001/version/65616/download"
+        }
+    },
+    "bahrain_international_circuit::inner": {
+        "name": "Bahrain International Circuit Inner Circuit",
+        "key": "bahrain_international_circuit",
+        "subkey": "inner",
+        "preview": "/assetto_corsa/1.16/tracks/bahrain_international_circuit/ui/inner/preview.png",
+        "country": "Bahrain",
+        "city": "Sakhir",
+        "length": 2550,
+        "maxEntries": 20,
+        "description": "Bahrain International Circuit Inner Ciruit",
+        "mod": {
+            "name": "Bahrain International Circuit (All Layouts)",
+            "version": "1.9",
+            "url": "https://www.racedepartment.com/downloads/bahrain-international-circuit-all-layouts.35001/version/65616/download"
+        }
+    },
+    "bahrain_international_circuit::outer": {
+        "name": "Bahrain International Circuit Outer Circuit",
+        "key": "bahrain_international_circuit",
+        "subkey": "outer",
+        "preview": "/assetto_corsa/1.16/tracks/bahrain_international_circuit/ui/outer/preview.png",
+        "country": "Bahrain",
+        "city": "Sakhir",
+        "length": 3664,
+        "maxEntries": 36,
+        "description": "Bahrain International Circuit Outer Circuit",
+        "mod": {
+            "name": "Bahrain International Circuit (All Layouts)",
+            "version": "1.9",
+            "url": "https://www.racedepartment.com/downloads/bahrain-international-circuit-all-layouts.35001/version/65616/download"
+        }
+    },
+    "bahrain_international_circuit::paddock": {
+        "name": "Bahrain International Circuit Paddock Circuit",
+        "key": "bahrain_international_circuit",
+        "subkey": "paddock",
+        "preview": "/assetto_corsa/1.16/tracks/bahrain_international_circuit/ui/paddock/preview.png",
+        "country": "Bahrain",
+        "city": "Sakhir",
+        "length": 3705,
+        "maxEntries": 36,
+        "description": "Bahrain International Circuit Paddock Circuit",
+        "mod": {
+            "name": "Bahrain International Circuit (All Layouts)",
+            "version": "1.9",
+            "url": "https://www.racedepartment.com/downloads/bahrain-international-circuit-all-layouts.35001/version/65616/download"
+        }
+    },
+    "bahrain_international_circuit::test": {
+        "name": "Bahrain International Circuit Test Oval",
+        "key": "bahrain_international_circuit",
+        "subkey": "test",
+        "preview": "/assetto_corsa/1.16/tracks/bahrain_international_circuit/ui/test/preview.png",
+        "country": "Bahrain",
+        "city": "Sakhir",
+        "length": 2500,
+        "maxEntries": 36,
+        "description": "Bahrain International Circuit Test Oval",
+        "mod": {
+            "name": "Bahrain International Circuit (All Layouts)",
+            "version": "1.9",
+            "url": "https://www.racedepartment.com/downloads/bahrain-international-circuit-all-layouts.35001/version/65616/download"
+        }
+    },
+    "bikernieki::big": {
+        "name": "Bikernieki - Big Ring",
+        "key": "bikernieki",
+        "subkey": "big",
+        "preview": "/assetto_corsa/1.16/tracks/bikernieki/ui/big/preview.png",
+        "country": "Latvia",
+        "city": "Riga",
+        "length": 5945,
+        "maxEntries": 32,
+        "description": "May 2018, v0.6",
+        "mod": {
+            "name": "Bikernieki Race Track",
+            "version": "0.6",
+            "url": "https://www.racedepartment.com/downloads/bikernieki-race-track.17186/version/37450/download"
+        }
+    },
+    "bikernieki::drift_vdc": {
+        "name": "Bikernieki - VDC",
+        "key": "bikernieki",
+        "subkey": "drift_vdc",
+        "preview": "/assetto_corsa/1.16/tracks/bikernieki/ui/drift_vdc/preview.png",
+        "country": "Latvia",
+        "city": "Riga",
+        "length": 515,
+        "maxEntries": 32,
+        "description": "May 2018, v0.6",
+        "mod": {
+            "name": "Bikernieki Race Track",
+            "version": "0.6",
+            "url": "https://www.racedepartment.com/downloads/bikernieki-race-track.17186/version/37450/download"
+        }
+    },
+    "bikernieki::open": {
+        "name": "Bikernieki - Open Track",
+        "key": "bikernieki",
+        "subkey": "open",
+        "preview": "/assetto_corsa/1.16/tracks/bikernieki/ui/open/preview.png",
+        "country": "Latvia",
+        "city": "Riga",
+        "length": 5945,
+        "maxEntries": 32,
+        "description": "May 2018, v0.6",
+        "mod": {
+            "name": "Bikernieki Race Track",
+            "version": "0.6",
+            "url": "https://www.racedepartment.com/downloads/bikernieki-race-track.17186/version/37450/download"
+        }
+    },
+    "bikernieki::oval": {
+        "name": "Bikernieki - Short 'Oval' Circuit",
+        "key": "bikernieki",
+        "subkey": "oval",
+        "preview": "/assetto_corsa/1.16/tracks/bikernieki/ui/oval/preview.png",
+        "country": "Latvia",
+        "city": "Riga",
+        "length": 1700,
+        "maxEntries": 32,
+        "description": "May 2018, v0.6",
+        "mod": {
+            "name": "Bikernieki Race Track",
+            "version": "0.6",
+            "url": "https://www.racedepartment.com/downloads/bikernieki-race-track.17186/version/37450/download"
+        }
+    },
+    "bikernieki::skill": {
+        "name": "Bikernieki - Ring of Skill",
+        "key": "bikernieki",
+        "subkey": "skill",
+        "preview": "/assetto_corsa/1.16/tracks/bikernieki/ui/skill/preview.png",
+        "country": "Latvia",
+        "city": "Riga",
+        "length": 3580,
+        "maxEntries": 32,
+        "description": "May 2018, v0.6",
+        "mod": {
+            "name": "Bikernieki Race Track",
+            "version": "0.6",
+            "url": "https://www.racedepartment.com/downloads/bikernieki-race-track.17186/version/37450/download"
+        }
+    },
+    "bikernieki::speed": {
+        "name": "Bikernieki - High Speed Ring",
+        "key": "bikernieki",
+        "subkey": "speed",
+        "preview": "/assetto_corsa/1.16/tracks/bikernieki/ui/speed/preview.png",
+        "country": "Latvia",
+        "city": "Riga",
+        "length": 3662,
+        "maxEntries": 32,
+        "description": "May 2018, v0.6",
+        "mod": {
+            "name": "Bikernieki Race Track",
+            "version": "0.6",
+            "url": "https://www.racedepartment.com/downloads/bikernieki-race-track.17186/version/37450/download"
+        }
+    },
+    "cadwell_park::fullcircuit": {
+        "name": "Cadwell Park - Full Circuit",
+        "key": "cadwell_park",
+        "subkey": "fullcircuit",
+        "preview": "/assetto_corsa/1.16/tracks/cadwell_park/ui/fullcircuit/preview.png",
+        "country": "Great Britain",
+        "city": "Lincolnshire",
+        "length": 2176,
+        "maxEntries": 18,
+        "description": "Cadwell Park",
+        "mod": {
+            "name": "Cadwell Park",
+            "version": "1.3",
+            "url": "https://www.racedepartment.com/downloads/cadwell-park.11507/version/36093/download"
+        }
+    },
+    "cadwell_park::mgpcircuit": {
+        "name": "Cadwell Park - Moto GP Circuit",
+        "key": "cadwell_park",
+        "subkey": "mgpcircuit",
+        "preview": "/assetto_corsa/1.16/tracks/cadwell_park/ui/mgpcircuit/preview.png",
+        "country": "Great Britain",
+        "city": "Lincolnshire",
+        "length": 2180,
+        "maxEntries": 18,
+        "description": "Cadwell Park",
+        "mod": {
+            "name": "Cadwell Park",
+            "version": "1.3",
+            "url": "https://www.racedepartment.com/downloads/cadwell-park.11507/version/36093/download"
+        }
+    },
+    "cadwell_park::woodlandscircuit": {
+        "name": "Cadwell Park - Woodlands Circuit",
+        "key": "cadwell_park",
+        "subkey": "woodlandscircuit",
+        "preview": "/assetto_corsa/1.16/tracks/cadwell_park/ui/woodlandscircuit/preview.png",
+        "country": "Great Britain",
+        "city": "Lincolnshire",
+        "length": 848,
+        "maxEntries": 18,
+        "description": "Cadwell Park",
+        "mod": {
+            "name": "Cadwell Park",
+            "version": "1.3",
+            "url": "https://www.racedepartment.com/downloads/cadwell-park.11507/version/36093/download"
+        }
+    },
+    "chang::circuit_gp": {
+        "name": "Chang International Circuit",
+        "key": "chang",
+        "subkey": "circuit_gp",
+        "preview": "/assetto_corsa/1.16/tracks/chang/ui/circuit_gp/preview.png",
+        "country": "Thailand",
+        "city": "Buriram",
+        "length": 4554,
+        "maxEntries": 40,
+        "description": "Chang GP",
+        "mod": {
+            "name": "Chang International circuit",
+            "version": "0.82",
+            "url": "https://www.racedepartment.com/downloads/chang-international-circuit.20997/version/37540/download"
+        }
+    },
+    "doningtonpark2018::gp": {
+        "name": "Donington Park 2018 GP",
+        "key": "doningtonpark2018",
+        "subkey": "gp",
+        "preview": "/assetto_corsa/1.16/tracks/doningtonpark2018/ui/gp/preview.png",
+        "country": "Great Britain",
+        "city": "Donington",
+        "length": 4020,
+        "maxEntries": 24,
+        "description": "Donington Park GP Circuit",
+        "mod": {
+            "name": "Donington Park",
+            "version": "2.02",
+            "url": "https://www.racedepartment.com/downloads/donington-park.3031/version/45007/download"
+        }
+    },
+    "doningtonpark2018::national": {
+        "name": "Donington Park 2018 National",
+        "key": "doningtonpark2018",
+        "subkey": "national",
+        "preview": "/assetto_corsa/1.16/tracks/doningtonpark2018/ui/national/preview.png",
+        "country": "Great Britain",
+        "city": "Donington",
+        "length": 3185,
+        "maxEntries": 24,
+        "description": "Donington Park National Circuit",
+        "mod": {
+            "name": "Donington Park",
+            "version": "2.02",
+            "url": "https://www.racedepartment.com/downloads/donington-park.3031/version/45007/download"
+        }
+    },
+    "drift::karting": {
+        "name": "Drift Karting",
+        "key": "drift",
+        "subkey": "karting",
+        "preview": "/assetto_corsa/1.16/tracks/drift/ui/karting/preview.png",
+        "country": "Japan",
+        "city": "Tokyo",
+        "length": 1312,
+        "maxEntries": 18,
+        "description": "Drift Track. Karting Layout",
+        "mod": {
+            "name": "Drift track racing layouts",
+            "version": "3.0",
+            "url": "https://www.racedepartment.com/downloads/drift-track-racing-layouts.35986/version/65623/download"
+        }
+    },
+    "drift::karting_counter": {
+        "name": "Drift Karting Anti-clockwise",
+        "key": "drift",
+        "subkey": "karting_counter",
+        "preview": "/assetto_corsa/1.16/tracks/drift/ui/karting_counter/preview.png",
+        "country": "Japan",
+        "city": "Tokyo",
+        "length": 1312,
+        "maxEntries": 18,
+        "description": "Drift Track. Karting Anti-clockwise Layout",
+        "mod": {
+            "name": "Drift track racing layouts",
+            "version": "3.0",
+            "url": "https://www.racedepartment.com/downloads/drift-track-racing-layouts.35986/version/65623/download"
+        }
+    },
+    "drift::trioval": {
+        "name": "Drift Trioval",
+        "key": "drift",
+        "subkey": "trioval",
+        "preview": "/assetto_corsa/1.16/tracks/drift/ui/trioval/preview.png",
+        "country": "Japan",
+        "city": "Tokyo",
+        "length": 891,
+        "maxEntries": 18,
+        "description": "Drift Track. Trioval Layout",
+        "mod": {
+            "name": "Drift track racing layouts",
+            "version": "3.0",
+            "url": "https://www.racedepartment.com/downloads/drift-track-racing-layouts.35986/version/65623/download"
+        }
+    },
+    "drift::trioval_clockwise": {
+        "name": "Drift Trioval Clockwise",
+        "key": "drift",
+        "subkey": "trioval_clockwise",
+        "preview": "/assetto_corsa/1.16/tracks/drift/ui/trioval_clockwise/preview.png",
+        "country": "Japan",
+        "city": "Tokyo",
+        "length": 891,
+        "maxEntries": 18,
+        "description": "Drift Track. Trioval Clockwise Layout",
+        "mod": {
+            "name": "Drift track racing layouts",
+            "version": "3.0",
+            "url": "https://www.racedepartment.com/downloads/drift-track-racing-layouts.35986/version/65623/download"
+        }
+    },
+    "fonteny::fonteny": {
+        "name": "Fonteny",
+        "key": "fonteny",
+        "subkey": "fonteny",
+        "preview": "/assetto_corsa/1.16/tracks/fonteny/ui/fonteny/preview.png",
+        "country": "France",
+        "city": "Brassy",
+        "length": 25809,
+        "maxEntries": 40,
+        "description": "Fictional vintage circuit based on real roads",
+        "mod": {
+            "name": "Fonteny",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/fonteny.30137/version/55900/download"
+        }
+    },
+    "fonteny::fonteny-rev": {
+        "name": "Fonteny - reverse",
+        "key": "fonteny",
+        "subkey": "fonteny-rev",
+        "preview": "/assetto_corsa/1.16/tracks/fonteny/ui/fonteny-rev/preview.png",
+        "country": "France",
+        "city": "Brassy",
+        "length": 25809,
+        "maxEntries": 40,
+        "description": "Fictional vintage circuit based on real roads - reverse direction",
+        "mod": {
+            "name": "Fonteny",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/fonteny.30137/version/55900/download"
+        }
+    },
+    "fonteny::trackday": {
+        "name": "Fonteny - Tourist",
+        "key": "fonteny",
+        "subkey": "trackday",
+        "preview": "/assetto_corsa/1.16/tracks/fonteny/ui/trackday/preview.png",
+        "country": "France",
+        "city": "Brassy",
+        "length": 25809,
+        "maxEntries": 60,
+        "description": "Fictional vintage circuit based on real roads - trackday layout",
+        "mod": {
+            "name": "Fonteny",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/fonteny.30137/version/55900/download"
+        }
+    },
+    "fonteny::trackday-rev": {
+        "name": "Fonteny - Tourist - Reverse",
+        "key": "fonteny",
+        "subkey": "trackday-rev",
+        "preview": "/assetto_corsa/1.16/tracks/fonteny/ui/trackday-rev/preview.png",
+        "country": "France",
+        "city": "Brassy",
+        "length": 25809,
+        "maxEntries": 60,
+        "description": "Fictional vintage circuit based on real roads - reverse trackday layout",
+        "mod": {
+            "name": "Fonteny",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/fonteny.30137/version/55900/download"
+        }
+    },
+    "gb_carolina_motorsports_park::east": {
+        "name": "Carolina Motorsports Park - East",
+        "key": "gb_carolina_motorsports_park",
+        "subkey": "east",
+        "preview": "/assetto_corsa/1.16/tracks/gb_carolina_motorsports_park/ui/east/preview.png",
+        "country": "USA",
+        "city": "Kershaw, South Carolina",
+        "length": 2007,
+        "maxEntries": 20,
+        "description": "Carolina Motorsports Park is the only purpose-built road racing facility in the Carolinas.",
+        "mod": {
+            "name": "Carolina Motorsports Park",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/carolina-motorsports-park.35849/version/63195/download"
+        }
+    },
+    "gb_carolina_motorsports_park::full": {
+        "name": "Carolina Motorsports Park - Full Course",
+        "key": "gb_carolina_motorsports_park",
+        "subkey": "full",
+        "preview": "/assetto_corsa/1.16/tracks/gb_carolina_motorsports_park/ui/full/preview.png",
+        "country": "USA",
+        "city": "Kershaw, South Carolina",
+        "length": 3653,
+        "maxEntries": 20,
+        "description": "Carolina Motorsports Park is the only purpose-built road racing facility in the Carolinas.",
+        "mod": {
+            "name": "Carolina Motorsports Park",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/carolina-motorsports-park.35849/version/63195/download"
+        }
+    },
+    "gb_carolina_motorsports_park::full_old": {
+        "name": "Carolina Motorsports Park - Full Course (Old Layout)",
+        "key": "gb_carolina_motorsports_park",
+        "subkey": "full_old",
+        "preview": "/assetto_corsa/1.16/tracks/gb_carolina_motorsports_park/ui/full_old/preview.png",
+        "country": "USA",
+        "city": "Kershaw, South Carolina",
+        "length": 3588,
+        "maxEntries": 20,
+        "description": "Carolina Motorsports Park is the only purpose-built road racing facility in the Carolinas.",
+        "mod": {
+            "name": "Carolina Motorsports Park",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/carolina-motorsports-park.35849/version/63195/download"
+        }
+    },
+    "gb_carolina_motorsports_park::kart": {
+        "name": "Carolina Motorsports Park - Kart",
+        "key": "gb_carolina_motorsports_park",
+        "subkey": "kart",
+        "preview": "/assetto_corsa/1.16/tracks/gb_carolina_motorsports_park/ui/kart/preview.png",
+        "country": "USA",
+        "city": "Kershaw, South Carolina",
+        "length": 1126,
+        "maxEntries": 14,
+        "description": "Carolina Motorsports Park is the only purpose built road racing facility in the Carolinas.",
+        "mod": {
+            "name": "Carolina Motorsports Park",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/carolina-motorsports-park.35849/version/63195/download"
+        }
+    },
+    "gb_carolina_motorsports_park::skidpad": {
+        "name": "Carolina Motorsports Park - Skidpad",
+        "key": "gb_carolina_motorsports_park",
+        "subkey": "skidpad",
+        "preview": "/assetto_corsa/1.16/tracks/gb_carolina_motorsports_park/ui/skidpad/preview.png",
+        "country": "USA",
+        "city": "Kershaw, South Carolina",
+        "length": 6000,
+        "maxEntries": 2,
+        "description": "Carolina Motorsports Park is the only purpose-built road racing facility in the Carolinas.",
+        "mod": {
+            "name": "Carolina Motorsports Park",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/carolina-motorsports-park.35849/version/63195/download"
+        }
+    },
+    "gb_carolina_motorsports_park::west": {
+        "name": "Carolina Motorsports Park - West",
+        "key": "gb_carolina_motorsports_park",
+        "subkey": "west",
+        "preview": "/assetto_corsa/1.16/tracks/gb_carolina_motorsports_park/ui/west/preview.png",
+        "country": "USA",
+        "city": "Kershaw, South Carolina",
+        "length": 1589,
+        "maxEntries": 20,
+        "description": "Carolina Motorsports Park is the only purpose-built road racing facility in the Carolinas.",
+        "mod": {
+            "name": "Carolina Motorsports Park",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/carolina-motorsports-park.35849/version/63195/download"
+        }
+    },
+    "gb_carolina_motorsports_park::west_alt": {
+        "name": "Carolina Motorsports Park - West Alternate",
+        "key": "gb_carolina_motorsports_park",
+        "subkey": "west_alt",
+        "preview": "/assetto_corsa/1.16/tracks/gb_carolina_motorsports_park/ui/west_alt/preview.png",
+        "country": "USA",
+        "city": "Kershaw, South Carolina",
+        "length": 1589,
+        "maxEntries": 20,
+        "description": "Carolina Motorsports Park is the only purpose-built road racing facility in the Carolinas.",
+        "mod": {
+            "name": "Carolina Motorsports Park",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/carolina-motorsports-park.35849/version/63195/download"
+        }
+    },
+    "gb_carolina_motorsports_park::west_alt_old": {
+        "name": "Carolina Motorsports Park - West Alternate (Old Layout)",
+        "key": "gb_carolina_motorsports_park",
+        "subkey": "west_alt_old",
+        "preview": "/assetto_corsa/1.16/tracks/gb_carolina_motorsports_park/ui/west_alt_old/preview.png",
+        "country": "USA",
+        "city": "Kershaw, South Carolina",
+        "length": 1590,
+        "maxEntries": 20,
+        "description": "Carolina Motorsports Park is the only purpose-built road racing facility in the Carolinas.",
+        "mod": {
+            "name": "Carolina Motorsports Park",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/carolina-motorsports-park.35849/version/63195/download"
+        }
+    },
+    "gb_carolina_motorsports_park::west_old": {
+        "name": "Carolina Motorsports Park - West (Old Layout)",
+        "key": "gb_carolina_motorsports_park",
+        "subkey": "west_old",
+        "preview": "/assetto_corsa/1.16/tracks/gb_carolina_motorsports_park/ui/west_old/preview.png",
+        "country": "USA",
+        "city": "Kershaw, South Carolina",
+        "length": 1590,
+        "maxEntries": 20,
+        "description": "Carolina Motorsports Park is the only purpose-built road racing facility in the Carolinas.",
+        "mod": {
+            "name": "Carolina Motorsports Park",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/carolina-motorsports-park.35849/version/63195/download"
+        }
+    },
+    "goodwood_circuit::dry": {
+        "name": "Goodwood",
+        "key": "goodwood_circuit",
+        "subkey": "dry",
+        "preview": "/assetto_corsa/1.16/tracks/goodwood_circuit/ui/dry/preview.png",
+        "country": "Great Britain",
+        "city": "Chichester",
+        "length": 3809,
+        "maxEntries": 32,
+        "description": "Goodwood circuit",
+        "mod": {
+            "name": "Goodwood Circuit",
+            "version": "0.99",
+            "url": "https://www.racedepartment.com/downloads/goodwood-circuit.17228/version/35594/download"
+        }
+    },
+    "goodwood_circuit::wet": {
+        "name": "Goodwood WET",
+        "key": "goodwood_circuit",
+        "subkey": "wet",
+        "preview": "/assetto_corsa/1.16/tracks/goodwood_circuit/ui/wet/preview.png",
+        "country": "Great Britain",
+        "city": "Chichester",
+        "length": 3809,
+        "maxEntries": 32,
+        "description": "Goodwood circuit",
+        "mod": {
+            "name": "Goodwood Circuit",
+            "version": "0.99",
+            "url": "https://www.racedepartment.com/downloads/goodwood-circuit.17228/version/35594/download"
+        }
+    },
+    "greatwall::alternative": {
+        "name": "Great Wall - Alternative Start Grid",
+        "key": "greatwall",
+        "subkey": "alternative",
+        "preview": "/assetto_corsa/1.16/tracks/greatwall/ui/alternative/preview.png",
+        "country": "Italy",
+        "city": "Biella - Oropa",
+        "length": 4474,
+        "maxEntries": 24,
+        "description": "Great Wall Speedway",
+        "mod": {
+            "name": "Great Wall SpeedWay",
+            "version": "6",
+            "url": "https://www.racedepartment.com/downloads/great-wall-speedway.7155/version/21340/download"
+        }
+    },
+    "greatwall::alternative_pit": {
+        "name": "Great Wall - Alternative Start Grid - PIT",
+        "key": "greatwall",
+        "subkey": "alternative_pit",
+        "preview": "/assetto_corsa/1.16/tracks/greatwall/ui/alternative_pit/preview.png",
+        "country": "Italy",
+        "city": "Biella - Oropa",
+        "length": 4474,
+        "maxEntries": 24,
+        "description": "Great Wall Speedway",
+        "mod": {
+            "name": "Great Wall SpeedWay",
+            "version": "6",
+            "url": "https://www.racedepartment.com/downloads/great-wall-speedway.7155/version/21340/download"
+        }
+    },
+    "greatwall::greatwall": {
+        "name": "Great Wall",
+        "key": "greatwall",
+        "subkey": "greatwall",
+        "preview": "/assetto_corsa/1.16/tracks/greatwall/ui/greatwall/preview.png",
+        "country": "Italy",
+        "city": "Biella - Oropa",
+        "length": 4474,
+        "maxEntries": 24,
+        "description": "Great Wall Speedway",
+        "mod": {
+            "name": "Great Wall SpeedWay",
+            "version": "6",
+            "url": "https://www.racedepartment.com/downloads/great-wall-speedway.7155/version/21340/download"
+        }
+    },
+    "greatwall::greatwall_pit": {
+        "name": "Great Wall - PIT",
+        "key": "greatwall",
+        "subkey": "greatwall_pit",
+        "preview": "/assetto_corsa/1.16/tracks/greatwall/ui/greatwall_pit/preview.png",
+        "country": "Italy",
+        "city": "Biella - Oropa",
+        "length": 4474,
+        "maxEntries": 24,
+        "description": "Great Wall Speedway",
+        "mod": {
+            "name": "Great Wall SpeedWay",
+            "version": "6",
+            "url": "https://www.racedepartment.com/downloads/great-wall-speedway.7155/version/21340/download"
+        }
+    },
+    "kakucsring::laptiming": {
+        "name": "Kakucs Ring Laptiming",
+        "key": "kakucsring",
+        "subkey": "laptiming",
+        "preview": "/assetto_corsa/1.16/tracks/kakucsring/ui/laptiming/preview.png",
+        "country": "Hungary",
+        "city": "Kakucs",
+        "length": 970,
+        "maxEntries": 15,
+        "description": "Kakucs Ring",
+        "mod": {
+            "name": "Kakucs Ring",
+            "version": "0.95",
+            "url": "https://www.racedepartment.com/downloads/kakucs-ring.25815/version/54084/download"
+        }
+    },
+    "kakucsring::open": {
+        "name": "Kakucs Ring Open",
+        "key": "kakucsring",
+        "subkey": "open",
+        "preview": "/assetto_corsa/1.16/tracks/kakucsring/ui/open/preview.png",
+        "country": "Hungary",
+        "city": "Kakucs",
+        "length": 970,
+        "maxEntries": 15,
+        "description": "Kakucs Ring",
+        "mod": {
+            "name": "Kakucs Ring",
+            "version": "0.95",
+            "url": "https://www.racedepartment.com/downloads/kakucs-ring.25815/version/54084/download"
+        }
+    },
+    "kakucsring::rallycross": {
+        "name": "Kakucs Ring Rallycross",
+        "key": "kakucsring",
+        "subkey": "rallycross",
+        "preview": "/assetto_corsa/1.16/tracks/kakucsring/ui/rallycross/preview.png",
+        "country": "Hungary",
+        "city": "Kakucs",
+        "length": 970,
+        "maxEntries": 15,
+        "description": "Kakucs Ring",
+        "mod": {
+            "name": "Kakucs Ring",
+            "version": "0.95",
+            "url": "https://www.racedepartment.com/downloads/kakucs-ring.25815/version/54084/download"
+        }
+    },
+    "kakucsring::trackday": {
+        "name": "Kakucs Ring Trackday",
+        "key": "kakucsring",
+        "subkey": "trackday",
+        "preview": "/assetto_corsa/1.16/tracks/kakucsring/ui/trackday/preview.png",
+        "country": "Hungary",
+        "city": "Kakucs",
+        "length": 970,
+        "maxEntries": 15,
+        "description": "Kakucs Ring",
+        "mod": {
+            "name": "Kakucs Ring",
+            "version": "0.95",
+            "url": "https://www.racedepartment.com/downloads/kakucs-ring.25815/version/54084/download"
+        }
+    },
+    "ks_barcelona::layout_gp": {
+        "name": "Barcelona - GP",
+        "key": "ks_barcelona",
+        "subkey": "layout_gp",
+        "preview": "/assetto_corsa/1.16/tracks/ks_barcelona/ui/layout_gp/preview.png",
+        "country": "Spain",
+        "city": "Montmelo'",
+        "length": 4655,
+        "maxEntries": 24,
+        "description": "Circuit de Barcelona",
+        "dlc": "Dream Pack 2"
+    },
+    "ks_barcelona::layout_moto": {
+        "name": "Barcelona - Moto",
+        "key": "ks_barcelona",
+        "subkey": "layout_moto",
+        "preview": "/assetto_corsa/1.16/tracks/ks_barcelona/ui/layout_moto/preview.png",
+        "country": "Spain",
+        "city": "Montmelo'",
+        "length": 4727,
+        "maxEntries": 24,
+        "description": "Circuit de Barcelona",
+        "dlc": "Dream Pack 2"
+    },
+    "ks_black_cat_county::layout_int": {
+        "name": "Black Cat County",
+        "key": "ks_black_cat_county",
+        "subkey": "layout_int",
+        "preview": "/assetto_corsa/1.16/tracks/ks_black_cat_county/ui/layout_int/preview.png",
+        "country": "U.S.A.",
+        "city": "Los Angeles",
+        "length": 6478,
+        "maxEntries": 24,
+        "description": "Fictional U.S.A. Road"
+    },
+    "ks_black_cat_county::layout_long": {
+        "name": "Black Cat County - Long",
+        "key": "ks_black_cat_county",
+        "subkey": "layout_long",
+        "preview": "/assetto_corsa/1.16/tracks/ks_black_cat_county/ui/layout_long/preview.png",
+        "country": "U.S.A.",
+        "city": "Los Angeles",
+        "length": 11244,
+        "maxEntries": 24,
+        "description": "Fictional U.S.A. Road"
+    },
+    "ks_black_cat_county::layout_short": {
+        "name": "Black Cat County - Short",
+        "key": "ks_black_cat_county",
+        "subkey": "layout_short",
+        "preview": "/assetto_corsa/1.16/tracks/ks_black_cat_county/ui/layout_short/preview.png",
+        "country": "U.S.A.",
+        "city": "Los Angeles",
+        "length": 6542,
+        "maxEntries": 24,
+        "description": "Fictional U.S.A. Road"
+    },
+    "ks_brands_hatch::gp": {
+        "name": "Brands Hatch - GP",
+        "key": "ks_brands_hatch",
+        "subkey": "gp",
+        "preview": "/assetto_corsa/1.16/tracks/ks_brands_hatch/ui/gp/preview.png",
+        "country": "Great Britain",
+        "city": "Fawkham",
+        "length": 3908,
+        "maxEntries": 24,
+        "description": "Brands Hatch Circuit",
+        "dlc": "Dream Pack 3"
+    },
+    "ks_brands_hatch::indy": {
+        "name": "Brands Hatch - Indy",
+        "key": "ks_brands_hatch",
+        "subkey": "indy",
+        "preview": "/assetto_corsa/1.16/tracks/ks_brands_hatch/ui/indy/preview.png",
+        "country": "Great Britain",
+        "city": "Fawkham",
+        "length": 1929,
+        "maxEntries": 24,
+        "description": "Brands Hatch Circuit",
+        "dlc": "Dream Pack 3"
+    },
+    "ks_drag::drag1000": {
+        "name": "Drag 1000m",
+        "key": "ks_drag",
+        "subkey": "drag1000",
+        "preview": "/assetto_corsa/1.16/tracks/ks_drag/ui/drag1000/preview.png",
+        "country": "Italy",
+        "city": "Imola",
+        "length": 1000,
+        "maxEntries": 2,
+        "description": "fast&furious"
+    },
+    "ks_drag::drag200": {
+        "name": "Drag 200m",
+        "key": "ks_drag",
+        "subkey": "drag200",
+        "preview": "/assetto_corsa/1.16/tracks/ks_drag/ui/drag200/preview.png",
+        "country": "Italy",
+        "city": "Imola",
+        "length": 200,
+        "maxEntries": 2,
+        "description": "fast&furious"
+    },
+    "ks_drag::drag2000": {
+        "name": "Drag 2000m",
+        "key": "ks_drag",
+        "subkey": "drag2000",
+        "preview": "/assetto_corsa/1.16/tracks/ks_drag/ui/drag2000/preview.png",
+        "country": "Italy",
+        "city": "Imola",
+        "length": 2000,
+        "maxEntries": 2,
+        "description": "fast&furious"
+    },
+    "ks_drag::drag400": {
+        "name": "Drag 400m",
+        "key": "ks_drag",
+        "subkey": "drag400",
+        "preview": "/assetto_corsa/1.16/tracks/ks_drag/ui/drag400/preview.png",
+        "country": "Italy",
+        "city": "Imola",
+        "length": 400,
+        "maxEntries": 2,
+        "description": "fast&furious"
+    },
+    "ks_drag::drag500": {
+        "name": "Drag 500m",
+        "key": "ks_drag",
+        "subkey": "drag500",
+        "preview": "/assetto_corsa/1.16/tracks/ks_drag/ui/drag500/preview.png",
+        "country": "Italy",
+        "city": "Imola",
+        "length": 500,
+        "maxEntries": 2,
+        "description": "fast&furious"
+    },
+    "ks_highlands::layout_drift": {
+        "name": "Highlands Drift",
+        "key": "ks_highlands",
+        "subkey": "layout_drift",
+        "preview": "/assetto_corsa/1.16/tracks/ks_highlands/ui/layout_drift/preview.png",
+        "country": "Scotland",
+        "city": "Fantasy",
+        "length": 5167,
+        "maxEntries": 24,
+        "description": "Highlands drift layout"
+    },
+    "ks_highlands::layout_int": {
+        "name": "Highlands",
+        "key": "ks_highlands",
+        "subkey": "layout_int",
+        "preview": "/assetto_corsa/1.16/tracks/ks_highlands/ui/layout_int/preview.png",
+        "country": "Scotland",
+        "city": "Fantasy",
+        "length": 8152,
+        "maxEntries": 24,
+        "description": "Highlands original layout"
+    },
+    "ks_highlands::layout_long": {
+        "name": "Highlands Long",
+        "key": "ks_highlands",
+        "subkey": "layout_long",
+        "preview": "/assetto_corsa/1.16/tracks/ks_highlands/ui/layout_long/preview.png",
+        "country": "Scotland",
+        "city": "Fantasy",
+        "length": 12191,
+        "maxEntries": 24,
+        "description": "Highlands long layout"
+    },
+    "ks_highlands::layout_short": {
+        "name": "Highlands Short",
+        "key": "ks_highlands",
+        "subkey": "layout_short",
+        "preview": "/assetto_corsa/1.16/tracks/ks_highlands/ui/layout_short/preview.png",
+        "country": "Scotland",
+        "city": "Fantasy",
+        "length": 1714,
+        "maxEntries": 24,
+        "description": "Highlands short layout"
+    },
+    "ks_monza66::full": {
+        "name": "Monza 1966 - Full Course",
+        "key": "ks_monza66",
+        "subkey": "full",
+        "preview": "/assetto_corsa/1.16/tracks/ks_monza66/ui/full/preview.png",
+        "country": "Italy",
+        "city": "Monza (MI)",
+        "length": 10000,
+        "maxEntries": 25,
+        "description": "Autodromo di Monza"
+    },
+    "ks_monza66::junior": {
+        "name": "Monza 1966 - Junior Course",
+        "key": "ks_monza66",
+        "subkey": "junior",
+        "preview": "/assetto_corsa/1.16/tracks/ks_monza66/ui/junior/preview.png",
+        "country": "Italy",
+        "city": "Monza (MI)",
+        "length": 2405,
+        "maxEntries": 25,
+        "description": "Autodromo di Monza"
+    },
+    "ks_monza66::road": {
+        "name": "Monza 1966 - Road Course",
+        "key": "ks_monza66",
+        "subkey": "road",
+        "preview": "/assetto_corsa/1.16/tracks/ks_monza66/ui/road/preview.png",
+        "country": "Italy",
+        "city": "Monza (MI)",
+        "length": 5793,
+        "maxEntries": 25,
+        "description": "Autodromo di Monza"
+    },
+    "ks_nordschleife::endurance": {
+        "name": "Nordschleife - Endurance",
+        "key": "ks_nordschleife",
+        "subkey": "endurance",
+        "preview": "/assetto_corsa/1.16/tracks/ks_nordschleife/ui/endurance/preview.png",
+        "country": "Germany",
+        "city": "Nurburg",
+        "length": 25378,
+        "maxEntries": 24,
+        "description": "Nurburgring Nordschleife",
+        "dlc": "Dream Pack 1"
+    },
+    "ks_nordschleife::endurance_108": {
+        "name": "Nordschleife - Endurance 108",
+        "key": "ks_nordschleife",
+        "subkey": "endurance_108",
+        "preview": "/assetto_corsa/1.16/tracks/ks_nordschleife/ui/endurance_108/preview.png",
+        "country": "Germany",
+        "city": "Nurburg",
+        "length": 25378,
+        "maxEntries": 108,
+        "description": "Nurburgring Nordschleife",
+        "mod": {
+            "name": "Nordschleife 108 Grid Spots",
+            "version": "2017-05-22",
+            "url": "https://www.racedepartment.com/downloads/nordschleife-108-grid-spots.15493/version/26792/download"
+        },
+        "dlc": "Dream Pack 1"
+    },
+    "ks_nordschleife::endurance_cup": {
+        "name": "Nordschleife - Endurance Cup",
+        "key": "ks_nordschleife",
+        "subkey": "endurance_cup",
+        "preview": "/assetto_corsa/1.16/tracks/ks_nordschleife/ui/endurance_cup/preview.png",
+        "country": "Germany",
+        "city": "Nurburg",
+        "length": 24433,
+        "maxEntries": 24,
+        "description": "Nurburgring Nordschleife",
+        "dlc": "Dream Pack 1"
+    },
+    "ks_nordschleife::endurance_cup_108": {
+        "name": "Nordschleife - Endurance Cup 108",
+        "key": "ks_nordschleife",
+        "subkey": "endurance_cup_108",
+        "preview": "/assetto_corsa/1.16/tracks/ks_nordschleife/ui/endurance_cup_108/preview.png",
+        "country": "Germany",
+        "city": "Nurburg",
+        "length": 24433,
+        "maxEntries": 108,
+        "description": "Nurburgring Nordschleife",
+        "mod": {
+            "name": "Nordschleife 108 Grid Spots",
+            "version": "2017-05-22",
+            "url": "https://www.racedepartment.com/downloads/nordschleife-108-grid-spots.15493/version/26792/download"
+        },
+        "dlc": "Dream Pack 1"
+    },
+    "ks_nordschleife::nordschleife": {
+        "name": "Nordschleife",
+        "key": "ks_nordschleife",
+        "subkey": "nordschleife",
+        "preview": "/assetto_corsa/1.16/tracks/ks_nordschleife/ui/nordschleife/preview.png",
+        "country": "Germany",
+        "city": "Nurburg",
+        "length": 20832,
+        "maxEntries": 24,
+        "description": "Nurburgring Nordschleife",
+        "dlc": "Dream Pack 1"
+    },
+    "ks_nordschleife::touristenfahrten": {
+        "name": "Nordschleife - Tourist",
+        "key": "ks_nordschleife",
+        "subkey": "touristenfahrten",
+        "preview": "/assetto_corsa/1.16/tracks/ks_nordschleife/ui/touristenfahrten/preview.png",
+        "country": "Germany",
+        "city": "Nurburg",
+        "length": 19100,
+        "maxEntries": 32,
+        "description": "Nurburgring Nordschleife",
+        "dlc": "Dream Pack 1"
+    },
+    "ks_nurburgring::layout_gp_a": {
+        "name": "Nurburgring - GP",
+        "key": "ks_nurburgring",
+        "subkey": "layout_gp_a",
+        "preview": "/assetto_corsa/1.16/tracks/ks_nurburgring/ui/layout_gp_a/preview.png",
+        "country": "Germany",
+        "city": "Nurburg",
+        "length": 5148,
+        "maxEntries": 24,
+        "description": "Nuerburgring"
+    },
+    "ks_nurburgring::layout_gp_b": {
+        "name": "Nurburgring - GP (GT)",
+        "key": "ks_nurburgring",
+        "subkey": "layout_gp_b",
+        "preview": "/assetto_corsa/1.16/tracks/ks_nurburgring/ui/layout_gp_b/preview.png",
+        "country": "Germany",
+        "city": "Nurburg",
+        "length": 5137,
+        "maxEntries": 24,
+        "description": "Nuerburgring"
+    },
+    "ks_nurburgring::layout_sprint_a": {
+        "name": "Nurburgring - Sprint",
+        "key": "ks_nurburgring",
+        "subkey": "layout_sprint_a",
+        "preview": "/assetto_corsa/1.16/tracks/ks_nurburgring/ui/layout_sprint_a/preview.png",
+        "country": "Germany",
+        "city": "Nurburg",
+        "length": 3629,
+        "maxEntries": 24,
+        "description": "Nuerburgring"
+    },
+    "ks_nurburgring::layout_sprint_b": {
+        "name": "Nurburgring - Sprint (GT)",
+        "key": "ks_nurburgring",
+        "subkey": "layout_sprint_b",
+        "preview": "/assetto_corsa/1.16/tracks/ks_nurburgring/ui/layout_sprint_b/preview.png",
+        "country": "Germany",
+        "city": "Nurburg",
+        "length": 3618,
+        "maxEntries": 24,
+        "description": "Nuerburgring"
+    },
+    "ks_red_bull_ring::layout_gp": {
+        "name": "Red Bull Ring GP",
+        "key": "ks_red_bull_ring",
+        "subkey": "layout_gp",
+        "preview": "/assetto_corsa/1.16/tracks/ks_red_bull_ring/ui/layout_gp/preview.png",
+        "country": "Austria",
+        "city": "Spielberg",
+        "length": 4326,
+        "maxEntries": 24,
+        "description": "Red Bull Ring Grand Prix Cricuit",
+        "dlc": "Red Pack"
+    },
+    "ks_red_bull_ring::layout_national": {
+        "name": "Red Bull Ring National",
+        "key": "ks_red_bull_ring",
+        "subkey": "layout_national",
+        "preview": "/assetto_corsa/1.16/tracks/ks_red_bull_ring/ui/layout_national/preview.png",
+        "country": "Austria",
+        "city": "Spielberg",
+        "length": 2336,
+        "maxEntries": 24,
+        "description": "Red Bull Ring Südschleife National Circuit",
+        "dlc": "Red Pack"
+    },
+    "ks_silverstone::gp": {
+        "name": "Silverstone GP",
+        "key": "ks_silverstone",
+        "subkey": "gp",
+        "preview": "/assetto_corsa/1.16/tracks/ks_silverstone/ui/gp/preview.png",
+        "country": "Great Britain",
+        "city": "Silverstone",
+        "length": 5901,
+        "maxEntries": 24,
+        "description": "Circuit of Silverstone"
+    },
+    "ks_silverstone::international": {
+        "name": "Silverstone - International",
+        "key": "ks_silverstone",
+        "subkey": "international",
+        "preview": "/assetto_corsa/1.16/tracks/ks_silverstone/ui/international/preview.png",
+        "country": "Great Britain",
+        "city": "Silverstone",
+        "length": 3619,
+        "maxEntries": 24,
+        "description": "Circuit of Silverstone"
+    },
+    "ks_silverstone::national": {
+        "name": "Silverstone - National",
+        "key": "ks_silverstone",
+        "subkey": "national",
+        "preview": "/assetto_corsa/1.16/tracks/ks_silverstone/ui/national/preview.png",
+        "country": "Great Britain",
+        "city": "Silverstone",
+        "length": 2638,
+        "maxEntries": 24,
+        "description": "Circuit of Silverstone"
+    },
+    "ks_vallelunga::classic_circuit": {
+        "name": "Vallelunga - Classic",
+        "key": "ks_vallelunga",
+        "subkey": "classic_circuit",
+        "preview": "/assetto_corsa/1.16/tracks/ks_vallelunga/ui/classic_circuit/preview.png",
+        "country": "Italy",
+        "city": "Rome",
+        "length": 3222,
+        "maxEntries": 24,
+        "description": "Autodromo Piero Taruffi"
+    },
+    "ks_vallelunga::club_circuit": {
+        "name": "Vallelunga - Club",
+        "key": "ks_vallelunga",
+        "subkey": "club_circuit",
+        "preview": "/assetto_corsa/1.16/tracks/ks_vallelunga/ui/club_circuit/preview.png",
+        "country": "Italy",
+        "city": "Rome",
+        "length": 1746,
+        "maxEntries": 24,
+        "description": "Autodromo Piero Taruffi"
+    },
+    "ks_vallelunga::extended_circuit": {
+        "name": "Vallelunga",
+        "key": "ks_vallelunga",
+        "subkey": "extended_circuit",
+        "preview": "/assetto_corsa/1.16/tracks/ks_vallelunga/ui/extended_circuit/preview.png",
+        "country": "Italy",
+        "city": "Rome",
+        "length": 4085,
+        "maxEntries": 24,
+        "description": "Autodromo Piero Taruffi"
+    },
+    "ks_zandvoort::zandvoort_36": {
+        "name": "Zandvoort 36",
+        "key": "ks_zandvoort",
+        "subkey": "zandvoort_36",
+        "preview": "/assetto_corsa/1.16/tracks/ks_zandvoort/ui/zandvoort_36/preview.png",
+        "country": "Netherlands",
+        "city": "Zandvoort",
+        "length": 4307,
+        "maxEntries": 36,
+        "description": "Zandvoort Circuit Park with 36 grid spots",
+        "mod": {
+            "name": "AC Zandvoort 36 Gridslots",
+            "version": "2018-04-07",
+            "url": "https://www.racedepartment.com/downloads/ac-zandvoort-36-gridslots.20517/version/36373/download"
+        }
+    },
+    "kyalami_2016::gt_challenge": {
+        "name": "Kyalami 2016",
+        "key": "kyalami_2016",
+        "subkey": "gt_challenge",
+        "preview": "/assetto_corsa/1.16/tracks/kyalami_2016/ui/gt_challenge/preview.png",
+        "country": "South Africa",
+        "city": "Johannesburg",
+        "length": 4522,
+        "maxEntries": 30,
+        "description": "Kyalami Grand Prix Circuit",
+        "mod": {
+            "name": "Kyalami 2016",
+            "version": "0.9",
+            "url": "https://www.racedepartment.com/downloads/kyalami-2016.29786/version/54203/download"
+        }
+    },
+    "kyalami_2016::summer": {
+        "name": "Kyalami 2016",
+        "key": "kyalami_2016",
+        "subkey": "summer",
+        "preview": "/assetto_corsa/1.16/tracks/kyalami_2016/ui/summer/preview.png",
+        "country": "South Africa",
+        "city": "Johannesburg",
+        "length": 4522,
+        "maxEntries": 30,
+        "description": "Kyalami Grand Prix Circuit",
+        "mod": {
+            "name": "Kyalami 2016",
+            "version": "0.9",
+            "url": "https://www.racedepartment.com/downloads/kyalami-2016.29786/version/54203/download"
+        }
+    },
+    "kyalami_2016::winter": {
+        "name": "Kyalami 2016",
+        "key": "kyalami_2016",
+        "subkey": "winter",
+        "preview": "/assetto_corsa/1.16/tracks/kyalami_2016/ui/winter/preview.png",
+        "country": "South Africa",
+        "city": "Johannesburg",
+        "length": 4522,
+        "maxEntries": 30,
+        "description": "Kyalami Grand Prix Circuit",
+        "mod": {
+            "name": "Kyalami 2016",
+            "version": "0.9",
+            "url": "https://www.racedepartment.com/downloads/kyalami-2016.29786/version/54203/download"
+        }
+    },
+    "lemans_2017::lights": {
+        "name": "Circuit de la Sarthe (Le Mans) Night",
+        "key": "lemans_2017",
+        "subkey": "lights",
+        "preview": "/assetto_corsa/1.16/tracks/lemans_2017/ui/lights/preview.png",
+        "country": "France",
+        "city": "Le Mans",
+        "length": 13600,
+        "maxEntries": 56,
+        "description": "Lemans 24 Hour",
+        "mod": {
+            "name": "Circuit 24H Lemans 2017",
+            "version": "2.0",
+            "url": "https://www.racedepartment.com/downloads/circuit-24h-lemans-2017.2482/version/53933/download"
+        }
+    },
+    "lemans_2017::no_lights": {
+        "name": "Circuit de la Sarthe (Le Mans) Day",
+        "key": "lemans_2017",
+        "subkey": "no_lights",
+        "preview": "/assetto_corsa/1.16/tracks/lemans_2017/ui/no_lights/preview.png",
+        "country": "France",
+        "city": "Le Mans",
+        "length": 13600,
+        "maxEntries": 56,
+        "description": "Lemans 24 Hour",
+        "mod": {
+            "name": "Circuit 24H Lemans 2017",
+            "version": "2.0",
+            "url": "https://www.racedepartment.com/downloads/circuit-24h-lemans-2017.2482/version/53933/download"
+        }
+    },
+    "lemans_2017::nochic_lights": {
+        "name": "Circuit de la Sarthe (No Chicane's) Night",
+        "key": "lemans_2017",
+        "subkey": "nochic_lights",
+        "preview": "/assetto_corsa/1.16/tracks/lemans_2017/ui/nochic_lights/preview.png",
+        "country": "France",
+        "city": "Le Mans",
+        "length": 13005,
+        "maxEntries": 56,
+        "description": "Lemans 24 Hour",
+        "mod": {
+            "name": "Circuit 24H Lemans 2017",
+            "version": "2.0",
+            "url": "https://www.racedepartment.com/downloads/circuit-24h-lemans-2017.2482/version/53933/download"
+        }
+    },
+    "lemans_2017::nochic_no_lights": {
+        "name": "Circuit de la Sarthe (No Chicane's) Day",
+        "key": "lemans_2017",
+        "subkey": "nochic_no_lights",
+        "preview": "/assetto_corsa/1.16/tracks/lemans_2017/ui/nochic_no_lights/preview.png",
+        "country": "France",
+        "city": "Le Mans",
+        "length": 13005,
+        "maxEntries": 56,
+        "description": "Lemans 24 Hour",
+        "mod": {
+            "name": "Circuit 24H Lemans 2017",
+            "version": "2.0",
+            "url": "https://www.racedepartment.com/downloads/circuit-24h-lemans-2017.2482/version/53933/download"
+        }
+    },
+    "lilski_calabogie::full": {
+        "name": "Calabogie Motorsports Park Full",
+        "key": "lilski_calabogie",
+        "subkey": "full",
+        "preview": "/assetto_corsa/1.16/tracks/lilski_calabogie/ui/full/preview.png",
+        "country": "Canada",
+        "city": "Calabogie",
+        "length": 5050,
+        "maxEntries": 32,
+        "description": "Calabogie Motorsports Park",
+        "mod": {
+            "name": "Calabogie Motorsports Park",
+            "version": "0.9",
+            "url": "https://www.racedepartment.com/downloads/calabogie-motorsports-park.30099/version/52962/download"
+        }
+    },
+    "lilski_calabogie::stadium": {
+        "name": "Calabogie Motorsports Park Stadium",
+        "key": "lilski_calabogie",
+        "subkey": "stadium",
+        "preview": "/assetto_corsa/1.16/tracks/lilski_calabogie/ui/stadium/preview.png",
+        "country": "Canada",
+        "city": "Calabogie",
+        "length": 2810,
+        "maxEntries": 32,
+        "description": "Calabogie Motorsports Park",
+        "mod": {
+            "name": "Calabogie Motorsports Park",
+            "version": "0.9",
+            "url": "https://www.racedepartment.com/downloads/calabogie-motorsports-park.30099/version/52962/download"
+        }
+    },
+    "lilski_road_america::moto": {
+        "name": "Road America Moto",
+        "key": "lilski_road_america",
+        "subkey": "moto",
+        "preview": "/assetto_corsa/1.16/tracks/lilski_road_america/ui/moto/preview.png",
+        "country": "USA",
+        "city": "Elkhart Lake",
+        "length": 6515,
+        "maxEntries": 43,
+        "description": "Road America",
+        "mod": {
+            "name": "Road America",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/road-america.32732/version/62697/download"
+        }
+    },
+    "lilski_watkins_glen::boot": {
+        "name": "Watkins Glen Boot",
+        "key": "lilski_watkins_glen",
+        "subkey": "boot",
+        "preview": "/assetto_corsa/1.16/tracks/lilski_watkins_glen/ui/boot/preview.png",
+        "country": "USA",
+        "city": "Watkins Glen",
+        "length": 5430,
+        "maxEntries": 43,
+        "description": "Watkins Glen",
+        "mod": {
+            "name": "Watkins Glen International",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/watkins-glen-international.20204/version/59248/download"
+        }
+    },
+    "lilski_watkins_glen::boot_classic": {
+        "name": "Watkins Glen Boot Classic",
+        "key": "lilski_watkins_glen",
+        "subkey": "boot_classic",
+        "preview": "/assetto_corsa/1.16/tracks/lilski_watkins_glen/ui/boot_classic/preview.png",
+        "country": "USA",
+        "city": "Watkins Glen",
+        "length": 5430,
+        "maxEntries": 43,
+        "description": "Watkins Glen",
+        "mod": {
+            "name": "Watkins Glen International",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/watkins-glen-international.20204/version/59248/download"
+        }
+    },
+    "lilski_watkins_glen::short": {
+        "name": "Watkins Glen Short",
+        "key": "lilski_watkins_glen",
+        "subkey": "short",
+        "preview": "/assetto_corsa/1.16/tracks/lilski_watkins_glen/ui/short/preview.png",
+        "country": "USA",
+        "city": "Watkins Glen",
+        "length": 3950,
+        "maxEntries": 43,
+        "description": "Watkins Glen",
+        "mod": {
+            "name": "Watkins Glen International",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/watkins-glen-international.20204/version/59248/download"
+        }
+    },
+    "lilski_watkins_glen::short_classic": {
+        "name": "Watkins Glen Short Classic",
+        "key": "lilski_watkins_glen",
+        "subkey": "short_classic",
+        "preview": "/assetto_corsa/1.16/tracks/lilski_watkins_glen/ui/short_classic/preview.png",
+        "country": "USA",
+        "city": "Watkins Glen",
+        "length": 3950,
+        "maxEntries": 43,
+        "description": "Watkins Glen",
+        "mod": {
+            "name": "Watkins Glen International",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/watkins-glen-international.20204/version/59248/download"
+        }
+    },
+    "modena31::fast_layout": {
+        "name": "Modena - Fast",
+        "key": "modena31",
+        "subkey": "fast_layout",
+        "preview": "/assetto_corsa/1.16/tracks/modena31/ui/fast_layout/preview.png",
+        "country": "Italy",
+        "city": "Modena",
+        "length": 1820,
+        "maxEntries": 24,
+        "description": "Autodromo di Modena",
+        "mod": {
+            "name": "Autodromo di Modena",
+            "version": "3.2",
+            "url": "https://www.racedepartment.com/downloads/autodromo-di-modena.5346/version/19473/download"
+        }
+    },
+    "modena31::standard_layout": {
+        "name": "Modena",
+        "key": "modena31",
+        "subkey": "standard_layout",
+        "preview": "/assetto_corsa/1.16/tracks/modena31/ui/standard_layout/preview.png",
+        "country": "Italy",
+        "city": "Modena",
+        "length": 2007,
+        "maxEntries": 24,
+        "description": "Autodromo di Modena",
+        "mod": {
+            "name": "Autodromo di Modena",
+            "version": "3.2",
+            "url": "https://www.racedepartment.com/downloads/autodromo-di-modena.5346/version/19473/download"
+        }
+    },
+    "mountainpeak::layout_roadcourse_chicane": {
+        "name": "Mountain Peak Roadcourse",
+        "key": "mountainpeak",
+        "subkey": "layout_roadcourse_chicane",
+        "preview": "/assetto_corsa/1.16/tracks/mountainpeak/ui/layout_roadcourse_chicane/preview.png",
+        "country": "USA",
+        "city": "Charlotte",
+        "length": 3681,
+        "maxEntries": 40,
+        "description": "Charlotte Motor Speedway",
+        "mod": {
+            "name": "Mountain Peak (Charlotte Speedway)",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/mountain-peak-charlotte-speedway.25103/version/44580/download"
+        }
+    },
+    "mountainpeak::layout_roadcourse_nochicane": {
+        "name": "Mountain Peak Roadcourse B",
+        "key": "mountainpeak",
+        "subkey": "layout_roadcourse_nochicane",
+        "preview": "/assetto_corsa/1.16/tracks/mountainpeak/ui/layout_roadcourse_nochicane/preview.png",
+        "country": "USA",
+        "city": "Charlotte",
+        "length": 3621,
+        "maxEntries": 40,
+        "description": "Charlotte Motor Speedway",
+        "mod": {
+            "name": "Mountain Peak (Charlotte Speedway)",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/mountain-peak-charlotte-speedway.25103/version/44580/download"
+        }
+    },
+    "mountainpeak::layout_speedway": {
+        "name": "Mountain Peak Speedway",
+        "key": "mountainpeak",
+        "subkey": "layout_speedway",
+        "preview": "/assetto_corsa/1.16/tracks/mountainpeak/ui/layout_speedway/preview.png",
+        "country": "USA",
+        "city": "Charlotte",
+        "length": 2414,
+        "maxEntries": 40,
+        "description": "Charlotte Motor Speedway",
+        "mod": {
+            "name": "Mountain Peak (Charlotte Speedway)",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/mountain-peak-charlotte-speedway.25103/version/44580/download"
+        }
+    },
+    "nemuno_ziedas::fastlap": {
+        "name": "Nemuno Ziedas Fast Lap",
+        "key": "nemuno_ziedas",
+        "subkey": "fastlap",
+        "preview": "/assetto_corsa/1.16/tracks/nemuno_ziedas/ui/fastlap/preview.png",
+        "country": "Lithuania",
+        "city": "Kaunas",
+        "length": 3350,
+        "maxEntries": 32,
+        "description": "Nemuno Ziedas is lithuanias only race circuit",
+        "mod": {
+            "name": "Nemuno Žiedas (Nemunas Ring) ",
+            "version": "0.95",
+            "url": "https://www.racedepartment.com/downloads/nemuno-%C5%BDiedas-nemunas-ring.15814/version/36315/download"
+        }
+    },
+    "nemuno_ziedas::trackday": {
+        "name": "Nemuno Ziedas trackday",
+        "key": "nemuno_ziedas",
+        "subkey": "trackday",
+        "preview": "/assetto_corsa/1.16/tracks/nemuno_ziedas/ui/trackday/preview.png",
+        "country": "Lithuania",
+        "city": "Kaunas",
+        "length": 3350,
+        "maxEntries": 32,
+        "description": "Nemuno Ziedas is lithuanias only race circuit",
+        "mod": {
+            "name": "Nemuno Žiedas (Nemunas Ring) ",
+            "version": "0.95",
+            "url": "https://www.racedepartment.com/downloads/nemuno-%C5%BDiedas-nemunas-ring.15814/version/36315/download"
+        }
+    },
+    "okayama::circuit_gp": {
+        "name": "Okayama Grand Prix",
+        "key": "okayama",
+        "subkey": "circuit_gp",
+        "preview": "/assetto_corsa/1.16/tracks/okayama/ui/circuit_gp/preview.png",
+        "country": "Japan",
+        "city": "Okayama",
+        "length": 3703,
+        "maxEntries": 36,
+        "description": "Okayama International circuit",
+        "mod": {
+            "name": "Okayama International circuit",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/okayama-international-circuit.15846/version/30738/download"
+        }
+    },
+    "okayama::circuit_piper": {
+        "name": "Okayama Piper circuit",
+        "key": "okayama",
+        "subkey": "circuit_piper",
+        "preview": "/assetto_corsa/1.16/tracks/okayama/ui/circuit_piper/preview.png",
+        "country": "Japan",
+        "city": "Okayama",
+        "length": 1950,
+        "maxEntries": 36,
+        "description": "Okayama International circuit",
+        "mod": {
+            "name": "Okayama International circuit",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/okayama-international-circuit.15846/version/30738/download"
+        }
+    },
+    "okayama::circuit_piper_drift": {
+        "name": "Okayama drift",
+        "key": "okayama",
+        "subkey": "circuit_piper_drift",
+        "preview": "/assetto_corsa/1.16/tracks/okayama/ui/circuit_piper_drift/preview.png",
+        "country": "Japan",
+        "city": "Okayama",
+        "length": 800,
+        "maxEntries": 24,
+        "description": "Okayama, Formula DRIFT Japan",
+        "mod": {
+            "name": "Okayama International circuit",
+            "version": "1.0",
+            "url": "https://www.racedepartment.com/downloads/okayama-international-circuit.15846/version/30738/download"
+        }
+    },
+    "ottawapark::drift": {
+        "name": "Ottawa Drift",
+        "key": "ottawapark",
+        "subkey": "drift",
+        "preview": "/assetto_corsa/1.16/tracks/ottawapark/ui/drift/preview.png",
+        "country": "United States",
+        "city": "Ottawa",
+        "length": 1269,
+        "maxEntries": 14,
+        "description": "Ottawa Motorsports Park Infield Drift Circuit",
+        "mod": {
+            "name": "Ottawa Motorsports Park",
+            "version": "1.01",
+            "url": "https://www.racedepartment.com/downloads/ottawa-motorsports-park.34967/version/65743/download"
+        }
+    },
+    "ottawapark::full": {
+        "name": "Ottawa Full Circuit",
+        "key": "ottawapark",
+        "subkey": "full",
+        "preview": "/assetto_corsa/1.16/tracks/ottawapark/ui/full/preview.png",
+        "country": "United States",
+        "city": "Ottawa",
+        "length": 7948,
+        "maxEntries": 32,
+        "description": "Ottawa Motorsports Park Full Circuit",
+        "mod": {
+            "name": "Ottawa Motorsports Park",
+            "version": "1.01",
+            "url": "https://www.racedepartment.com/downloads/ottawa-motorsports-park.34967/version/65743/download"
+        }
+    },
+    "ottawapark::gp": {
+        "name": "Ottawa GP Circuit",
+        "key": "ottawapark",
+        "subkey": "gp",
+        "preview": "/assetto_corsa/1.16/tracks/ottawapark/ui/gp/preview.png",
+        "country": "United States",
+        "city": "Ottawa",
+        "length": 6901,
+        "maxEntries": 32,
+        "description": "Ottawa Motorsports Park Grand Prix Circuit",
+        "mod": {
+            "name": "Ottawa Motorsports Park",
+            "version": "1.01",
+            "url": "https://www.racedepartment.com/downloads/ottawa-motorsports-park.34967/version/65743/download"
+        }
+    },
+    "ottawapark::northclub": {
+        "name": "Ottawa Club",
+        "key": "ottawapark",
+        "subkey": "northclub",
+        "preview": "/assetto_corsa/1.16/tracks/ottawapark/ui/northclub/preview.png",
+        "country": "United States",
+        "city": "Ottawa",
+        "length": 3315,
+        "maxEntries": 32,
+        "description": "Ottawa Motorsports Park Club Circuit",
+        "mod": {
+            "name": "Ottawa Motorsports Park",
+            "version": "1.01",
+            "url": "https://www.racedepartment.com/downloads/ottawa-motorsports-park.34967/version/65743/download"
+        }
+    },
+    "ottawapark::northfull": {
+        "name": "Ottawa North Ciruit",
+        "key": "ottawapark",
+        "subkey": "northfull",
+        "preview": "/assetto_corsa/1.16/tracks/ottawapark/ui/northfull/preview.png",
+        "country": "United States",
+        "city": "Ottawa",
+        "length": 4728,
+        "maxEntries": 32,
+        "description": "Ottawa Motorsports Park North Course",
+        "mod": {
+            "name": "Ottawa Motorsports Park",
+            "version": "1.01",
+            "url": "https://www.racedepartment.com/downloads/ottawa-motorsports-park.34967/version/65743/download"
+        }
+    },
+    "ottawapark::south": {
+        "name": "Ottawa South Circuit",
+        "key": "ottawapark",
+        "subkey": "south",
+        "preview": "/assetto_corsa/1.16/tracks/ottawapark/ui/south/preview.png",
+        "country": "United States",
+        "city": "Ottawa",
+        "length": 2239,
+        "maxEntries": 32,
+        "description": "Ottawa Motorsports Park South Club Circuit",
+        "mod": {
+            "name": "Ottawa Motorsports Park",
+            "version": "1.01",
+            "url": "https://www.racedepartment.com/downloads/ottawa-motorsports-park.34967/version/65743/download"
+        }
+    },
+    "riverside::long": {
+        "name": "Riverside Long",
+        "key": "riverside",
+        "subkey": "long",
+        "preview": "/assetto_corsa/1.16/tracks/riverside/ui/long/preview.png",
+        "country": "U.S.A.",
+        "city": "Riverside",
+        "length": 5300,
+        "maxEntries": 24,
+        "description": "Riverside",
+        "mod": {
+            "name": "Riverside International Raceway ",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/riverside-international-raceway.9492/version/25093/download"
+        }
+    },
+    "riverside::nascar": {
+        "name": "Riverside NASCAR",
+        "key": "riverside",
+        "subkey": "nascar",
+        "preview": "/assetto_corsa/1.16/tracks/riverside/ui/nascar/preview.png",
+        "country": "U.S.A.",
+        "city": "Riverside",
+        "length": 4220,
+        "maxEntries": 24,
+        "description": "Riverside",
+        "mod": {
+            "name": "Riverside International Raceway ",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/riverside-international-raceway.9492/version/25093/download"
+        }
+    },
+    "riverside::short": {
+        "name": "Riverside Short",
+        "key": "riverside",
+        "subkey": "short",
+        "preview": "/assetto_corsa/1.16/tracks/riverside/ui/short/preview.png",
+        "country": "U.S.A.",
+        "city": "Riverside",
+        "length": 4090,
+        "maxEntries": 24,
+        "description": "Riverside",
+        "mod": {
+            "name": "Riverside International Raceway ",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/riverside-international-raceway.9492/version/25093/download"
+        }
+    },
+    "riverside::spike": {
+        "name": "Riverside Spike",
+        "key": "riverside",
+        "subkey": "spike",
+        "preview": "/assetto_corsa/1.16/tracks/riverside/ui/spike/preview.png",
+        "country": "U.S.A.",
+        "city": "Riverside",
+        "length": 4220,
+        "maxEntries": 24,
+        "description": "Riverside",
+        "mod": {
+            "name": "Riverside International Raceway ",
+            "version": "1.1",
+            "url": "https://www.racedepartment.com/downloads/riverside-international-raceway.9492/version/25093/download"
+        }
+    },
+    "road_atlanta2018::grandprix": {
+        "name": "Road Atlanta Grand Prix",
+        "key": "road_atlanta2018",
+        "subkey": "grandprix",
+        "preview": "/assetto_corsa/1.16/tracks/road_atlanta2018/ui/grandprix/preview.png",
+        "country": "USA",
+        "city": "Road Atlanta",
+        "length": 4088,
+        "maxEntries": 50,
+        "description": "2018 layout",
+        "mod": {
+            "name": "Road Atlanta",
+            "version": "1.3",
+            "url": "https://www.racedepartment.com/downloads/road-atlanta.18293/version/43269/download"
+        }
+    },
+    "road_atlanta2018::shortcourse": {
+        "name": "Road Atlanta Short Course",
+        "key": "road_atlanta2018",
+        "subkey": "shortcourse",
+        "preview": "/assetto_corsa/1.16/tracks/road_atlanta2018/ui/shortcourse/preview.png",
+        "country": "USA",
+        "city": "Road Atlanta",
+        "length": 2748,
+        "maxEntries": 50,
+        "description": "2018 layout",
+        "mod": {
+            "name": "Road Atlanta",
+            "version": "1.3",
+            "url": "https://www.racedepartment.com/downloads/road-atlanta.18293/version/43269/download"
+        }
+    },
+    "rs_tor_poznanl::drift": {
+        "name": "Tor Poznań - Drift",
+        "key": "rs_tor_poznanl",
+        "subkey": "drift",
+        "preview": "/assetto_corsa/1.16/tracks/rs_tor_poznanl/ui/drift/preview.png",
+        "country": "Poland",
+        "city": "Poznan",
+        "length": 4083,
+        "maxEntries": 32,
+        "description": "Tor Poznań v1.4 - Drift",
+        "mod": {
+            "name": "Tor Poznań",
+            "version": "2.0",
+            "url": "https://www.racedepartment.com/downloads/tor-pozna%C5%84.6118/version/68348/download"
+        }
+    },
+    "rs_tor_poznanl::karting": {
+        "name": "Tor Poznań - eKart ROTAX Max Challenge POLAND",
+        "key": "rs_tor_poznanl",
+        "subkey": "karting",
+        "preview": "/assetto_corsa/1.16/tracks/rs_tor_poznanl/ui/karting/preview.png",
+        "country": "Poland",
+        "city": "Poznan",
+        "length": 1500,
+        "maxEntries": 36,
+        "description": "Tor Poznań v2.0 (2020)",
+        "mod": {
+            "name": "Tor Poznań",
+            "version": "2.0",
+            "url": "https://www.racedepartment.com/downloads/tor-pozna%C5%84.6118/version/68348/download"
+        }
+    },
+    "rs_tor_poznanl::laser": {
+        "name": "Tor Poznań",
+        "key": "rs_tor_poznanl",
+        "subkey": "laser",
+        "preview": "/assetto_corsa/1.16/tracks/rs_tor_poznanl/ui/laser/preview.png",
+        "country": "Poland",
+        "city": "Poznan",
+        "length": 4083,
+        "maxEntries": 40,
+        "description": "Tor Poznań v2.0 (2021)",
+        "mod": {
+            "name": "Tor Poznań",
+            "version": "2.0",
+            "url": "https://www.racedepartment.com/downloads/tor-pozna%C5%84.6118/version/68348/download"
+        }
+    },
+    "willow_springs::big_willow": {
+        "name": "Willow Springs - Big Willow",
+        "key": "willow_springs",
+        "subkey": "big_willow",
+        "preview": "/assetto_corsa/1.16/tracks/willow_springs/ui/big_willow/preview.png",
+        "country": "USA",
+        "city": "Willow Springs",
+        "length": 2000,
+        "maxEntries": 40,
+        "description": "Willow Springs International Raceway",
+        "mod": {
+            "name": "Willow Springs - Big Willow",
+            "version": "1.03",
+            "url": "https://www.racedepartment.com/downloads/willow-springs-big-willow.32338/version/59631/download"
+        }
+    },
+    "willow_springs::big_willow_real": {
+        "name": "Willow Springs - Big Willow Real",
+        "key": "willow_springs",
+        "subkey": "big_willow_real",
+        "preview": "/assetto_corsa/1.16/tracks/willow_springs/ui/big_willow_real/preview.png",
+        "country": "USA",
+        "city": "Willow Springs",
+        "length": 2000,
+        "maxEntries": 40,
+        "description": "Willow Springs International Raceway",
+        "mod": {
+            "name": "Willow Springs - Big Willow",
+            "version": "1.03",
+            "url": "https://www.racedepartment.com/downloads/willow-springs-big-willow.32338/version/59631/download"
+        }
+    }
+}
