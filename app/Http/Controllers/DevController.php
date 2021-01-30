@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\DataProvider\DataProvider;
 use App\EventBonusCalculators\OnePointEachSplit;
 use App\Models\User;
 
@@ -24,6 +25,12 @@ class DevController extends Controller
     }
 
     public function index()
+    {
+        $tracks = (new DataProvider)->getAcTracks();
+        dd($tracks->sortBy('length')->skip(30));
+    }
+
+    public function indexImport()
     {
         $series = Series::find(8);
 
