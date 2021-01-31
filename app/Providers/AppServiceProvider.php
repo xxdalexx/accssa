@@ -37,5 +37,13 @@ class AppServiceProvider extends ServiceProvider
         Auth::macro('driver', function () {
             return self::user()->driver;
         });
+
+        \Illuminate\Support\Collection::macro('recursive', function () {
+            return $this->map(function ($value) {
+                if (is_array($value) || is_object($value)) {
+                    return collect($value)->recursive();
+                }        return $value;
+            });
+        });
     }
 }

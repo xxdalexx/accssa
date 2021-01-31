@@ -17,8 +17,7 @@ class DevController extends Controller
 
     public function index()
     {
-<<<<<<< HEAD
-        $series = Series::find(10);
+        $series = Series::find(11);
 
         $dto = ImportEventResults::get('0-s_Giz4-CyLbvvfJOm6L', $series, 20);
 
@@ -29,22 +28,6 @@ class DevController extends Controller
     {
         $tracks = (new DataProvider)->getAcTracks();
         dd($tracks->sortBy('length')->skip(30));
-=======
-        $tracks = (new DataProvider)->getAcTracks();
-        dd($tracks->sortBy('length')->skip(30));
-    }
-
-    public function indexImport()
-    {
-        $series = Series::find(8);
-
-        $dto = ImportEventResults::get('0-s_Giz4-CyLbvvfJOm6L', $series, 20);
-
-        dd('success', $dto);
-
-        //Build event entry records
-
->>>>>>> 1f58780bd4e2d904f88072de071e442dfaf0623a
     }
 
     public function aindex()

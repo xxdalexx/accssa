@@ -10,7 +10,7 @@ class CalculatePoints
         $calculator->run();
 
         foreach($dto->eventEntries as $entry) {
-            $entry->recalculatePoints(); //TODO: Needs changed to account for split
+            $entry->recalculatePoints();
         }
 
         return $next($dto);

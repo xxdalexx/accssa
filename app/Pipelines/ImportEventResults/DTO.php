@@ -13,7 +13,9 @@ class DTO
 
     public int $minLapCutoff;
 
-    public $rawApiResult;
+    public string $rawApiResult; //Refactor WIP, set to string to throw error.
+
+    public SgpACCApiResult $results;
 
     public Series $series;
 
@@ -31,15 +33,17 @@ class DTO
         $this->minLapCutoff = $minLapCutoff;
     }
 
-    public function loadDrivers(): void
+    public function loadDrivers(): self
     {
-        $this->drivers = Driver::whereIn('sgp_id', $this->getDriverIdsFromRace())->get();
+        $this->drivers = Driver::whereIn('sgp_id', $this->results->getDriverIdsFromFirstRace())->get();
+
+        return $this;
     }
 
     public function missingDrivers(): Collection
     {
         $have = $this->drivers->pluck('sgp_id');
-        $need = $this->getDriverIdsFromRace();
+        $need = $this->results->getDriverIdsFromFirstRace();
 
         return $need->diff($have);
     }
@@ -47,24 +51,6 @@ class DTO
     public function setEvent(Event $event): void
     {
         $this->event = $event;
-    }
-
-    public function getRacesFromResponse(): Collection
-    {
-        $collection = collect($this->rawApiResult->results);
-        return $collection->where('type', 'RACE');
-    }
-
-    public function getFirstRaceResults(): Collection
-    {
-        $race = $this->getRacesFromResponse()->first();
-        return collect($race->results);
-    }
-
-    public function getDriverIdsFromRace(): Collection
-    {
-        $results = $this->getFirstRaceResults();
-        return $results->pluck('driverId');
     }
 
     public function driverIdFromSgpId(string $sgpId): int
@@ -77,20 +63,9 @@ class DTO
         return $this->drivers->firstWhere('sgp_id', $sgpId);
     }
 
-    public function getQualisFromResponse(): Collection
-    {
-        $collection = collect($this->rawApiResult->results);
-        return $collection->where('type', 'QUALIFY');
-    }
-
-    public function getFirstQualiResults()
-    {
-        $quali = $this->getQualisFromResponse()->first();
-        return collect($quali->results);
-    }
-
     public function qualiTimeForSgpDriver(string $sgpId)
     {
-        return $this->getFirstQualiResults()->firstWhere('driverId', $sgpId)->bestCleanLapTime;
+        return $this->results->getFirstQualiResults()->firstWhere('driverId', $sgpId)->bestCleanLapTime;
     }
+
 }

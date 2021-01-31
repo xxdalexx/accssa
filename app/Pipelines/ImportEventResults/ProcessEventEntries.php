@@ -8,7 +8,7 @@ class ProcessEventEntries
 {
     public function handle(DTO $dto, $next)
     {
-        $results = $dto->getFirstRaceResults();
+        $results = $dto->results->getFirstRaceResults();
 
         foreach ($results as $result) {
             if ($result->lapCount < $dto->minLapCutoff) continue;
