@@ -10,7 +10,7 @@ class ImportEventResults
 {
     protected static array $pipes = [
         MakeApiCall::class,
-        NewEvent::class,
+        SetEvent::class,
         HandleDrivers::class,
         CreateMissingLocks::class,
         ProcessEventEntries::class,
@@ -30,4 +30,5 @@ class ImportEventResults
             ->through(static::$pipes)
             ->thenReturn();
     }
+
 }
