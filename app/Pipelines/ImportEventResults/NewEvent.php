@@ -19,6 +19,8 @@ class NewEvent
         $event->registration_open = $dto->series->registration_open; //I don't think this is needed.
         //$event->replay_url;
 
+        $event->setRelation('series', $dto->series);
+
         $dto->setEvent($event);
 
         return $next($dto);

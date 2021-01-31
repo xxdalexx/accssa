@@ -26,20 +26,17 @@ class DevController extends Controller
 
     public function index()
     {
-        $tracks = (new DataProvider)->getAcTracks();
-        dd($tracks->sortBy('length')->skip(30));
-    }
-
-    public function indexImport()
-    {
-        $series = Series::find(8);
+        $series = Series::find(10);
 
         $dto = ImportEventResults::get('0-s_Giz4-CyLbvvfJOm6L', $series, 20);
 
-        dd('success', $dto);
+        return $dto->event->link();
+    }
 
-        //Build event entry records
-
+    public function acTracksindex()
+    {
+        $tracks = (new DataProvider)->getAcTracks();
+        dd($tracks->sortBy('length')->skip(30));
     }
 
     public function aindex()

@@ -26,7 +26,7 @@ class Series extends BaseModel
     {
         $series = new self;
         $series->name = $name;
-        $series->top_point = 0;
+        $series->top_point = $splits ? 20 : 0;
         $series->penalty_points = $penaltyPoints;
         $series->splits = $splits;
         $series->registration_locked = $registrationLocked;

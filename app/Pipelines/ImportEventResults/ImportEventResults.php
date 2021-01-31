@@ -14,6 +14,7 @@ class ImportEventResults
         HandleDrivers::class,
         CreateMissingLocks::class,
         ProcessEventEntries::class,
+        ReassignPositionsForSplit::class,
         CalculatePoints::class,
         SaveAll::class
     ];

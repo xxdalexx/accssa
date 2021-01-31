@@ -14,20 +14,28 @@ class ProcessEventEntries
             if ($result->lapCount < $dto->minLapCutoff) continue;
             $entry = new EventEntry;
 
-            $entry->driver_id = $dto->driverIdFromSgpId($result->driverId);
-            //$entry->event_id; Later
+            $driver = $dto->driverModelFromSgpId($result->driverId);
+
+            $entry->driver_id = $driver->id;
             $entry->position = $result->position;
             $entry->laps = $result->lapCount;
             $entry->quali_time = $dto->qualiTimeForSgpDriver($result->driverId);
             $entry->total_time = $result->totalTime;
             $entry->best_lap = $result->bestCleanLapTime;
+            $entry->split = $dto->series->getLockForDriverId($entry->driver_id)->split;
+
+            //** Properties to be set later in the pipe. */
+            //$entry->event_id;
             //$entry->race_number;
             //$entry->penalty_points;
             //$entry->best_lap_points;
             //$entry->top_quali_points;
             //$entry->points;
             //$entry->final_points;
-            $entry->split = $dto->series->getLockForDriverId($entry->driver_id)->split;
+
+            //Fake load relationships.
+            $entry->setRelation('driver', $driver);
+            $entry->setRelation('event', $dto->event);
 
             $dto->eventEntries->push($entry);
         }

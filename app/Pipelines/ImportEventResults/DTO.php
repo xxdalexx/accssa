@@ -69,7 +69,12 @@ class DTO
 
     public function driverIdFromSgpId(string $sgpId): int
     {
-        return $this->drivers->firstWhere('sgp_id', $sgpId)->id;
+        return $this->driverModelFromSgpId($sgpId)->id;
+    }
+
+    public function driverModelFromSgpId(string $sgpId): Driver
+    {
+        return $this->drivers->firstWhere('sgp_id', $sgpId);
     }
 
     public function getQualisFromResponse(): Collection
