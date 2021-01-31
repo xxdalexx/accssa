@@ -15,6 +15,7 @@
 </div>
 
 @can('manage series')
+    <hr>
     @livewire('event-editor', ['event' => $event, 'showImport' => true])
 @endcan
 

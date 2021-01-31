@@ -1,4 +1,3 @@
-<hr>
 <div class="row mt-3">
     <div class="col-sm-12">
 
@@ -28,6 +27,7 @@
         <hr>
         <label>Min Lap Cut Off</label>
         <input wire:model="minLap" type="text" class="form-control mb-2">
+        <span wire:loading wire:target="importResults" class="text-success">Working</span>
         <button wire:click="importResults" class="btn btn-outline-primary btn-block">Import Results</button>
         @endif
 
