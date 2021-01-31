@@ -18,6 +18,14 @@ trait BetterInputs
     public function mountBetterInputs()
     {
         $this->fillInputsFromRules();
+        $this->setDefualts();
+    }
+
+    protected function setDefualts()
+    {
+        if (method_exists($this, 'inputDefaults')) {
+            $this->inputDefaults();
+        }
     }
 
     protected function fillInputsFromRules()

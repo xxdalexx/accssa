@@ -17,7 +17,7 @@ class ImportEvent extends BetterComponent
         'minLaps' => 'required|numeric'
     ];
 
-    public function mount()
+    protected function inputDefaults()
     {
         $this->setInputDefault('minLaps', 20);
         $this->setInputDefault('seriesId', dbFirstId('series'));
