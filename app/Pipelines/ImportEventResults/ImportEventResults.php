@@ -30,5 +30,8 @@ class ImportEventResults
             ->through(static::$pipes)
             ->thenReturn();
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1f58780bd4e2d904f88072de071e442dfaf0623a
 }
