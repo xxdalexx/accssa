@@ -3,19 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\DataProvider\DataProvider;
-use App\EventBonusCalculators\OnePointEachSplit;
 use App\Models\User;
-
-use Illuminate\Support\Facades\Auth;
 use App\Models\Series;
-use App\Pipelines\ImportEventResults\CreateMissingLocks;
-use App\Pipelines\ImportEventResults\DTO;
-use App\Pipelines\ImportEventResults\HandleDrivers;
 use App\Pipelines\ImportEventResults\ImportEventResults;
-use App\Pipelines\ImportEventResults\NewEvent;
-use App\Pipelines\ImportEventResults\MakeApiCall;
-use App\Pipelines\ImportEventResults\ProcessEventEntries;
-use App\Pipelines\ImportEventResults\SaveAll;
+use Illuminate\Support\Facades\Auth;
 
 class DevController extends Controller
 {
