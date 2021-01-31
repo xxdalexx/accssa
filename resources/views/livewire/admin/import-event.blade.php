@@ -1,6 +1,5 @@
 <div class="iq-card-body">
     <form wire:submit.prevent="submitForm">
-        @dump($input)
         <div class="form-group">
             <label>Series</label>
             <select wire:model="input.seriesId" class="form-control mb-3 @error('seriesId') is-invalid @enderror">
