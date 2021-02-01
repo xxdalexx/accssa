@@ -8,7 +8,7 @@ class MakeApiCall
 {
     public function handle(DTO $dto, $next)
     {
-        $rawApiResult = SgpApi::results('0-s_Giz4-CyLbvvfJOm6L');
+        $rawApiResult = SgpApi::results($dto->getEventId());
 
         $dto->results = SgpACCApiResult::load($rawApiResult);
 

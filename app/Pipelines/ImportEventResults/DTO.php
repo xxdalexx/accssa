@@ -33,6 +33,11 @@ class DTO
         $this->minLapCutoff = $minLapCutoff;
     }
 
+    public function getEventId()
+    {
+        return $this->eventId;
+    }
+
     public function loadDrivers(): self
     {
         $this->drivers = Driver::whereIn('sgp_id', $this->results->getDriverIdsFromFirstRace())->get();
