@@ -22,6 +22,7 @@ class ImportEvent extends BetterComponent
         $this->setInputDefault('minLaps', 20);
         $this->setInputDefault('seriesId', dbFirstId('series'));
         $this->setInputDefault('minLaps', 20);
+        $this->setInputDefault('hasResults', 0);
     }
 
     public function submitForm()

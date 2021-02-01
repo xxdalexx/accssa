@@ -26,7 +26,7 @@ class Series extends BaseModel
     {
         $series = new self;
         $series->name = $name;
-        $series->top_point = 0;
+        $series->top_point = $splits ? 20 : 0;
         $series->penalty_points = $penaltyPoints;
         $series->splits = $splits;
         $series->registration_locked = $registrationLocked;
@@ -125,6 +125,11 @@ class Series extends BaseModel
     public function getLockForDriver(Driver $driver)
     {
         return $this->locks->firstWhere('driver_id', $driver->id);
+    }
+
+    public function getLockForDriverId(int $driverId)
+    {
+        return $this->locks->firstWhere('driver_id', $driverId);
     }
 
     public function getLockForUser(User $user)

@@ -21,6 +21,16 @@ class EventEntry extends BaseModel
         return $this->belongsTo(Driver::class);
     }
 
+    public function recalculatePoints($top = 20, $splitPosition = null)
+    {
+        $position = $splitPosition ?? $this->position;
+        $top = $top ?? $this->event->series->top_point;//TODO: Currently hard coded to 20, needs rethought.
+
+        $this->points = $top + 1 - $position;
+        $this->final_points = $this->points + $this->best_lap_points + $this->top_quali_points - $this->penalty_points;
+        return $this;
+    }
+
     public function getPenaltyPointsAttribute($value)
     {
         if ($value == 0) {

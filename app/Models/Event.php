@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Http\Guzzle\Sgp\SgpBase;
+use App\Pipelines\ImportEventResults\ImportEventResults;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Event extends BaseModel
@@ -28,63 +29,10 @@ class Event extends BaseModel
     public static function build($sgpEventId, $seriesId, $minLaps = 20)
     {
         $series = Series::find($seriesId);
-        $apiResponse = (new SgpBase)->getEventResults($sgpEventId, $minLaps);
-        //api call failed.
-        if (!$apiResponse) {
-            return false;
-        }
 
-        $event = self::updateOrCreate([
-            'session_id_sgp' => $apiResponse['session_id_sgp'],
-            'track_name' => $apiResponse['track_name'],
-            'series_id' => $seriesId
-        ],[
-            'session_name' => $apiResponse['session_name']
-        ]);
+        $dto = ImportEventResults::get($sgpEventId, $series, $minLaps);
 
-        foreach ($apiResponse['raceResults'] as $result) {
-            $driver = $result['driverModel'];
-
-            if ($event->series->splits) {
-                $lock = SeriesLock::updateOrCreate([
-                    'series_id' => $seriesId,
-                    'driver_id' => $driver->id
-                ]);
-                if ($lock->wasRecentlyCreated) {
-                    $lock->split = $driver->calculateDriverScore()->currentSplit;
-                    $lock->save();
-                }
-            }
-
-            $entry = EventEntry::firstOrCreate([
-                'event_id' => $event->id,
-                'driver_id' => $result['driver_id'],
-                'position' => $result['position'],
-                'quali_time' => $result['quali_time'],
-                'laps' => $result['laps'],
-                'total_time' => $result['total_time'],
-                'best_lap' => $result['best_lap'],
-                'best_lap_points' => $result['best_lap_points'],
-                'top_quali_points' => $result['top_quali_points'],
-                'split' => $lock->split ?? ''
-            ]);
-        }
-
-        if ($event->series->splits) {
-            $event->repositionSplits();
-        } else {
-            //If the new driver count is higher than previous, all events in the series will
-            //have their points recalculated. If not, calculate points for this event alone.
-            if (!$event->series->topPointUpdate(count($apiResponse['raceResults']))) {
-                $event->recalculatePoints();
-            }
-        }
-
-        $event->registration_open = false;
-        $event->results_imported = true;
-        $event->save();
-
-        return $event;
+        return $dto->event;
     }
 
     public function repositionSplits()
