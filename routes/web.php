@@ -33,7 +33,6 @@ Route::get('invite/{invite:code}', [InviteController::class, 'show'])->name('inv
 Route::get('reset-password/{reset:code}', [InviteController::class, 'showReset'])->name('password-reset.show');
 
 Route::middleware('auth')->group(function () {
-    Route::get('new', [HomeController::class, 'new']);
     Route::get('event/{event}', [EventController::class, 'show'])->name('event.show');
     Route::get('series/create', [SeriesController::class, 'create'])->name('series.create');
     Route::put('series', [SeriesController::class, 'store'])->name('series.store');
