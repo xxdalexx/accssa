@@ -4,7 +4,7 @@
 
         <ul class="navbar-item theme-brand flex-row  text-center">
             <li class="nav-item theme-logo">
-                <a href="index.html">
+                <a href="{{ route('home') }}">
                     <img src="{{ asset('images/logo.png') }}" class="navbar-logo" alt="logo">
                 </a>
             </li>
