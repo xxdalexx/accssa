@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Http\Guzzle\Sgp\SgpBase;
-use App\Pipelines\ImportEventResults\ImportEventResults;
+use App\Pipelines\ImportEventResults\ImportEventResultsPipeline;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Event extends BaseModel
@@ -30,9 +30,7 @@ class Event extends BaseModel
     {
         $series = Series::find($seriesId);
 
-        $dto = ImportEventResults::get($sgpEventId, $series, $minLaps);
-
-        return $dto->event;
+        return ImportEventResultsPipeline::run($sgpEventId, $series, $minLaps);
     }
 
     public function repositionSplits()
