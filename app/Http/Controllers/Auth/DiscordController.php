@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
+use App\Pipelines\ProcessDiscordRegistration\ProcessDiscordRegistrationPipeline;
 
 class DiscordController extends Controller
 {
@@ -32,14 +36,22 @@ class DiscordController extends Controller
      */
     public function handleCallback()
     {
-        $user = Socialite::driver('discord')->user();
+        $discordUserResponse = Cache::remember('discordTesting', 9999, function () {
+            return Socialite::driver('discord')->user();
+        });
 
-        $status = app('DiscordAuthHandler')->setDiscordUser($user)->process();
+        $discordUserId = $discordUserResponse->id;
 
-        if ($status == 'loggedIn') {
+        $user = User::whereHas('driver', function ($query) use ($discordUserId) {
+            $query->where('discord_user_id', $discordUserId);
+        });
+
+        if ($user) {
+            Auth::login($user);
             return redirect()->route('home');
         } else {
-            return 'No account found. Go to the NWSR Discord to get set up with an account.';
+            $returnRoute = ProcessDiscordRegistrationPipeline::run($discordUserResponse);
+            return redirect()->route($returnRoute);
         }
     }
 }

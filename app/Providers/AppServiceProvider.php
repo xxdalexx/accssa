@@ -26,10 +26,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('DataProvider', function () {
             return new DataProvider;
         });
-
-        $this->app->singleton('DiscordAuthHandler', function () {
-            return new DiscordAuthHandler;
-        });
     }
 
     /**
