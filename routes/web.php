@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DevController;
 use App\Http\Controllers\HomeController;
@@ -8,10 +9,11 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\InviteController;
 use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\AdminGivePenaltiesController;
+use App\Http\Controllers\Auth\DiscordController;
 use App\Http\Controllers\Admin\AdminManageUsersController;
-use App\Http\Controllers\Admin\AdminManageDriversController;
 use App\Http\Controllers\Admin\AdminManageSeriesController;
+use App\Http\Controllers\Admin\AdminGivePenaltiesController;
+use App\Http\Controllers\Admin\AdminManageDriversController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,4 +58,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('dev/login/{user}', [DevController::class, 'loginAs'])->name('dev.loginAs');
     Route::get('dev', [DevController::class, 'index'])->name('dev');
+});
+
+DiscordController::routes();
+
+Route::get('logout', function(){
+    Auth::logout();
+    return redirect()->route('home');
 });

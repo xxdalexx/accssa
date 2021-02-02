@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\DataProvider\DataProvider;
+use App\DiscordAuth\DiscordAuthHandler;
 use App\MenuBuilder\MenuBuilder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
@@ -24,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->singleton('DataProvider', function () {
             return new DataProvider;
+        });
+
+        $this->app->singleton('DiscordAuthHandler', function () {
+            return new DiscordAuthHandler;
         });
     }
 

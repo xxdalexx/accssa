@@ -31,7 +31,10 @@ return [
     ],
 
     'discord' => [
-        'token' => 'NzgxMDg1MTU4ODk1MTI0NDgx.X74gPQ.JfW7g2iwK4jzDAJft1HhR4aCU8E',
+        'token' => env('DISCORD_TOKEN'),
+        'client_id' => env('DISCORD_CLIENT_ID'),
+        'client_secret' => env('DISCORD_CLIENT_SECRET'),
+        'redirect' => '/auth/callback',
     ],
 
 ];

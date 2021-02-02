@@ -15,9 +15,11 @@
         "laravel-notification-channels/discord": "^1.2",
         "laravel/fortify": "^1.6",
         "laravel/framework": "^8.0",
+        "laravel/socialite": "^5.1",
         "laravel/telescope": "^4.3",
         "laravel/tinker": "^2.0",
         "livewire/livewire": "^2.2",
+        "martinbean/socialite-discord-provider": "1.2",
         "spatie/laravel-permission": "^3.17",
         "staudenmeir/eloquent-has-many-deep": "^1.7"
     },
