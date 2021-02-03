@@ -3,13 +3,14 @@
 
 namespace App\SingleUseFeatures;
 
+use App\Http\Guzzle\Sgp\SgpApi;
 use App\Http\Guzzle\Sgp\SgpBase;
 
 class AbandondedMembers
 {
     public static function run()
     {
-        $list = (new SgpBase)->bustCache()->getLeagueMemberList();
+        $list = SgpApi::memberList();
         $deleteList = [];
         $saveList = collect([
             'Doug Cooper',

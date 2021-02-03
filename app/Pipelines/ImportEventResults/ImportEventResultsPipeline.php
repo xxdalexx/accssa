@@ -6,7 +6,7 @@ use App\Models\Series;
 use App\Pipelines\ImportEventResults\DTO;
 use App\EventBonusCalculators\OnePointEachSplit;
 
-class ImportEventResults
+class ImportEventResultsPipeline
 {
     protected static array $pipes = [
         MakeApiCall::class,
@@ -19,15 +19,17 @@ class ImportEventResults
         SaveAll::class
     ];
 
-    public static function get(string $eventId, Series $series, int $minLapCutoff = 20):DTO
+    public static function run(string $eventId, Series $series, int $minLapCutoff = 20):DTO
     {
         $series->bonus_calculator = OnePointEachSplit::class; //Make Dynamic In DB
 
         $passable = new DTO($eventId, $series, $minLapCutoff);
 
-        return app('Illuminate\Pipeline\Pipeline')
+        $finalDTO = app('Illuminate\Pipeline\Pipeline')
             ->send($passable)
             ->through(static::$pipes)
             ->thenReturn();
+
+        return $finalDTO->event;
     }
 }
