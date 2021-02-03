@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Guzzle\Sgp\SgpApi;
 use App\Http\Guzzle\Sgp\SgpBase;
 use Illuminate\Notifications\Notifiable;
 use App\Notifications\DiscordNotification;
@@ -24,7 +25,7 @@ class Driver extends BaseModel
 
     public static function importFromSgp(string $sgpId)
     {
-        $apiResponse = (new SgpBase)->getLeagueMemberList();
+        $apiResponse = SgpApi::memberList();
 
         //api connection failed
         if (!$apiResponse) {

@@ -15,21 +15,25 @@ class Results extends SgpApi
         parent::__construct();
     }
 
-    public function setEventId(string $eventId)
+    public function setEventId(string $eventId): self
     {
         $this->eventId = $eventId;
+
+        return $this;
     }
 
-    protected function setClient()
+    protected function setClient(): self
     {
         $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/results/$this->eventId"]);
 
         return $this;
     }
 
-    protected function setCacheKey()
+    protected function setCacheKey(): self
     {
         $this->cacheName = 'eventResults.' . $this->eventId;
+
+        return $this;
     }
 
 }

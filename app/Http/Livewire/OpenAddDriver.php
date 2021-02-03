@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Guzzle\Sgp\SgpApi;
 use Livewire\Component;
 use App\Http\Guzzle\Sgp\SgpBase;
 use App\Http\Guzzle\Sgp\SgpPost;
@@ -142,7 +143,7 @@ class OpenAddDriver extends Component
 
     protected function fillMemberList()
     {
-        $response = (new SgpBase)->getLeagueMemberList($this->leagueId);
+        $response = SgpApi::memberList($this->leagueId);
         $this->memberList = [];
 
         foreach ($response->members as $id => $member) {

@@ -2,6 +2,7 @@
 
 namespace App\SingleUseFeatures;
 
+use App\Http\Guzzle\Sgp\SgpApi;
 use App\Http\Guzzle\Sgp\SgpBase;
 
 class MembersMissingDiscordOnSgp
@@ -9,7 +10,7 @@ class MembersMissingDiscordOnSgp
     public static function run()
     {
         $missing = [];
-        $members = (new SgpBase)->getLeagueMemberList()->members;
+        $members = SgpApi::memberList()->members;
 
         foreach ($members as $member) {
             if (property_exists($member, 'discord')) continue;
