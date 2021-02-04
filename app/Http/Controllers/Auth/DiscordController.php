@@ -61,7 +61,7 @@ class DiscordController extends Controller
         }
 
         //User and Driver records don't exist, see if they are in the league member list.
-        $memberList = SgpApi::memberList();
+        $memberList = collect(SgpApi::memberList()->members);
 
         $member = $memberList->firstWhere('discord.id', $discordUserId);
 
