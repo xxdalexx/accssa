@@ -9,7 +9,7 @@ class CheckForDriverRecord
     public function handle(DTO $dto, $next)
     {
         if ($driver = Driver::whereDiscordUserId($dto->discordUserInfo->id)->first()) {
-            $dto->returnRouteName = 'home';
+            $dto->returnRouteName = 'home'; //go to registration page.
             return $dto;
         }
 

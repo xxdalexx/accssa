@@ -9,7 +9,7 @@ class Invite extends BaseModel
 {
     use HasFactory;
 
-    public static function generate($driverID)
+    public static function generate(int $driverID)
     {
         return self::firstOrCreate(
             ['driver_id' => $driverID],

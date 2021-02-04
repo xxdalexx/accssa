@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\DataProvider\DataProvider;
+use App\Http\Guzzle\Sgp\SgpApi;
 use App\Models\User;
-use App\Models\Series;
-use App\Pipelines\ImportEventResults\ImportEventResults;
 use Illuminate\Support\Facades\Auth;
 
 class DevController extends Controller
@@ -17,11 +16,8 @@ class DevController extends Controller
 
     public function index()
     {
-        $series = Series::find(11);
+        //get the discord user in response
 
-        $dto = ImportEventResults::get('0-s_Giz4-CyLbvvfJOm6L', $series, 20);
-
-        return $dto->event->link();
     }
 
     public function acTracksindex()
