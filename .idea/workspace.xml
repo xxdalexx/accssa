@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9637d409-ef27-46e5-b2bb-ab3c6d7ead85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sgp.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/DiscordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/DiscordController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DevController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DevController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Invite.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Invite.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Pipelines/ProcessDiscordRegistration/AttemptToFindDriverInSGPMemberList.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pipelines/ProcessDiscordRegistration/AttemptToFindDriverInSGPMemberList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Pipelines/ProcessDiscordRegistration/CheckForDriverRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pipelines/ProcessDiscordRegistration/CheckForDriverRecord.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,9 +165,22 @@
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
       <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-ide-helper" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
     </include_path>
   </component>
   <component name="ProjectId" id="1nzGMcrCRh81pPQuSyWv6jKrf9s" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -180,6 +191,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
@@ -204,6 +216,7 @@
       <workItem from="1612386541931" duration="725000" />
       <workItem from="1612387276058" duration="105000" />
       <workItem from="1612387389508" duration="852000" />
+      <workItem from="1612420102054" duration="4141000" />
     </task>
     <task id="LOCAL-00001" summary="Config Updates.">
       <created>1612385764697</created>

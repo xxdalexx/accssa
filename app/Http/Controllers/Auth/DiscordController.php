@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Guzzle\Sgp\SgpApi;
+use App\Models\Driver;
+use App\Models\Invite;
 use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -19,8 +22,6 @@ class DiscordController extends Controller
     }
     /**
      * Redirect the user to the Discord authentication page.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function redirectToDiscord()
     {
@@ -31,27 +32,49 @@ class DiscordController extends Controller
 
     /**
      * Obtain the user information from Discord.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function handleCallback()
     {
-        $discordUserResponse = Cache::remember('discordTesting', 9999, function () {
-            return Socialite::driver('discord')->user();
-        });
+        //TODO: Refactor this to a pipeline when we know it's working.
+
+        $discordUserResponse = Socialite::driver('discord')->user();
 
         $discordUserId = $discordUserResponse->id;
 
         $user = User::whereHas('driver', function ($query) use ($discordUserId) {
             $query->where('discord_user_id', $discordUserId);
-        });
+        })->first();
+
 
         if ($user) {
             Auth::login($user);
             return redirect()->route('home');
-        } else {
-            $returnRoute = ProcessDiscordRegistrationPipeline::run($discordUserResponse);
-            return redirect()->route($returnRoute);
         }
+
+        //User with driver record doesn't exist, see if only a driver record does.
+
+        $driver = Driver::whereDiscordUserId($discordUserId)->first();
+
+        if ($driver) {
+            $invite = Invite::generate($driver->id);
+            return redirect()->route('invite.show', $invite);
+        }
+
+        //User and Driver records don't exist, see if they are in the league member list.
+        $memberList = SgpApi::memberList();
+
+        $member = $memberList->firstWhere('discord.id', $discordUserId);
+
+        if ($member) {
+            $driver = Driver::importFromSgp($member->userId);
+            $invite = Invite::generate($driver->id);
+            return redirect()->route('invite.show', $invite);
+        }
+
+        //Next is to handle auto on-boarding into sgp.
+
+        return 'Your account could not be found or created. ' .
+            'Usually this means you do not have your discord account linked to your SGP account. ' .
+            'Check the discord for support.';
     }
 }
