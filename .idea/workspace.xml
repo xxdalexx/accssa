@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9637d409-ef27-46e5-b2bb-ab3c6d7ead85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sgp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DevController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DevController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Guzzle/Sgp/SgpApi.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Guzzle/Sgp/SgpApi.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Pipelines/ImportEventResults/MakeApiCall.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pipelines/ImportEventResults/MakeApiCall.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/plugins/table/datatable/custom_miscellaneous.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/plugins/table/datatable/custom_miscellaneous.js" afterDir="false" />
-    </list>
+    <list default="true" id="9637d409-ef27-46e5-b2bb-ab3c6d7ead85" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
