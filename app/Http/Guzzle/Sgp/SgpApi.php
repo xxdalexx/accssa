@@ -3,23 +3,25 @@
 namespace App\Http\Guzzle\Sgp;
 
 use App\Http\Guzzle\GuzzleBase;
+use App\Http\Guzzle\Sgp\Get\DriverResults;
 use App\Http\Guzzle\Sgp\Get\LeagueViews;
-use App\Http\Guzzle\Sgp\Get\Results;
+use App\Http\Guzzle\Sgp\Get\EventResults;
 use App\Models\Site;
 use BadMethodCallException;
-use phpDocumentor\Reflection\Types\Nullable;
 
 /**
  * @method static memberList(?string $leagueId)
  * @method static leagueViews(string|null $leagueId)
- * @method static results(string $eventId)
+ * @method static eventResults(string $eventId)
+ * @method static driverResults(string $eventId)
  */
 abstract class SgpApi extends GuzzleBase
 {
     protected static array $directory = [
-        'results' => Results::class,
+        'eventResults' => EventResults::class,
         'leagueViews' => LeagueViews::class,
         'memberList' => LeagueViews::class, //alias
+        'driverResults' => DriverResults::class,
     ];
 
     public function __construct()
