@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Guzzle\Sgp\Get\LeagueViews;
+use App\Http\Guzzle\Sgp\Get\Responses\LeagueViewsResponse;
 use App\Http\Guzzle\Sgp\SgpApi;
 use App\Models\Driver;
 use App\Models\Invite;
@@ -61,9 +63,8 @@ class DiscordController extends Controller
         }
 
         //User and Driver records don't exist, see if they are in the league member list.
-        $memberList = collect(SgpApi::memberList()->members);
-
-        $member = $memberList->firstWhere('discord.id', $discordUserId);
+        $sgpApiResponse = new LeagueViewsResponse(new LeagueViews());
+        $member = $sgpApiResponse->findMemberByDiscordId($discordUserId);
 
         if ($member) {
             $driver = Driver::importFromSgp($member->userId);
