@@ -2,9 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\Http\Guzzle\Sgp\Get\LeagueViews;
-use App\Http\Guzzle\Sgp\SgpApi;
 use Database\Seeders\Testing\CreateMe;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
