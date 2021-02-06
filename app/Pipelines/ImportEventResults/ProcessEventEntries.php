@@ -22,7 +22,10 @@ class ProcessEventEntries
             $entry->quali_time = $dto->qualiTimeForSgpDriver($result->driverId);
             $entry->total_time = $result->totalTime;
             $entry->best_lap = $result->bestCleanLapTime;
-            $entry->split = $dto->series->getLockForDriverId($entry->driver_id)->split;
+
+            if ($dto->series->splits) {
+                $entry->split = $dto->series->getLockForDriverId($entry->driver_id)->split;
+            }
 
             //** Properties to be set later in the pipe. */
             //$entry->event_id;

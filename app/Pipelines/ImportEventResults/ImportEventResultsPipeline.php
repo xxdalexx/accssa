@@ -2,6 +2,7 @@
 
 namespace App\Pipelines\ImportEventResults;
 
+use App\Models\Event;
 use App\Models\Series;
 use App\Pipelines\ImportEventResults\DTO;
 use App\EventBonusCalculators\OnePointEachSplit;
@@ -19,7 +20,7 @@ class ImportEventResultsPipeline
         SaveAll::class
     ];
 
-    public static function run(string $eventId, Series $series, int $minLapCutoff = 20):DTO
+    public static function run(string $eventId, Series $series, int $minLapCutoff = 20):Event
     {
         $series->bonus_calculator = OnePointEachSplit::class; //Make Dynamic In DB
 
