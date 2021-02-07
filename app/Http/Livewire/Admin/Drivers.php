@@ -45,13 +45,12 @@ class Drivers extends Component
 
         if (!empty($discord)) {
             $driver->discord_user_id = $discord;
-            $driver->discord_private_channel_id = app(Discord::class)->getPrivateChannel($discord);
             $driver->save();
 
             $inviteURL = route('invite.show', $invite);
 
             //formatting is off on purpose.
-            $driver->sendDiscordDM('Hey ' . $driver->driver_name . ', ' . Auth::user()->name . ' has added you to the **ACCSSA League Tracker**.
+            $driver->sendDiscordDM('Hey ' . $driver->driver_name . ', ' . Auth::user()->name . ' has added you to the **NWSR League Tracker**.
 All you need to do is visit '. $inviteURL . ' to complete your registration and gain access.
 _This is an automated message, send Dale a message if you have any issues._');
         }

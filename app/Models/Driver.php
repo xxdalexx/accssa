@@ -7,7 +7,12 @@ use App\Http\Guzzle\Sgp\SgpBase;
 use Illuminate\Notifications\Notifiable;
 use App\Notifications\DiscordNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use NotificationChannels\Discord\Discord;
 
+/**
+ * @property mixed discord_private_channel_id
+ * @property mixed|string discord_user_id
+ */
 class Driver extends BaseModel
 {
     use HasFactory, Notifiable;
@@ -95,6 +100,12 @@ class Driver extends BaseModel
         }
 
         return 'AM';
+    }
+
+    public function setDiscordUserIdAttribute($value)
+    {
+        $this->attributes['discord_user_id'] = $value;
+        $this->attributes['discord_private_channel_id'] = app(Discord::class)->getPrivateChannel($value);
     }
 
     public function championshipEligible()
