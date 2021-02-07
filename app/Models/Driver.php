@@ -32,7 +32,7 @@ class Driver extends BaseModel
 
     public static function importFromSgp(string $sgpId)
     {
-        $sgpApiResponse = new LeagueViewsResponse(new LeagueViews());
+        $sgpApiResponse = app(LeagueViewsResponse::class);
 
         //api connection failed
         if (!$sgpApiResponse) return false;
@@ -44,7 +44,7 @@ class Driver extends BaseModel
             'sgp_id' => $member->userId
         ]);
 
-        $newDriver->calculateDriverScore();
+        //$newDriver->calculateDriverScore(); NEEDS REFACTORED API CLASS
 
         return $newDriver;
     }

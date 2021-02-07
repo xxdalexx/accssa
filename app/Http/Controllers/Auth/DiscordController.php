@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
+use Laravel\Socialite\Contracts\Factory as Socialite;
 use App\Pipelines\ProcessDiscordRegistration\ProcessDiscordRegistrationPipeline;
 
 class DiscordController extends Controller
@@ -22,24 +22,27 @@ class DiscordController extends Controller
         Route::get('/auth/redirect', [self::class, 'redirectToDiscord'])->name('discordSend');
         Route::get('/auth/callback', [self::class, 'handleCallback'])->name('discordCallback');
     }
-    /**
-     * Redirect the user to the Discord authentication page.
-     */
+
+    protected Socialite $socialite;
+
+    public function __construct(Socialite $socialite)
+    {
+        $this->socialite = $socialite;
+    }
+
     public function redirectToDiscord()
     {
-        return Socialite::driver('discord')
+        return $this->socialite->driver('discord')
             ->scopes(['identify', 'guilds', 'email'])
             ->redirect();
     }
 
-    /**
-     * Obtain the user information from Discord.
-     */
+
     public function handleCallback()
     {
         //TODO: Refactor this to a pipeline when we know it's working.
 
-        $discordUserResponse = Socialite::driver('discord')->user();
+        $discordUserResponse = $this->socialite->driver('discord')->user();
 
         $discordUserId = $discordUserResponse->id;
 
@@ -63,7 +66,7 @@ class DiscordController extends Controller
         }
 
         //User and Driver records don't exist, see if they are in the league member list.
-        $sgpApiResponse = new LeagueViewsResponse(new LeagueViews());
+        $sgpApiResponse = app(LeagueViewsResponse::class);
         $member = $sgpApiResponse->findMemberByDiscordId($discordUserId);
 
         if ($member) {

@@ -49,7 +49,9 @@ class User extends Authenticatable
         //Change to actual event if anything else should be done when a driver is created.
         static::created(function ($newUser) {
             $dale = User::first();
-            $dale->sendDiscordDM($newUser->name . ' Signed up.');
+            if (app('env') != 'testing') {
+                $dale->sendDiscordDM($newUser->name . ' Signed up.');
+            }
         });
     }
 

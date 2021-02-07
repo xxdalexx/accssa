@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\DataProvider\DataProvider;
+use App\Http\Guzzle\Sgp\Get\LeagueViews;
+use App\Http\Guzzle\Sgp\Get\Responses\LeagueViewsResponse;
 use App\Http\Guzzle\Sgp\SgpApi;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Tests\Mocks\SgpLeagueViewsMock;
 
 class DevController extends Controller
 {
@@ -16,8 +19,7 @@ class DevController extends Controller
 
     public function index()
     {
-        //get the discord user in response
-
+        dd(app());
     }
 
     public function acTracksindex()

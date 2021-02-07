@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use App\DataProvider\DataProvider;
 use App\DiscordAuth\DiscordAuthHandler;
+use App\Http\Guzzle\Sgp\Get\LeagueViews;
+use App\Http\Guzzle\Sgp\Get\Responses\LeagueViewsResponse;
+use App\Http\Guzzle\Sgp\SgpApi;
 use App\MenuBuilder\MenuBuilder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
@@ -26,6 +29,12 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton('DataProvider', function () {
             return new DataProvider;
         });
+
+        $this->app->bind(LeagueViews::class);
+
+        $this->app->bind(LeagueViewsResponse::class, function($app) {
+            return new LeagueViewsResponse(app(LeagueViews::class));
+        });
     }
 
     /**
@@ -46,5 +55,9 @@ class AppServiceProvider extends ServiceProvider
                 }        return $value;
             });
         });
+
+        $this->app->when(LeagueViewsResponse::class)
+            ->needs(SgpApi::class)
+            ->give(LeagueViews::class);
     }
 }
