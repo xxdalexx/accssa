@@ -31,4 +31,10 @@ class LeagueViewsResponseTest extends \Tests\TestCase
     {
         $this->assertNotNull($this->response->findMemberByDiscordId('324060102770556933'));
     }
+
+    /** @test */
+    public function it_searches_for_a_member_by_sgp_id()
+    {
+        $this->assertNotNull($this->response->findMemberBySgpId('SXs33IH-ZDSa6A2hUzKU_'));
+    }
 }

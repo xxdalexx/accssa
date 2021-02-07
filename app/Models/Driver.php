@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Http\Guzzle\Sgp\Get\LeagueViews;
+use App\Http\Guzzle\Sgp\Get\Responses\LeagueViewsResponse;
 use App\Http\Guzzle\Sgp\SgpApi;
 use App\Http\Guzzle\Sgp\SgpBase;
 use Illuminate\Notifications\Notifiable;
@@ -30,18 +32,16 @@ class Driver extends BaseModel
 
     public static function importFromSgp(string $sgpId)
     {
-        $apiResponse = SgpApi::memberList();
+        $sgpApiResponse = new LeagueViewsResponse(new LeagueViews());
 
         //api connection failed
-        if (!$apiResponse) {
-            return false;
-        }
+        if (!$sgpApiResponse) return false;
 
-        $apiResponse = $apiResponse->members->{$sgpId};
+        $member = $sgpApiResponse->findMemberBySgpId($sgpId);
 
         $newDriver = self::updateOrCreate([
-            'driver_name' => $apiResponse->name,
-            'sgp_id' => $apiResponse->userId
+            'driver_name' => $member->name,
+            'sgp_id' => $member->userId
         ]);
 
         $newDriver->calculateDriverScore();
