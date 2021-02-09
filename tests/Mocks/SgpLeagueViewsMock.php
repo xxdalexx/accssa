@@ -4,22 +4,14 @@
 namespace Tests\Mocks;
 
 
+use App\Http\Guzzle\Sgp\Get\LeagueViews;
 use App\Http\Guzzle\Sgp\SgpApi;
 
-class SgpLeagueViewsMock extends \App\Http\Guzzle\Sgp\SgpApi
+class SgpLeagueViewsMock extends LeagueViews
 {
-    public function __construct()
+    public function __construct(string $leagueId = null)
     {
-    }
 
-    protected function setClient(): \App\Http\Guzzle\Sgp\SgpApi
-    {
-        return $this;
-    }
-
-    protected function setCacheKey(): \App\Http\Guzzle\Sgp\SgpApi
-    {
-        return $this;
     }
 
     public function get()

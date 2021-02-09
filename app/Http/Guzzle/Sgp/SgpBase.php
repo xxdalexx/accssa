@@ -21,13 +21,6 @@ class SgpBase extends GuzzleBase
         ];
     }
 
-    protected function setClientToSession($eventId)
-    {
-        $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/sessions/$eventId"]);
-
-        return $this;
-    }
-
     protected function setClientToEvent($eventId)
     {
         $this->client = new \GuzzleHttp\Client(['base_uri' => "https://stg-api.simracing.gp/stg/event/$eventId"]);
@@ -188,12 +181,6 @@ class SgpBase extends GuzzleBase
         $this->cacheName = 'userDetails' . $userId;
 
         $this->setClientToUserViews($userId);
-        return $this->getResponse();
-    }
-
-    public function getPreEventDetails($eventId)
-    {
-        $this->setClientToSession($eventId);
         return $this->getResponse();
     }
 

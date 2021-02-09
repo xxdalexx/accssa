@@ -10,11 +10,17 @@ class DriverResults extends SgpApi
 {
     protected string $driverId;
 
-    public function __construct(string $driverId)
+    public function forDriver(string $driverId)
+    {
+        $this->driverId = $driverId;
+        return $this;
+    }
+
+    public function setDriverId(string $driverId): DriverResults
     {
         $this->driverId = $driverId;
 
-        parent::__construct();
+        return $this;
     }
 
     protected function setClient(): self

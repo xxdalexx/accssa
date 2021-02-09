@@ -3,6 +3,7 @@
 namespace Tests;
 
 use App\Models\Driver;
+use App\Models\Series;
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
 use Illuminate\Support\Facades\Hash;
 
@@ -29,6 +30,13 @@ abstract class TestCase extends BaseTestCase
             'driver_name' => 'Dale Carter',
             'sgp_id' => 'SXs33IH-ZDSa6A2hUzKU_',
             'discord_user_id' => '324060102770556933'
+        ]);
+    }
+
+    protected function createDummySeries()
+    {
+        return Series::create([
+            'name' => 'Testing'
         ]);
     }
 }

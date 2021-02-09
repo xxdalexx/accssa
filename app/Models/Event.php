@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Http\Guzzle\Sgp\Get\Responses\DriverResultsResponse;
+use App\Http\Guzzle\Sgp\Get\Responses\SessionResponse;
 use App\Http\Guzzle\Sgp\SgpBase;
 use App\Pipelines\ImportEventResults\ImportEventResultsPipeline;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,18 +14,17 @@ class Event extends BaseModel
 
     public static function buildPreResults($sgpEventId, $seriesId)
     {
-        //$series = Series::find($seriesId);
-        $apiResponse = (new SgpBase)->getPreEventDetails($sgpEventId);
+        $apiResponse = app(SessionResponse::class)
+            ->forEvent($sgpEventId)
+            ->getRawResponse();
 
-        $event = Event::create([
+        return Event::create([
             'session_id_sgp' => $apiResponse->id,
             'session_name' => $apiResponse->sessionName,
             'track_name' => $apiResponse->trackName,
             'series_id' => $seriesId,
             'results_imported' => false
         ]);
-
-        return $event;
     }
 
     public static function build($sgpEventId, $seriesId, $minLaps = 20)

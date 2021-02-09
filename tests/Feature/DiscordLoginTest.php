@@ -24,6 +24,7 @@ class DiscordLoginTest extends TestCase
         parent::setUp();
 
         $sgpCallMock = new SgpLeagueViewsMock();
+
         $this->app->instance(LeagueViews::class, $sgpCallMock);
         $this->mockSocialite('324060102770556933');
     }
@@ -69,7 +70,7 @@ class DiscordLoginTest extends TestCase
 
     }
 
-    protected function mockSocialite($id = 1)
+    protected function mockSocialite($id)
     {
         $socialiteUser = $this->createMock(SocialiteUser::class);
         $socialiteUser->id = $id;
