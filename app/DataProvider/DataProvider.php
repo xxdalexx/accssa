@@ -105,4 +105,10 @@ class DataProvider
             6 => 'Awaiting Review From Outside Source'
         ];
     }
+
+    public function getIncidentReport()
+    {
+        $path = __DIR__ . '/incidentReport.json';
+        return collect(json_decode(file_get_contents($path)));
+    }
 }
