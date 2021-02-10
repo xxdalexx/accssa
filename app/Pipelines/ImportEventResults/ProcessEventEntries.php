@@ -16,6 +16,7 @@ class ProcessEventEntries
 
             $driver = $dto->driverModelFromSgpId($result->driverId);
 
+            $entry->server_car_id = $result->carId;
             $entry->driver_id = $driver->id;
             $entry->position = $result->position;
             $entry->laps = $result->lapCount;
