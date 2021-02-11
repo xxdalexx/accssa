@@ -21,7 +21,8 @@
         "livewire/livewire": "^2.2",
         "martinbean/socialite-discord-provider": "1.2",
         "spatie/laravel-permission": "^3.17",
-        "staudenmeir/eloquent-has-many-deep": "^1.7"
+        "staudenmeir/eloquent-has-many-deep": "^1.7",
+      "ext-json": "*"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.9",

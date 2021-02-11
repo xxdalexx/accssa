@@ -1,0 +1,1999 @@
+{
+    "broadcastEvents": [
+        {
+            "message": "#vs. #-1253587488",
+            "timeMs": 2869230,
+            "carId": 1012,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1827206800",
+            "timeMs": 2869314,
+            "carId": 1013,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1139228944",
+            "timeMs": 2894607,
+            "carId": 1014,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1795162704",
+            "timeMs": 3132516,
+            "carId": 1009,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1134141712",
+            "timeMs": 3132600,
+            "carId": 1022,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1379940640",
+            "timeMs": 3248892,
+            "carId": 1017,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1411601712",
+            "timeMs": 3297336,
+            "carId": 1005,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1411613056",
+            "timeMs": 3297417,
+            "carId": 1010,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1188074576",
+            "timeMs": 3336414,
+            "carId": 1007,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1247857856",
+            "timeMs": 3336498,
+            "carId": 1022,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1408529344",
+            "timeMs": 3387426,
+            "carId": 1017,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1411621424",
+            "timeMs": 3387492,
+            "carId": 1018,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1795189968",
+            "timeMs": 3512766,
+            "carId": 1017,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1408517824",
+            "timeMs": 3512829,
+            "carId": 1020,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1397599696",
+            "timeMs": 3997581,
+            "carId": 1008,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1397611088",
+            "timeMs": 4159896,
+            "carId": 1008,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1411606608",
+            "timeMs": 4160061,
+            "carId": 1018,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1803791536",
+            "timeMs": 4691538,
+            "carId": 1005,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1408554464",
+            "timeMs": 4691622,
+            "carId": 1015,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1238930416",
+            "timeMs": 5007099,
+            "carId": 1022,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1379935104",
+            "timeMs": 5007183,
+            "carId": 1008,
+            "type": "ACCIDENT"
+        },
+        {
+            "message": "#vs. #-1499771440",
+            "timeMs": 6005001,
+            "carId": 1008,
+            "type": "ACCIDENT"
+        }
+    ],
+    "incidents": [
+        {
+            "sessionEarliestTime": 5751.75,
+            "sessionLatestTime": 6021.75,
+            "cars": [
+                {
+                    "carId": 1012,
+                    "carModelType": 5,
+                    "teamName": "",
+                    "carNumber": 54,
+                    "cupCatergory": 2,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "David",
+                            "lastName": "Wirch",
+                            "shortName": "Wir",
+                            "category": "BRONZE",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1012,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 4,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 156,
+                        "position": 23,
+                        "cupPosition": 23,
+                        "trackPosition": 0,
+                        "splinePosition": 0.9974229,
+                        "laps": 0,
+                        "delta": 0,
+                        "bestSessionLap": {
+                            "lapTimeMS": 2147483647,
+                            "carId": 1012,
+                            "driverIndex": 0,
+                            "splits": [
+                                2147483647,
+                                2147483647,
+                                2147483647
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 2147483647,
+                            "carId": 1012,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 542384,
+                            "carId": 1012,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "David",
+                        "lastName": "Wirch",
+                        "shortName": "Wir",
+                        "category": "BRONZE",
+                        "driverNationality": "ANY"
+                    }
+                },
+                {
+                    "carId": 1013,
+                    "carModelType": 25,
+                    "teamName": "",
+                    "carNumber": 197,
+                    "cupCatergory": 2,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Philip",
+                            "lastName": "Menzies",
+                            "shortName": "Men",
+                            "category": "BRONZE",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1013,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 3,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 116,
+                        "position": 25,
+                        "cupPosition": 25,
+                        "trackPosition": 0,
+                        "splinePosition": 0.98358226,
+                        "laps": 0,
+                        "delta": 0,
+                        "bestSessionLap": {
+                            "lapTimeMS": 2147483647,
+                            "carId": 1013,
+                            "driverIndex": 0,
+                            "splits": [
+                                2147483647,
+                                2147483647,
+                                2147483647
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 2147483647,
+                            "carId": 1013,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 672492,
+                            "carId": 1013,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Philip",
+                        "lastName": "Menzies",
+                        "shortName": "Men",
+                        "category": "BRONZE",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611532293481,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 31251.75,
+            "sessionLatestTime": 31251.75,
+            "cars": [
+                {
+                    "carId": 1014,
+                    "carModelType": 19,
+                    "teamName": "",
+                    "carNumber": 404,
+                    "cupCatergory": 2,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Raz",
+                            "lastName": "Shaw",
+                            "shortName": "Sha",
+                            "category": "BRONZE",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1014,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 4,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 130,
+                        "position": 19,
+                        "cupPosition": 19,
+                        "trackPosition": 0,
+                        "splinePosition": 0.2115851,
+                        "laps": 0,
+                        "delta": 0,
+                        "bestSessionLap": {
+                            "lapTimeMS": 2147483647,
+                            "carId": 1014,
+                            "driverIndex": 0,
+                            "splits": [
+                                2147483647,
+                                2147483647,
+                                2147483647
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 2147483647,
+                            "carId": 1014,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 548762,
+                            "carId": 1014,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Raz",
+                        "lastName": "Shaw",
+                        "shortName": "Sha",
+                        "category": "BRONZE",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611532318775,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 269202.75,
+            "sessionLatestTime": 269202.75,
+            "cars": [
+                {
+                    "carId": 1009,
+                    "carModelType": 22,
+                    "teamName": "",
+                    "carNumber": 81,
+                    "cupCatergory": 3,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Paul",
+                            "lastName": " Miles",
+                            "shortName": "Mil",
+                            "category": "SILVER",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1009,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 3,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 128,
+                        "position": 9,
+                        "cupPosition": 9,
+                        "trackPosition": 0,
+                        "splinePosition": 0.4538063,
+                        "laps": 2,
+                        "delta": 13,
+                        "bestSessionLap": {
+                            "lapTimeMS": 107145,
+                            "carId": 1009,
+                            "driverIndex": 0,
+                            "splits": [
+                                32703,
+                                41928,
+                                32133
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 107145,
+                            "carId": 1009,
+                            "driverIndex": 0,
+                            "splits": [
+                                32703,
+                                41928,
+                                32514
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 46505,
+                            "carId": 1009,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Paul",
+                        "lastName": " Miles",
+                        "shortName": "Mil",
+                        "category": "SILVER",
+                        "driverNationality": "ANY"
+                    }
+                },
+                {
+                    "carId": 1022,
+                    "carModelType": 8,
+                    "teamName": "",
+                    "carNumber": 121,
+                    "cupCatergory": 3,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Dylan",
+                            "lastName": "Beveridge",
+                            "shortName": "Bev",
+                            "category": "SILVER",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1022,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 1,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 0,
+                        "position": 10,
+                        "cupPosition": 10,
+                        "trackPosition": 0,
+                        "splinePosition": 0.43453854,
+                        "laps": 2,
+                        "delta": 622,
+                        "bestSessionLap": {
+                            "lapTimeMS": 108279,
+                            "carId": 1022,
+                            "driverIndex": 0,
+                            "splits": [
+                                33624,
+                                42006,
+                                32445
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 108279,
+                            "carId": 1022,
+                            "driverIndex": 0,
+                            "splits": [
+                                33624,
+                                42006,
+                                32649
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 46175,
+                            "carId": 1022,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Dylan",
+                        "lastName": "Beveridge",
+                        "shortName": "Bev",
+                        "category": "SILVER",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611532556765,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 385473.75,
+            "sessionLatestTime": 385473.75,
+            "cars": [
+                {
+                    "carId": 1017,
+                    "carModelType": 19,
+                    "teamName": "",
+                    "carNumber": 42,
+                    "cupCatergory": 0,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Dylan",
+                            "lastName": "Sauer",
+                            "shortName": "Sau",
+                            "category": "PLATINUM",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1017,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 4,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 161,
+                        "position": 2,
+                        "cupPosition": 2,
+                        "trackPosition": 0,
+                        "splinePosition": 0.67703956,
+                        "laps": 3,
+                        "delta": -256,
+                        "bestSessionLap": {
+                            "lapTimeMS": 103167,
+                            "carId": 1017,
+                            "driverIndex": 0,
+                            "splits": [
+                                31164,
+                                41013,
+                                30588
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 103305,
+                            "carId": 1017,
+                            "driverIndex": 0,
+                            "splits": [
+                                31164,
+                                41028,
+                                31113
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 69031,
+                            "carId": 1017,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Dylan",
+                        "lastName": "Sauer",
+                        "shortName": "Sau",
+                        "category": "PLATINUM",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611532673058,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 434064.75,
+            "sessionLatestTime": 434064.75,
+            "cars": [
+                {
+                    "carId": 1005,
+                    "carModelType": 8,
+                    "teamName": "",
+                    "carNumber": 23,
+                    "cupCatergory": 2,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Bryan",
+                            "lastName": "Yang",
+                            "shortName": "Yan",
+                            "category": "BRONZE",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1005,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 2,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 0,
+                        "position": 12,
+                        "cupPosition": 12,
+                        "trackPosition": 0,
+                        "splinePosition": 0.91768646,
+                        "laps": 3,
+                        "delta": 4629,
+                        "bestSessionLap": {
+                            "lapTimeMS": 106590,
+                            "carId": 1005,
+                            "driverIndex": 0,
+                            "splits": [
+                                32301,
+                                42507,
+                                31224
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 106590,
+                            "carId": 1005,
+                            "driverIndex": 0,
+                            "splits": [
+                                32301,
+                                43065,
+                                31224
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 100924,
+                            "carId": 1005,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Bryan",
+                        "lastName": "Yang",
+                        "shortName": "Yan",
+                        "category": "BRONZE",
+                        "driverNationality": "ANY"
+                    }
+                },
+                {
+                    "carId": 1010,
+                    "carModelType": 20,
+                    "teamName": "",
+                    "carNumber": 66,
+                    "cupCatergory": 3,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Gary",
+                            "lastName": "Allen",
+                            "shortName": "All",
+                            "category": "SILVER",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1010,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 2,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 80,
+                        "position": 15,
+                        "cupPosition": 15,
+                        "trackPosition": 0,
+                        "splinePosition": 0.9419292,
+                        "laps": 3,
+                        "delta": -1197,
+                        "bestSessionLap": {
+                            "lapTimeMS": 107499,
+                            "carId": 1010,
+                            "driverIndex": 0,
+                            "splits": [
+                                32694,
+                                42177,
+                                31161
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 107499,
+                            "carId": 1010,
+                            "driverIndex": 0,
+                            "splits": [
+                                32694,
+                                43644,
+                                31161
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 99010,
+                            "carId": 1010,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Gary",
+                        "lastName": "Allen",
+                        "shortName": "All",
+                        "category": "SILVER",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611532721582,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 472956.75,
+            "sessionLatestTime": 473205.75,
+            "cars": [
+                {
+                    "carId": 1007,
+                    "carModelType": 24,
+                    "teamName": "",
+                    "carNumber": 418,
+                    "cupCatergory": 2,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Ethan",
+                            "lastName": "Spitz",
+                            "shortName": "Spi",
+                            "category": "BRONZE",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1007,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 2,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 0,
+                        "position": 15,
+                        "cupPosition": 15,
+                        "trackPosition": 0,
+                        "splinePosition": 0.24118795,
+                        "laps": 4,
+                        "delta": 2770,
+                        "bestSessionLap": {
+                            "lapTimeMS": 107094,
+                            "carId": 1007,
+                            "driverIndex": 0,
+                            "splits": [
+                                32382,
+                                42174,
+                                31458
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 107094,
+                            "carId": 1007,
+                            "driverIndex": 0,
+                            "splits": [
+                                32382,
+                                42819,
+                                31893
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 28328,
+                            "carId": 1007,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Ethan",
+                        "lastName": "Spitz",
+                        "shortName": "Spi",
+                        "category": "BRONZE",
+                        "driverNationality": "ANY"
+                    }
+                },
+                {
+                    "carId": 1022,
+                    "carModelType": 8,
+                    "teamName": "",
+                    "carNumber": 121,
+                    "cupCatergory": 3,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Dylan",
+                            "lastName": "Beveridge",
+                            "shortName": "Bev",
+                            "category": "SILVER",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1022,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 2,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 0,
+                        "position": 16,
+                        "cupPosition": 16,
+                        "trackPosition": 0,
+                        "splinePosition": 0.24038218,
+                        "laps": 4,
+                        "delta": 2108,
+                        "bestSessionLap": {
+                            "lapTimeMS": 105141,
+                            "carId": 1022,
+                            "driverIndex": 0,
+                            "splits": [
+                                32175,
+                                41919,
+                                30774
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 105141,
+                            "carId": 1022,
+                            "driverIndex": 0,
+                            "splits": [
+                                32448,
+                                41919,
+                                30774
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 27728,
+                            "carId": 1022,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Dylan",
+                        "lastName": "Beveridge",
+                        "shortName": "Bev",
+                        "category": "SILVER",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611532760664,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 524052.75,
+            "sessionLatestTime": 524052.75,
+            "cars": [
+                {
+                    "carId": 1017,
+                    "carModelType": 19,
+                    "teamName": "",
+                    "carNumber": 42,
+                    "cupCatergory": 0,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Dylan",
+                            "lastName": "Sauer",
+                            "shortName": "Sau",
+                            "category": "PLATINUM",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1017,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 4,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 150,
+                        "position": 3,
+                        "cupPosition": 3,
+                        "trackPosition": 0,
+                        "splinePosition": 0.98015064,
+                        "laps": 4,
+                        "delta": 3028,
+                        "bestSessionLap": {
+                            "lapTimeMS": 103167,
+                            "carId": 1017,
+                            "driverIndex": 0,
+                            "splits": [
+                                31080,
+                                41013,
+                                30588
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 103329,
+                            "carId": 1017,
+                            "driverIndex": 0,
+                            "splits": [
+                                31080,
+                                41352,
+                                30897
+                            ],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 104285,
+                            "carId": 1017,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Dylan",
+                        "lastName": "Sauer",
+                        "shortName": "Sau",
+                        "category": "PLATINUM",
+                        "driverNationality": "ANY"
+                    }
+                },
+                {
+                    "carId": 1018,
+                    "carModelType": 20,
+                    "teamName": "",
+                    "carNumber": 91,
+                    "cupCatergory": 3,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Colin",
+                            "lastName": "Mcleod",
+                            "shortName": "Mcl",
+                            "category": "SILVER",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1018,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 3,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 138,
+                        "position": 4,
+                        "cupPosition": 4,
+                        "trackPosition": 0,
+                        "splinePosition": 0.97668177,
+                        "laps": 4,
+                        "delta": 1452,
+                        "bestSessionLap": {
+                            "lapTimeMS": 102987,
+                            "carId": 1018,
+                            "driverIndex": 0,
+                            "splits": [
+                                31566,
+                                40608,
+                                30777
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 104313,
+                            "carId": 1018,
+                            "driverIndex": 0,
+                            "splits": [
+                                31857,
+                                41556,
+                                30900
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 102036,
+                            "carId": 1018,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Colin",
+                        "lastName": "Mcleod",
+                        "shortName": "Mcl",
+                        "category": "SILVER",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611532811656,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 649389.75,
+            "sessionLatestTime": 649389.75,
+            "cars": [
+                {
+                    "carId": 1017,
+                    "carModelType": 19,
+                    "teamName": "",
+                    "carNumber": 42,
+                    "cupCatergory": 0,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Dylan",
+                            "lastName": "Sauer",
+                            "shortName": "Sau",
+                            "category": "PLATINUM",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1017,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 2,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 58,
+                        "position": 3,
+                        "cupPosition": 3,
+                        "trackPosition": 0,
+                        "splinePosition": 0.16513065,
+                        "laps": 6,
+                        "delta": 3805,
+                        "bestSessionLap": {
+                            "lapTimeMS": 103167,
+                            "carId": 1017,
+                            "driverIndex": 0,
+                            "splits": [
+                                31080,
+                                41013,
+                                30588
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 103845,
+                            "carId": 1017,
+                            "driverIndex": 0,
+                            "splits": [
+                                31593,
+                                41406,
+                                30846
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 19418,
+                            "carId": 1017,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Dylan",
+                        "lastName": "Sauer",
+                        "shortName": "Sau",
+                        "category": "PLATINUM",
+                        "driverNationality": "ANY"
+                    }
+                },
+                {
+                    "carId": 1020,
+                    "carModelType": 19,
+                    "teamName": "",
+                    "carNumber": 12,
+                    "cupCatergory": 3,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Thiago",
+                            "lastName": "Alves",
+                            "shortName": "Alv",
+                            "category": "SILVER",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1020,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 3,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 143,
+                        "position": 4,
+                        "cupPosition": 4,
+                        "trackPosition": 0,
+                        "splinePosition": 0.1920366,
+                        "laps": 6,
+                        "delta": 532,
+                        "bestSessionLap": {
+                            "lapTimeMS": 103050,
+                            "carId": 1020,
+                            "driverIndex": 0,
+                            "splits": [
+                                31710,
+                                40716,
+                                30624
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 104007,
+                            "carId": 1020,
+                            "driverIndex": 0,
+                            "splits": [
+                                31719,
+                                41478,
+                                30810
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 18716,
+                            "carId": 1020,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Thiago",
+                        "lastName": "Alves",
+                        "shortName": "Alv",
+                        "category": "SILVER",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611532936993,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 1134309.8,
+            "sessionLatestTime": 1134309.8,
+            "cars": [
+                {
+                    "carId": 1008,
+                    "carModelType": 16,
+                    "teamName": "",
+                    "carNumber": 6,
+                    "cupCatergory": 2,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Christopher",
+                            "lastName": "Cox",
+                            "shortName": "Cox",
+                            "category": "BRONZE",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1008,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 2,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 94,
+                        "position": 18,
+                        "cupPosition": 18,
+                        "trackPosition": 0,
+                        "splinePosition": 0.95047605,
+                        "laps": 9,
+                        "delta": 2654,
+                        "bestSessionLap": {
+                            "lapTimeMS": 107949,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [
+                                32802,
+                                42645,
+                                31830
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 109668,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [
+                                33942,
+                                43770,
+                                31956
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 105061,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Christopher",
+                        "lastName": "Cox",
+                        "shortName": "Cox",
+                        "category": "BRONZE",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611533421746,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 1296456.8,
+            "sessionLatestTime": 1296729.8,
+            "cars": [
+                {
+                    "carId": 1008,
+                    "carModelType": 16,
+                    "teamName": "",
+                    "carNumber": 6,
+                    "cupCatergory": 2,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Christopher",
+                            "lastName": "Cox",
+                            "shortName": "Cox",
+                            "category": "BRONZE",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1008,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 2,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 42,
+                        "position": 18,
+                        "cupPosition": 18,
+                        "trackPosition": 0,
+                        "splinePosition": 0.4279526,
+                        "laps": 11,
+                        "delta": 3677,
+                        "bestSessionLap": {
+                            "lapTimeMS": 107949,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [
+                                32679,
+                                42645,
+                                31830
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 108858,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [
+                                32859,
+                                43482,
+                                32517
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 47585,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Christopher",
+                        "lastName": "Cox",
+                        "shortName": "Cox",
+                        "category": "BRONZE",
+                        "driverNationality": "ANY"
+                    }
+                },
+                {
+                    "carId": 1018,
+                    "carModelType": 20,
+                    "teamName": "",
+                    "carNumber": 91,
+                    "cupCatergory": 3,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Colin",
+                            "lastName": "Mcleod",
+                            "shortName": "Mcl",
+                            "category": "SILVER",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1018,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 2,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 99,
+                        "position": 5,
+                        "cupPosition": 5,
+                        "trackPosition": 0,
+                        "splinePosition": 0.43345243,
+                        "laps": 12,
+                        "delta": 1270,
+                        "bestSessionLap": {
+                            "lapTimeMS": 102822,
+                            "carId": 1018,
+                            "driverIndex": 0,
+                            "splits": [
+                                31530,
+                                40599,
+                                30513
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 102822,
+                            "carId": 1018,
+                            "driverIndex": 0,
+                            "splits": [
+                                31578,
+                                40647,
+                                30597
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 43484,
+                            "carId": 1018,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Colin",
+                        "lastName": "Mcleod",
+                        "shortName": "Mcl",
+                        "category": "SILVER",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611533584227,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 1828038.8,
+            "sessionLatestTime": 1828308.8,
+            "cars": [
+                {
+                    "carId": 1005,
+                    "carModelType": 8,
+                    "teamName": "",
+                    "carNumber": 23,
+                    "cupCatergory": 2,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Bryan",
+                            "lastName": "Yang",
+                            "shortName": "Yan",
+                            "category": "BRONZE",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1005,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 3,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 0,
+                        "position": 18,
+                        "cupPosition": 18,
+                        "trackPosition": 0,
+                        "splinePosition": 0.17007029,
+                        "laps": 16,
+                        "delta": 2928,
+                        "bestSessionLap": {
+                            "lapTimeMS": 104523,
+                            "carId": 1005,
+                            "driverIndex": 0,
+                            "splits": [
+                                31884,
+                                41121,
+                                31083
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 105519,
+                            "carId": 1005,
+                            "driverIndex": 0,
+                            "splits": [
+                                32013,
+                                42132,
+                                31374
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 19529,
+                            "carId": 1005,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Bryan",
+                        "lastName": "Yang",
+                        "shortName": "Yan",
+                        "category": "BRONZE",
+                        "driverNationality": "ANY"
+                    }
+                },
+                {
+                    "carId": 1015,
+                    "carModelType": 15,
+                    "teamName": "",
+                    "carNumber": 63,
+                    "cupCatergory": 3,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Mike",
+                            "lastName": "Jackson",
+                            "shortName": "Jac",
+                            "category": "SILVER",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1015,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 3,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 143,
+                        "position": 5,
+                        "cupPosition": 5,
+                        "trackPosition": 0,
+                        "splinePosition": 0.19326241,
+                        "laps": 17,
+                        "delta": 6010,
+                        "bestSessionLap": {
+                            "lapTimeMS": 102360,
+                            "carId": 1015,
+                            "driverIndex": 0,
+                            "splits": [
+                                31179,
+                                40422,
+                                30297
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 154683,
+                            "carId": 1015,
+                            "driverIndex": 0,
+                            "splits": [
+                                31323,
+                                41100,
+                                2147483647
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "INLAP"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 24623,
+                            "carId": 1015,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Mike",
+                        "lastName": "Jackson",
+                        "shortName": "Jac",
+                        "category": "SILVER",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611534115787,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 2143806.8,
+            "sessionLatestTime": 2143806.8,
+            "cars": [
+                {
+                    "carId": 1022,
+                    "carModelType": 8,
+                    "teamName": "",
+                    "carNumber": 121,
+                    "cupCatergory": 3,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Dylan",
+                            "lastName": "Beveridge",
+                            "shortName": "Bev",
+                            "category": "SILVER",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1022,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 3,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 118,
+                        "position": 12,
+                        "cupPosition": 12,
+                        "trackPosition": 0,
+                        "splinePosition": 0.4479914,
+                        "laps": 19,
+                        "delta": 1746,
+                        "bestSessionLap": {
+                            "lapTimeMS": 103425,
+                            "carId": 1022,
+                            "driverIndex": 0,
+                            "splits": [
+                                31497,
+                                40731,
+                                30375
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 104760,
+                            "carId": 1022,
+                            "driverIndex": 0,
+                            "splits": [
+                                31686,
+                                41064,
+                                32010
+                            ],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 46163,
+                            "carId": 1022,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Dylan",
+                        "lastName": "Beveridge",
+                        "shortName": "Bev",
+                        "category": "SILVER",
+                        "driverNationality": "ANY"
+                    }
+                },
+                {
+                    "carId": 1008,
+                    "carModelType": 16,
+                    "teamName": "",
+                    "carNumber": 6,
+                    "cupCatergory": 2,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Christopher",
+                            "lastName": "Cox",
+                            "shortName": "Cox",
+                            "category": "BRONZE",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1008,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 2,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 92,
+                        "position": 21,
+                        "cupPosition": 21,
+                        "trackPosition": 0,
+                        "splinePosition": 0.44778115,
+                        "laps": 18,
+                        "delta": 447,
+                        "bestSessionLap": {
+                            "lapTimeMS": 107949,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [
+                                32565,
+                                42645,
+                                31830
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 111102,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [
+                                33693,
+                                45267,
+                                32142
+                            ],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 47975,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Christopher",
+                        "lastName": "Cox",
+                        "shortName": "Cox",
+                        "category": "BRONZE",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611534431348,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        },
+        {
+            "sessionEarliestTime": 3141600.8,
+            "sessionLatestTime": 3141600.8,
+            "cars": [
+                {
+                    "carId": 1008,
+                    "carModelType": 16,
+                    "teamName": "",
+                    "carNumber": 6,
+                    "cupCatergory": 2,
+                    "currentDriverIndex": 0,
+                    "carNationality": 0,
+                    "drivers": [
+                        {
+                            "firstName": "Christopher",
+                            "lastName": "Cox",
+                            "shortName": "Cox",
+                            "category": "BRONZE",
+                            "driverNationality": "ANY"
+                        }
+                    ],
+                    "realtime": {
+                        "carId": 1008,
+                        "driverIndex": 0,
+                        "driverCount": 1,
+                        "gear": 2,
+                        "posX": 0.0,
+                        "posY": 0.0,
+                        "yaw": 0.0,
+                        "location": "TRACK",
+                        "kmh": 59,
+                        "position": 18,
+                        "cupPosition": 18,
+                        "trackPosition": 0,
+                        "splinePosition": 0.5154665,
+                        "laps": 27,
+                        "delta": 1987,
+                        "bestSessionLap": {
+                            "lapTimeMS": 107859,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [
+                                32565,
+                                42267,
+                                31665
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "lastLap": {
+                            "lapTimeMS": 107859,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [
+                                33270,
+                                42576,
+                                32013
+                            ],
+                            "isInvalid": false,
+                            "isValidForBest": true,
+                            "type": "REGULAR"
+                        },
+                        "currentLap": {
+                            "lapTimeMS": 56696,
+                            "carId": 1008,
+                            "driverIndex": 0,
+                            "splits": [],
+                            "isInvalid": true,
+                            "isValidForBest": false,
+                            "type": "REGULAR"
+                        }
+                    },
+                    "connected": true,
+                    "driver": {
+                        "firstName": "Christopher",
+                        "lastName": "Cox",
+                        "shortName": "Cox",
+                        "category": "BRONZE",
+                        "driverNationality": "ANY"
+                    }
+                }
+            ],
+            "systemTimestamp": 1611535429164,
+            "sessionID": {
+                "type": "RACE",
+                "number": 0,
+                "index": 2
+            }
+        }
+    ],
+    "greenFlagOffset": 280013
+}

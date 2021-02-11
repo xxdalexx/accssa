@@ -28,7 +28,7 @@ class DevController extends Controller
 
     public function index()
     {
-        return redirect()->route('home');
+        return $this->formatIncidentImport();
     }
 
     public function formatIncidentImport()
