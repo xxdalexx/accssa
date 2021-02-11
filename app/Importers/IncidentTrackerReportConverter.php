@@ -1,9 +1,10 @@
 <?php
 
 
-namespace App\Helper;
+namespace App\Importers;
 
 
+use App\Helper\RaceTime;
 use Illuminate\Support\Collection;
 
 class IncidentTrackerReportConverter

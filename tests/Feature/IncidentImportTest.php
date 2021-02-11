@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Helper\IncidentTrackerReportConverter;
+use App\Importers\IncidentTrackerReportConverter;
 use App\Models\Event;
 use App\Models\EventEntry;
 use App\Models\IncidentImport;

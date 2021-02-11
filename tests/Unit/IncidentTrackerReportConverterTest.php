@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Helper\IncidentTrackerReportConverter;
+use App\Importers\IncidentTrackerReportConverter;
 use PHPUnit\Framework\TestCase;
 
 class IncidentTrackerReportConverterTest extends TestCase
