@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Importers\AccCarsFromSgpConverter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class AccCar extends BaseModel
@@ -12,9 +13,15 @@ class AccCar extends BaseModel
 
     protected array $guarded = [];
 
-    public static function import(array $cars)
+    public static function import(array $cars): void
     {
         self::truncate();
         self::insert($cars);
+    }
+
+    public static function importFromSgpJson(): void
+    {
+        $cars = (new AccCarsFromSgpConverter())->getFormatted();
+        self::import($cars);
     }
 }

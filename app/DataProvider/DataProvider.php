@@ -6,15 +6,15 @@ use Illuminate\Support\Collection;
 
 class DataProvider
 {
-    protected Collection $cars;
+    protected Collection $accCars;
 
-    protected Collection $tracks;
-
-    protected Collection $acTracks;
+    protected Collection $accTracks;
 
     protected Collection $acCars;
 
-    protected $alienTimes = [
+    protected Collection $acTracks;
+
+    protected array $alienTimes = [
         "barcelona" => 101900,
         "barcelona_2019" => 102500,
         "brands_hatch_2019" => 82200,
@@ -43,49 +43,49 @@ class DataProvider
         $accTrackPath = __DIR__ . '/AccTracks.json';
         $acTrackPath = __DIR__ . '/AcTracks.json';
 
-        $this->cars = collect(json_decode(file_get_contents($accCarPath)));
-        $this->tracks = collect(json_decode(file_get_contents($accTrackPath)));
+        $this->accCars = collect(json_decode(file_get_contents($accCarPath)));
+        $this->accTracks = collect(json_decode(file_get_contents($accTrackPath)));
         $this->acTracks = collect(json_decode((file_get_contents($acTrackPath))));
     }
 
-    public function getCars()
+    public function getAccCars(): Collection
     {
-        return $this->cars;
+        return $this->accCars;
     }
 
-    public function getGT3CarsForDropdown()
+    public function getGT3CarsForDropdown(): array
     {
         $list = [];
-        foreach ($this->cars->take(26) as $id => $car) {
+        foreach ($this->accCars->take(26) as $id => $car) {
             $list['car'.$id] = $car->name;
         }
 
         return $list;
     }
 
-    public function getTracks()
+    public function getAccTracks(): Collection
     {
-        return $this->tracks;
+        return $this->accTracks;
     }
 
-    public function getAcTracks()
+    public function getAcTracks(): Collection
     {
         return $this->acTracks;
     }
 
-    public function gimmeAGT3Car()
+    public function gimmeAGT3Car(): string
     {
-        return $this->cars->take(26)->random()->name;
+        return $this->accCars->take(26)->random()->name;
     }
 
-    public function gimmeAGT4Car()
+    public function gimmeAGT4Car(): string
     {
-        return $this->cars->where('dlc', 'GT4 Pack')->random()->name;
+        return $this->accCars->where('dlc', 'GT4 Pack')->random()->name;
     }
 
-    public function gimmeATrack()
+    public function gimmeATrack(): string
     {
-        return $this->tracks->random()->name;
+        return $this->accTracks->random()->name;
     }
 
     public function getAlienTimes(): array
@@ -93,7 +93,7 @@ class DataProvider
         return $this->alienTimes;
     }
 
-    public function getIncidentStatuses()
+    public function getIncidentStatuses(): array
     {
         return [
             0 => 'Awaiting Response From Accused',
@@ -106,7 +106,7 @@ class DataProvider
         ];
     }
 
-    public function getIncidentReport()
+    public function getIncidentReport(): Collection
     {
         $path = __DIR__ . '/incidentReport.json';
         return collect(json_decode(file_get_contents($path)));

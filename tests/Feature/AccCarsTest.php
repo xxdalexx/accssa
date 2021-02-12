@@ -21,7 +21,10 @@ class AccCarsTest extends TestCase
             'type' => 'type'
         ]);
         $cars = (new AccCarsFromSgpConverter())->getFormatted();
-        AccCar::import($cars);
+
+
+        AccCar::importFromSgpJson();
+
 
         $this->assertDatabaseCount('acc_cars', count($cars));
         $firstRecord = AccCar::first();
@@ -43,5 +46,30 @@ class AccCarsTest extends TestCase
         $this->assertEquals($firstRecord->id, $firstImport['id']);
         $this->assertEquals($firstRecord->name, $firstImport['name']);
         $this->assertEquals($firstRecord->type, $firstImport['type']);
+    }
+
+    /** @test */
+    public function it_runs_from_a_command()
+    {
+        AccCar::truncate();
+        AccCar::insert([
+            'id' => 0,
+            'name' => "Shouldn't Exist",
+            'type' => 'type'
+        ]);
+
+
+        $this->artisan('sgp:rebuild-acc-cars');
+
+
+        $cars = (new AccCarsFromSgpConverter())->getFormatted();
+        $this->assertDatabaseCount('acc_cars', count($cars));
+        $firstRecord = AccCar::first();
+        $firstImport = $cars[0];
+
+        $this->assertEquals($firstRecord->id, $firstImport['id']);
+        $this->assertEquals($firstRecord->name, $firstImport['name']);
+        $this->assertEquals($firstRecord->type, $firstImport['type']);
+
     }
 }

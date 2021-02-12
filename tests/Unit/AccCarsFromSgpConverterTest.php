@@ -4,7 +4,7 @@ namespace Tests\Unit;
 
 use App\Importers\AccCarsFromSgpConverter;
 use Illuminate\Support\Collection;
-use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 
 class AccCarsFromSgpConverterTest extends TestCase
 {
@@ -14,11 +14,5 @@ class AccCarsFromSgpConverterTest extends TestCase
         $converter = new AccCarsFromSgpConverter();
         $this->assertInstanceOf(Collection::class, $converter->getCars());
         $this->assertGreaterThan(0, $converter->getCars()->count());
-    }
-
-    /** @test */
-    public function it_()
-    {
-        $converter = (new AccCarsFromSgpConverter());
     }
 }
