@@ -2,17 +2,17 @@
 
 namespace App\Console\Commands;
 
-use App\Models\AccCar;
+use App\Models\AccTrack;
 use Illuminate\Console\Command;
 
-class RebuildAccCarsTableFromSgpData extends Command
+class RebuildAccTracksTableFromSgpData extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'sgp:rebuild-acc-cars';
+    protected $signature = 'sgp:rebuild-acc-tracks';
 
     /**
      * The console command description.
@@ -38,7 +38,7 @@ class RebuildAccCarsTableFromSgpData extends Command
      */
     public function handle()
     {
-        AccCar::importFromSgpJson();
-        $this->info('Cars Imported.');
+        AccTrack::importFromSgpJson();
+        $this->info('Tracks Imported.');
     }
 }

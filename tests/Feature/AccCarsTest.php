@@ -59,7 +59,8 @@ class AccCarsTest extends TestCase
         ]);
 
 
-        $this->artisan('sgp:rebuild-acc-cars');
+        $this->artisan('sgp:rebuild-acc-cars')
+             ->expectsOutput('Cars Imported.');
 
 
         $cars = (new AccCarsFromSgpConverter())->getFormatted();
