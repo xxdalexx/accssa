@@ -4,15 +4,14 @@ namespace App\Models;
 
 use App\Importers\AccTracksFromSgpConverter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
-class AccTrack extends Model
+class AccTrack extends BaseModel
 {
     use HasFactory;
 
-    public bool $timestamps = false;
+    public $timestamps = false;
 
-    protected array $guarded = [];
+    protected $guarded = [];
 
     public static function import(array $tracks): void
     {

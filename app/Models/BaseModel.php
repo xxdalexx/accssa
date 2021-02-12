@@ -9,5 +9,5 @@ class BaseModel extends Model
 {
     use HasFactory;
 
-    protected array $guarded = ['id'];
+    protected $guarded = ['id'];
 }

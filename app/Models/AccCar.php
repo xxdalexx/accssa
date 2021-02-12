@@ -9,9 +9,9 @@ class AccCar extends BaseModel
 {
     use HasFactory;
 
-    public bool $timestamps = false;
+    public $timestamps = false;
 
-    protected array $guarded = [];
+    protected $guarded = [];
 
     public static function import(array $cars): void
     {

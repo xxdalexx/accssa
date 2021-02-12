@@ -2,10 +2,7 @@
 
 namespace App\Models;
 
-use App\Http\Guzzle\Sgp\Get\LeagueViews;
 use App\Http\Guzzle\Sgp\Get\Responses\LeagueViewsResponse;
-use App\Http\Guzzle\Sgp\SgpApi;
-use App\Http\Guzzle\Sgp\SgpBase;
 use Illuminate\Notifications\Notifiable;
 use App\Notifications\DiscordNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
