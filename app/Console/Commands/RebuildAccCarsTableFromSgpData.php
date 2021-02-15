@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\AccCar;
+use App\Models\Car;
 use Illuminate\Console\Command;
 
 class RebuildAccCarsTableFromSgpData extends Command
@@ -38,7 +38,7 @@ class RebuildAccCarsTableFromSgpData extends Command
      */
     public function handle()
     {
-        AccCar::importFromSgpJson();
+        Car::RebuildFromSgpJsons();
         $this->info('Cars Imported.');
     }
 }

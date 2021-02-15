@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccCarsTable extends Migration
+class CreateCarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateAccCarsTable extends Migration
      */
     public function up()
     {
-        Schema::create('acc_cars', function (Blueprint $table) {
-            $table->integer('id')->primary();
+        Schema::create('cars', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->string('sim');
             $table->string('name');
-            $table->string('type');
+            $table->string('type')->nullable();
         });
 
-//        $cars = (new \App\Importers\AccCarsFromSgpConverter())->getFormatted();
-//        \App\Models\Car::insert($cars);
+        \App\Models\Car::RebuildFromSgpJsons();
     }
 
     /**
@@ -30,6 +30,6 @@ class CreateAccCarsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('acc_cars');
+        Schema::dropIfExists('cars');
     }
 }

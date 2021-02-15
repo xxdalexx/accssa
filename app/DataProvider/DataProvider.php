@@ -41,16 +41,23 @@ class DataProvider
     {
         $accCarPath = __DIR__ . '/AccCars.json';
         $accTrackPath = __DIR__ . '/AccTracks.json';
+        $acCarPath = __DIR__ . '/AcCars.json';
         $acTrackPath = __DIR__ . '/AcTracks.json';
 
         $this->accCars = collect(json_decode(file_get_contents($accCarPath)));
         $this->accTracks = collect(json_decode(file_get_contents($accTrackPath)));
+        $this->acCars = collect(json_decode(file_get_contents($acCarPath)));
         $this->acTracks = collect(json_decode((file_get_contents($acTrackPath))));
     }
 
     public function getAccCars(): Collection
     {
         return $this->accCars;
+    }
+
+    public function getAcCars(): Collection
+    {
+        return $this->acCars;
     }
 
     public function getGT3CarsForDropdown(): array
