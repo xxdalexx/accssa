@@ -19,7 +19,7 @@ class CreateTrackTimesTable extends Migration
             $table->string('sim');
             $table->foreignId('driver_id');
             $table->string('track_id');
-            $table->string('car_id');
+            $table->string('car_id')->nullable();
             $table->string('car_type')->nullable();
             $table->mediumInteger('lap_time');
             $table->mediumInteger('per_km_time');
