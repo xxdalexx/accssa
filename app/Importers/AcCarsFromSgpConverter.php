@@ -7,7 +7,7 @@ namespace App\Importers;
 use App\DataProvider\DataProvider;
 use Illuminate\Support\Collection;
 
-class AccCarsFromSgpConverter implements FromSgpConverterContract
+class AcCarsFromSgpConverter implements FromSgpConverterContract
 {
     protected Collection $cars;
 
@@ -15,7 +15,7 @@ class AccCarsFromSgpConverter implements FromSgpConverterContract
 
     public function __construct()
     {
-        $this->cars = app('DataProvider')->getAccCars();
+        $this->cars = app('DataProvider')->getAcCars();
         $this->format();
     }
 
@@ -30,8 +30,9 @@ class AccCarsFromSgpConverter implements FromSgpConverterContract
             $new = [];
             $new['id'] = $id;
             $new['name'] = $car->name;
-            $new['type'] = data_get($car, 'tags.0');
-            $new['sim'] = 'acc';
+            $new['type'] = null;
+            $new['sim'] = 'ac';
+
 
             $this->formatted[] = $new;
         }

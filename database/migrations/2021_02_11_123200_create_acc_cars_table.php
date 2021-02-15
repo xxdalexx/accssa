@@ -19,8 +19,8 @@ class CreateAccCarsTable extends Migration
             $table->string('type');
         });
 
-        $cars = (new \App\Importers\AccCarsFromSgpConverter())->getFormatted();
-        \App\Models\AccCar::import($cars);
+//        $cars = (new \App\Importers\AccCarsFromSgpConverter())->getFormatted();
+//        \App\Models\Car::insert($cars);
     }
 
     /**

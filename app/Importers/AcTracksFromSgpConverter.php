@@ -6,7 +6,7 @@ namespace App\Importers;
 
 use Illuminate\Support\Collection;
 
-class AccTracksFromSgpConverter implements FromSgpConverterContract
+class AcTracksFromSgpConverter implements FromSgpConverterContract
 {
     protected array $formatted;
 
@@ -14,7 +14,7 @@ class AccTracksFromSgpConverter implements FromSgpConverterContract
 
     public function __construct()
     {
-        $this->tracks = app('DataProvider')->getAccTracks();
+        $this->tracks = app('DataProvider')->getAcTracks();
         $this->format();
     }
 
@@ -25,7 +25,7 @@ class AccTracksFromSgpConverter implements FromSgpConverterContract
 
             $new['track_id'] = $track->key;
             $new['name'] = $track->name;
-            $new['sim'] = 'acc';
+            $new['sim'] = 'ac';
             $new['length'] = $track->length;
             $new['max_entries'] = $track->maxEntries;
 

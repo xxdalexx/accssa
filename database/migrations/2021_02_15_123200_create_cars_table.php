@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAccTracksTable extends Migration
+class CreateCarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateAccTracksTable extends Migration
      */
     public function up()
     {
-        Schema::create('acc_tracks', function (Blueprint $table) {
-            $table->id();
-            $table->string('track_id');
+        Schema::create('cars', function (Blueprint $table) {
+            $table->string('id')->primary();
+            $table->string('sim');
             $table->string('name');
-            $table->integer('length');
-            $table->integer('max_entries');
+            $table->string('type')->nullable();
         });
 
-        //\App\Models\Track::rebuildFromSgpJsons();
+        \App\Models\Car::RebuildFromSgpJsons();
     }
 
     /**
@@ -31,6 +30,6 @@ class CreateAccTracksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('acc_tracks');
+        Schema::dropIfExists('cars');
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Models\AccTrack;
+use App\Models\Track;
 use Illuminate\Console\Command;
 
 class RebuildAccTracksTableFromSgpData extends Command
@@ -38,7 +38,7 @@ class RebuildAccTracksTableFromSgpData extends Command
      */
     public function handle()
     {
-        AccTrack::importFromSgpJson();
+        Track::rebuildFromSgpJsons();
         $this->info('Tracks Imported.');
     }
 }
