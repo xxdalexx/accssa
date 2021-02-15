@@ -12,6 +12,7 @@ use App\Http\Guzzle\Sgp\Get\Responses\LeagueViewsResponse;
 use App\Http\Guzzle\Sgp\Get\Responses\SessionResponse;
 use App\Http\Guzzle\Sgp\Get\Session;
 use App\Http\Guzzle\Sgp\SgpApi;
+use App\Models\AccCar;
 use App\Models\EventEntry;
 use App\Models\User;
 use Illuminate\Support\Arr;
@@ -28,30 +29,62 @@ class DevController extends Controller
 
     public function index()
     {
-        return $this->formatIncidentImport();
+        $formatted = $this->formatDriversTimes();
+        dd($formatted);
+        $this->processSims($formatted);
     }
 
-    public function formatIncidentImport()
+    public function formatDriversTimes()
     {
-        $rawReport = (new DataProvider)->getIncidentReport();
-        $formattedReport = [];
+        $api = new DriverResults();
+        $response = collect($api->forDriver('SXs33IH-ZDSa6A2hUzKU_')->get());
 
-        $offset = $rawReport['greenFlagOffset'];
-        dump($offset);
+        return $response->map(function ($event) {
+            $results = collect($event->results)->filter(function ($result) {
+                return $result->type == "RACE" && is_int($result->bestLapTime);
+            })->each(function ($result) use ($event) {
+                $result->carModelId = $event->carModelId;
+                $result->sim = $event->game;
+                $result->trackId = $event->trackId;
+            })->map(function ($result) {
+                return collect($result)->only(['trackId', 'carModelId', 'sim', 'bestLapTime']);
+            });
+            return $results->toArray();
+        })->flatten(1)->groupBy('trackId')->groupBy('0.sim', true);
+    }
 
-        $incidents = collect($rawReport['incidents'])->where('sessionID.type', 'RACE');
+    protected function processSims($formatted)
+    {
+        $formatted->each(function ($tracks, $sim) {
+            $method = $sim . 'CleanTracks';
+            return $this->$method($tracks);
+        });
+    }
 
-        foreach ($incidents as $incident) {
-            $report = [];
-            $report['replayTime'] =
-                (new RaceTime($offset + $incident->sessionEarliestTime))
-                ->onlySeconds();
-            foreach ($incident->cars as $key => $car) {
-                $report['cars'][$key] = $car->carId;
-            }
-            $formattedReport[] = $report;
-        }
-        dd($formattedReport);
+    protected function accCleanTracks($tracks)
+    {
+        $carIds = collect(data_get($tracks, '*.*.carModelId'))->unique();
+        $cars = AccCar::select(['id', 'type'])->whereIn('id', $carIds)->get();
+
+        $tracks->transform(function ($races) use ($cars) {
+            $races = $this->injectCarTypesIntoRaceResultsForAcc($races, $cars);
+            return $races->groupBy('carType');
+        });
+
+        dd($tracks);
+    }
+
+    protected function injectCarTypesIntoRaceResultsForAcc($races, $cars)
+    {
+        return $races->transform(function ($race) use ($cars) {
+            $race['carType'] = $cars->find($race['carModelId'])->type;
+            return $race;
+        });
+    }
+
+    protected function acCleanTracks($track)
+    {
+
     }
 
     public function acTracksindex()
