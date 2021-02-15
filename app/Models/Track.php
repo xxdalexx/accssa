@@ -3,14 +3,17 @@
 namespace App\Models;
 
 use App\Importers\AccTracksFromSgpConverter;
+use App\Importers\AcTracksFromSgpConverter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+
 /**
  * @property string name
  * @property string track_id
+ * @property string sim
  * @property integer length
  * @property integer max_entries
  */
-class AccTrack extends BaseModel
+class Track extends BaseModel
 {
     use HasFactory;
 
@@ -18,15 +21,13 @@ class AccTrack extends BaseModel
 
     protected $guarded = [];
 
-    public static function import(array $tracks): void
+    public static function rebuildFromSgpJsons(): void
     {
         self::truncate();
-        self::insert($tracks);
-    }
 
-    public static function importFromSgpJson(): void
-    {
-        $tracks = (new AccTracksFromSgpConverter())->getFormatted();
-        self::import($tracks);
+        $accTracks = (new AccTracksFromSgpConverter())->getFormatted();
+        self::insert($accTracks);
+        $acTracks = (new AcTracksFromSgpConverter())->getFormatted();
+        self::insert($acTracks);
     }
 }
