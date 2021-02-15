@@ -4,7 +4,12 @@ namespace App\Models;
 
 use App\Importers\AccTracksFromSgpConverter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+/**
+ * @property string name
+ * @property string track_id
+ * @property integer length
+ * @property integer max_entries
+ */
 class AccTrack extends BaseModel
 {
     use HasFactory;

@@ -5,6 +5,10 @@ namespace App\Models;
 use App\Importers\AccCarsFromSgpConverter;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+/**
+ * @property string name
+ * @property string type
+ */
 class AccCar extends BaseModel
 {
     use HasFactory;
