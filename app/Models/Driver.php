@@ -140,4 +140,9 @@ class Driver extends BaseModel
             $driver->sendDiscordDM($message);
         }
     }
+
+    public function buildTrackTimesFromFormattedResponse($formattedArray)
+    {
+
+    }
 }

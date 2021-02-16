@@ -24,7 +24,7 @@ abstract class TestCase extends BaseTestCase
         return [$driver, $user];
     }
 
-    protected function createMyDriver()
+    protected function createMyDriver(): Driver
     {
         return Driver::create([
             'driver_name' => 'Dale Carter',

@@ -23,3 +23,12 @@ function dbFirstId($table)
 {
     return DB::table('series')->select('id')->first()->id;
 }
+
+function fake_sgp($path = '')
+{
+    $file = file_get_contents(
+        app()->basePath('tests/FakeSgpApi/' . $path)
+    );
+
+    return json_decode($file);
+}

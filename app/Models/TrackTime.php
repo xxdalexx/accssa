@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string track_id
  * @property integer car_id
  * @property Driver driver
- * @property AccTrack track
- * @property AccCar car
+ * @property Track track
+ * @property Car car
  * @property integer lap_time
  * @property integer per_km_time
  * @property integer lap_delta
@@ -22,14 +22,6 @@ class TrackTime extends BaseModel
 {
     use HasFactory;
 
-    protected static array $trackModels = [
-        'acc' => AccTrack::class
-    ];
-
-    protected static array $carModels = [
-        'acc' => AccCar::class
-    ];
-
     public function driver(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(Driver::class);
@@ -38,7 +30,7 @@ class TrackTime extends BaseModel
     public function track(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(
-            static::$trackModels[$this->sim],
+            Track::class,
             'track_id',
             'track_id'
         );
@@ -47,7 +39,7 @@ class TrackTime extends BaseModel
     public function car(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(
-            static::$carModels[$this->sim]
+            Car::class
         );
     }
 

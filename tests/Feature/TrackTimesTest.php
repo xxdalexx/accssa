@@ -2,9 +2,12 @@
 
 namespace Tests\Feature;
 
+use App\Http\Guzzle\Sgp\Responses\SgpDriverResultsResponse;
 use App\Models\AccCar;
 use App\Models\AccTrack;
+use App\Models\Car;
 use App\Models\Driver;
+use App\Models\Track;
 use App\Models\TrackTime;
 use Illuminate\Database\QueryException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -21,14 +24,14 @@ class TrackTimesTest extends TestCase
         $trackTime = TrackTime::create([
             'sim' => 'acc',
             'driver_id' => $driver->id,
-            'track_id' => AccTrack::first()->track_id,
-            'car_id' => AccCar::first()->id,
+            'track_id' => Track::first()->track_id,
+            'car_id' => Car::first()->id,
             'lap_time' => 90000
         ]);
 
         $this->assertInstanceOf(Driver::class, $trackTime->driver);
-        $this->assertInstanceOf(AccTrack::class, $trackTime->track);
-        $this->assertInstanceOf(AccCar::class, $trackTime->car);
+        $this->assertInstanceOf(Track::class, $trackTime->track);
+        $this->assertInstanceOf(Car::class, $trackTime->car);
     }
 
     /** @test */
@@ -37,16 +40,16 @@ class TrackTimesTest extends TestCase
         $alienTime = TrackTime::create([
             'sim' => 'acc',
             'driver_id' => 0,
-            'track_id' => AccTrack::first()->track_id,
-            'car_id' => AccCar::first()->id,
+            'track_id' => Track::first()->track_id,
+            'car_id' => Car::first()->id,
             'lap_time' => 101900
         ]);
         [$driver, $user] = $this->createMe();
         $trackTime = TrackTime::create([
             'sim' => 'acc',
             'driver_id' => $driver->id,
-            'track_id' => AccTrack::first()->track_id,
-            'car_id' => AccCar::first()->id,
+            'track_id' => Track::first()->track_id,
+            'car_id' => Car::first()->id,
             'lap_time' => 103900
         ]);
 
@@ -62,8 +65,8 @@ class TrackTimesTest extends TestCase
         $trackTime = TrackTime::create([
             'sim' => 'acc',
             'driver_id' => $driver->id,
-            'track_id' => AccTrack::first()->track_id,
-            'car_id' => AccCar::first()->id,
+            'track_id' => Track::first()->track_id,
+            'car_id' => Car::first()->id,
             'lap_time' => 103900
         ]);
 
@@ -79,8 +82,8 @@ class TrackTimesTest extends TestCase
         $trackTime = TrackTime::create([
             'sim' => 'acc',
             'driver_id' => $driver->id,
-            'track_id' => AccTrack::first()->track_id,
-            'car_id' => AccCar::first()->id,
+            'track_id' => Track::first()->track_id,
+            'car_id' => Car::first()->id,
             'lap_time' => 103900
         ]);
 
@@ -93,7 +96,7 @@ class TrackTimesTest extends TestCase
         $alienTime = TrackTime::create([
             'sim' => 'acc',
             'driver_id' => 0,
-            'track_id' => AccTrack::first()->track_id,
+            'track_id' => Track::first()->track_id,
             'car_id' => 5,
             'lap_time' => 101900
         ]);
@@ -101,7 +104,7 @@ class TrackTimesTest extends TestCase
         $trackTime = TrackTime::create([
             'sim' => 'acc',
             'driver_id' => $driver->id,
-            'track_id' => AccTrack::first()->track_id,
+            'track_id' => Track::first()->track_id,
             'car_id' => 6, //ids 5 and 6 are both of gt3 type
             'lap_time' => 103900
         ]);
@@ -118,7 +121,7 @@ class TrackTimesTest extends TestCase
         TrackTime::create([
             'sim' => 'acc',
             'driver_id' => 1,
-            'track_id' => AccTrack::first()->track_id,
+            'track_id' => Track::first()->track_id,
             'car_id' => 6,
             'lap_time' => 103900
         ]);
@@ -126,7 +129,7 @@ class TrackTimesTest extends TestCase
             TrackTime::create([
                 'sim' => 'acc',
                 'driver_id' => 1,
-                'track_id' => AccTrack::first()->track_id,
+                'track_id' => Track::first()->track_id,
                 'car_id' => 6,
                 'lap_time' => 103900
             ]);
@@ -137,8 +140,66 @@ class TrackTimesTest extends TestCase
     }
 
     /** @test */
-    public function it_()
+    public function it_updates_an_existing_record_after_comparison_time_is_created()
     {
-        Notification::fake();
+        [$driver, $user] = $this->createMe();
+        $trackTime = TrackTime::create([
+            'sim' => 'acc',
+            'driver_id' => $driver->id,
+            'track_id' => Track::first()->track_id,
+            'car_id' => Car::first()->id,
+            'lap_time' => 103900
+        ]);
+        $this->assertEmpty($trackTime->lap_delta);
+
+        $alienTime = TrackTime::create([
+            'sim' => 'acc',
+            'driver_id' => 0,
+            'track_id' => Track::first()->track_id,
+            'car_id' => 5,
+            'lap_time' => 101900
+        ]);
+
+        $trackTime->refresh();
+        $this->assertEquals(2000, $trackTime->lap_delta);
+    }
+
+    /** @test */
+    public function it_updates_an_existing_record_when_comparison_time_is_updated()
+    {
+        $alienTime = TrackTime::create([
+            'sim' => 'acc',
+            'driver_id' => 0,
+            'track_id' => Track::first()->track_id,
+            'car_id' => 5,
+            'lap_time' => 101900
+        ]);
+        [$driver, $user] = $this->createMe();
+        $trackTime = TrackTime::create([
+            'sim' => 'acc',
+            'driver_id' => $driver->id,
+            'track_id' => Track::first()->track_id,
+            'car_id' => Car::first()->id,
+            'lap_time' => 103900
+        ]);
+        $this->assertEquals(2000, $trackTime->lap_delta);
+
+        $alienTime->lap_time = 100900;
+        $alienTime->save();
+        $trackTime->refresh();
+
+        $this->assertEquals(3000, $trackTime->lap_delta);
+    }
+
+    /** @test */
+    public function it_builds_records_from_formatted_response()
+    {
+        $data = fake_sgp('driver-results\forTest.json');
+        $formattedArray = (new SgpDriverResultsResponse())->setRawData($data)->getFormattedListForTrackTimes();
+        $driver = $this->createMyDriver();
+
+        $driver->buildTrackTimesFromFormattedResponse($formattedArray);
+
+        $this->assertDatabaseCount('track_times', 7);
     }
 }
