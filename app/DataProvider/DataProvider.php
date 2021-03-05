@@ -34,7 +34,10 @@ class DataProvider
         "suzuka_2019" => 118200,
         "zandvoort_2019" => 94500,
         "zolder_2019" => 87650,
-        "imola_2020" => 99900
+        "imola_2020" => 99900,
+        "donington_2019" => 85500,
+        "oulton_park_2019" => 91800,
+        "snetterton_2019" => 104900,
     ];
 
     public function __construct()

@@ -113,7 +113,7 @@ class SgpBase extends GuzzleBase
 
     public function getDriverResultsForScore(string $driverId)
     {
-        $this->cacheName = 'driverResultsForScore.' . $driverId;
+        //$this->cacheName = 'driverResultsForScore.' . $driverId;
 
         $this->setClientToDriverResults($driverId);
         $cleaner = new DriverResultsForScoreCleaner($this->getResponse());

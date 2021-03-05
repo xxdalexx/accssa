@@ -9,8 +9,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use NotificationChannels\Discord\Discord;
 
 /**
- * @property mixed discord_private_channel_id
+ * @property mixed        discord_private_channel_id
  * @property mixed|string discord_user_id
+ * @property DriverScore  score
  */
 class Driver extends BaseModel
 {
@@ -38,7 +39,7 @@ class Driver extends BaseModel
 
         $newDriver = self::updateOrCreate([
             'driver_name' => $member->name,
-            'sgp_id' => $member->userId
+            'sgp_id'      => $member->userId
         ]);
 
         //$newDriver->calculateDriverScore(); NEEDS REFACTORED API CLASS
@@ -80,7 +81,7 @@ class Driver extends BaseModel
     public function getCurrentSplitAttribute()
     {
         $cuts = [
-            'pro' => 3000,
+            'pro'    => 3000,
             'silver' => 4000,
         ];
 
@@ -101,7 +102,7 @@ class Driver extends BaseModel
 
     public function setDiscordUserIdAttribute($value)
     {
-        $this->attributes['discord_user_id'] = $value;
+        $this->attributes['discord_user_id']            = $value;
         $this->attributes['discord_private_channel_id'] = app(Discord::class)->getPrivateChannel($value);
     }
 

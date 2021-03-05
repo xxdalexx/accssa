@@ -46,7 +46,10 @@ class DriverResultsForScoreCleaner extends CleanerBase
         "spa_2020",
         "zandvoort_2020",
         "zolder_2020",
-        "imola_2020"
+        "imola_2020",
+        "snetterton_2019",
+        "oulton_park_2019",
+        "donington_2019",
     ];
 
     public function clean()
