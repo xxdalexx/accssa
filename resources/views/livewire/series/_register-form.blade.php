@@ -1,5 +1,5 @@
 <div class="form-group">
-    <label>Register With Vehicle:</label>
+    <label>Register With Vehicle: </label>
     <select wire:model="carInput" class="form-control">
         @foreach($this->cars as $id => $name)
             <option value="{{ $id }}">{{ $name }}</option>

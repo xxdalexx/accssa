@@ -14,7 +14,7 @@ class CarForRegistration
     {
         $this->skin = "default";
 
-        if ($id) {
+        if ($id || $id === "0") {
             $this->setcarId($id);
         }
 
