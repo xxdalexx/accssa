@@ -124,8 +124,6 @@ class MenuBuilder
         $openTools = new MenuSection('Open Tools', 'zap');
         $openTools->addEntry(
             new MenuEntry('Event Randomizer', 'randomizer')
-        )->addEntry(
-            new MenuEntry('Practice Server Config', 'practiceConfig')
         );
 
         $this->menuSections->push($openTools);
