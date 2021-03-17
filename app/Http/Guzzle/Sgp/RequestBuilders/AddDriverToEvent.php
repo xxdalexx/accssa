@@ -4,6 +4,7 @@ namespace App\Http\Guzzle\Sgp\RequestBuilders;
 
 use App\DataProvider\DataProvider;
 use App\Models\Driver;
+use App\Models\Site;
 
 class AddDriverToEvent
 {
@@ -43,8 +44,13 @@ class AddDriverToEvent
 
     public function getRequestArray()
     {
-        $request['driverId'] = $this->driverId;
-        $request['car'] = $this->car->getRequestArray();
+        $payload['leagueId'] = Site::sgpLeagueId();
+        $payload['listType'] = "SingleEvent";
+        $payload['entry']['driverId'] = $this->driverId;
+        $payload['entry']['car'] = $this->car->getRequestArray();
+        $payload['type'] = "REGULAR";
+
+        $request['payload'] = $payload;
 
         return $request;
     }
@@ -56,6 +62,22 @@ class AddDriverToEvent
     }
 
 }
+
+//{
+//    "payload": {
+//        "leagueId": "ikG1uiyY6vvTGCTAL486M",
+//        "listType": "SingleEvent",
+//        "entry": {
+//            "driverId": "SXs33IH-ZDSa6A2hUzKU_",
+//            "car": {
+//                "model": "16",
+//                "skin": "default",
+//                "carClassId": "AM"
+//            },
+//         "type": "REGULAR"
+//        }
+//    }
+//}
 
 // {
 //     "driverId": "SXs33IH-ZDSa6A2hUzKU_",

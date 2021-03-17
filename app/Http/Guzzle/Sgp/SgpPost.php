@@ -20,7 +20,7 @@ class SgpPost extends SgpBase
     public function addDriverToEvent(string $eventId, AddDriverToEvent $request)
     {
         $this->client = new \GuzzleHttp\Client([
-            'base_uri' => "https://stg-api.simracing.gp/stg/sessions/$eventId/registerDriver"
+            'base_uri' => "https://stg-api.simracing.gp/stg/command/entry-list/AddEntry/$eventId/3"
         ]);
 
         $this->params['body'] = $request->getRequestJson();

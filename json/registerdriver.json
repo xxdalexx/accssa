@@ -1,8 +1,16 @@
 {
-    "driverId": "SXs33IH-ZDSa6A2hUzKU_",
-    "car": {
-        "model": "23",
-        "skin": "default",
-        "carClassId": "GT3"
+    "payload": {
+        "leagueId": "ikG1uiyY6vvTGCTAL486M",
+        "listType": "SingleEvent",
+        "entry": {
+            "driverId": "SXs33IH-ZDSa6A2hUzKU_",
+            "car": {
+                "model": "16",
+                "skin": "default",
+                "carClassId": "AM"
+            },
+            "type": "REGULAR"
+        }
     }
 }
+/stg/command/entry-list/AddEntry/oBSXAuTL7soqoFtz7a1di/6
