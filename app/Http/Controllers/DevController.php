@@ -14,7 +14,9 @@ use App\Http\Guzzle\Sgp\Get\Session;
 use App\Http\Guzzle\Sgp\SgpApi;
 use App\Models\EventEntry;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\VarDumper\Cloner\Data;
 use Tests\Mocks\SgpLeagueViewsMock;
@@ -28,7 +30,7 @@ class DevController extends Controller
 
     public function index()
     {
-        return $this->formatIncidentImport();
+        dd(\Illuminate\Support\Facades\Request::ip());
     }
 
     public function formatIncidentImport()

@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\AdminManageDriversController;
 Route::get('login', function () {
     return redirect()->route('discordSend');
 })->name('login');
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('open/randomizer', [HomeController::class, 'randomizer'])->name('randomizer');
 //Route::get('open/practice-config', [HomeController::class, 'practiceConfig'])->name('practiceConfig');

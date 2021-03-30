@@ -2,6 +2,7 @@
 
 namespace App\Helper;
 
+use Illuminate\Support\Facades\Request;
 use Throwable;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,8 @@ class DiscordErrorMessager
         $info = [
             'message' => $exception->getMessage(),
             'file' => $exception->getFile(),
-            'line' => $exception->getLine()
+            'line' => $exception->getLine(),
+            'ip' => Request::ip()
         ];
 
         //ignore stored messages
@@ -43,10 +45,15 @@ class DiscordErrorMessager
 
     protected function buildMessage($info)
     {
-        $message = 'Error: ' . $info['message'] . ' - File: ' . $info['file'] . ' - Line: ' . $info['line'];
+        $message = 'Error: ' . $info['message'] .
+            ' - File: ' . $info['file'] .
+            ' - Line: ' . $info['line'] .
+            ' - IP:' . $info['ip'];
+
         if (Auth::check()) {
             $message = Auth::user()->name . ' - ' . $message;
         }
+
         return $message;
     }
 }
