@@ -32,9 +32,9 @@ class MenuBuilder
 
     protected function buildLogIn()
     {
-//        $this->menuSections->push(
-//            new MenuSectionNoSubs('Login', 'log-in', 'login')
-//        );
+        $this->menuSections->push(
+            new MenuSectionNoSubs('Login', 'log-in', 'login')
+        );
         $this->menuSections->push(
             new MenuSectionNoSubs('Login w/ Discord (Beta)', 'log-in', 'discordSend')
         );
