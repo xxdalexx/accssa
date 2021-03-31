@@ -30,8 +30,7 @@ class DiscordErrorMessager
             'message' => $exception->getMessage(),
             'file' => $exception->getFile(),
             'line' => $exception->getLine(),
-            'ip' => Request::ip(),
-            'route' => Request::route()
+            'ip' => Request::ip()
         ];
 
         //ignore stored messages
@@ -49,8 +48,7 @@ class DiscordErrorMessager
         $message = 'Error: ' . $info['message'] .
             ' - File: ' . $info['file'] .
             ' - Line: ' . $info['line'] .
-            ' - IP:' . $info['ip'] .
-            ' - Route :' . $info['route'];
+            ' - IP:' . $info['ip'];
 
         if (Auth::check()) {
             $message = Auth::user()->name . ' - ' . $message;

@@ -30,7 +30,7 @@ class DevController extends Controller
 
     public function index()
     {
-        dd(\Illuminate\Support\Facades\Request::route());
+        dd(\Illuminate\Support\Facades\Request::ip());
     }
 
     public function formatIncidentImport()
