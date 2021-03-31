@@ -42,6 +42,14 @@ class Driver extends BaseModel
             'sgp_id'      => $member->userId
         ]);
 
+        if (
+            empty($newDriver->discord_user_id) &&
+            property_exists($member, 'discord')
+        ) {
+            $newDriver->discord_user_id = $member->discord->id;
+            $newDriver->save();
+        }
+
         //$newDriver->calculateDriverScore(); NEEDS REFACTORED API CLASS
 
         return $newDriver;

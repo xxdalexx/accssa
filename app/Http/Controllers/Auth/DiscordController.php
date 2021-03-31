@@ -71,8 +71,13 @@ class DiscordController extends Controller
 
         if ($member) {
             $driver = Driver::importFromSgp($member->userId);
-            $invite = Invite::generate($driver->id);
-            return redirect()->route('invite.show', $invite);
+            if ($driver->wasRecentlyCreated) {
+                $invite = Invite::generate($driver->id);
+                return redirect()->route('invite.show', $invite);
+            } else {
+                Auth::login($driver->user);
+                return redirect()->route('home');
+            }
         }
 
         //Next is to handle auto on-boarding into sgp.
