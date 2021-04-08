@@ -22,6 +22,7 @@ class OnePointEachSplit
     public function run()
     {
         $splits = $this->eventEntries->groupBy('split');
+
         foreach ($splits as $split => $entries) {
             if ($split == "No Score") continue;
 
@@ -36,7 +37,11 @@ class OnePointEachSplit
 
     protected function setQualiBonus(Collection $splitEntries)
     {
-        $entry = $splitEntries->sortBy('quali_time')->first();
+        $entry = $splitEntries
+            ->where('quali_time', '>', 0)
+            ->sortBy('quali_time')
+            ->first();
+
         $entry->top_quali_points = 1;
 
         $this->modified->push($entry);
