@@ -28,12 +28,12 @@ class LeagueViewsResponse
         return collect($this->rawResponse->members);
     }
 
-    public function findMemberByDiscordId(string $discordUserId): \stdClass
+    public function findMemberByDiscordId(string $discordUserId)
     {
         return $this->memberList()->firstWhere('discord.id', $discordUserId);
     }
 
-    public function findMemberBySgpId(string $sgpId): \stdClass
+    public function findMemberBySgpId(string $sgpId)
     {
         return $this->memberList()->firstWhere('userId', $sgpId);
     }

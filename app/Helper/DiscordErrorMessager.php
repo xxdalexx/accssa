@@ -2,7 +2,9 @@
 
 namespace App\Helper;
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Str;
 use Throwable;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -19,13 +21,15 @@ class DiscordErrorMessager
 
     public function handle(Throwable $exception)
     {
-        if (env('APP_ENV') == "production" && $exception->getMessage()) {
+        if (App::environment('production') && $exception->getMessage()) {
             $this->sendMessage($exception);
         }
     }
 
     protected function sendMessage($exception)
     {
+        if (Str::startsWith($exception->getMessage(), 'Unauthenticated')) return;
+
         $info = [
             'message' => $exception->getMessage(),
             'file' => $exception->getFile(),
