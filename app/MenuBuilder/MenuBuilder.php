@@ -36,7 +36,7 @@ class MenuBuilder
 //            new MenuSectionNoSubs('Login', 'log-in', 'login')
 //        );
         $this->menuSections->push(
-            new MenuSectionNoSubs('Login w/ Discord (Beta)', 'log-in', 'discordSend')
+            new MenuSectionNoSubs('Login w/ Discord', 'log-in', 'discordSend')
         );
     }
 
