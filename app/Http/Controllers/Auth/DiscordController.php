@@ -52,6 +52,8 @@ class DiscordController extends Controller
 
 
         if ($user) {
+            if ($user->deactivated) return redirect('https://www.pornhub.com/');
+
             Auth::login($user);
             return redirect()->route('home');
         }
