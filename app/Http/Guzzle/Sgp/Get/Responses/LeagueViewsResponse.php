@@ -25,7 +25,9 @@ class LeagueViewsResponse
 
     public function memberList(): ?Collection
     {
-        return collect($this->rawResponse->members) ?? null;
+        return $this->rawResponse->members
+            ? collect($this->rawResponse->members)
+            : null;
     }
 
     public function findMemberByDiscordId(string $discordUserId)
