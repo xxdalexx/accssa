@@ -34,8 +34,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('open/randomizer', [HomeController::class, 'randomizer'])->name('randomizer');
 //Route::get('open/practice-config', [HomeController::class, 'practiceConfig'])->name('practiceConfig');
 //Route::get('open/add-driver', [HomeController::class, 'addDriver'])->name('addDriver');
-Route::get('invite', [InviteController::class, 'index'])->name('invite.index');
-Route::get('invite/{invite:code}', [InviteController::class, 'show'])->name('invite.show');
+
+//Route::get('invite', [InviteController::class, 'index'])->name('invite.index');
+//Route::get('invite/{invite:code}', [InviteController::class, 'show'])->name('invite.show');
+
+
 Route::get('reset-password/{reset:code}', [InviteController::class, 'showReset'])->name('password-reset.show');
 
 Route::middleware('auth')->group(function () {

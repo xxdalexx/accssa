@@ -57,6 +57,9 @@ class DiscordController extends Controller
             Auth::login($user);
             return redirect()->route('home');
         }
+        //Registration checks.
+        //Exit out since SGP are assholes.
+        return redirect()->route('home');
 
         //User with driver record doesn't exist, see if only a driver record does.
 
