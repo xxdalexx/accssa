@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\DataProvider\DataProvider;
 use App\Helper\RaceTime;
+use App\Http\Guzzle\Sgp\SgpBase;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,48 @@ class DevController extends Controller
 
     public function index()
     {
-        dd(\Illuminate\Support\Facades\Request::ip());
+        $d = (new SgpBase)->getPreEventDetails('0Chj5LpwtGVJmOPCMYkZX');
+        dd($upcomingEvents);
+    }
+
+    public function indexMissingSector()
+    {
+        $file = file_get_contents(base_path('json/testing.json'));
+        $obj = json_decode($file);
+
+        $last = null;
+        foreach ($obj->race->results as $result) {
+            if ($last) {
+                if (
+                    $result->lapCount == $last->lapCount &&
+                    $result->totalTime < $last->totalTime
+                ) {
+                    $adjustedTime = $result->totalTime + $this->getLastSector3Time($obj, $result->driverId);
+                    if ($adjustedTime < $last->totalTime) {
+                        $adjustedTime = $adjustedTime + $this->getLastSector2Time($obj, $result->driverId);
+                    }
+                    $adjustedTime = new RaceTime($adjustedTime);
+                    dump($result->driverName . ' Adjusted Time: ' . $adjustedTime->withHour());
+                }
+            }
+            $last = $result;
+//            dump($result->driverName, $result->lapCount, $result->totalTime);
+        }
+
+//        $c = collect($obj->results[3]->laps);
+//        dd($c->where('driverId', 'Mza-9bHW1F1VqjeXcKcau'));
+    }
+
+    public function getLastSector3Time($obj, $driverId)
+    {
+        $lastLap = collect($obj->results[3]->laps)->where('driverId', $driverId)->last();
+        return $lastLap->sectors[2];
+    }
+
+    public function getLastSector2Time($obj, $driverId)
+    {
+        $lastLap = collect($obj->results[3]->laps)->where('driverId', $driverId)->last();
+        return $lastLap->sectors[1];
     }
 
     public function formatIncidentImport()

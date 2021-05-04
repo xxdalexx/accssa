@@ -25,8 +25,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('telescope:prune')->daily();
-        $schedule->command('sgp:reject-applications')->daily();
-        $schedule->command('sgp:run-scores')->mondays()->at('01:00')->timezone('America/New_York');
+//        $schedule->command('sgp:reject-applications')->daily();
+//        $schedule->command('sgp:run-scores')->mondays()->at('01:00')->timezone('America/New_York');
     }
 
     /**
